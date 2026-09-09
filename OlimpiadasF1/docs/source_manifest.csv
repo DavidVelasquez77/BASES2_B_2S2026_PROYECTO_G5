@@ -1,0 +1,11 @@
+fuente,archivo_relativo,url_origen,tamano_bytes,sha256
+fuente1,data/raw/fuente1/clean/bios.csv,https://github.com/KeithGalli/Olympics-Dataset,10984430,2f8c7e4a8922350190e021ef48ba4da55cc5ea6a475da2511eeb2927cf3b9407
+fuente1,data/raw/fuente1/clean/bios_locs.csv,https://github.com/KeithGalli/Olympics-Dataset,12714370,8cf8558de1a90f358c9bbb6b1166b106b2a83c8dacb89c53d325616658112044
+fuente1,data/raw/fuente1/clean/noc_regions.csv,https://github.com/KeithGalli/Olympics-Dataset,3825,ecbbd3f7658a87ced4c7d92f75db4e5e2af0096fb758168736dfe08267f6a071
+fuente1,data/raw/fuente1/clean/populations.csv,https://github.com/KeithGalli/Olympics-Dataset,180131,15a0090208ff279a4f60ecdc55e638e421d756264de6642b10f37d1361a08909
+fuente1,data/raw/fuente1/clean/results.csv,https://github.com/KeithGalli/Olympics-Dataset,33351982,7a4993f3585bf61202492c548f6be5d3a623d429844dd80408e60fd84809629b
+fuente1,data/raw/fuente1/raw/bios.csv,https://github.com/KeithGalli/Olympics-Dataset,27969433,dfc0b64c53b8132a8d15392f183fbb60a9255bae617ab698338841934823bc5b
+fuente1,data/raw/fuente1/raw/results.csv,https://github.com/KeithGalli/Olympics-Dataset,34250752,13fdd66b6e4b3b92628b96a629785180f7bdd0caae4dd9e42979ab6aa4539f7a
+fuente2,data/raw/fuente2/athlete_events.csv,https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-andresults,41500688,1751e89b509dd8c0fa0979ee258eef4374aa93f17d64cd07383ad3f57c5aabd7
+fuente3,data/raw/fuente3/olympics_dataset.csv,https://www.kaggle.com/datasets/stefanydeoliveira/summer-olympics-medals-1896-2024,26988833,3d3c716f8e2c082c0f8c36c45b64997d3c8edba4ef3df222acfcf44fb5e298a9
+fuente4,data/raw/fuente4/datalab_export.csv,https://www.datacamp.com/datalab/datasets/r-olympics,17063,2ad9e917619c63e5ebfe74d2e2d28b4010520e7d05bfe4fd6c2dde21d1b9c178
