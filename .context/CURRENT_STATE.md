@@ -2,7 +2,7 @@
 
 ## Corte del estado
 
-- Fecha y hora de esta revisión: 2026-09-08 21:55:35 -06:00.
+- Fecha y hora de esta revisión: 2026-09-08 23:41:23 -06:00.
 - Proyecto: `OlimpiadasF1`.
 - Alcance actual: Fase 1, incisos a, b y c.
 - Los incisos d y e quedan fuera del alcance de este integrante.
@@ -61,10 +61,27 @@ El profiling diagnóstico del Bloque 2 fue ejecutado sin modificar `data/raw`.
 
 El Bloque 2 **no está aprobado**. Las evidencias visuales reales quedan pendientes porque Computer Use no expuso aplicaciones nativas locales en esta sesión. No se inventaron capturas.
 
-## Estado de continuidad
+## Estado del Bloque 3
 
-El Bloque 3 **no ha iniciado**.
+El Bloque 3 está **ejecutado y pendiente de revisión; no está aprobado**. Se creó el script reproducible:
+
+- `OlimpiadasF1/scripts/python/02_clean_and_standardize.py`
+
+Resultados técnicos:
+
+- 10/10 archivos RAW procesados y validados.
+- 10 archivos intermedios generados en `OlimpiadasF1/data/intermediate/cleaned/`.
+- 0 filas descartadas.
+- 10/10 hashes SHA-256 coincidentes antes y después.
+- `data/raw` intacto.
+- 1,604,828 valores realmente modificados y 9,218,178 operaciones/valores procesados; ambas métricas están separadas.
+- 22,647 combinaciones de valores no resueltos documentadas, con frecuencia acumulada de 83,423.
+- La matriz explícita de ausencia está en `OlimpiadasF1/docs/cleaning/missing_value_matrix.csv`; no se aplican NA/N/A/null/None globalmente a campos descriptivos.
+- Duplicados exactos analizados y conservados: 126 en `clean/results.csv`, 110 en `raw/results.csv` y 1,385 en `athlete_events.csv`.
+- No se realizó matching, consolidación final, generación de `data/processed`, carga SQL ni Bloque 4.
+- Se generaron los reportes en `OlimpiadasF1/docs/cleaning/` y la documentación en `OlimpiadasF1/docs/Evidence/Evidences_Bloque3.md`.
+- Una segunda ejecución y comparación SHA-256 se utilizó para verificar que las salidas fueran idempotentes.
 
 ## Próximo paso autorizado
 
-Revisar externamente el script y los reportes del Bloque 2, completar las capturas visuales reales con fecha y hora visibles y resolver las observaciones documentadas antes de aprobar el bloque o iniciar el Bloque 3.
+Revisar el script, los reportes y los casos no resueltos del Bloque 3; completar las capturas visuales reales con fecha y hora visibles. No aprobar el Bloque 3 ni iniciar el Bloque 4 hasta resolver las decisiones pendientes.

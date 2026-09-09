@@ -1,0 +1,58 @@
+﻿fuente,archivo,columna,vacio_a_null,marcadores_semanticos,no_medal_a_null,justificacion
+fuente1,data/raw/fuente1/clean/bios.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/clean/bios.csv,athlete_id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios.csv,born_date,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios.csv,died_date,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios.csv,height_cm,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios.csv,weight_kg,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/clean/bios_locs.csv,athlete_id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,born_date,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,died_date,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,height_cm,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,lat,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,long,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/bios_locs.csv,weight_kg,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/noc_regions.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/clean/noc_regions.csv,NOC,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/populations.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/clean/populations.csv,Country Code,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/results.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/clean/results.csv,athlete_id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/results.csv,medal,SI,SI,SI,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/results.csv,place,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/results.csv,tied,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/clean/results.csv,year,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/bios.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/raw/bios.csv,Born,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/bios.csv,Died,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/bios.csv,Measurements,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/bios.csv,athlete_id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/results.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente1,data/raw/fuente1/raw/results.csv,Games,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/results.csv,Medal,SI,SI,SI,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/results.csv,Pos,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente1,data/raw/fuente1/raw/results.csv,athlete_id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente2,data/raw/fuente2/athlete_events.csv,Age,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,Games,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,Height,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,ID,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,Medal,SI,SI,SI,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,Season,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,Weight,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente2,data/raw/fuente2/athlete_events.csv,Year,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente3,data/raw/fuente3/olympics_dataset.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente3,data/raw/fuente3/olympics_dataset.csv,Medal,SI,SI,SI,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente3,data/raw/fuente3/olympics_dataset.csv,Season,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente3,data/raw/fuente3/olympics_dataset.csv,Year,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente3,data/raw/fuente3/olympics_dataset.csv,player_id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,*,SI,NO,NO,El vacío se interpreta como ausencia después de strip(); los marcadores semánticos no son globales.
+fuente4,data/raw/fuente4/datalab_export.csv,age,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,games,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,height,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,id,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,medal,SI,SI,SI,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,season,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,weight,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."
+fuente4,data/raw/fuente4/datalab_export.csv,year,SI,SI,NO,"Columna estructural, de medición, identificador o de medalla donde NA/N/A/null/None representa ausencia."

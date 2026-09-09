@@ -1,0 +1,11 @@
+﻿fuente,archivo,filas_entrada,filas_salida,columnas_entrada,columnas_salida,nulos_antes,nulos_despues,valores_modificados,operaciones_procesadas,registros_descartados,motivo_descartes
+fuente1,data/raw/fuente1/clean/bios.csv,145500,145500,10,10,299423,299423,209664,686720,0,
+fuente1,data/raw/fuente1/clean/bios_locs.csv,145500,145500,12,12,451333,451333,211474,977720,0,
+fuente1,data/raw/fuente1/clean/noc_regions.csv,230,230,3,3,209,209,0,209,0,
+fuente1,data/raw/fuente1/clean/populations.csv,266,17024,66,4,94,94,16930,50978,0,
+fuente1,data/raw/fuente1/clean/results.csv,308408,308408,11,11,481382,481382,589000,1422929,0,
+fuente1,data/raw/fuente1/raw/bios.csv,145500,145500,16,26,1009969,1632901,0,1291412,0,
+fuente1,data/raw/fuente1/raw/results.csv,308408,308408,11,16,1069525,1180549,0,2655703,0,
+fuente2,data/raw/fuente2/athlete_events.csv,271116,271116,15,15,363853,363853,363934,1626777,0,
+fuente3,data/raw/fuente3/olympics_dataset.csv,252565,252565,11,11,213747,213747,213747,505130,0,
+fuente4,data/raw/fuente4/datalab_export.csv,100,100,16,15,114,114,79,600,0,
