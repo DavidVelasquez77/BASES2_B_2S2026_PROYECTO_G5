@@ -2,7 +2,7 @@
 
 ## Corte del estado
 
-- Fecha y hora de esta revisión: 2026-09-08 21:06:29 -06:00.
+- Fecha y hora de esta revisión: 2026-09-08 21:55:35 -06:00.
 - Proyecto: `OlimpiadasF1`.
 - Alcance actual: Fase 1, incisos a, b y c.
 - Los incisos d y e quedan fuera del alcance de este integrante.
@@ -44,10 +44,27 @@ La matriz detallada está en:
 
 No se obtuvieron capturas nuevas para Docker, versión de SQL Server, schemas, persistencia, montaje de datos, entorno Python, código y ejecución del manifiesto ni contenido del CSV. La causa común es la ausencia de aplicaciones locales accesibles mediante Computer Use; el detalle por evidencia está en `Evidences.md`.
 
+## Estado del Bloque 2
+
+El profiling diagnóstico del Bloque 2 fue ejecutado sin modificar `data/raw`.
+
+- Script: `OlimpiadasF1/scripts/python/01_profile_sources.py`.
+- CSV analizados: 10.
+- Columnas perfiladas: 171.
+- Detecciones especiales reportadas: 357.
+- SHA-256 coincidentes: 10/10.
+- `data/raw` intacto: sí.
+- Python: 3.14.7.
+- pandas: 3.0.5.
+- Reportes: `OlimpiadasF1/docs/profiling/`.
+- Documentación: `OlimpiadasF1/docs/Evidence/Evidences_Bloque2.md`.
+
+El Bloque 2 **no está aprobado**. Las evidencias visuales reales quedan pendientes porque Computer Use no expuso aplicaciones nativas locales en esta sesión. No se inventaron capturas.
+
 ## Estado de continuidad
 
-El Bloque 2 **no ha iniciado** y no debe iniciarse hasta completar las evidencias visuales pendientes del Bloque 1.
+El Bloque 3 **no ha iniciado**.
 
 ## Próximo paso autorizado
 
-Reintentar únicamente la captura documental del Bloque 1 cuando Computer Use tenga acceso a las aplicaciones locales necesarias. Después de completar y verificar las capturas, actualizar esta matriz y recién entonces considerar cerrado documentalmente el Bloque 1.
+Revisar externamente el script y los reportes del Bloque 2, completar las capturas visuales reales con fecha y hora visibles y resolver las observaciones documentadas antes de aprobar el bloque o iniciar el Bloque 3.
