@@ -1,0 +1,237 @@
+﻿noc_codigo,noc_nombre,entidad,country_code,criterio,estado
+AFG,Afghanistan,Afghanistan,AFG,código de país explícito o alias histórico documentado,RESOLVED
+AHO,Curacao,Curacao,CUW,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+AIN,,,,,UNRESOLVED
+ALB,Albania,Albania,ALB,código de país explícito o alias histórico documentado,RESOLVED
+ALG,Algeria,Algeria,DZA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+AND,Andorra,Andorra,AND,código de país explícito o alias histórico documentado,RESOLVED
+ANG,Angola,Angola,AGO,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ANT,Antigua,Antigua,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ANZ,Australia,Australia,AUS,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ARG,Argentina,Argentina,ARG,código de país explícito o alias histórico documentado,RESOLVED
+ARM,Armenia,Armenia,ARM,código de país explícito o alias histórico documentado,RESOLVED
+ARU,Aruba,Aruba,ABW,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ASA,American Samoa,American Samoa,ASM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+AUS,Australia,Australia,AUS,código de país explícito o alias histórico documentado,RESOLVED
+AUT,Austria,Austria,AUT,código de país explícito o alias histórico documentado,RESOLVED
+AZE,Azerbaijan,Azerbaijan,AZE,código de país explícito o alias histórico documentado,RESOLVED
+BAH,Bahamas,Bahamas,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BAN,Bangladesh,Bangladesh,BGD,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BAR,Barbados,Barbados,BRB,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BDI,Burundi,Burundi,BDI,código de país explícito o alias histórico documentado,RESOLVED
+BEL,Belgium,Belgium,BEL,código de país explícito o alias histórico documentado,RESOLVED
+BEN,Benin,Benin,BEN,código de país explícito o alias histórico documentado,RESOLVED
+BER,Bermuda,Bermuda,BMU,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BHU,Bhutan,Bhutan,BTN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BIH,Bosnia and Herzegovina,Bosnia and Herzegovina,BIH,código de país explícito o alias histórico documentado,RESOLVED
+BIZ,Belize,Belize,BLZ,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BLR,Belarus,Belarus,BLR,código de país explícito o alias histórico documentado,RESOLVED
+BOH,Czech Republic,Czech Republic,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BOL,Boliva,Bolivia,BOL,código de país explícito o alias histórico documentado,RESOLVED
+BOT,Botswana,Botswana,BWA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BRA,Brazil,Brazil,BRA,código de país explícito o alias histórico documentado,RESOLVED
+BRN,Bahrain,Brunei Darussalam,BRN,código de país explícito o alias histórico documentado,RESOLVED
+BRU,Brunei,Brunei Darussalam,BRN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BUL,Bulgaria,Bulgaria,BGR,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+BUR,Burkina Faso,Burkina Faso,BFA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CAF,Central African Republic,Central African Republic,CAF,código de país explícito o alias histórico documentado,RESOLVED
+CAM,Cambodia,Cambodia,KHM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CAN,Canada,Canada,CAN,código de país explícito o alias histórico documentado,RESOLVED
+CAY,Cayman Islands,Cayman Islands,CYM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CGO,Republic of Congo,Republic of Congo,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CHA,Chad,Chad,TCD,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CHI,Chile,Channel Islands,CHI,código de país explícito o alias histórico documentado,RESOLVED
+CHN,China,China,CHN,código de país explícito o alias histórico documentado,RESOLVED
+CIV,Ivory Coast,Cote d'Ivoire,CIV,código de país explícito o alias histórico documentado,RESOLVED
+CMR,Cameroon,Cameroon,CMR,código de país explícito o alias histórico documentado,RESOLVED
+COD,Democratic Republic of the Congo,"Congo, Dem. Rep.",COD,código de país explícito o alias histórico documentado,RESOLVED
+COK,Cook Islands,Cook Islands,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+COL,Colombia,Colombia,COL,código de país explícito o alias histórico documentado,RESOLVED
+COM,Comoros,Comoros,COM,código de país explícito o alias histórico documentado,RESOLVED
+COR,,,,,UNRESOLVED
+CPV,Cape Verde,Cabo Verde,CPV,código de país explícito o alias histórico documentado,RESOLVED
+CRC,Costa Rica,Costa Rica,CRI,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CRO,Croatia,Croatia,HRV,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CRT,Greece,Greece,GRC,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+CUB,Cuba,Cuba,CUB,código de país explícito o alias histórico documentado,RESOLVED
+CYP,Cyprus,Cyprus,CYP,código de país explícito o alias histórico documentado,RESOLVED
+CZE,Czech Republic,Czechia,CZE,código de país explícito o alias histórico documentado,RESOLVED
+DEN,Denmark,Denmark,DNK,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+DJI,Djibouti,Djibouti,DJI,código de país explícito o alias histórico documentado,RESOLVED
+DMA,Dominica,Dominica,DMA,código de país explícito o alias histórico documentado,RESOLVED
+DOM,Dominican Republic,Dominican Republic,DOM,código de país explícito o alias histórico documentado,RESOLVED
+ECU,Ecuador,Ecuador,ECU,código de país explícito o alias histórico documentado,RESOLVED
+EGY,Egypt,"Egypt, Arab Rep.",EGY,código de país explícito o alias histórico documentado,RESOLVED
+EOR,,,,,UNRESOLVED
+ERI,Eritrea,Eritrea,ERI,código de país explícito o alias histórico documentado,RESOLVED
+ESA,El Salvador,El Salvador,SLV,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ESP,Spain,Spain,ESP,código de país explícito o alias histórico documentado,RESOLVED
+EST,Estonia,Estonia,EST,código de país explícito o alias histórico documentado,RESOLVED
+ETH,Ethiopia,Ethiopia,ETH,código de país explícito o alias histórico documentado,RESOLVED
+EUN,Russia,Russian Federation,RUS,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+FIJ,Fiji,Fiji,FJI,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+FIN,Finland,Finland,FIN,código de país explícito o alias histórico documentado,RESOLVED
+FRA,France,France,FRA,código de país explícito o alias histórico documentado,RESOLVED
+FRG,Germany,Germany,DEU,código de país explícito o alias histórico documentado,RESOLVED
+FSM,Micronesia,"Micronesia, Fed. Sts.",FSM,código de país explícito o alias histórico documentado,RESOLVED
+GAB,Gabon,Gabon,GAB,código de país explícito o alias histórico documentado,RESOLVED
+GAM,Gambia,Gambia,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+GBR,UK,United Kingdom,GBR,código de país explícito o alias histórico documentado,RESOLVED
+GBS,Guinea-Bissau,Guinea-Bissau,GNB,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+GDR,Germany,Germany,DEU,código de país explícito o alias histórico documentado,RESOLVED
+GEO,Georgia,Georgia,GEO,código de país explícito o alias histórico documentado,RESOLVED
+GEQ,Equatorial Guinea,Equatorial Guinea,GNQ,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+GER,Germany,Germany,DEU,código de país explícito o alias histórico documentado,RESOLVED
+GHA,Ghana,Ghana,GHA,código de país explícito o alias histórico documentado,RESOLVED
+GRE,Greece,Greece,GRC,código de país explícito o alias histórico documentado,RESOLVED
+GRN,Grenada,Grenada,GRD,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+GUA,Guatemala,Guatemala,GTM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+GUI,Guinea,Guinea,GIN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+GUM,Guam,Guam,GUM,código de país explícito o alias histórico documentado,RESOLVED
+GUY,Guyana,Guyana,GUY,código de país explícito o alias histórico documentado,RESOLVED
+HAI,Haiti,Haiti,HTI,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+HKG,China,"Hong Kong SAR, China",HKG,código de país explícito o alias histórico documentado,RESOLVED
+HON,Honduras,Honduras,HND,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+HUN,Hungary,Hungary,HUN,código de país explícito o alias histórico documentado,RESOLVED
+INA,Indonesia,Indonesia,IDN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+IND,India,India,IND,código de país explícito o alias histórico documentado,RESOLVED
+IOA,Individual Olympic Athletes,Individual Olympic Athletes,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+IRI,Iran,"Iran, Islamic Rep.",IRN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+IRL,Ireland,Ireland,IRL,código de país explícito o alias histórico documentado,RESOLVED
+IRQ,Iraq,Iraq,IRQ,código de país explícito o alias histórico documentado,RESOLVED
+ISL,Iceland,Iceland,ISL,código de país explícito o alias histórico documentado,RESOLVED
+ISR,Israel,Israel,ISR,código de país explícito o alias histórico documentado,RESOLVED
+ISV,"Virgin Islands, US","Virgin Islands, US",,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ITA,Italy,Italy,ITA,código de país explícito o alias histórico documentado,RESOLVED
+IVB,"Virgin Islands, British","Virgin Islands, British",,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+JAM,Jamaica,Jamaica,JAM,código de país explícito o alias histórico documentado,RESOLVED
+JOR,Jordan,Jordan,JOR,código de país explícito o alias histórico documentado,RESOLVED
+JPN,Japan,Japan,JPN,código de país explícito o alias histórico documentado,RESOLVED
+KAZ,Kazakhstan,Kazakhstan,KAZ,código de país explícito o alias histórico documentado,RESOLVED
+KEN,Kenya,Kenya,KEN,código de país explícito o alias histórico documentado,RESOLVED
+KGZ,Kyrgyzstan,Kyrgyz Republic,KGZ,código de país explícito o alias histórico documentado,RESOLVED
+KIR,Kiribati,Kiribati,KIR,código de país explícito o alias histórico documentado,RESOLVED
+KOR,South Korea,"Korea, Rep.",KOR,código de país explícito o alias histórico documentado,RESOLVED
+KOS,Kosovo,Kosovo,XKX,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+KSA,Saudi Arabia,Saudi Arabia,SAU,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+KUW,Kuwait,Kuwait,KWT,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+LAO,Laos,Lao PDR,LAO,código de país explícito o alias histórico documentado,RESOLVED
+LAT,Latvia,Latvia,LVA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+LBA,Libya,Libya,LBY,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+LBN,,Lebanon,LBN,código de país explícito o alias histórico documentado,RESOLVED
+LBR,Liberia,Liberia,LBR,código de país explícito o alias histórico documentado,RESOLVED
+LCA,Saint Lucia,St. Lucia,LCA,código de país explícito o alias histórico documentado,RESOLVED
+LES,Lesotho,Lesotho,LSO,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+LIB,Lebanon,Lebanon,LBN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+LIE,Liechtenstein,Liechtenstein,LIE,código de país explícito o alias histórico documentado,RESOLVED
+LTU,Lithuania,Lithuania,LTU,código de país explícito o alias histórico documentado,RESOLVED
+LUX,Luxembourg,Luxembourg,LUX,código de país explícito o alias histórico documentado,RESOLVED
+MAD,Madagascar,Madagascar,MDG,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MAL,Malaysia,Malaysia,MYS,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MAR,Morocco,Morocco,MAR,código de país explícito o alias histórico documentado,RESOLVED
+MAS,Malaysia,Malaysia,MYS,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MAW,Malawi,Malawi,MWI,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MDA,Moldova,Moldova,MDA,código de país explícito o alias histórico documentado,RESOLVED
+MDV,Maldives,Maldives,MDV,código de país explícito o alias histórico documentado,RESOLVED
+MEX,Mexico,Mexico,MEX,código de país explícito o alias histórico documentado,RESOLVED
+MGL,Mongolia,Mongolia,MNG,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MHL,Marshall Islands,Marshall Islands,MHL,código de país explícito o alias histórico documentado,RESOLVED
+MKD,Macedonia,North Macedonia,MKD,código de país explícito o alias histórico documentado,RESOLVED
+MLI,Mali,Mali,MLI,código de país explícito o alias histórico documentado,RESOLVED
+MLT,Malta,Malta,MLT,código de país explícito o alias histórico documentado,RESOLVED
+MNE,Montenegro,Montenegro,MNE,código de país explícito o alias histórico documentado,RESOLVED
+MON,Monaco,Monaco,MCO,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MOZ,Mozambique,Mozambique,MOZ,código de país explícito o alias histórico documentado,RESOLVED
+MRI,Mauritius,Mauritius,MUS,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MTN,Mauritania,Mauritania,MRT,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+MYA,Myanmar,Myanmar,MMR,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NAM,Namibia,Namibia,NAM,código de país explícito o alias histórico documentado,RESOLVED
+NBO,Malaysia,Malaysia,MYS,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NCA,Nicaragua,Nicaragua,NIC,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NED,Netherlands,Netherlands,NLD,código de país explícito o alias histórico documentado,RESOLVED
+NEP,Nepal,Nepal,NPL,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NFL,Canada,Canada,CAN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NGR,Nigeria,Nigeria,NGA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NIG,Niger,Niger,NER,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+NOR,Norway,Norway,NOR,código de país explícito o alias histórico documentado,RESOLVED
+NRU,Nauru,Nauru,NRU,código de país explícito o alias histórico documentado,RESOLVED
+NZL,New Zealand,New Zealand,NZL,código de país explícito o alias histórico documentado,RESOLVED
+OMA,Oman,Oman,OMN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+PAK,Pakistan,Pakistan,PAK,código de país explícito o alias histórico documentado,RESOLVED
+PAN,Panama,Panama,PAN,código de país explícito o alias histórico documentado,RESOLVED
+PAR,Paraguay,Paraguay,PRY,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+PER,Peru,Peru,PER,código de país explícito o alias histórico documentado,RESOLVED
+PHI,Philippines,Philippines,PHL,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+PLE,Palestine,Palestine,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+PLW,Palau,Palau,PLW,código de país explícito o alias histórico documentado,RESOLVED
+PNG,Papua New Guinea,Papua New Guinea,PNG,código de país explícito o alias histórico documentado,RESOLVED
+POL,Poland,Poland,POL,código de país explícito o alias histórico documentado,RESOLVED
+POR,Portugal,Portugal,PRT,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+PRK,North Korea,"Korea, Dem. People's Rep.",PRK,código de país explícito o alias histórico documentado,RESOLVED
+PUR,Puerto Rico,Puerto Rico,PRI,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+QAT,Qatar,Qatar,QAT,código de país explícito o alias histórico documentado,RESOLVED
+RHO,Zimbabwe,Zimbabwe,ZWE,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ROC,,,,,UNRESOLVED
+ROT,NA,,,delegación especial sin país; no se inventa entidad,UNRESOLVED
+ROU,Romania,Romania,ROU,código de país explícito o alias histórico documentado,RESOLVED
+RSA,South Africa,South Africa,ZAF,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+RUS,Russia,Russian Federation,RUS,código de país explícito o alias histórico documentado,RESOLVED
+RWA,Rwanda,Rwanda,RWA,código de país explícito o alias histórico documentado,RESOLVED
+SAA,Germany,Germany,DEU,código de país explícito o alias histórico documentado,RESOLVED
+SAM,Samoa,Samoa,WSM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SCG,Serbia,Serbia,SRB,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SEN,Senegal,Senegal,SEN,código de país explícito o alias histórico documentado,RESOLVED
+SEY,Seychelles,Seychelles,SYC,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SGP,,Singapore,SGP,código de país explícito o alias histórico documentado,RESOLVED
+SIN,Singapore,Singapore,SGP,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SKN,Saint Kitts,Saint Kitts,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SLE,Sierra Leone,Sierra Leone,SLE,código de país explícito o alias histórico documentado,RESOLVED
+SLO,Slovenia,Slovenia,SVN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SMR,San Marino,San Marino,SMR,código de país explícito o alias histórico documentado,RESOLVED
+SOL,Solomon Islands,Solomon Islands,SLB,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SOM,Somalia,Somalia,SOM,código de país explícito o alias histórico documentado,RESOLVED
+SRB,Serbia,Serbia,SRB,código de país explícito o alias histórico documentado,RESOLVED
+SRI,Sri Lanka,Sri Lanka,LKA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SSD,South Sudan,South Sudan,SSD,código de país explícito o alias histórico documentado,RESOLVED
+STP,Sao Tome and Principe,Sao Tome and Principe,STP,código de país explícito o alias histórico documentado,RESOLVED
+SUD,Sudan,Sudan,SDN,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+SUI,Switzerland,Switzerland,CHE,código de país explícito o alias histórico documentado,RESOLVED
+SUR,Suriname,Suriname,SUR,código de país explícito o alias histórico documentado,RESOLVED
+SVK,Slovakia,Slovak Republic,SVK,código de país explícito o alias histórico documentado,RESOLVED
+SWE,Sweden,Sweden,SWE,código de país explícito o alias histórico documentado,RESOLVED
+SWZ,Swaziland,Eswatini,SWZ,código de país explícito o alias histórico documentado,RESOLVED
+SYR,Syria,Syrian Arab Republic,SYR,código de país explícito o alias histórico documentado,RESOLVED
+TAN,Tanzania,Tanzania,TZA,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+TCH,Czech Republic,Czech Republic,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+TGA,Tonga,Tonga,TON,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+THA,Thailand,Thailand,THA,código de país explícito o alias histórico documentado,RESOLVED
+TJK,Tajikistan,Tajikistan,TJK,código de país explícito o alias histórico documentado,RESOLVED
+TKM,Turkmenistan,Turkmenistan,TKM,código de país explícito o alias histórico documentado,RESOLVED
+TLS,Timor-Leste,Timor-Leste,TLS,código de país explícito o alias histórico documentado,RESOLVED
+TOG,Togo,Togo,TGO,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+TPE,Taiwan,Taiwan,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+TTO,Trinidad,Trinidad and Tobago,TTO,código de país explícito o alias histórico documentado,RESOLVED
+TUN,Tunisia,Tunisia,TUN,código de país explícito o alias histórico documentado,RESOLVED
+TUR,Turkey,Turkiye,TUR,código de país explícito o alias histórico documentado,RESOLVED
+TUV,NA,Tuvalu,TUV,código de país explícito o alias histórico documentado,RESOLVED
+UAE,United Arab Emirates,United Arab Emirates,ARE,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+UAR,Syria,Syrian Arab Republic,SYR,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+UGA,Uganda,Uganda,UGA,código de país explícito o alias histórico documentado,RESOLVED
+UKR,Ukraine,Ukraine,UKR,código de país explícito o alias histórico documentado,RESOLVED
+UNK,NA,NA,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+URS,Russia,Russian Federation,RUS,código de país explícito o alias histórico documentado,RESOLVED
+URU,Uruguay,Uruguay,URY,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+USA,USA,United States,USA,código de país explícito o alias histórico documentado,RESOLVED
+UZB,Uzbekistan,Uzbekistan,UZB,código de país explícito o alias histórico documentado,RESOLVED
+VAN,Vanuatu,Vanuatu,VUT,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+VEN,Venezuela,"Venezuela, RB",VEN,código de país explícito o alias histórico documentado,RESOLVED
+VIE,Vietnam,Vietnam,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+VIN,Saint Vincent,Saint Vincent,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+VNM,Vietnam,Viet Nam,VNM,código de país explícito o alias histórico documentado,RESOLVED
+WIF,Trinidad,Trinidad,,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+YAR,Yemen,"Yemen, Rep.",YEM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+YEM,Yemen,"Yemen, Rep.",YEM,código de país explícito o alias histórico documentado,RESOLVED
+YMD,Yemen,"Yemen, Rep.",YEM,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+YUG,Serbia,Serbia,SRB,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ZAM,Zambia,Zambia,ZMB,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED
+ZIM,Zimbabwe,Zimbabwe,ZWE,nombre NOC o alias explícito coincide con entidad geográfica existente,RESOLVED

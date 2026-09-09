@@ -2,7 +2,7 @@
 
 ## Corte del estado
 
-- Fecha y hora de esta revisión: 2026-09-08 23:41:23 -06:00.
+- Fecha y hora de esta revisión: 2026-09-09 14:38:49 -06:00.
 - Proyecto: `OlimpiadasF1`.
 - Alcance actual: Fase 1, incisos a, b y c.
 - Los incisos d y e quedan fuera del alcance de este integrante.
@@ -78,10 +78,36 @@ Resultados técnicos:
 - 22,647 combinaciones de valores no resueltos documentadas, con frecuencia acumulada de 83,423.
 - La matriz explícita de ausencia está en `OlimpiadasF1/docs/cleaning/missing_value_matrix.csv`; no se aplican NA/N/A/null/None globalmente a campos descriptivos.
 - Duplicados exactos analizados y conservados: 126 en `clean/results.csv`, 110 en `raw/results.csv` y 1,385 en `athlete_events.csv`.
-- No se realizó matching, consolidación final, generación de `data/processed`, carga SQL ni Bloque 4.
+- No se realizó carga SQL ni Bloque 5.
 - Se generaron los reportes en `OlimpiadasF1/docs/cleaning/` y la documentación en `OlimpiadasF1/docs/Evidence/Evidences_Bloque3.md`.
 - Una segunda ejecución y comparación SHA-256 se utilizó para verificar que las salidas fueran idempotentes.
 
+## Estado del Bloque 4
+
+El Bloque 4 está **ejecutado y pendiente de revisión; no está aprobado**. Se creó y ejecutó el script reproducible:
+
+- `OlimpiadasF1/scripts/python/03_match_and_consolidate.py`
+
+Resultados técnicos de la ejecución corregida:
+
+- 10 tablas finales regeneradas en `OlimpiadasF1/data/processed/`.
+- 338,772 atletas globales.
+- Matching externo: 177,741 STRONG, 496 CONTEXTUAL, 2,857 AMBIGUOUS y 190,415 UNMATCHED; fuzzy automático 0.
+- 14,545 matches previamente existentes cambiaron en ID global, estado o tipo respecto a la ejecución anterior.
+- 832,189 participaciones de entrada y 826,606 retenidas después de deduplicación documentada.
+- Fuente 4: 100/100 filas con match exacto normalizado contra Fuente 2; las 100 se excluyen de la salida consolidada.
+- Fuente 1 RAW/CLEAN: 299,462 matches seguros y 102,995 atributos enriquecidos; la edición histórica incompleta no pudo resolverse.
+- ENTIDAD_GEOGRAFICA: 282 filas; se corrigieron 81 duplicados conceptuales y no quedan duplicados normalizados reportados.
+- Nacionalidad de participación: 81 filas resueltas; ningún valor presente quedó sin correspondencia.
+- NOC: 231 resueltos y 5 no resueltos.
+- Deporte-disciplina: 313 mapeos resueltos, que cubren las 832,189 participaciones de entrada, y 0 pendientes de revisión.
+- Validaciones de modelo: 55 PASS y 1 FAIL. El único FAIL corresponde a una participación con `id_edicion` nulo.
+- SHA-256 RAW: 10/10 MATCH; `data/raw` y `data/intermediate/cleaned` permanecen intactos.
+- Idempotencia: dos ejecuciones produjeron hashes idénticos para los 10 CSV de `data/processed/`.
+- Los CSV no se consideran todavía aptos para carga SQL. No se cargó SQL Server, no se crearon tablas SQL y no se inició el Bloque 5.
+
+La documentación oficial está en `OlimpiadasF1/docs/Evidence/Evidences_Bloque4.md`; los reportes técnicos están en `OlimpiadasF1/docs/consolidation/` y `OlimpiadasF1/data/intermediate/matching/`.
+
 ## Próximo paso autorizado
 
-Revisar el script, los reportes y los casos no resueltos del Bloque 3; completar las capturas visuales reales con fecha y hora visibles. No aprobar el Bloque 3 ni iniciar el Bloque 4 hasta resolver las decisiones pendientes.
+Revisar el script, las 10 tablas finales y los reportes del Bloque 4; completar las capturas visuales reales con fecha y hora visibles. No aprobar el Bloque 4 ni iniciar el Bloque 5 hasta revisar los 5 NOC sin entidad, los 2,857 matches ambiguos, los 190,415 no matched, los conflictos documentados y la participación histórica con `id_edicion` nulo.

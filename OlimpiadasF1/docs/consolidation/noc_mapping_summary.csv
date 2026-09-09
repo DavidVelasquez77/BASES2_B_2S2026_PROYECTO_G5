@@ -1,0 +1,5 @@
+﻿estado,criterio,cantidad
+RESOLVED,código de país explícito o alias histórico documentado,131
+RESOLVED,nombre NOC o alias explícito coincide con entidad geográfica existente,100
+UNRESOLVED,,4
+UNRESOLVED,delegación especial sin país; no se inventa entidad,1

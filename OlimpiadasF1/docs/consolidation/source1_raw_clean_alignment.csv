@@ -1,0 +1,2 @@
+﻿filas_raw,filas_clean,matches_seguros,no_encontrados,ambiguos,year_enriquecido,season_enriquecida,posicion_enriquecida,empatado_enriquecido,atributos_enriquecidos,edicion_incompleta_antes,edicion_incompleta_despues,ediciones_incompletas_resueltas,criterio
+308408,308408,299462,8675,271,0,0,48337,54658,102995,1,1,0,clave de contenido estable; candidatos múltiples solo son seguros si los cuatro atributos objetivo coinciden

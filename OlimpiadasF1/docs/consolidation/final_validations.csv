@@ -1,0 +1,57 @@
+﻿validacion,esperado,actual,estado,detalle
+PK entidad_geografica,0 duplicados,0,PASS,
+PK poblacion,0 duplicados,0,PASS,
+PK noc,0 duplicados,0,PASS,
+PK atleta,0 duplicados,0,PASS,
+PK sede,0 duplicados,0,PASS,
+PK edicion_olimpica,0 duplicados,0,PASS,
+PK deporte,0 duplicados,0,PASS,
+PK disciplina,0 duplicados,0,PASS,
+PK evento,0 duplicados,0,PASS,
+PK participacion,0 duplicados,0,PASS,
+Edición año+temporada,única,0,PASS,
+Disciplina dentro de deporte,única,0,PASS,
+Evento dentro de disciplina,único,0,PASS,
+Deporte nombre,único,0,PASS,
+Sede nombre+país,única,0,PASS,
+NOT NULL entidad_geografica.id_entidad,0 NULL,0,PASS,
+NOT NULL entidad_geografica.nombre,0 NULL,0,PASS,
+NOT NULL poblacion.id_entidad,0 NULL,0,PASS,
+NOT NULL poblacion.anio,0 NULL,0,PASS,
+NOT NULL noc.id_noc,0 NULL,0,PASS,
+NOT NULL atleta.id_atleta,0 NULL,0,PASS,
+NOT NULL atleta.nombre,0 NULL,0,PASS,
+NOT NULL sede.id_sede,0 NULL,0,PASS,
+NOT NULL sede.nombre,0 NULL,0,PASS,
+NOT NULL sede.id_pais,0 NULL,0,PASS,
+NOT NULL edicion_olimpica.id_edicion,0 NULL,0,PASS,
+NOT NULL edicion_olimpica.anio,0 NULL,0,PASS,
+NOT NULL edicion_olimpica.temporada,0 NULL,0,PASS,
+NOT NULL deporte.id_deporte,0 NULL,0,PASS,
+NOT NULL deporte.nombre,0 NULL,0,PASS,
+NOT NULL disciplina.id_disciplina,0 NULL,0,PASS,
+NOT NULL disciplina.id_deporte,0 NULL,0,PASS,
+NOT NULL disciplina.nombre,0 NULL,0,PASS,
+NOT NULL evento.id_evento,0 NULL,0,PASS,
+NOT NULL evento.id_disciplina,0 NULL,0,PASS,
+NOT NULL evento.nombre,0 NULL,0,PASS,
+NOT NULL participacion.id_participacion,0 NULL,0,PASS,
+NOT NULL participacion.id_atleta,0 NULL,0,PASS,
+NOT NULL participacion.id_edicion,0 NULL,1,FAIL,
+NOT NULL participacion.id_evento,0 NULL,0,PASS,
+FK poblacion.id_entidad,referencias existentes,0,PASS,[]
+FK noc.id_entidad,referencias existentes,0,PASS,[]; NULL permitido
+FK atleta.id_pais_nacimiento,referencias existentes,0,PASS,[]; NULL permitido
+FK atleta.id_pais_nacionalidad,referencias existentes,0,PASS,[]; NULL permitido
+FK atleta.id_pais_fallecimiento,referencias existentes,0,PASS,[]; NULL permitido
+FK sede.id_pais,referencias existentes,0,PASS,[]
+FK edicion_olimpica.id_sede,referencias existentes,0,PASS,[]; NULL permitido
+FK disciplina.id_deporte,referencias existentes,0,PASS,[]
+FK evento.id_disciplina,referencias existentes,0,PASS,[]
+FK participacion.id_atleta,referencias existentes,0,PASS,[]
+FK participacion.id_edicion,referencias existentes,0,PASS,[]
+FK participacion.id_evento,referencias existentes,0,PASS,[]
+FK participacion.id_noc,referencias existentes,0,PASS,[]; NULL permitido
+FK participacion.id_pais_nacionalidad,referencias existentes,0,PASS,[]; NULL permitido
+Medallas,Gold/Silver/Bronze/NULL,0,PASS,
+Jerarquía deporte-disciplina,0 pendientes,0,PASS,Los pendientes impiden declarar los CSV aptos para carga SQL.
