@@ -25,6 +25,8 @@ PROCESSED_DIR = ROOT / "data" / "processed"
 CONSOLIDATION_DIR = ROOT / "docs" / "consolidation"
 RAW_DIR = ROOT / "data" / "raw"
 MANIFEST_FILE = ROOT / "docs" / "source_manifest.csv"
+EDITION_SPECIAL_CASE_REPORT = CONSOLIDATION_DIR / "edition_special_cases.csv"
+EDITION_1906_REPORT = CONSOLIDATION_DIR / "edition_1906_analysis.csv"
 
 INPUT_FILES = [
     "fuente1_clean_bios.csv",
@@ -950,6 +952,126 @@ def final_sport_tables(records: list[dict[str, Any]]) -> tuple[pd.DataFrame, pd.
     return pd.DataFrame(sport_rows), pd.DataFrame(disc_rows), pd.DataFrame(event_rows)
 
 
+def _edition_comparison_key(record: dict[str, Any]) -> tuple[str, ...]:
+    """Key auditable por atleta, evento, NOC/equipo y resultado."""
+    return tuple(text(record.get(column)) for column in [
+        "id_atleta", "id_evento", "noc_codigo", "equipo", "posicion", "empatado",
+        "estado_resultado", "medalla",
+    ])
+
+
+def edition_1906_analysis(records: list[dict[str, Any]]) -> pd.DataFrame:
+    """Compara 1906 antes de aplicar la homologación de temporada."""
+    selected = [
+        record for record in records
+        if text(record.get("year")) == "1906"
+        and text(record.get("season")) in {"Summer", "Intercalated Games"}
+    ]
+    rows: list[dict[str, Any]] = []
+    for category in ["Summer", "Intercalated Games"]:
+        for source in ["fuente1", "fuente2", "fuente3", "fuente4"]:
+            group = [r for r in selected if text(r.get("season")) == category and text(r.get("fuente")) == source]
+            if not group:
+                continue
+            rows.append({
+                "tipo_registro": "SOURCE_SUMMARY", "grupo_a": category, "grupo_b": "", "fuente_a": source,
+                "fuente_b": "", "temporada_a": category, "temporada_b": "1906", "filas_a": len(group),
+                "filas_b": "", "atletas_distintos_a": len({text(r.get("id_atleta")) for r in group}),
+                "atletas_distintos_b": "", "eventos_distintos_a": len({text(r.get("id_evento")) for r in group}),
+                "eventos_distintos_b": "", "claves_distintas_a": len({_edition_comparison_key(r) for r in group}),
+                "claves_distintas_b": "", "coincidencias_atleta_evento_noc_equipo_resultado": "",
+                "solo_a": "", "solo_b": "", "coincidencia_porcentaje": "",
+                "conclusion": "Conteo de participaciones por fuente y categoría original; no modifica registros.",
+            })
+
+    summer = [r for r in selected if text(r.get("season")) == "Summer"]
+    intercalated = [r for r in selected if text(r.get("season")) == "Intercalated Games"]
+    summer_counts = Counter(_edition_comparison_key(r) for r in summer)
+    intercalated_counts = Counter(_edition_comparison_key(r) for r in intercalated)
+    shared = sum((summer_counts & intercalated_counts).values())
+    shared_keys = len(set(summer_counts) & set(intercalated_counts))
+    rows.append({
+        "tipo_registro": "CATEGORY_COMPARISON", "grupo_a": "Summer", "grupo_b": "Intercalated Games",
+        "fuente_a": "fuentes 2/3", "fuente_b": "fuente1", "temporada_a": "Summer", "temporada_b": "Intercalated Games",
+        "filas_a": len(summer), "filas_b": len(intercalated),
+        "atletas_distintos_a": len({text(r.get("id_atleta")) for r in summer}),
+        "atletas_distintos_b": len({text(r.get("id_atleta")) for r in intercalated}),
+        "eventos_distintos_a": len({text(r.get("id_evento")) for r in summer}),
+        "eventos_distintos_b": len({text(r.get("id_evento")) for r in intercalated}),
+        "claves_distintas_a": len(summer_counts), "claves_distintas_b": len(intercalated_counts),
+        "coincidencias_atleta_evento_noc_equipo_resultado": shared,
+        "solo_a": len(summer) - shared, "solo_b": len(intercalated) - shared,
+        "coincidencia_porcentaje": round(100 * shared / max(1, min(len(summer), len(intercalated))), 2),
+        "conclusion": "Misma edición histórica cuando la clave completa coincide; diferencias restantes se conservan para revisión de fuente.",
+    })
+
+    for source_a, source_b in [("fuente2", "fuente1"), ("fuente3", "fuente1"), ("fuente2", "fuente3")]:
+        left = [r for r in selected if text(r.get("fuente")) == source_a]
+        right = [r for r in selected if text(r.get("fuente")) == source_b]
+        left_counts = Counter(_edition_comparison_key(r) for r in left)
+        right_counts = Counter(_edition_comparison_key(r) for r in right)
+        shared_pair = sum((left_counts & right_counts).values())
+        rows.append({
+            "tipo_registro": "SOURCE_COMPARISON", "grupo_a": text(left[0].get("season")) if left else "",
+            "grupo_b": text(right[0].get("season")) if right else "", "fuente_a": source_a, "fuente_b": source_b,
+            "temporada_a": text(left[0].get("season")) if left else "", "temporada_b": text(right[0].get("season")) if right else "",
+            "filas_a": len(left), "filas_b": len(right),
+            "atletas_distintos_a": len({text(r.get("id_atleta")) for r in left}),
+            "atletas_distintos_b": len({text(r.get("id_atleta")) for r in right}),
+            "eventos_distintos_a": len({text(r.get("id_evento")) for r in left}),
+            "eventos_distintos_b": len({text(r.get("id_evento")) for r in right}),
+            "claves_distintas_a": len(left_counts), "claves_distintas_b": len(right_counts),
+            "coincidencias_atleta_evento_noc_equipo_resultado": shared_pair,
+            "solo_a": len(left) - shared_pair, "solo_b": len(right) - shared_pair,
+            "coincidencia_porcentaje": round(100 * shared_pair / max(1, min(len(left), len(right))), 2),
+            "conclusion": "Coincidencia de clave completa entre fuentes; respalda la homologación de la edición, sin fusionar identidades nuevas.",
+        })
+    return pd.DataFrame(rows)
+
+
+def apply_edition_policy(records: list[dict[str, Any]]) -> pd.DataFrame:
+    """Homologa solo casos de edición aprobados, conservando Youth."""
+    special_rows: list[dict[str, Any]] = []
+    equestrian = [
+        record for record in records
+        if text(record.get("year")) == "1956" and text(record.get("season")) == "Equestrian"
+    ]
+    if equestrian:
+        original_cities = sorted({text(r.get("city")) for r in equestrian if text(r.get("city"))})
+        for record in equestrian:
+            record["season_original"] = record.get("season", "")
+            record["city_original"] = record.get("city", "")
+            record["season"] = "Summer"
+            record["city"] = "Melbourne"
+        special_rows.append({
+            "anio": 1956, "categoria_original": "Equestrian", "categoria_final": "Summer",
+            "ciudad_original": " | ".join(original_cities) or "Stockholm",
+            "sede_final": "Melbourne", "participaciones_afectadas": len(equestrian),
+            "motivo": "Pruebas ecuestres de los Juegos de 1956 celebradas en Stockholm por las restricciones de cuarentena australianas; se homologan a la edición Summer 1956.",
+            "estado": "HOMOLOGADO_AUDITADO",
+        })
+
+    intercalated_1906 = [
+        record for record in records
+        if text(record.get("year")) == "1906" and text(record.get("season")) == "Summer"
+    ]
+    for record in intercalated_1906:
+        record["season_original"] = record.get("season", "")
+        record["season"] = "Intercalated Games"
+    if intercalated_1906:
+        special_rows.append({
+            "anio": 1906, "categoria_original": "Summer", "categoria_final": "Intercalated Games",
+            "ciudad_original": "Athina", "sede_final": "Athina",
+            "participaciones_afectadas": len(intercalated_1906),
+            "motivo": "Las fuentes 2/3 etiquetan como Summer el mismo conjunto histórico que la fuente 1 identifica como Intercalated Games; se elimina la edición duplicada por año/categoría.",
+            "estado": "HOMOLOGADO_AUDITADO",
+        })
+    return pd.DataFrame(special_rows, columns=[
+        "anio", "categoria_original", "categoria_final", "ciudad_original", "sede_final",
+        "participaciones_afectadas", "motivo", "estado",
+    ])
+
+
 def deduplicate_records(records: list[dict[str, Any]], noc_ids: dict[str, int], edition_ids: dict[tuple[str, str], int]) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
     exact_groups: defaultdict[str, list[int]] = defaultdict(list)
     probable_groups: defaultdict[str, list[int]] = defaultdict(list)
@@ -1266,6 +1388,10 @@ def main() -> int:
     sport_map_report = sport_mapping(records)
     write_csv(sport_map_report, MATCH_DIR / "sport_discipline_mapping.csv")
     sport_table, discipline_table, event_table = final_sport_tables(records)
+    analysis_1906 = edition_1906_analysis(records)
+    write_csv(analysis_1906, EDITION_1906_REPORT)
+    special_cases = apply_edition_policy(records)
+    write_csv(special_cases, EDITION_SPECIAL_CASE_REPORT)
     venue_table, edition_table, edition_ids, venue_index, edition_conflicts = edition_and_venue(records, entities, entity_by_code)
     dedup_report, retained_records = deduplicate_records(records, noc_ids, edition_ids)
     retained_records, dedup_report, excluded_non_official = exclude_non_official_participations(retained_records, dedup_report)

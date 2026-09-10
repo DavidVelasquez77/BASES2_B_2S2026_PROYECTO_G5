@@ -1,0 +1,5 @@
+tipo_registro,categoria_a,categoria_b,fuente_a,fuente_b,filas_a,filas_b,atletas_distintos_a,atletas_distintos_b,eventos_distintos_a,eventos_distintos_b,coincidencias_atleta,coincidencias_evento,coincidencias_noc_equipo,coincidencias_resultado,coincidencias_clave_completa,solo_a,solo_b,conclusion
+SOURCE_SUMMARY,Intercalated Games,,fuente1,,2300,,866,,86,,,,,,,,,Conteo original por fuente y categoría; no se excluyen participaciones.
+SOURCE_SUMMARY,Summer,,fuente2,,1733,,841,,74,,,,,,,,,Conteo original por fuente y categoría; no se excluyen participaciones.
+SOURCE_SUMMARY,Summer,,fuente3,,1733,,838,,74,,,,,,,,,Conteo original por fuente y categoría; no se excluyen participaciones.
+CATEGORY_COMPARISON,Summer,Intercalated Games,fuente2+fuente3,fuente1,3466,2300,1147,866,73,84,552,0,20,4,0,2460,2300,"Las categorías describen 1906 con coberturas y nomenclaturas distintas; la coincidencia de año y evento histórico justifica una sola edición, pero las participaciones se conservan y solo se deduplican filas exactas posteriores al remapeo."

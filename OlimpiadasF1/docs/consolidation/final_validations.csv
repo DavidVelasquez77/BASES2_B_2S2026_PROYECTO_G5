@@ -1,15 +1,15 @@
-﻿validacion,esperado,actual,estado,detalle
+validacion,esperado,actual,estado,detalle
 PK entidad_geografica,0 duplicados,0,PASS,
 PK poblacion,0 duplicados,0,PASS,
 PK noc,0 duplicados,0,PASS,
 PK atleta,0 duplicados,0,PASS,
 PK sede,0 duplicados,0,PASS,
-PK edicion_olimpica,0 duplicados,0,PASS,
+PK edicion_olimpica,0 duplicados,0,PASS,Revalidado después de homologar Equestrian 1956 y 1906; no quedan duplicados ni referencias inválidas.
 PK deporte,0 duplicados,0,PASS,
 PK disciplina,0 duplicados,0,PASS,
 PK evento,0 duplicados,0,PASS,
-PK participacion,0 duplicados,0,PASS,
-Edición año+temporada,única,0,PASS,
+PK participacion,0 duplicados,0,PASS,Revalidado después de homologar Equestrian 1956 y 1906; no quedan duplicados ni referencias inválidas.
+Edición año+temporada,única,0,PASS,Revalidado después de homologar Equestrian 1956 y 1906; no quedan duplicados ni referencias inválidas.
 Disciplina dentro de deporte,única,0,PASS,
 Evento dentro de disciplina,único,0,PASS,
 Deporte nombre,único,0,PASS,
@@ -49,7 +49,7 @@ FK edicion_olimpica.id_sede,referencias existentes,0,PASS,[]; NULL permitido
 FK disciplina.id_deporte,referencias existentes,0,PASS,[]
 FK evento.id_disciplina,referencias existentes,0,PASS,[]
 FK participacion.id_atleta,referencias existentes,0,PASS,[]
-FK participacion.id_edicion,referencias existentes,0,PASS,[]
+FK participacion.id_edicion,referencias existentes,0,PASS,Revalidado después de homologar Equestrian 1956 y 1906; no quedan duplicados ni referencias inválidas.
 FK participacion.id_evento,referencias existentes,0,PASS,[]
 FK participacion.id_noc,referencias existentes,0,PASS,[]; NULL permitido
 FK participacion.id_pais_nacionalidad,referencias existentes,0,PASS,[]; NULL permitido

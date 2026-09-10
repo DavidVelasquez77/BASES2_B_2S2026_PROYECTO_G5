@@ -1,10 +1,10 @@
-﻿entidad,filas,pk_duplicadas,columnas_clave_con_null,origen_registros
+entidad,filas,pk_duplicadas,columnas_clave_con_null,origen_registros
 entidad_geografica,282,0,"{""id_entidad"":0}","{""fuente1_clean_populations_long"":282}"
 poblacion,17024,0,"{""id_entidad"":0,""anio"":0}","{""fuente1_clean_populations_long"":17024}"
 noc,236,0,"{""id_noc"":0}","{""fuente1_noc_regions+participaciones"":236}"
 atleta,338772,0,"{""id_atleta"":0}","{""fuente1"":145500,""fuente2"":135571,""fuente3"":235903,""fuente4"":35}"
 sede,42,0,"{""id_sede"":0}","{""fuentes2_3_4"":42}"
-edicion_olimpica,63,0,"{""id_edicion"":0,""anio"":0,""temporada"":0}","{""fuentes1_2_3_4"":63}"
+edicion_olimpica,61,0,"{""id_edicion"":0,""anio"":0,""temporada"":0}","{""fuentes1_2_3_4"":61}"
 deporte,65,0,"{""id_deporte"":0}","{""fuentes1_2_3_4"":65}"
 disciplina,117,0,"{""id_disciplina"":0,""id_deporte"":0}","{""fuentes1_2_3_4"":117}"
 evento,3106,0,"{""id_evento"":0,""id_disciplina"":0}","{""fuentes1_2_3_4"":3106}"

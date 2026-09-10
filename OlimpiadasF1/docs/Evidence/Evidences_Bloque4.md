@@ -654,4 +654,53 @@ Los datos consolidados quedan preparados para la siguiente etapa:
 Bloque 5 — Modelo físico SQL Server
 ```
 
-En este bloque no se crearon tablas SQL, no se cargaron datos en SQL Server y no se inició el Bloque 5.
+En este bloque no se crearon tablas SQL ni se cargaron datos en SQL Server. El Bloque 5 ya había sido iniciado en una etapa posterior únicamente para crear el modelo físico vacío; la presente revisión no carga SQL ni inicia el Bloque 6.
+
+## 23. Revisión puntual de ediciones motivada por la validación física
+
+Se aplicó una corrección limitada a `EDICION_OLIMPICA`, sin reconstruir matching, identidades, NOC, jerarquía deportiva ni la exclusión histórica de `1888-89 Zappas Olympic Games`.
+
+### Youth Olympic Games
+
+Se conservaron las categorías `Summer Youth` y `Winter Youth`. En el dataset consolidado, `temporada` funciona como categoría/tipo de edición y no exclusivamente como estación. No se transformaron las categorías Youth a `Summer` o `Winter` ordinarios.
+
+### Equestrian 1956
+
+Las 300 participaciones de `1956 | Equestrian` se homologaron a `1956 | Summer`. La edición final conserva Melbourne como sede principal. Stockholm se documenta como excepción histórica por las restricciones australianas de cuarentena, sin crear una segunda edición, sede adicional o relación nueva.
+
+La auditoría está en:
+
+```text
+docs/consolidation/edition_special_cases.csv
+```
+
+### 1906
+
+La comparación previa a la homologación registró:
+
+| Fuente | Categoría original | Filas |
+|---|---|---:|
+| Fuente 1 | Intercalated Games | 2,300 |
+| Fuente 2 | Summer | 1,733 |
+| Fuente 3 | Summer | 1,733 |
+
+El análisis por atleta, evento, NOC/equipo y resultado está en:
+
+```text
+docs/consolidation/edition_1906_analysis.csv
+```
+
+Las fuentes utilizan coberturas y nomenclaturas diferentes, por lo que no se forzó una igualdad fila a fila. Sin embargo, ambas categorías identifican el mismo año histórico de Atenas 1906 y la clasificación `Summer` de Fuentes 2/3 se homologó a `Intercalated Games`. No se excluyeron esas participaciones.
+
+La decisión se documenta junto con la referencia histórica IOC/Olympic Studies Centre sobre los Juegos intercalados: [Historical Archives](https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A).
+
+### Salidas finales de esta revisión
+
+- Ediciones: **61**.
+- Participaciones: **826,605**.
+- Duplicados nuevos creados por el remapeo: **0**.
+- Entidades: `ENTIDAD_GEOGRAFICA` 282, `POBLACION` 17,024, `NOC` 236, `ATLETA` 338,772, `SEDE` 42, `EDICION_OLIMPICA` 61, `DEPORTE` 65, `DISCIPLINA` 117, `EVENTO` 3,106 y `PARTICIPACION` 826,605.
+- Validaciones finales: **56/56 PASS**.
+- SHA-256 RAW: **10/10 MATCH**.
+- `data/intermediate/cleaned`: intacto.
+- No se modificó precisión decimal ni DDL, no se cargó SQL y no se inició el Bloque 6.

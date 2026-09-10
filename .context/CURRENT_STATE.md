@@ -2,7 +2,7 @@
 
 ## Corte del estado
 
-- Fecha y hora de esta revisión: 2026-09-09 17:20:50 -06:00.
+- Fecha y hora de esta revisión: 2026-09-09 19:06:52 -06:00.
 - Proyecto: `OlimpiadasF1`.
 - Alcance actual: Fase 1, incisos a, b y c.
 - Los incisos d y e quedan fuera del alcance de este integrante.
@@ -84,7 +84,7 @@ Resultados técnicos:
 
 ## Estado del Bloque 4
 
-El Bloque 4 está **ejecutado y pendiente de revisión; no está aprobado**. Se creó y ejecutó el script reproducible:
+El Bloque 4 está **ejecutado y técnicamente aprobado**. Se creó y ejecutó el script reproducible:
 
 - `OlimpiadasF1/scripts/python/03_match_and_consolidate.py`
 
@@ -103,12 +103,32 @@ Resultados técnicos de la ejecución corregida:
 - NOC: 231 resueltos y 5 no resueltos.
 - Deporte-disciplina: 313 mapeos resueltos, que cubren las 832,189 participaciones de entrada, y 0 pendientes de revisión.
 - Validaciones de modelo: 56 PASS y 0 FAIL. La participación fuera del alcance oficial fue excluida únicamente de la salida procesada, sin modificar RAW ni intermedios.
+- Revisión puntual posterior al Bloque 5: `1956 | Equestrian` (300 participaciones) se homologó a `1956 | Summer` con sede final Melbourne y excepción histórica Stockholm auditada; `1906 | Summer` se homologó a `1906 | Intercalated Games` después de comparar 1,733 filas de Fuente 2, 1,733 de Fuente 3 y 2,300 de Fuente 1. Youth Olympic Games se conservaron.
+- Resultado posterior: 61 ediciones, 826,605 participaciones, 0 duplicados nuevos producidos por el remapeo y 56/56 validaciones PASS.
 - SHA-256 RAW: 10/10 MATCH; `data/raw` y `data/intermediate/cleaned` permanecen intactos.
 - Idempotencia: dos ejecuciones produjeron hashes idénticos para los 10 CSV de `data/processed/`.
-- El Bloque 4 no se declara aprobado. No se cargó SQL Server, no se crearon tablas SQL y no se inició el Bloque 5.
+- El Bloque 5 fue iniciado únicamente para crear y validar el modelo físico vacío. No se cargaron datos y no se inició el Bloque 6.
 
 La documentación oficial está en `OlimpiadasF1/docs/Evidence/Evidences_Bloque4.md`; los reportes técnicos están en `OlimpiadasF1/docs/consolidation/` y `OlimpiadasF1/data/intermediate/matching/`.
 
+## Estado del Bloque 5
+
+El Bloque 5 está **ejecutado técnicamente y pendiente de revisión externa; no está aprobado**.
+
+- Se crearon exactamente diez tablas bajo `OlimpiadasDB.olympics`.
+- No se crearon tablas finales en `dbo` ni tablas lógicas adicionales.
+- Las diez tablas están vacías.
+- Validación física de CSV: cobertura completa 66/66 columnas; 63 PASS y 3 FAIL por pérdida de precisión observable en `ATLETA.latitud`, `ATLETA.longitud` y `PARTICIPACION.peso_kg_registrado` con el DDL actual.
+- La validación física calcula precisión/escala observadas, capacidad entera y redondeo potencial. Las recomendaciones mínimas son `DECIMAL(18,16)` para latitud, `DECIMAL(19,16)` para longitud y `DECIMAL(16,13)` para peso registrado; no se cambió el DDL.
+- Validación del schema SQL: 10 tablas, 66 columnas, 16 PK/UNIQUE, 14 FK y 3 CHECK inspeccionados correctamente; además, `sys.columns.precision` y `sys.columns.scale` coinciden con el contrato actual de las siete columnas DECIMAL.
+- Análisis de temporadas: 63 ediciones agrupadas en Summer (31), Winter (24), Intercalated Games (1, 1906), Summer Youth (3), Winter Youth (3) y Equestrian (1, 1956), documentado en `OlimpiadasF1/docs/schema/edition_season_analysis.csv`.
+- El análisis conceptual indica que `Equestrian` 1956 debe asociarse a los Juegos Summer 1956, mientras que `Intercalated Games` 1906 y las categorías Youth requieren una decisión de alcance previa en Bloque 4.
+- No se modificaron `data/processed`, `data/raw` ni `data/intermediate/cleaned`.
+- Se documentaron dos ajustes de capacidad: `temporada NVARCHAR(20)` y `titulos NVARCHAR(2000)`.
+- No se cargaron datos y no se inició el Bloque 6.
+
+La documentación está en `OlimpiadasF1/docs/Evidence/Evidences_Bloque5.md`; los scripts están en `OlimpiadasF1/scripts/sql/` y `OlimpiadasF1/scripts/python/04_validate_physical_model.py`.
+
 ## Próximo paso autorizado
 
-Revisar el script, las 10 tablas finales y los reportes del Bloque 4; completar las capturas visuales reales con fecha y hora visibles. No aprobar el Bloque 4 ni iniciar el Bloque 5 hasta revisar los 5 NOC sin entidad, los 2,857 matches ambiguos, los 190,415 no matched y los conflictos documentados.
+Revisar externamente el DDL del Bloque 5, la precisión decimal y la política de alcance de las temporadas no ordinarias antes de aprobar el bloque o iniciar el Bloque 6. No cargar datos todavía.
