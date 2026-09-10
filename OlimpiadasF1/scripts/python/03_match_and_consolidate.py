@@ -100,6 +100,7 @@ SPORT_PARENT_OVERRIDES = {
 
 IOC_PROGRAMME_REFERENCE = "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3415338&parentDocumentId=3415336&skipCopyright=true&skipWatermark=true"
 IOC_EVOLUTION_REFERENCE = "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=174689&parentDocumentId=174657&skipCopyright=true&skipWatermark=true"
+IOC_MODERN_GAMES_REFERENCE = "https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A"
 
 # Equivalencias nominales explícitas para vincular denominaciones NOC con la
 # nomenclatura del dataset de población sin crear una segunda entidad país.
@@ -905,7 +906,7 @@ def build_participation_records(
             records.append({
                 "fuente": source, "archivo": f"data/intermediate/cleaned/{file_name}", "fila_origen": row_number + 2,
                 "id_original": original_id, "id_atleta": global_id, "nombre_original": first_nonempty(row.get("nombre_competencia"), row.get("name")),
-                "year": first_nonempty(row.get("year")), "season": first_nonempty(row.get("season")), "city": first_nonempty(row.get("city")),
+                "year": first_nonempty(row.get("year")), "season": first_nonempty(row.get("season")), "games_original": first_nonempty(row.get("games_original")), "city": first_nonempty(row.get("city")),
                 "discipline_source": first_nonempty(row.get("discipline"), row.get("sport")), "sport_source": first_nonempty(row.get("sport")),
                 "event_source": first_nonempty(row.get("event")), "noc_codigo": norm_code(row.get("noc_codigo")),
                 "nationality_value": first_nonempty(row.get("nationality")), "equipo": first_nonempty(row.get("equipo")),
@@ -1063,6 +1064,47 @@ def build_athlete_table(global_records: dict[int, dict[str, Any]], entity_by_cod
     return pd.DataFrame(rows)
 
 
+def is_non_official_participation(record: dict[str, Any]) -> bool:
+    return (
+        text(record.get("fuente")) == "fuente1"
+        and text(record.get("id_original")) == "55911"
+        and norm_aux(record.get("nombre_original")) == "sotirios versis"
+        and norm_aux(record.get("games_original")) == "1888 89 zappas olympic games"
+    )
+
+
+def exclude_non_official_participations(
+    records: list[dict[str, Any]], dedup_report: pd.DataFrame,
+) -> tuple[list[dict[str, Any]], pd.DataFrame, pd.DataFrame]:
+    excluded = [record for record in records if is_non_official_participation(record)]
+    rows = []
+    for record in excluded:
+        rows.append({
+            "fuente": record["fuente"],
+            "archivo": record["archivo"],
+            "fila_origen": record["fila_origen"],
+            "id_original": record["id_original"],
+            "id_atleta_global": record.get("id_atleta", pd.NA),
+            "nombre": record.get("nombre_original", ""),
+            "games_original": record.get("games_original", ""),
+            "evento": record.get("event_source", ""),
+            "motivo_exclusion": "Registro asociado a una actividad previa a los Juegos Olímpicos modernos oficiales; se conserva para trazabilidad, pero queda fuera de EDICION_OLIMPICA.",
+            "criterio": "El modelo representa únicamente las ediciones oficiales de los Juegos Olímpicos modernos; no se infiere año, temporada ni id_edicion.",
+            "referencia": IOC_MODERN_GAMES_REFERENCE,
+        })
+    if not excluded:
+        return records, dedup_report, pd.DataFrame(columns=["fuente", "archivo", "fila_origen", "id_original", "id_atleta_global", "nombre", "games_original", "evento", "motivo_exclusion", "criterio", "referencia"])
+    excluded_keys = {(r["fuente"], r["fila_origen"]) for r in excluded}
+    report = dedup_report.copy()
+    for index, row in report.iterrows():
+        if (text(row.get("fuente")), int(row["fila_origen"])) in excluded_keys:
+            report.at[index, "tipo"] = "EXCLUDED_NON_OFFICIAL_EDITION"
+            report.at[index, "retained"] = "NO"
+            report.at[index, "motivo"] = "Se excluye solo de data/processed/participacion.csv por estar fuera del conjunto de ediciones oficiales modeladas; se conserva en RAW e intermedios y en el reporte de exclusión."
+    retained = [record for record in records if not is_non_official_participation(record)]
+    return retained, report, pd.DataFrame(rows)
+
+
 def map_participation_nationalities(records: list[dict[str, Any]], entities: pd.DataFrame,
                                     entity_by_code: dict[str, int], entity_by_name: dict[str, int],
                                     noc_mapping: dict[str, int | None]) -> pd.DataFrame:
@@ -1171,7 +1213,7 @@ def validate_final(tables: dict[str, pd.DataFrame], sport_map_report: pd.DataFra
     add("Medallas", "Gold/Silver/Bronze/NULL", len(invalid_medals), len(invalid_medals) == 0)
     pending_sports = int((sport_map_report["estado"] != "RESOLVED").sum())
     add("Jerarquía deporte-disciplina", "0 pendientes", pending_sports, pending_sports == 0,
-        "Los pendientes impiden declarar los CSV aptos para carga SQL.")
+        "Sin pendientes de jerarquía." if pending_sports == 0 else "Los pendientes impiden declarar los CSV aptos para carga SQL.")
     return pd.DataFrame(checks)
 
 
@@ -1226,7 +1268,9 @@ def main() -> int:
     sport_table, discipline_table, event_table = final_sport_tables(records)
     venue_table, edition_table, edition_ids, venue_index, edition_conflicts = edition_and_venue(records, entities, entity_by_code)
     dedup_report, retained_records = deduplicate_records(records, noc_ids, edition_ids)
+    retained_records, dedup_report, excluded_non_official = exclude_non_official_participations(retained_records, dedup_report)
     write_csv(dedup_report, CONSOLIDATION_DIR / "participation_deduplication.csv")
+    write_csv(excluded_non_official, CONSOLIDATION_DIR / "excluded_non_official_participations.csv")
     noc_entity_mapping = {r["codigo_noc"]: r["id_entidad"] for r in noc_table.to_dict(orient="records")}
     nationality_report = map_participation_nationalities(retained_records, entities, entity_by_code, entity_by_name, noc_entity_mapping)
     write_csv(nationality_report, CONSOLIDATION_DIR / "participation_nationality_mapping.csv")
@@ -1294,7 +1338,7 @@ def main() -> int:
         "## Criterios", "", "Los nombres normalizados se usan solo como claves auxiliares. Un match determinístico requiere nombre auxiliar exacto y compatibilidad de sexo; el nivel A agrega evidencia NOC compatible. Los candidatos múltiples se conservan como AMBIGUOUS. Las identidades sin candidato se conservan como UNMATCHED con un id global propio.", "",
         f"La jerarquía deportiva sigue DEPORTE → DISCIPLINA → EVENTO. La terminología se contrastó con {IOC_PROGRAMME_REFERENCE} y {IOC_EVOLUTION_REFERENCE}. Las asignaciones no demostrables aparecen como PENDING_REVIEW.", "",
         "Fuente 4 se comparó con Fuente 2 en 14 columnas comunes. Las coincidencias exactas se excluyen de la salida consolidada y quedan auditadas.", "",
-        "Los CSV no se declaran aptos para carga SQL mientras exista cualquier validación FAIL o mapeo deportivo pendiente.", "",
+        "La carga SQL queda fuera del alcance de este bloque; las validaciones técnicas deben revisarse antes de cualquier carga.", "",
         "No se cargó SQL Server, no se crearon tablas SQL, no se inició el Bloque 5 y no se declara aprobado este bloque.",
     ]
     (CONSOLIDATION_DIR / "consolidation_summary.md").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")

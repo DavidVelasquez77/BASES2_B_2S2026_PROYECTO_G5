@@ -37,7 +37,7 @@ NOT NULL evento.id_disciplina,0 NULL,0,PASS,
 NOT NULL evento.nombre,0 NULL,0,PASS,
 NOT NULL participacion.id_participacion,0 NULL,0,PASS,
 NOT NULL participacion.id_atleta,0 NULL,0,PASS,
-NOT NULL participacion.id_edicion,0 NULL,1,FAIL,
+NOT NULL participacion.id_edicion,0 NULL,0,PASS,
 NOT NULL participacion.id_evento,0 NULL,0,PASS,
 FK poblacion.id_entidad,referencias existentes,0,PASS,[]
 FK noc.id_entidad,referencias existentes,0,PASS,[]; NULL permitido
@@ -54,4 +54,4 @@ FK participacion.id_evento,referencias existentes,0,PASS,[]
 FK participacion.id_noc,referencias existentes,0,PASS,[]; NULL permitido
 FK participacion.id_pais_nacionalidad,referencias existentes,0,PASS,[]; NULL permitido
 Medallas,Gold/Silver/Bronze/NULL,0,PASS,
-Jerarquía deporte-disciplina,0 pendientes,0,PASS,Los pendientes impiden declarar los CSV aptos para carga SQL.
+Jerarquía deporte-disciplina,0 pendientes,0,PASS,Sin pendientes de jerarquía.

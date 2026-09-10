@@ -8,4 +8,4 @@ edicion_olimpica,63,0,"{""id_edicion"":0,""anio"":0,""temporada"":0}","{""fuente
 deporte,65,0,"{""id_deporte"":0}","{""fuentes1_2_3_4"":65}"
 disciplina,117,0,"{""id_disciplina"":0,""id_deporte"":0}","{""fuentes1_2_3_4"":117}"
 evento,3106,0,"{""id_evento"":0,""id_disciplina"":0}","{""fuentes1_2_3_4"":3106}"
-participacion,826606,0,"{""id_participacion"":0,""id_atleta"":0,""id_edicion"":1,""id_evento"":0}","{""fuentes1_2_3_4"":826606}"
+participacion,826605,0,"{""id_participacion"":0,""id_atleta"":0,""id_edicion"":0,""id_evento"":0}","{""fuentes1_2_3_4"":826605}"
