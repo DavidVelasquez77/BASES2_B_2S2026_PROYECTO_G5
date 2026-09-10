@@ -1,0 +1,88 @@
+validacion,esperado,actual,estado,detalle
+conteo.ATLETA,338772,338772,PASS,Conteo CSV esperado frente a staging
+conteo.DEPORTE,65,65,PASS,Conteo CSV esperado frente a staging
+conteo.DISCIPLINA,117,117,PASS,Conteo CSV esperado frente a staging
+conteo.EDICION_OLIMPICA,61,61,PASS,Conteo CSV esperado frente a staging
+conteo.ENTIDAD_GEOGRAFICA,282,282,PASS,Conteo CSV esperado frente a staging
+conteo.EVENTO,3106,3106,PASS,Conteo CSV esperado frente a staging
+conteo.NOC,236,236,PASS,Conteo CSV esperado frente a staging
+conteo.PARTICIPACION,826605,826605,PASS,Conteo CSV esperado frente a staging
+conteo.POBLACION,17024,17024,PASS,Conteo CSV esperado frente a staging
+conteo.SEDE,42,42,PASS,Conteo CSV esperado frente a staging
+convert.ATLETA.country_ids,0,0,PASS,INT inválido en país nullable
+convert.ATLETA.dates,0,0,PASS,DATE inválida
+convert.ATLETA.decimals,0,0,PASS,DECIMAL inválido o fuera de precision/scale
+convert.ATLETA.id_atleta,0,0,PASS,BIGINT inválido
+convert.DEPORTE,0,0,PASS,INT inválido
+convert.DISCIPLINA,0,0,PASS,INT inválido
+convert.EDICION_OLIMPICA,0,0,PASS,INT/SMALLINT inválido
+convert.ENTIDAD_GEOGRAFICA.id_entidad,0,0,PASS,INT inválido
+convert.EVENTO,0,0,PASS,BIGINT/INT inválido
+convert.NOC.id_entidad,0,0,PASS,INT inválido
+convert.NOC.id_noc,0,0,PASS,INT inválido
+convert.PARTICIPACION.decimals,0,0,PASS,DECIMAL inválido o fuera de precision/scale
+convert.PARTICIPACION.optional_ids,0,0,PASS,INT nullable inválido
+convert.PARTICIPACION.required,0,0,PASS,BIGINT/INT requerido inválido
+convert.POBLACION.anio,0,0,PASS,SMALLINT inválido
+convert.POBLACION.id_entidad,0,0,PASS,INT inválido
+convert.POBLACION.poblacion,0,0,PASS,BIGINT inválido
+convert.SEDE,0,0,PASS,INT inválido
+domain.EDICION_OLIMPICA.temporada,0,0,PASS,Temporada fuera del dominio final
+domain.PARTICIPACION.empatado,0,0,PASS,BIT fuera del dominio
+domain.PARTICIPACION.medalla,0,0,PASS,Medalla fuera del dominio
+domain.PARTICIPACION.posicion,0,0,PASS,Posición no positiva
+duplicate.ATLETA,0,0,PASS,PK duplicada
+duplicate.DEPORTE,0,0,PASS,PK o UNIQUE duplicada
+duplicate.DISCIPLINA,0,0,PASS,PK duplicada
+duplicate.EDICION_OLIMPICA,0,0,PASS,PK o UNIQUE duplicada
+duplicate.EDICION_OLIMPICA.anio_temporada,0,0,PASS,UNIQUE duplicada
+duplicate.ENTIDAD_GEOGRAFICA,0,0,PASS,PK duplicada
+duplicate.EVENTO,0,0,PASS,PK duplicada
+duplicate.NOC,0,0,PASS,PK duplicada
+duplicate.PARTICIPACION,0,0,PASS,PK duplicada
+duplicate.POBLACION,0,0,PASS,PK compuesta duplicada
+fk.ATLETA.paises,0,0,PASS,País inexistente
+fk.DISCIPLINA.deporte,0,0,PASS,Deporte inexistente
+fk.EDICION_OLIMPICA.sede,0,0,PASS,Sede inexistente
+fk.EVENTO.disciplina,0,0,PASS,Disciplina inexistente
+fk.NOC.entidad,0,0,PASS,Entidad inexistente
+fk.PARTICIPACION.atleta,0,0,PASS,Atleta inexistente
+fk.PARTICIPACION.edicion,0,0,PASS,Edición inexistente
+fk.PARTICIPACION.evento,0,0,PASS,Evento inexistente
+fk.PARTICIPACION.nacionalidad,0,0,PASS,Entidad inexistente
+fk.PARTICIPACION.noc,0,0,PASS,NOC inexistente
+fk.POBLACION.entidad,0,0,PASS,Entidad inexistente
+fk.SEDE.pais,0,0,PASS,País inexistente
+length.ATLETA,0,0,PASS,Longitud mayor al DDL
+length.DEPORTE_DISCIPLINA,0,0,PASS,Longitud mayor al DDL
+length.DISCIPLINA,0,0,PASS,Longitud mayor al DDL
+length.EDICION_OLIMPICA,0,0,PASS,Longitud mayor al DDL
+length.EVENTO,0,0,PASS,Longitud mayor al DDL
+length.NOC,0,0,PASS,Longitud mayor al DDL
+length.PARTICIPACION,0,0,PASS,Longitud mayor al DDL
+length.SEDE,0,0,PASS,Longitud mayor al DDL
+notnull.ATLETA,0,0,PASS,id_atleta/nombre vacío
+notnull.DEPORTE,0,0,PASS,id_deporte/nombre vacío
+notnull.DISCIPLINA,0,0,PASS,id_disciplina/id_deporte/nombre vacío
+notnull.ENTIDAD_GEOGRAFICA,0,0,PASS,id_entidad/nombre vacío
+notnull.EVENTO,0,0,PASS,id_evento/id_disciplina/nombre vacío
+notnull.NOC,0,0,PASS,id_noc vacío
+notnull.PARTICIPACION,0,0,PASS,clave requerida vacía
+unique.DEPORTE.nombre,0,0,PASS,Nombre de deporte duplicado
+unique.DISCIPLINA.deporte_nombre,0,0,PASS,Disciplina duplicada dentro de deporte
+unique.EVENTO.disciplina_nombre,0,0,PASS,Evento duplicado dentro de disciplina
+unique.NOC.codigo_noc,0,0,PASS,Código NOC duplicado
+final_pk_duplicadas,0,0,PASS,PK PARTICIPACION
+final_fk_huerfanas,0,0,PASS,FK principales PARTICIPACION
+final_check_medalla,0,0,PASS,Dominio medalla
+final_check_temporada,0,0,PASS,Dominio temporada
+final_constraints,33,33,PASS,10 PK + 6 UNIQUE + 14 FK + 3 CHECK
+final_indices_adicionales,8,8,PASS,Índices no cluster justificados
+decimal.ATLETA.altura_cm,0,0,PASS,Comparación staging/final sin redondeo
+decimal.ATLETA.peso_kg,0,0,PASS,Comparación staging/final sin redondeo
+decimal.ATLETA.latitud,0,0,PASS,Comparación staging/final sin redondeo
+decimal.ATLETA.longitud,0,0,PASS,Comparación staging/final sin redondeo
+decimal.PARTICIPACION.edad,0,0,PASS,Comparación staging/final sin redondeo
+decimal.PARTICIPACION.altura_cm_registrada,0,0,PASS,Comparación staging/final sin redondeo
+decimal.PARTICIPACION.peso_kg_registrado,0,0,PASS,Comparación staging/final sin redondeo
+unicode.ATLETA.nombre,0,0,PASS,Comparación exacta CSV -> SQL por id_atleta

@@ -113,7 +113,7 @@ La documentación oficial está en `OlimpiadasF1/docs/Evidence/Evidences_Bloque4
 
 ## Estado del Bloque 5
 
-El Bloque 5 está **ejecutado técnicamente y pendiente de revisión externa; no está aprobado**.
+El Bloque 5 está **ejecutado técnicamente y aprobado como prerequisito del Bloque 6**.
 
 - Se crearon exactamente diez tablas bajo `OlimpiadasDB.olympics`.
 - No se crearon tablas finales en `dbo` ni tablas lógicas adicionales.
@@ -126,10 +126,27 @@ El Bloque 5 está **ejecutado técnicamente y pendiente de revisión externa; no
 - El reset controlado de desarrollo se ejecutó sobre las diez tablas vacías y luego se recreó el schema físico sin cargar datos.
 - No se modificaron `data/processed`, `data/raw` ni `data/intermediate/cleaned`.
 - Se documentaron dos ajustes de capacidad: `temporada NVARCHAR(20)` y `titulos NVARCHAR(2000)`.
-- No se cargaron datos y no se inició el Bloque 6.
+- El schema quedó preparado para la carga y no se modificaron los CSV.
 
 La documentación está en `OlimpiadasF1/docs/Evidence/Evidences_Bloque5.md`; los scripts están en `OlimpiadasF1/scripts/sql/` y `OlimpiadasF1/scripts/python/04_validate_physical_model.py`.
 
+## Estado del Bloque 6
+
+El Bloque 6 está **ejecutado técnicamente y pendiente de revisión externa; no está aprobado**.
+
+- Se crearon diez tablas staging bajo `OlimpiadasDB.stg` y se cargaron exactamente los diez CSV de `data/processed` desde `/var/opt/mssql/import/processed/`.
+- Las diez tablas `OlimpiadasDB.olympics` se cargaron mediante INSERT explícito por columna y transacciones por entidad.
+- Conteos finales: ENTIDAD_GEOGRAFICA 282, POBLACION 17,024, NOC 236, ATLETA 338,772, SEDE 42, EDICION_OLIMPICA 61, DEPORTE 65, DISCIPLINA 117, EVENTO 3,106 y PARTICIPACION 826,605.
+- Validaciones: 0 duplicados de PK, 0 FK huérfanas, 0 conversiones inválidas, 0 truncamientos, 0 redondeos, 0 dominios inválidos; 10 PK, 6 UNIQUE, 14 FK y 3 CHECK activos.
+- Se crearon ocho índices no cluster justificados después de la carga.
+- La auditoría Unicode compara exactamente `data/processed/atleta.csv` contra `olympics.ATLETA` por `id_atleta`: 26,261 nombres no ASCII, 26,261 comparados y 0 diferencias.
+- Los tiempos se conservan como evidencia histórica en `OlimpiadasF1/docs/loading/load_metrics_run_20260909.csv`; el generador no los vuelve a fabricar.
+- `05_validate_staging.sql` produce ahora una auditoría completa con `validacion`, `esperado`, `actual`, `estado` y `detalle`, y el reporte Python consulta esa salida real.
+- La reejecución segura fue probada: el preflight abortó con mensaje claro y `PARTICIPACION` permaneció en 826,605 filas.
+- RAW SHA-256: 10/10 MATCH. `data/raw`, `data/intermediate/cleaned` y `data/processed` permanecen intactos.
+- Reportes: `OlimpiadasF1/docs/loading/`; documentación: `OlimpiadasF1/docs/Evidence/Evidences_Bloque6.md`.
+- No se inició el Bloque 7.
+
 ## Próximo paso autorizado
 
-Revisar externamente el DDL del Bloque 5, la precisión decimal y la política de alcance de las temporadas no ordinarias antes de aprobar el bloque o iniciar el Bloque 6. No cargar datos todavía.
+Revisar externamente la estrategia de staging, las validaciones de carga, los índices adicionales y las evidencias visuales del Bloque 6 antes de aprobarlo o iniciar el Bloque 7.

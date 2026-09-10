@@ -1,0 +1,9 @@
+indice,tabla,columnas,motivo
+IX_NOC_id_entidad,NOC,id_entidad,Join NOC a entidad geográfica.
+IX_ATLETA_id_pais_nacionalidad,ATLETA,id_pais_nacionalidad,Búsqueda de atletas por país.
+IX_SEDE_id_pais,SEDE,id_pais,Join sede a entidad geográfica.
+IX_PARTICIPACION_id_atleta,PARTICIPACION,id_atleta,Búsqueda de participaciones por atleta.
+IX_PARTICIPACION_id_edicion,PARTICIPACION,id_edicion,Joins y filtros por edición olímpica.
+IX_PARTICIPACION_id_evento,PARTICIPACION,id_evento,Joins y filtros por evento.
+IX_PARTICIPACION_id_noc,PARTICIPACION,id_noc,Consultas por NOC/equipo.
+IX_PARTICIPACION_id_pais_nacionalidad,PARTICIPACION,id_pais_nacionalidad,Consultas por país de nacionalidad.

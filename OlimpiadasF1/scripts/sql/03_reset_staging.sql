@@ -1,0 +1,30 @@
+/* Bloque 6 — reset manual de staging.
+   Opcional y separado del flujo normal. Nunca se ejecuta automáticamente. */
+USE OlimpiadasDB;
+GO
+SET NOCOUNT ON;
+SET XACT_ABORT ON;
+GO
+
+BEGIN TRY
+    BEGIN TRANSACTION;
+    TRUNCATE TABLE stg.PARTICIPACION;
+    TRUNCATE TABLE stg.EVENTO;
+    TRUNCATE TABLE stg.DISCIPLINA;
+    TRUNCATE TABLE stg.DEPORTE;
+    TRUNCATE TABLE stg.EDICION_OLIMPICA;
+    TRUNCATE TABLE stg.SEDE;
+    TRUNCATE TABLE stg.ATLETA;
+    TRUNCATE TABLE stg.NOC;
+    TRUNCATE TABLE stg.POBLACION;
+    TRUNCATE TABLE stg.ENTIDAD_GEOGRAFICA;
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+    THROW;
+END CATCH;
+GO
+
+PRINT N'03_reset_staging.sql ejecutado de forma manual: staging vaciado.';
+GO
