@@ -1,0 +1,35 @@
+validacion,esperado,actual,estado,detalle
+atletas,338772,338772,PASS,Atletas finales
+check,3,3,PASS,Restricciones CHECK activas
+columnas,66,66,PASS,Columnas de las diez tablas finales
+conteo.ATLETA,338772,338772,PASS,Conteo final exacto
+conteo.DEPORTE,65,65,PASS,Conteo final exacto
+conteo.DISCIPLINA,117,117,PASS,Conteo final exacto
+conteo.EDICION_OLIMPICA,61,61,PASS,Conteo final exacto
+conteo.ENTIDAD_GEOGRAFICA,282,282,PASS,Conteo final exacto
+conteo.EVENTO,3106,3106,PASS,Conteo final exacto
+conteo.NOC,236,236,PASS,Conteo final exacto
+conteo.PARTICIPACION,826605,826605,PASS,Conteo final exacto
+conteo.POBLACION,17024,17024,PASS,Conteo final exacto
+conteo.SEDE,42,42,PASS,Conteo final exacto
+ediciones,61,61,PASS,Ediciones finales
+fk,14,14,PASS,Claves foráneas activas
+fk_huerfanas,0,0,PASS,Filas sin padre en las 14 FK
+indices_adicionales,8,8,PASS,Índices IX_ adicionales
+participaciones,826605,826605,PASS,Participaciones finales
+pk,10,10,PASS,Claves primarias activas
+pk_duplicadas,0,0,PASS,Duplicados efectivos de claves primarias
+tablas_finales,10,10,PASS,Tablas esperadas en olympics
+tablas_logicas_extra,0,0,PASS,Tablas fuera del modelo lógico final
+unique,6,6,PASS,Claves UNIQUE activas
+valores_invalidos.medalla,0,0,PASS,Dominio final de medalla
+valores_invalidos.posicion,0,0,PASS,Posición positiva
+valores_invalidos.temporada,0,0,PASS,Dominio final de temporada
+1906.Intercalated_Games,1,1,PASS,Debe existir una edición 1906 Intercalated Games
+1906.Summer_ausente,0,0,PASS,No debe existir 1906 Summer
+Equestrian.1956_eventos_finales,586,586,PASS,Conteo final por nombre de evento. Las 300 filas de la fuente auditadas no son recuperables como subconjunto de procedencia en la tabla final.
+Equestrian.1956_fuera_de_summer,0,0,PASS,Todas las filas ecuestres identificables de 1956 están asociadas a 1956 Summer.
+Equestrian.ediciones,0,0,PASS,Equestrian no es temporada final
+Summer_Youth.ediciones,3,3,PASS,Youth conservado
+Winter_Youth.ediciones,3,3,PASS,Youth conservado
+Zappas.participaciones_finales,0,0,PASS,No quedan atributos Zappas en la participación final; el modelo final no conserva Games original/procedencia de fila.
