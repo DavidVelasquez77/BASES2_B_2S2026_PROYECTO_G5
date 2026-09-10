@@ -31,17 +31,17 @@ atleta.csv,fecha_nacimiento,DATE,338772,195079,10,,,,,,NO,PASS,fechas ISO compat
 atleta.csv,fecha_fallecimiento,DATE,338772,304832,10,,,,,,NO,PASS,fechas ISO compatibles
 atleta.csv,altura_cm,"DECIMAL(5,2)",338772,205840,3,,5,2,3,0,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
 atleta.csv,peso_kg,"DECIMAL(5,2)",338772,208507,5,,5,2,3,1,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 1/2; valores con redondeo 0; inválidos 0"
-atleta.csv,latitud,"DECIMAL(9,6)",338772,269227,19,,9,6,2,16,YES,FAIL,"DECIMAL(9,6); enteros observados 2/3; decimales observados 16/6; valores con redondeo 63726; inválidos 0"
-atleta.csv,longitud,"DECIMAL(9,6)",338772,269227,19,,9,6,3,16,YES,FAIL,"DECIMAL(9,6); enteros observados 3/3; decimales observados 16/6; valores con redondeo 62549; inválidos 0"
+atleta.csv,latitud,"DECIMAL(19,16)",338772,269227,19,,19,16,2,16,NO,PASS,"DECIMAL(19,16); enteros observados 2/3; decimales observados 16/16; valores con redondeo 0; inválidos 0"
+atleta.csv,longitud,"DECIMAL(19,16)",338772,269227,19,,19,16,3,16,NO,PASS,"DECIMAL(19,16); enteros observados 3/3; decimales observados 16/16; valores con redondeo 0; inválidos 0"
 atleta.csv,roles,NVARCHAR(MAX),338772,193272,119,,,,,,NO,PASS,NVARCHAR(MAX) sin límite fijo de caracteres
 atleta.csv,afiliaciones,NVARCHAR(MAX),338772,242940,174,,,,,,NO,PASS,NVARCHAR(MAX) sin límite fijo de caracteres
 sede.csv,id_sede,INT,42,0,2,,,,,,NO,PASS,rango compatible
 sede.csv,nombre,NVARCHAR(150),42,0,22,150,,,,,NO,PASS,máximo observado 22; capacidad 150 caracteres
 sede.csv,id_pais,INT,42,0,3,,,,,,NO,PASS,rango compatible
-edicion_olimpica.csv,id_edicion,INT,63,0,2,,,,,,NO,PASS,rango compatible
-edicion_olimpica.csv,anio,SMALLINT,63,0,4,,,,,,NO,PASS,rango compatible
-edicion_olimpica.csv,temporada,NVARCHAR(20),63,0,18,20,,,,,NO,PASS,máximo observado 18; capacidad 20 caracteres
-edicion_olimpica.csv,id_sede,INT,63,10,2,,,,,,NO,PASS,rango compatible
+edicion_olimpica.csv,id_edicion,INT,61,0,2,,,,,,NO,PASS,rango compatible
+edicion_olimpica.csv,anio,SMALLINT,61,0,4,,,,,,NO,PASS,rango compatible
+edicion_olimpica.csv,temporada,NVARCHAR(20),61,0,18,20,,,,,NO,PASS,máximo observado 18; capacidad 20 caracteres
+edicion_olimpica.csv,id_sede,INT,61,8,2,,,,,,NO,PASS,rango compatible
 deporte.csv,id_deporte,INT,65,0,2,,,,,,NO,PASS,rango compatible
 deporte.csv,nombre,NVARCHAR(150),65,0,25,150,,,,,NO,PASS,máximo observado 25; capacidad 150 caracteres
 disciplina.csv,id_disciplina,INT,117,0,3,,,,,,NO,PASS,rango compatible
@@ -60,7 +60,7 @@ participacion.csv,equipo,NVARCHAR(250),826605,186581,56,250,,,,,NO,PASS,máximo 
 participacion.csv,nombre_competencia,NVARCHAR(300),826605,518340,49,300,,,,,NO,PASS,máximo observado 49; capacidad 300 caracteres
 participacion.csv,edad,"DECIMAL(5,2)",826605,566189,2,,5,2,2,0,NO,PASS,"DECIMAL(5,2); enteros observados 2/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
 participacion.csv,altura_cm_registrada,"DECIMAL(5,2)",826605,615688,3,,5,2,3,0,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
-participacion.csv,peso_kg_registrado,"DECIMAL(5,2)",826605,618401,16,,5,2,3,13,YES,FAIL,"DECIMAL(5,2); enteros observados 3/3; decimales observados 13/2; valores con redondeo 6; inválidos 0"
+participacion.csv,peso_kg_registrado,"DECIMAL(16,13)",826605,618401,16,,16,13,3,13,NO,PASS,"DECIMAL(16,13); enteros observados 3/3; decimales observados 13/13; valores con redondeo 0; inválidos 0"
 participacion.csv,posicion,INT,826605,543771,3,,,,,,NO,PASS,rango compatible
 participacion.csv,empatado,BIT,826605,519171,5,,,,,,NO,PASS,rango compatible
 participacion.csv,estado_resultado,NVARCHAR(30),826605,808270,3,30,,,,,NO,PASS,máximo observado 3; capacidad 30 caracteres

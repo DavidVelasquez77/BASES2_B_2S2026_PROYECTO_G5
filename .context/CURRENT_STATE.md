@@ -2,7 +2,7 @@
 
 ## Corte del estado
 
-- Fecha y hora de esta revisión: 2026-09-09 19:06:52 -06:00.
+- Fecha y hora de esta revisión: 2026-09-09 20:19:06 -06:00.
 - Proyecto: `OlimpiadasF1`.
 - Alcance actual: Fase 1, incisos a, b y c.
 - Los incisos d y e quedan fuera del alcance de este integrante.
@@ -118,11 +118,12 @@ El Bloque 5 está **ejecutado técnicamente y pendiente de revisión externa; no
 - Se crearon exactamente diez tablas bajo `OlimpiadasDB.olympics`.
 - No se crearon tablas finales en `dbo` ni tablas lógicas adicionales.
 - Las diez tablas están vacías.
-- Validación física de CSV: cobertura completa 66/66 columnas; 63 PASS y 3 FAIL por pérdida de precisión observable en `ATLETA.latitud`, `ATLETA.longitud` y `PARTICIPACION.peso_kg_registrado` con el DDL actual.
-- La validación física calcula precisión/escala observadas, capacidad entera y redondeo potencial. Las recomendaciones mínimas son `DECIMAL(18,16)` para latitud, `DECIMAL(19,16)` para longitud y `DECIMAL(16,13)` para peso registrado; no se cambió el DDL.
-- Validación del schema SQL: 10 tablas, 66 columnas, 16 PK/UNIQUE, 14 FK y 3 CHECK inspeccionados correctamente; además, `sys.columns.precision` y `sys.columns.scale` coinciden con el contrato actual de las siete columnas DECIMAL.
-- Análisis de temporadas: 63 ediciones agrupadas en Summer (31), Winter (24), Intercalated Games (1, 1906), Summer Youth (3), Winter Youth (3) y Equestrian (1, 1956), documentado en `OlimpiadasF1/docs/schema/edition_season_analysis.csv`.
-- El análisis conceptual indica que `Equestrian` 1956 debe asociarse a los Juegos Summer 1956, mientras que `Intercalated Games` 1906 y las categorías Youth requieren una decisión de alcance previa en Bloque 4.
+- Validación física de CSV: cobertura completa 66/66 columnas; 66 PASS y 0 FAIL.
+- La validación física calcula precisión/escala observadas, capacidad entera y redondeo potencial. El DDL definitivo usa `DECIMAL(19,16)` para latitud/longitud y `DECIMAL(16,13)` para peso registrado, sin redondeo.
+- Validación del schema SQL: 10 tablas, 66 columnas, 10 PK, 6 UNIQUE, 14 FK y 3 CHECK inspeccionados correctamente; además, `sys.columns.precision` y `sys.columns.scale` coinciden con el contrato definitivo de las siete columnas DECIMAL.
+- Análisis de temporadas: 61 ediciones agrupadas en Summer (30), Winter (24), Intercalated Games (1), Summer Youth (3) y Winter Youth (3), sin `Equestrian`, documentado en `OlimpiadasF1/docs/schema/edition_season_analysis.csv`.
+- `EDICION_OLIMPICA.temporada` admite únicamente `Summer`, `Winter`, `Intercalated Games`, `Summer Youth` y `Winter Youth`.
+- El reset controlado de desarrollo se ejecutó sobre las diez tablas vacías y luego se recreó el schema físico sin cargar datos.
 - No se modificaron `data/processed`, `data/raw` ni `data/intermediate/cleaned`.
 - Se documentaron dos ajustes de capacidad: `temporada NVARCHAR(20)` y `titulos NVARCHAR(2000)`.
 - No se cargaron datos y no se inició el Bloque 6.

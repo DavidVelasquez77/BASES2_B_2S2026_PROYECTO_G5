@@ -88,11 +88,11 @@ INSERT INTO @expected_decimals (table_name, column_name, precision_value, scale_
 VALUES
     (N'ATLETA', N'altura_cm', 5, 2),
     (N'ATLETA', N'peso_kg', 5, 2),
-    (N'ATLETA', N'latitud', 9, 6),
-    (N'ATLETA', N'longitud', 9, 6),
+    (N'ATLETA', N'latitud', 19, 16),
+    (N'ATLETA', N'longitud', 19, 16),
     (N'PARTICIPACION', N'edad', 5, 2),
     (N'PARTICIPACION', N'altura_cm_registrada', 5, 2),
-    (N'PARTICIPACION', N'peso_kg_registrado', 5, 2);
+    (N'PARTICIPACION', N'peso_kg_registrado', 16, 13);
 
 SELECT e.table_name, e.column_name,
        e.precision_value AS precision_esperada, c.precision AS precision_actual,

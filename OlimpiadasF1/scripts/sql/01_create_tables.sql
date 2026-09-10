@@ -84,8 +84,8 @@ BEGIN
         afiliaciones NVARCHAR(MAX) NULL,
         /* Ajuste físico: el máximo real del CSV es 1,518 caracteres. */
         titulos NVARCHAR(2000) NULL,
-        latitud DECIMAL(9,6) NULL,
-        longitud DECIMAL(9,6) NULL,
+        latitud DECIMAL(19,16) NULL,
+        longitud DECIMAL(19,16) NULL,
         CONSTRAINT PK_ATLETA PRIMARY KEY (id_atleta),
         CONSTRAINT FK_ATLETA_PAIS_NACIMIENTO FOREIGN KEY (id_pais_nacimiento)
             REFERENCES olympics.ENTIDAD_GEOGRAFICA (id_entidad),
@@ -124,7 +124,7 @@ BEGIN
         CONSTRAINT PK_EDICION_OLIMPICA PRIMARY KEY (id_edicion),
         CONSTRAINT UQ_EDICION_OLIMPICA_anio_temporada UNIQUE (anio, temporada),
         CONSTRAINT CK_EDICION_OLIMPICA_temporada CHECK
-            (temporada IN (N'Summer', N'Winter', N'Intercalated Games', N'Summer Youth', N'Winter Youth', N'Equestrian')),
+            (temporada IN (N'Summer', N'Winter', N'Intercalated Games', N'Summer Youth', N'Winter Youth')),
         CONSTRAINT FK_EDICION_OLIMPICA_SEDE FOREIGN KEY (id_sede)
             REFERENCES olympics.SEDE (id_sede)
     );
@@ -189,7 +189,7 @@ BEGIN
         nombre_competencia NVARCHAR(300) NULL,
         edad DECIMAL(5,2) NULL,
         altura_cm_registrada DECIMAL(5,2) NULL,
-        peso_kg_registrado DECIMAL(5,2) NULL,
+        peso_kg_registrado DECIMAL(16,13) NULL,
         posicion INT NULL,
         empatado BIT NULL,
         estado_resultado NVARCHAR(30) NULL,

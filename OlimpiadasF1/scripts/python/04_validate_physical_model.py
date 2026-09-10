@@ -31,7 +31,7 @@ SPECS = {
         "titulos": ("NVARCHAR(2000)", 2000),
         "fecha_nacimiento": ("DATE", None), "fecha_fallecimiento": ("DATE", None),
         "altura_cm": ("DECIMAL(5,2)", None), "peso_kg": ("DECIMAL(5,2)", None),
-        "latitud": ("DECIMAL(9,6)", None), "longitud": ("DECIMAL(9,6)", None),
+        "latitud": ("DECIMAL(19,16)", None), "longitud": ("DECIMAL(19,16)", None),
         "roles": ("NVARCHAR(MAX)", None), "afiliaciones": ("NVARCHAR(MAX)", None),
     },
     "sede.csv": {"id_sede": ("INT", None), "nombre": ("NVARCHAR(150)", 150), "id_pais": ("INT", None)},
@@ -44,7 +44,7 @@ SPECS = {
         "id_evento": ("BIGINT", None), "id_noc": ("INT", None), "id_pais_nacionalidad": ("INT", None),
         "equipo": ("NVARCHAR(250)", 250), "nombre_competencia": ("NVARCHAR(300)", 300),
         "edad": ("DECIMAL(5,2)", None), "altura_cm_registrada": ("DECIMAL(5,2)", None),
-        "peso_kg_registrado": ("DECIMAL(5,2)", None), "posicion": ("INT", None), "empatado": ("BIT", None),
+        "peso_kg_registrado": ("DECIMAL(16,13)", None), "posicion": ("INT", None), "empatado": ("BIT", None),
         "estado_resultado": ("NVARCHAR(30)", 30), "medalla": ("NVARCHAR(20)", 20),
     },
 }
@@ -132,7 +132,6 @@ def edition_season_analysis() -> pd.DataFrame:
     venue_names = venues.set_index("id_sede")["nombre"].to_dict()
     participation_counts = participation.groupby("id_edicion").size().to_dict()
     observations = {
-        "Equestrian": "1956; eventos ecuestres asociados a los Juegos de Melbourne 1956, celebrados en Stockholm por cuarentena; no parece una edición independiente.",
         "Intercalated Games": "1906; edición histórica intercalada de Atenas, no equivalente a una edición ordinaria de la Olympiad.",
         "Summer Youth": "2010, 2014 y 2018; Juegos Olímpicos de la Juventud de verano, sin sede conservada en el CSV final.",
         "Winter Youth": "2012, 2016 y 2020; Juegos Olímpicos de la Juventud de invierno, sin sede conservada en el CSV final.",

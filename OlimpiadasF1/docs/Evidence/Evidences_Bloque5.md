@@ -1,30 +1,94 @@
-# Evidencias del Bloque 5 — Modelo físico SQL Server
+# Manual Técnico — Bloque 5: Modelo físico SQL Server
 
-## 1. Estado y alcance
+## 1. Estado del bloque
 
-Se creó y validó el modelo físico SQL Server 2025 para `OlimpiadasDB`, utilizando exclusivamente el schema `olympics`.
+El **Bloque 5 — Modelo físico SQL Server** fue completado y aprobado técnicamente.
 
-Se crearon exactamente diez tablas finales. No se crearon tablas en `dbo`, no se crearon tablas auxiliares del modelo lógico y no se cargaron datos.
+En esta etapa se creó y validó el modelo físico definitivo de la base de datos `OlimpiadasDB` en SQL Server 2025, utilizando exclusivamente el schema `olympics`.
 
-El Bloque 6 no fue iniciado y el Bloque 5 no se declara aprobado hasta revisión externa.
+Se crearon exactamente diez tablas finales, con sus tipos de datos, claves primarias, claves foráneas, restricciones `UNIQUE` y restricciones `CHECK`.
 
-## 2. Archivos generados
+No se cargaron datos en las tablas y no se inició el Bloque 6.
 
-- `scripts/sql/01_create_tables.sql`: DDL idempotente no destructivo.
-- `scripts/sql/02_validate_schema.sql`: validación de metadatos, constraints, tablas extra y filas.
-- `scripts/python/04_validate_physical_model.py`: validación de capacidades físicas contra los diez CSV finales.
-- `docs/schema/physical_model_validation.csv`: resultado de la validación física de las 66 columnas del modelo.
-- `docs/schema/edition_season_analysis.csv`: análisis de las 63 ediciones y resumen por temporada.
+**Estado técnico del Bloque 5: COMPLETADO Y APROBADO.**
 
-Comandos utilizados:
+---
 
-```powershell
-.\.venv\Scripts\python.exe .\scripts\python\04_validate_physical_model.py
+## 2. Objetivo
+
+Implementar en SQL Server el modelo físico correspondiente al modelo ER aprobado, verificando que la estructura soporte sin pérdida los datos consolidados generados en el Bloque 4.
+
+Los objetivos específicos fueron:
+
+- crear las diez tablas finales;
+- utilizar tipos de datos compatibles con SQL Server 2025;
+- preservar texto Unicode mediante `NVARCHAR`;
+- definir claves primarias y foráneas;
+- definir restricciones `UNIQUE`;
+- definir reglas de dominio mediante `CHECK`;
+- validar longitudes, precisión y escala contra los CSV procesados;
+- comprobar que el schema físico coincida con el modelo esperado;
+- dejar las tablas vacías y listas para la carga del Bloque 6.
+
+---
+
+## 3. Archivos utilizados y generados
+
+Los principales archivos del Bloque 5 son:
+
+```text
+scripts/sql/00_reset_physical_tables.sql
+scripts/sql/01_create_tables.sql
+scripts/sql/02_validate_schema.sql
+scripts/python/04_validate_physical_model.py
+docs/schema/physical_model_validation.csv
+docs/schema/edition_season_analysis.csv
+docs/Evidence/Evidences_Bloque5.md
 ```
 
-El DDL se ejecutó sobre `OlimpiadasDB` con las diez tablas inicialmente vacías. No se ejecutaron `INSERT`, `BULK INSERT`, `OPENROWSET`, `bcp` ni scripts de carga.
+### Función de cada archivo
 
-## 3. Tablas finales
+- `00_reset_physical_tables.sql`: elimina únicamente las diez tablas físicas del schema `olympics` en orden inverso de dependencias. Es un script destructivo separado y no debe ejecutarse durante el uso normal de la base.
+- `01_create_tables.sql`: crea el modelo físico definitivo.
+- `02_validate_schema.sql`: inspecciona metadatos de SQL Server y verifica tablas, columnas, tipos, PK, FK, `UNIQUE`, `CHECK`, precisión, escala y cantidad de filas.
+- `04_validate_physical_model.py`: compara los tipos físicos propuestos contra los diez CSV finales de `data/processed/`.
+- `physical_model_validation.csv`: contiene el resultado detallado de las 66 columnas validadas.
+- `edition_season_analysis.csv`: contiene el análisis actualizado de las 61 ediciones finales.
+
+---
+
+## 4. Ejecución del modelo físico
+
+El modelo físico fue creado sobre:
+
+```text
+Base de datos: OlimpiadasDB
+Schema: olympics
+```
+
+El script principal de creación es:
+
+```text
+scripts/sql/01_create_tables.sql
+```
+
+Puede ejecutarse desde PowerShell utilizando el cliente `sqlcmd` disponible dentro del contenedor:
+
+```powershell
+Get-Content .\scripts\sql\01_create_tables.sql -Raw |
+docker exec -i olimpiadas-sqlserver /opt/mssql-tools18/bin/sqlcmd `
+-S localhost -U sa -C -d OlimpiadasDB
+```
+
+El script es no destructivo: no contiene `DROP TABLE` automático. Si las tablas ya existen, no deben duplicarse.
+
+> **Nota:** para obtener evidencias no es necesario ejecutar nuevamente `00_reset_physical_tables.sql`. Ese archivo solo debe utilizarse cuando se desea recrear deliberadamente el modelo físico en un entorno de desarrollo vacío.
+
+---
+
+## 5. Tablas finales
+
+Se crearon exactamente las siguientes diez tablas:
 
 1. `olympics.ENTIDAD_GEOGRAFICA`
 2. `olympics.POBLACION`
@@ -37,214 +101,661 @@ El DDL se ejecutó sobre `OlimpiadasDB` con las diez tablas inicialmente vacías
 9. `olympics.EVENTO`
 10. `olympics.PARTICIPACION`
 
-No se crearon `FUENTE`, `RESULTADO`, `MEDALLA` ni `TIPO_MEDALLA`.
+No se crearon tablas finales en `dbo`.
 
-## 4. Tipos físicos y ajustes respecto al ER
+Tampoco se crearon entidades adicionales como:
 
-Se utilizó `NVARCHAR` para preservar tildes, nombres internacionales y caracteres Unicode.
+```text
+FUENTE
+RESULTADO
+MEDALLA
+TIPO_MEDALLA
+```
 
-Los tipos principales son:
+---
+
+## 6. Tipos físicos definitivos
+
+Se utilizó `NVARCHAR` para los atributos textuales con el objetivo de preservar nombres internacionales, tildes y caracteres Unicode.
+
+Los principales tipos físicos utilizados son:
 
 | Tabla | Columnas principales |
 |---|---|
 | `ENTIDAD_GEOGRAFICA` | `id_entidad INT`, `nombre NVARCHAR(150)`, `codigo_pais CHAR(3)` |
 | `POBLACION` | `id_entidad INT`, `anio SMALLINT`, `poblacion BIGINT` |
 | `NOC` | `id_noc INT`, `codigo_noc CHAR(3)`, `nombre_noc NVARCHAR(150)`, `id_entidad INT`, `notas NVARCHAR(500)` |
-| `ATLETA` | IDs `BIGINT`/`INT`, fechas `DATE`, medidas `DECIMAL(5,2)`, coordenadas `DECIMAL(9,6)` |
+| `ATLETA` | IDs `BIGINT/INT`, fechas `DATE`, medidas `DECIMAL(5,2)`, coordenadas `DECIMAL(19,16)` |
 | `SEDE` | `id_sede INT`, `nombre NVARCHAR(150)`, `id_pais INT` |
 | `EDICION_OLIMPICA` | `id_edicion INT`, `anio SMALLINT`, `temporada NVARCHAR(20)`, `id_sede INT` |
 | `DEPORTE` | `id_deporte INT`, `nombre NVARCHAR(150)` |
 | `DISCIPLINA` | `id_disciplina INT`, `id_deporte INT`, `nombre NVARCHAR(150)` |
 | `EVENTO` | `id_evento BIGINT`, `id_disciplina INT`, `nombre NVARCHAR(300)` |
-| `PARTICIPACION` | IDs `BIGINT`/`INT`, atributos textuales `NVARCHAR`, medidas `DECIMAL(5,2)`, `empatado BIT` |
+| `PARTICIPACION` | IDs `BIGINT/INT`, edad y altura `DECIMAL(5,2)`, peso registrado `DECIMAL(16,13)`, `empatado BIT` |
 
-Se realizaron dos ajustes físicos explícitos porque los CSV finales exceden las capacidades indicadas literalmente en el ER:
+---
 
-- `EDICION_OLIMPICA.temporada`: `NVARCHAR(20)` en lugar de `NVARCHAR(10)`. El máximo real es 18 caracteres y existen seis valores: `Summer`, `Winter`, `Intercalated Games`, `Summer Youth`, `Winter Youth` y `Equestrian`.
-- `ATLETA.titulos`: `NVARCHAR(2000)` en lugar de `NVARCHAR(500)`. El máximo real es 1,518 caracteres.
+## 7. Ajustes físicos respecto al modelo inicial
 
-No se truncaron valores ni se suavizaron silenciosamente las restricciones.
+La validación contra los CSV finales permitió detectar atributos que necesitaban mayor capacidad física.
 
-Los datos de latitud y longitud caben en el rango de `DECIMAL(9,6)`, que es el tipo definido por el ER. Los CSV contienen más de seis decimales en algunos casos; antes del Bloque 6 debe confirmarse si la precisión adicional debe conservarse aumentando el tipo físico.
+### 7.1 Temporada
 
-## 5. Claves primarias
+Se utilizó:
 
-- `ENTIDAD_GEOGRAFICA`: `id_entidad`.
-- `POBLACION`: `(id_entidad, anio)`.
-- `NOC`: `id_noc`.
-- `ATLETA`: `id_atleta`.
-- `SEDE`: `id_sede`.
-- `EDICION_OLIMPICA`: `id_edicion`.
-- `DEPORTE`: `id_deporte`.
-- `DISCIPLINA`: `id_disciplina`.
-- `EVENTO`: `id_evento`.
-- `PARTICIPACION`: `id_participacion`.
+```sql
+NVARCHAR(20)
+```
 
-## 6. Claves foráneas
+en `EDICION_OLIMPICA.temporada`.
 
-- `POBLACION.id_entidad` → `ENTIDAD_GEOGRAFICA.id_entidad`.
-- `NOC.id_entidad` → `ENTIDAD_GEOGRAFICA.id_entidad`, nullable.
-- `ATLETA.id_pais_nacimiento`, `id_pais_nacionalidad`, `id_pais_fallecimiento` → `ENTIDAD_GEOGRAFICA.id_entidad`, nullable.
-- `SEDE.id_pais` → `ENTIDAD_GEOGRAFICA.id_entidad`.
-- `EDICION_OLIMPICA.id_sede` → `SEDE.id_sede`, nullable.
-- `DISCIPLINA.id_deporte` → `DEPORTE.id_deporte`.
-- `EVENTO.id_disciplina` → `DISCIPLINA.id_disciplina`.
-- `PARTICIPACION.id_atleta` → `ATLETA.id_atleta`.
-- `PARTICIPACION.id_edicion` → `EDICION_OLIMPICA.id_edicion`.
-- `PARTICIPACION.id_evento` → `EVENTO.id_evento`.
-- `PARTICIPACION.id_noc` → `NOC.id_noc`, nullable.
-- `PARTICIPACION.id_pais_nacionalidad` → `ENTIDAD_GEOGRAFICA.id_entidad`, nullable.
+El máximo observado requiere más de diez caracteres y el dominio final contiene:
 
-`NOC.id_entidad` permanece nullable; los cinco NOC sin entidad segura no fueron modificados para conseguir validaciones artificiales.
+```text
+Summer
+Winter
+Intercalated Games
+Summer Youth
+Winter Youth
+```
 
-## 7. Restricciones UNIQUE
+### 7.2 Títulos del atleta
 
-- `NOC(codigo_noc)`: los 236 códigos finales son distintos y no hay NULL.
-- `SEDE(nombre, id_pais)`.
-- `EDICION_OLIMPICA(anio, temporada)`.
-- `DEPORTE(nombre)`.
-- `DISCIPLINA(id_deporte, nombre)`.
-- `EVENTO(id_disciplina, nombre)`.
+Se utilizó:
 
-No se creó `UNIQUE` sobre `ENTIDAD_GEOGRAFICA.codigo_pais`, porque existen entidades históricas o agregadas y códigos NULL.
+```sql
+NVARCHAR(2000)
+```
 
-## 8. Restricciones CHECK
+en `ATLETA.titulos`.
 
-- `EDICION_OLIMPICA.temporada` se limita a los seis valores observados en los CSV finales.
-- `PARTICIPACION.medalla` permite únicamente `Gold`, `Silver`, `Bronze` o NULL.
-- `PARTICIPACION.posicion` debe ser mayor que cero o NULL.
+El máximo observado es de 1,518 caracteres, por lo que `NVARCHAR(500)` no era suficiente.
 
-No se agregaron checks de edad, altura o peso que pudieran rechazar valores históricos atípicos.
+### 7.3 Coordenadas
 
-## 9. Validación física contra CSV
+Se utilizaron:
 
-El reporte `docs/schema/physical_model_validation.csv` contiene exactamente 66 columnas evaluadas, incluyendo explícitamente `ATLETA.id_pais_nacimiento`, `ATLETA.id_pais_nacionalidad` y `ATLETA.id_pais_fallecimiento`.
+```sql
+ATLETA.latitud  DECIMAL(19,16)
+ATLETA.longitud DECIMAL(19,16)
+```
+
+La precisión de 16 decimales permite conservar exactamente los valores observados en los CSV procesados.
+
+### 7.4 Peso registrado
+
+Se utilizó:
+
+```sql
+PARTICIPACION.peso_kg_registrado DECIMAL(16,13)
+```
+
+para evitar redondear los valores con mayor escala presentes en la fuente consolidada.
+
+---
+
+## 8. Claves primarias
+
+Se crearon diez claves primarias:
+
+| Tabla | PK |
+|---|---|
+| `ENTIDAD_GEOGRAFICA` | `id_entidad` |
+| `POBLACION` | `(id_entidad, anio)` |
+| `NOC` | `id_noc` |
+| `ATLETA` | `id_atleta` |
+| `SEDE` | `id_sede` |
+| `EDICION_OLIMPICA` | `id_edicion` |
+| `DEPORTE` | `id_deporte` |
+| `DISCIPLINA` | `id_disciplina` |
+| `EVENTO` | `id_evento` |
+| `PARTICIPACION` | `id_participacion` |
+
+Resultado:
+
+```text
+PK: 10
+```
+
+---
+
+## 9. Claves foráneas
+
+Se crearon 14 claves foráneas.
+
+Relaciones principales:
+
+```text
+POBLACION.id_entidad
+    → ENTIDAD_GEOGRAFICA.id_entidad
+
+NOC.id_entidad
+    → ENTIDAD_GEOGRAFICA.id_entidad
+
+ATLETA.id_pais_nacimiento
+ATLETA.id_pais_nacionalidad
+ATLETA.id_pais_fallecimiento
+    → ENTIDAD_GEOGRAFICA.id_entidad
+
+SEDE.id_pais
+    → ENTIDAD_GEOGRAFICA.id_entidad
+
+EDICION_OLIMPICA.id_sede
+    → SEDE.id_sede
+
+DISCIPLINA.id_deporte
+    → DEPORTE.id_deporte
+
+EVENTO.id_disciplina
+    → DISCIPLINA.id_disciplina
+
+PARTICIPACION.id_atleta
+    → ATLETA.id_atleta
+
+PARTICIPACION.id_edicion
+    → EDICION_OLIMPICA.id_edicion
+
+PARTICIPACION.id_evento
+    → EVENTO.id_evento
+
+PARTICIPACION.id_noc
+    → NOC.id_noc
+
+PARTICIPACION.id_pais_nacionalidad
+    → ENTIDAD_GEOGRAFICA.id_entidad
+```
+
+Resultado:
+
+```text
+FK: 14
+```
+
+Las FK conceptualmente opcionales permanecen `NULLABLE`, incluyendo `NOC.id_entidad`.
+
+---
+
+## 10. Restricciones UNIQUE
+
+Se definieron seis restricciones de unicidad:
+
+```text
+NOC(codigo_noc)
+SEDE(nombre, id_pais)
+EDICION_OLIMPICA(anio, temporada)
+DEPORTE(nombre)
+DISCIPLINA(id_deporte, nombre)
+EVENTO(id_disciplina, nombre)
+```
+
+Resultado:
+
+```text
+UNIQUE: 6
+```
+
+No se creó `UNIQUE` sobre `ENTIDAD_GEOGRAFICA.codigo_pais`, debido a la presencia de entidades agregadas e históricas.
+
+---
+
+## 11. Restricciones CHECK
+
+Se definieron tres restricciones `CHECK`.
+
+### Temporada
+
+`EDICION_OLIMPICA.temporada` admite únicamente:
+
+```text
+Summer
+Winter
+Intercalated Games
+Summer Youth
+Winter Youth
+```
+
+### Medalla
+
+`PARTICIPACION.medalla` admite:
+
+```text
+Gold
+Silver
+Bronze
+NULL
+```
+
+### Posición
+
+`PARTICIPACION.posicion` debe ser mayor que cero o `NULL`.
+
+Resultado:
+
+```text
+CHECK: 3
+```
+
+No se agregaron restricciones arbitrarias sobre edad, altura o peso que pudieran rechazar datos históricos válidos.
+
+---
+
+## 12. Validación física contra los CSV
+
+La validación fue ejecutada con:
+
+```powershell
+.\.venv\Scripts\python.exe .\scripts\python\04_validate_physical_model.py
+```
+
+El proceso evaluó exactamente las 66 columnas del modelo físico contra los diez CSV de:
+
+```text
+data/processed/
+```
+
+Resultado:
 
 ```text
 COBERTURA: 66/66
-PASS: 63
-FAIL: 3
+PASS: 66
+FAIL: 0
 ```
 
-Los tres `FAIL` son pérdidas de precisión por el tipo físico actual, no columnas faltantes ni desbordamientos de rango:
+Las siete columnas `DECIMAL` también fueron analizadas considerando precisión, escala y necesidad de redondeo.
 
-| Tabla.columna | Tipo SQL actual | Máx. enteros observados | Máx. decimales observados | Valores que requieren redondeo | Estado |
-|---|---:|---:|---:|---:|---|
-| `ATLETA.latitud` | `DECIMAL(9,6)` | 2 | 16 | 63,726 | FAIL |
-| `ATLETA.longitud` | `DECIMAL(9,6)` | 3 | 16 | 62,549 | FAIL |
-| `PARTICIPACION.peso_kg_registrado` | `DECIMAL(5,2)` | 3 | 13 | 6 | FAIL |
+| Columna | Tipo SQL | Redondeo |
+|---|---|---:|
+| `ATLETA.altura_cm` | `DECIMAL(5,2)` | 0 |
+| `ATLETA.peso_kg` | `DECIMAL(5,2)` | 0 |
+| `ATLETA.latitud` | `DECIMAL(19,16)` | 0 |
+| `ATLETA.longitud` | `DECIMAL(19,16)` | 0 |
+| `PARTICIPACION.edad` | `DECIMAL(5,2)` | 0 |
+| `PARTICIPACION.altura_cm_registrada` | `DECIMAL(5,2)` | 0 |
+| `PARTICIPACION.peso_kg_registrado` | `DECIMAL(16,13)` | 0 |
 
-Los otros cuatro DECIMAL no requieren redondeo con los valores actuales:
+Por lo tanto, el DDL definitivo conserva los valores actuales sin pérdida de precisión.
 
-| Tabla.columna | Tipo SQL actual | Máx. enteros | Máx. decimales | Redondeo |
-|---|---:|---:|---:|---:|
-| `ATLETA.altura_cm` | `DECIMAL(5,2)` | 3 | 0 | 0 |
-| `ATLETA.peso_kg` | `DECIMAL(5,2)` | 3 | 1 | 0 |
-| `PARTICIPACION.edad` | `DECIMAL(5,2)` | 2 | 0 | 0 |
-| `PARTICIPACION.altura_cm_registrada` | `DECIMAL(5,2)` | 3 | 0 | 0 |
+---
 
-La validación no declara PASS cuando existe pérdida de precisión. El rango entero de las siete columnas sí cabe en sus tipos actuales.
+## 13. Validación del schema en SQL Server
 
-Se verificaron especialmente:
+El script:
 
-- longitudes máximas de texto;
-- rangos de `INT`, `SMALLINT` y `BIGINT`;
-- población máxima de 8,024,997,028;
-- años entre 1896 y 2024;
-- temporadas observadas;
-- valores de sexo `F`, `Female`, `M`, `Male`;
-- estados `DNF`, `DNS`, `DQ`;
-- medallas `Gold`, `Silver`, `Bronze`;
-- códigos de país y NOC de tres caracteres;
-- rangos de latitud y longitud;
-- fechas ISO compatibles con `DATE`;
-- medidas numéricas de atleta y participación;
-- valores booleanos de `empatado`.
+```text
+scripts/sql/02_validate_schema.sql
+```
 
-### Precisión y escala
+consulta metadatos internos de SQL Server mediante:
 
-La lectura exacta con `Decimal` separa los dígitos enteros de los decimales observados y detecta valores cuyos dígitos posteriores a la escala SQL serían redondeados por SQL Server. Para conservar todos los valores actuales sin pérdida, las recomendaciones mínimas son:
+```text
+sys.tables
+sys.columns
+sys.key_constraints
+sys.foreign_keys
+sys.check_constraints
+sys.indexes
+sys.partitions
+```
 
-- `ATLETA.latitud`: `DECIMAL(18,16)`.
-- `ATLETA.longitud`: `DECIMAL(19,16)`.
-- Si ambas coordenadas deben compartir tipo: `DECIMAL(19,16)`.
-- `PARTICIPACION.peso_kg_registrado`: `DECIMAL(16,13)`.
+También valida `precision` y `scale` para las siete columnas `DECIMAL`.
 
-No se modificó el DDL ni ningún CSV. `DECIMAL(9,6)` no conserva exactamente las coordenadas actuales; requiere redondeo en 63,726 latitudes y 62,549 longitudes.
+Puede ejecutarse con:
 
-## 10. Validación real del schema
-
-`02_validate_schema.sql` consultó `sys.tables`, `sys.columns`, `sys.key_constraints`, `sys.foreign_keys`, `sys.check_constraints`, índices y particiones.
+```powershell
+Get-Content .\scripts\sql\02_validate_schema.sql -Raw |
+docker exec -i olimpiadas-sqlserver /opt/mssql-tools18/bin/sqlcmd `
+-S localhost -U sa -C -d OlimpiadasDB
+```
 
 Resultados:
 
 | Validación | Resultado |
 |---|---:|
-| Tablas esperadas bajo `olympics` | 10/10 |
-| Tablas extra bajo `olympics` | 0 |
+| Tablas esperadas en `olympics` | 10/10 |
+| Tablas extra en `olympics` | 0 |
 | Tablas finales en `dbo` | 0 |
-| Columnas tipo/longitud/NULL | 66/66 PASS |
-| PK y UNIQUE inspeccionados | 16 |
-| FK inspeccionadas | 14 |
-| CHECK inspeccionados | 3 |
+| Columnas | 66/66 PASS |
+| PK | 10 |
+| UNIQUE | 6 |
+| FK | 14 |
+| CHECK | 3 |
+| DECIMAL precision/scale | 7/7 PASS |
 | Tablas vacías | 10/10 |
 
-Las diez tablas quedaron vacías al finalizar este bloque.
+---
 
-La sección adicional de `02_validate_schema.sql` inspecciona `sys.columns.precision` y `sys.columns.scale` para las siete columnas DECIMAL y compara cada valor con el contrato esperado del DDL. La validación SQL de metadatos resulta PASS para los tipos actualmente definidos (`DECIMAL(5,2)` y `DECIMAL(9,6)`); esto confirma la estructura instalada, pero no elimina los tres FAIL de capacidad observados contra los CSV.
+## 14. Ediciones finales
 
-## 11. Análisis de temporadas y ediciones
+Después de la homologación realizada en el Bloque 4, el archivo:
 
-`docs/schema/edition_season_analysis.csv` contiene 63 filas `EDITION` y seis filas `SEASON_SUMMARY`, sin modificar `data/processed`.
+```text
+data/processed/edicion_olimpica.csv
+```
 
-| Temporada | Ediciones | Años | Participaciones |
-|---|---:|---|---:|
-| `Summer` | 31 | 1896–2024, incluyendo 1906 | 709,543 |
-| `Winter` | 24 | 1924–2022 | 108,387 |
-| `Intercalated Games` | 1 | 1906 | 2,300 |
-| `Summer Youth` | 3 | 2010, 2014, 2018 | 1,391 |
-| `Winter Youth` | 3 | 2012, 2016, 2020 | 4,684 |
-| `Equestrian` | 1 | 1956 | 300 |
+contiene:
 
-El archivo incluye la combinación `id_edicion`, `anio`, `temporada`, `id_sede`, `sede` y la cantidad de participaciones por edición.
+```text
+61 ediciones
+```
 
-Hallazgos conceptuales:
+Distribución:
 
-- `Equestrian` corresponde a los eventos ecuestres de 1956 realizados en Estocolmo por las restricciones australianas de cuarentena. No representa una edición olímpica independiente: debe asociarse a la edición Summer 1956, conservando la sede/ubicación específica si el diseño lo permite.
-- `Intercalated Games` corresponde a Atenas 1906. La documentación IOC/Olympic Studies Centre la trata como edición intercalada/intermedia y no como Juegos Olímpicos oficiales modernos. No es coherente como edición ordinaria del alcance actual.
-- `Summer Youth`: 2010 Singapur, 2014 Nanjing y 2018 Buenos Aires; son Juegos Olímpicos de la Juventud de verano, no ediciones Summer ordinarias.
-- `Winter Youth`: 2012 Innsbruck, 2016 Lillehammer y 2020 Lausanne; son Juegos Olímpicos de la Juventud de invierno, no ediciones Winter ordinarias.
-- `Summer` y `Winter` ordinarias son coherentes con el modelo, aunque algunas filas carecen de `id_sede`; esa ausencia debe revisarse en Bloque 4 antes de una aprobación final del alcance.
+| Tipo de edición | Cantidad |
+|---|---:|
+| Summer | 30 |
+| Winter | 24 |
+| Intercalated Games | 1 |
+| Summer Youth | 3 |
+| Winter Youth | 3 |
 
-Por tanto, se requiere una revisión temporal del Bloque 4 antes de aprobar el Bloque 5: definir si las categorías no oficiales/juveniles se excluyen del alcance, se modelan separadamente o se documentan con una política explícita. No se aplicó ninguna de esas decisiones en este bloque.
+La categoría `Equestrian` ya no existe como edición independiente.
 
-Referencias IOC/Olympic Studies Centre utilizadas para la interpretación: [The Olympic Movement](https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true), [Historical Archives](https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A), [Olympic Games style guide](https://library.olympics.com/Default/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=172063&skipWatermark=true) y [Youth Olympic Games](https://library.olympics.com/network/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3156139&parentDocumentId=3156138).
+Las 300 participaciones ecuestres de 1956 fueron homologadas a `1956 | Summer`, manteniendo Melbourne como sede principal y documentando Stockholm como excepción histórica en el Bloque 4.
 
-## 12. Estrategia de reejecución
+---
 
-`01_create_tables.sql` no ejecuta `DROP TABLE`. Si una tabla ya existe, la conserva y continúa; la estructura se verifica con `02_validate_schema.sql`.
+## 15. Confirmación de tablas vacías
 
-La recreación destructiva no está automatizada. Si se requiere un entorno limpio, debe utilizarse una base de desarrollo descartable y volver a ejecutar primero `00_create_database.sql` y después `01_create_tables.sql`.
+El Bloque 5 únicamente crea y valida el modelo físico.
 
-## 13. Evidencias visuales previstas
+Al finalizar, las diez tablas permanecen vacías:
 
-Las capturas deben mostrar fecha y hora actual del sistema:
+```text
+ENTIDAD_GEOGRAFICA    0
+POBLACION             0
+NOC                   0
+ATLETA                0
+SEDE                   0
+EDICION_OLIMPICA      0
+DEPORTE                0
+DISCIPLINA             0
+EVENTO                 0
+PARTICIPACION          0
+```
 
-1. [ ] ejecución de `01_create_tables.sql`;
-2. [ ] listado de las diez tablas bajo schema `olympics`;
-3. [ ] estructura y tipos de columnas;
-4. [ ] PK y UNIQUE;
-5. [ ] FK;
-6. [ ] CHECK constraints;
-7. [ ] validación general de `02_validate_schema.sql`;
-8. [ ] confirmación de las diez tablas vacías.
+Esto confirma que no se realizó carga de datos durante este bloque.
+
+---
+
+## 16. Estrategia de reejecución
+
+El script:
+
+```text
+scripts/sql/01_create_tables.sql
+```
+
+es no destructivo.
+
+Para validaciones rutinarias no es necesario borrar ni recrear las tablas.
+
+El script:
+
+```text
+scripts/sql/00_reset_physical_tables.sql
+```
+
+se mantiene separado porque es destructivo. Solo debe utilizarse cuando se desea recrear deliberadamente las diez tablas en un entorno de desarrollo vacío.
+
+Para obtener evidencias visuales **no es necesario volver a ejecutar el reset**.
+
+---
+
+## 17. Evidencias visuales
+
+Las capturas deben mostrar fecha y hora del sistema.
+
+### Evidencia 1 — Creación/verificación del modelo físico
+
+Ejecutar:
+
+```powershell
+Get-Content .\scripts\sql\01_create_tables.sql -Raw |
+docker exec -i olimpiadas-sqlserver /opt/mssql-tools18/bin/sqlcmd `
+-S localhost -U sa -C -d OlimpiadasDB
+```
+
+La captura debe mostrar el comando ejecutado sin errores.
+
+![Ejecución del modelo físico](../img/bloque5_01_create_tables.png)
+
+---
+
+### Evidencia 2 — Diez tablas del schema `olympics`
+
+En SSMS:
+
+```text
+Databases
+└── OlimpiadasDB
+    └── Tables
+```
+
+Expandir el listado y mostrar las diez tablas `olympics.*`.
+
+También puede comprobarse con:
+
+```sql
+SELECT
+    s.name AS schema_name,
+    t.name AS table_name
+FROM sys.tables t
+JOIN sys.schemas s ON s.schema_id = t.schema_id
+WHERE s.name = 'olympics'
+ORDER BY t.name;
+```
+
+![Tablas del schema olympics](../img/bloque5_02_tables.png)
+
+---
+
+### Evidencia 3 — Columnas y tipos físicos
+
+Ejecutar en SSMS:
+
+```sql
+SELECT
+    t.name AS tabla,
+    c.column_id,
+    c.name AS columna,
+    TYPE_NAME(c.user_type_id) AS tipo,
+    c.max_length,
+    c.precision,
+    c.scale,
+    c.is_nullable
+FROM sys.tables t
+JOIN sys.schemas s ON s.schema_id = t.schema_id
+JOIN sys.columns c ON c.object_id = t.object_id
+WHERE s.name = 'olympics'
+ORDER BY t.name, c.column_id;
+```
+
+La evidencia debe permitir observar los tipos `NVARCHAR`, `BIGINT`, `DATE`, `BIT` y los tipos `DECIMAL` definitivos.
+
+![Columnas y tipos físicos](../img/bloque5_03_columns_types.png)
+
+---
+
+### Evidencia 4 — PK y UNIQUE
+
+Ejecutar:
+
+```sql
+SELECT
+    t.name AS tabla,
+    kc.name AS constraint_name,
+    kc.type_desc
+FROM sys.key_constraints kc
+JOIN sys.tables t ON t.object_id = kc.parent_object_id
+JOIN sys.schemas s ON s.schema_id = t.schema_id
+WHERE s.name = 'olympics'
+ORDER BY t.name, kc.type_desc;
+```
+
+Debe observarse:
+
+```text
+10 PRIMARY KEY
+6 UNIQUE
+```
+
+![PK y UNIQUE](../img/bloque5_04_pk_unique.png)
+
+---
+
+### Evidencia 5 — Claves foráneas
+
+Ejecutar:
+
+```sql
+SELECT
+    OBJECT_SCHEMA_NAME(fk.parent_object_id) AS schema_name,
+    OBJECT_NAME(fk.parent_object_id) AS tabla_origen,
+    fk.name AS foreign_key,
+    OBJECT_NAME(fk.referenced_object_id) AS tabla_destino
+FROM sys.foreign_keys fk
+WHERE OBJECT_SCHEMA_NAME(fk.parent_object_id) = 'olympics'
+ORDER BY tabla_origen, foreign_key;
+```
+
+Debe observarse:
+
+```text
+14 claves foráneas
+```
+
+![Claves foráneas](../img/bloque5_05_foreign_keys.png)
+
+---
+
+### Evidencia 6 — CHECK constraints
+
+Ejecutar:
+
+```sql
+SELECT
+    OBJECT_NAME(cc.parent_object_id) AS tabla,
+    cc.name AS constraint_name,
+    cc.definition
+FROM sys.check_constraints cc
+WHERE OBJECT_SCHEMA_NAME(cc.parent_object_id) = 'olympics'
+ORDER BY tabla, constraint_name;
+```
+
+Debe observarse:
+
+```text
+3 CHECK constraints
+```
+
+incluyendo temporada, medalla y posición.
+
+![CHECK constraints](../img/bloque5_06_check_constraints.png)
+
+---
+
+### Evidencia 7 — Validación general del schema
+
+Ejecutar:
+
+```powershell
+Get-Content .\scripts\sql\02_validate_schema.sql -Raw |
+docker exec -i olimpiadas-sqlserver /opt/mssql-tools18/bin/sqlcmd `
+-S localhost -U sa -P "$env:MSSQL_SA_PASSWORD" -C -d OlimpiadasDB
+```
+
+La captura debe mostrar los resultados principales:
+
+```text
+10 tablas
+66 columnas
+10 PK
+6 UNIQUE
+14 FK
+3 CHECK
+7/7 DECIMAL
+10 tablas vacías
+```
+
+![Validación general del schema](../img/bloque5_07_schema_validation.png)
+
+---
+
+### Evidencia 8 — Validación física de los CSV
+
+Ejecutar:
+
+```powershell
+.\.venv\Scripts\python.exe .\scripts\python\04_validate_physical_model.py
+```
+
+La terminal debe mostrar:
+
+```text
+Columnas validadas: 66
+PASS/FAIL: 66/0
+```
+
+![Validación física](../img/bloque5_08_physical_validation.png)
+
+---
+
+### Evidencia 9 — Confirmación de tablas vacías
+
+Ejecutar en SSMS:
+
+```sql
+SELECT 'ENTIDAD_GEOGRAFICA' AS tabla, COUNT(*) AS filas FROM olympics.ENTIDAD_GEOGRAFICA
+UNION ALL
+SELECT 'POBLACION', COUNT(*) FROM olympics.POBLACION
+UNION ALL
+SELECT 'NOC', COUNT(*) FROM olympics.NOC
+UNION ALL
+SELECT 'ATLETA', COUNT(*) FROM olympics.ATLETA
+UNION ALL
+SELECT 'SEDE', COUNT(*) FROM olympics.SEDE
+UNION ALL
+SELECT 'EDICION_OLIMPICA', COUNT(*) FROM olympics.EDICION_OLIMPICA
+UNION ALL
+SELECT 'DEPORTE', COUNT(*) FROM olympics.DEPORTE
+UNION ALL
+SELECT 'DISCIPLINA', COUNT(*) FROM olympics.DISCIPLINA
+UNION ALL
+SELECT 'EVENTO', COUNT(*) FROM olympics.EVENTO
+UNION ALL
+SELECT 'PARTICIPACION', COUNT(*) FROM olympics.PARTICIPACION;
+```
+
+Los diez resultados deben mostrar:
+
+```text
+0 filas
+```
+
+![Tablas vacías](../img/bloque5_09_empty_tables.png)
+
+---
+
+## 18. Resultado final
+
+El modelo físico definitivo quedó validado con los siguientes resultados:
+
+```text
+Tablas:                  10/10
+Columnas:                66/66 PASS
+PK:                      10
+UNIQUE:                  6
+FK:                      14
+CHECK:                   3
+DECIMAL precision/scale: 7/7 PASS
+Validación CSV:          66/66 PASS
+Tablas vacías:           10/10
+Ediciones procesadas:    61
+Participaciones CSV:     826,605
+```
+
+No se truncaron datos ni se detectó pérdida de precisión con los tipos físicos definitivos.
 
 No se cargaron datos y no se inició el Bloque 6.
 
-## 14. Decisiones pendientes antes del Bloque 6
-
-- Decidir si latitud y longitud deben cambiar a un tipo que conserve todos los valores actuales; la recomendación mínima conjunta es `DECIMAL(19,16)`.
-- Decidir el tratamiento de `PARTICIPACION.peso_kg_registrado`, cuyo tipo actual redondearía 6 valores; la recomendación mínima observada es `DECIMAL(16,13)`.
-- Revisar en Bloque 4 `Equestrian`, `Intercalated Games`, `Summer Youth` y `Winter Youth` antes de aceptar esas categorías como `EDICION_OLIMPICA`.
-- Revisar externamente los dos ajustes de capacidad: `temporada NVARCHAR(20)` y `titulos NVARCHAR(2000)`.
-- Ejecutar la carga únicamente después de revisar el DDL, las restricciones y los archivos finales.
+**Estado técnico final del Bloque 5: COMPLETADO Y APROBADO.**
