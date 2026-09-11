@@ -30,13 +30,13 @@ BEGIN TRY
     WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
     BULK INSERT stg.ATLETA
     FROM '/var/opt/mssql/import/processed/atleta.csv'
-    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
+    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0d0a', TABLOCK);
     BULK INSERT stg.SEDE
     FROM '/var/opt/mssql/import/processed/sede.csv'
     WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
     BULK INSERT stg.EDICION_OLIMPICA
     FROM '/var/opt/mssql/import/processed/edicion_olimpica.csv'
-    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
+    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0d0a', TABLOCK);
     BULK INSERT stg.DEPORTE
     FROM '/var/opt/mssql/import/processed/deporte.csv'
     WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
@@ -45,10 +45,10 @@ BEGIN TRY
     WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
     BULK INSERT stg.EVENTO
     FROM '/var/opt/mssql/import/processed/evento.csv'
-    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
+    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0d0a', TABLOCK);
     BULK INSERT stg.PARTICIPACION
     FROM '/var/opt/mssql/import/processed/participacion.csv'
-    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0a', TABLOCK);
+    WITH (FORMAT = 'CSV', FIELDQUOTE = '"', FIRSTROW = 2, ROWTERMINATOR = '0x0d0a', TABLOCK);
 
     /* Los archivos fueron generados con CRLF; SQL Server Linux usa 0x0a como
        terminador y deja CR en el último campo. Se elimina únicamente ese

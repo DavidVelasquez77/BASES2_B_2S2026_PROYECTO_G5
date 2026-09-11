@@ -1,0 +1,44 @@
+categoria,validacion,esperado,actual,estado,detalle
+precheck,processed_sha256,10/10 MATCH,10/10 MATCH,PASS,Comparado antes y después contra processed_manifest_after_block4_apply.csv
+precheck,processed_counts,1090667,1090667,PASS,Conteos locales exactos antes de reconstruir
+precheck,line_endings,terminadores por archivo,4 CRLF y 6 LF,PASS,Detalle en processed_line_endings_20260910.csv
+script,row_terminator_fix,solo ROWTERMINATOR,solo ROWTERMINATOR,PASS,04_bulk_load_staging.sql modificado sin cambios de schema o ETL
+staging,ENTIDAD_GEOGRAFICA,282,282,PASS,Conteo staging
+staging,POBLACION,17024,17024,PASS,Conteo staging
+staging,NOC,236,236,PASS,Conteo staging
+staging,ATLETA,336419,336419,PASS,Conteo staging
+staging,SEDE,42,42,PASS,Conteo staging
+staging,EDICION_OLIMPICA,61,61,PASS,Conteo staging
+staging,DEPORTE,65,65,PASS,Conteo staging
+staging,DISCIPLINA,117,117,PASS,Conteo staging
+staging,EVENTO,3007,3007,PASS,Conteo staging
+staging,PARTICIPACION,733414,733414,PASS,Conteo staging
+staging,total,1090667,1090667,PASS,Suma de las diez tablas staging
+final,ENTIDAD_GEOGRAFICA,282,282,PASS,Conteo SQL final
+final,POBLACION,17024,17024,PASS,Conteo SQL final
+final,NOC,236,236,PASS,Conteo SQL final
+final,ATLETA,336419,336419,PASS,Conteo SQL final
+final,SEDE,42,42,PASS,Conteo SQL final
+final,EDICION_OLIMPICA,61,61,PASS,Conteo SQL final
+final,DEPORTE,65,65,PASS,Conteo SQL final
+final,DISCIPLINA,117,117,PASS,Conteo SQL final
+final,EVENTO,3007,3007,PASS,Conteo SQL final
+final,PARTICIPACION,733414,733414,PASS,Conteo SQL final
+final,total,1090667,1090667,PASS,Suma de las diez tablas olympics
+physical,tables,10,10,PASS,Tablas olympics
+physical,columns,66,66,PASS,Columnas olympics
+physical,PK,10,10,PASS,Claves primarias activas
+physical,UQ,6,6,PASS,Restricciones UNIQUE activas
+physical,FK,14,14,PASS,Claves foráneas activas
+physical,CHECK,3,3,PASS,Checks activos
+physical,indexes_additional,8,8,PASS,Índices IX_ aprobados
+integrity,PK_duplicates,0,0,PASS,08_validate_loaded_data.sql
+integrity,FK_orphans,0,0,PASS,14 FK verificadas
+integrity,DECIMAL,7 campos sin diferencias,7 campos sin diferencias,PASS,Comparación staging/final sin redondeo
+integrity,Unicode,26261 comparados; 0 diferencias,26261 comparados; 0 diferencias,PASS,CSV oficial atleta.csv contra olympics.ATLETA por id_atleta
+functional,Messi,1 identidad y 1 participación,110178 y 1 participación,PASS,1987-06-24; 2008 Summer; ARG; evento 303; posición 1; Gold; id 167544 ausente
+special,1906,Intercalated=1 y Summer=0,Intercalated=1 y Summer=0,PASS,No se duplicó la edición
+special,1956,Spring/Summer=1 y Equestrian=0,Summer=1 y Equestrian=0,PASS,Equestrian no existe como temporada final
+special,Youth,Summer Youth=3; Winter Youth=3,Summer Youth=3; Winter Youth=3,PASS,Categorías preservadas
+special,Zappas,excluido y auditado,excluido y auditado,PASS,Referencia en excluded_non_official_participations.csv
+special,NOC_historicos,nullable conservado,5 NOC con id_entidad NULL,PASS,No se forzó entidad para NOC especiales

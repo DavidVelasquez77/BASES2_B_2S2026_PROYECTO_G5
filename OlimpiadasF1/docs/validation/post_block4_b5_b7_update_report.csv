@@ -1,0 +1,14 @@
+tipo,archivo,detalle,valor_anterior,valor_nuevo_o_accion,estado
+MODIFICADO,scripts/sql/05_validate_staging.sql,Expectativas activas de staging,"ATLETA=338772; EVENTO=3106; PARTICIPACION=826605","ATLETA=336419; EVENTO=3007; PARTICIPACION=733414",UPDATED
+MODIFICADO,scripts/sql/08_validate_loaded_data.sql,Expectativas activas de tablas finales,"ATLETA=338772; EVENTO=3106; PARTICIPACION=826605","ATLETA=336419; EVENTO=3007; PARTICIPACION=733414",UPDATED
+MODIFICADO,scripts/sql/10_final_validation.sql,Expectativas de conteo final y comprobaciones explícitas,"ATLETA=338772; EVENTO=3106; PARTICIPACION=826605","ATLETA=336419; EVENTO=3007; PARTICIPACION=733414",UPDATED
+MODIFICADO,scripts/python/09_generate_loading_reports.py,Lista de entidades esperadas,"ATLETA=338772; EVENTO=3106; PARTICIPACION=826605","ATLETA=336419; EVENTO=3007; PARTICIPACION=733414; tiempos históricos sin cambios",UPDATED
+MODIFICADO,README.md,Estado final documentado,"ATLETA=338772; EVENTO=3106; PARTICIPACION=826605; total=1186310","ATLETA=336419; EVENTO=3007; PARTICIPACION=733414; total=1090667; histórico pre-Bloque 4 preservado",UPDATED
+MODIFICADO,docs/Evidence/Evidences_Bloque7.md,Secciones de conteos y cierre,"ATLETA=338772; EVENTO=3106; PARTICIPACION=826605; total=1186310","Expectativas vigentes 336419/3007/733414; SQL post-Bloque 4 pendiente; corrida anterior rotulada como histórica",UPDATED
+CREADO,docs/FINAL_DELIVERY_CHECKLIST.md,Checklist final y pendientes SQL,No existía,"Checklist creado; solo integridad de data/processed marcada 10/10 MATCH; validaciones dependientes de SQL sin marcar",CREATED
+PENDIENTE,docs/loading/load_counts.csv,Reporte generado de carga,Conteos pre-Bloque 4,Regenerar con resultados SQL reales posteriores; no editar manualmente,PENDING
+PENDIENTE,docs/loading/load_validation.csv,Reporte generado de validación,Conteos pre-Bloque 4,Regenerar con resultados SQL reales posteriores; no editar manualmente,PENDING
+PENDIENTE,docs/schema/physical_model_validation.csv,Reporte generado del modelo físico,Observaciones pre-Bloque 4,Regenerar contra los CSV vigentes sin cambiar el modelo físico,PENDING
+PENDIENTE,docs/final/final_validation_report.csv,Reporte final generado,Conteos pre-Bloque 4,Regenerar después de validación SQL real; no declarar PASS ahora,PENDING
+VERIFICACION,data/processed/,Hashes contra processed_manifest_after_block4_apply.csv,Estado posterior al apply,10/10 MATCH; ningún CSV modificado en esta tarea,PASS
+HISTORICO,docs/loading/load_metrics_run_20260909.csv; docs/consolidation/*; docs/Evidence/Evidences_Bloque4.md; docs/Evidence/Evidences_Bloque5.md; docs/Evidence/Evidences_Bloque6.md,Artefactos históricos,338772/3106/826605/1186310 conservados,No reemplazar; no representan conteos vigentes,PRESERVED

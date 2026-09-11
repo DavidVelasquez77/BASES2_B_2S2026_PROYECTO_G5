@@ -1,0 +1,11 @@
+﻿caracteristica,backup_before_block4_apply,processed_actual,diferencia,interpretacion
+encoding,UTF-8,UTF-8,IGUAL
+BOM,SI,NO,DIFERENTE
+terminador_linea,LF,CRLF,DIFERENTE
+terminador_ultima_linea,SI,SI,IGUAL
+delimitador,",",",",IGUAL
+quotechar,"""","""",IGUAL
+doublequote,SI,SI,IGUAL
+escapechar,NO_EXPLICITO,NO_EXPLICITO,IGUAL
+filas_datos,3106,3007,DIFERENTE
+bytes,126935,125616,DIFERENTE

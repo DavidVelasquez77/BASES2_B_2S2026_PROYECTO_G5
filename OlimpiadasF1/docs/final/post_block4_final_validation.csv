@@ -1,0 +1,13 @@
+validacion,esperado,actual,estado,detalle
+10_final_validation,26,26,PASS,"Validación estructural y de datos finales: 26/26 PASS."
+11_special_cases_validation,8,8,PASS,"1906, 1956 Equestrian, Youth y Zappas: 8/8 PASS."
+consultas_funcionales,PASS,PASS,PASS,"12_functional_queries.sql ejecutado únicamente contra olympics.*; consultas de atleta, país/NOC, medalla, sin medalla, DNF/DNS/DQ, empate, NOC histórico, Youth, 1906 y Unicode sin error."
+Messi,PASS,PASS,PASS,"id_atleta 110178, nacimiento 1987-06-24, id 167544 ausente y una participación exacta 2008 Summer/ARG/Argentina/evento 303/posición 1/Gold."
+Unicode,"26261 nombres no ASCII",0 diferencias,PASS,"Comparación exacta CSV procesado → olympics.ATLETA.nombre."
+DECIMAL,7/7,0 discrepancias,PASS,"Siete columnas DECIMAL sin pérdida de precisión."
+constraints,"10 PK; 6 UQ; 14 FK; 3 CHECK","10 PK; 6 UQ; 14 FK; 3 CHECK",PASS,"Constraints activos y validados."
+indices,8,8,PASS,"Ocho índices adicionales justificados."
+processed_sha,10/10 MATCH,10/10 MATCH,PASS,"data/processed intacto contra el manifiesto posterior al Bloque 4."
+Equestrian_1956,536,536,PASS,"Conteo vigente de participaciones; el valor 586 se conserva solo como histórico pre-Bloque 4."
+conteos_totales,1090667,1090667,PASS,"Total actual: 282 + 17024 + 236 + 61 + 65 + 117 + 3007 + 733414 + 336419 + 42."
+FINAL_DATABASE_VALIDATION,PASS,PASS,PASS,"Cierre técnico final posterior al Bloque 4."

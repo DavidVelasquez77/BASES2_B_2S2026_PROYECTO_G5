@@ -1,0 +1,11 @@
+﻿archivo,line_ending,terminator_sql
+atleta.csv,CRLF,0x0d0a
+deporte.csv,LF,0x0a
+disciplina.csv,LF,0x0a
+edicion_olimpica.csv,CRLF,0x0d0a
+entidad_geografica.csv,LF,0x0a
+evento.csv,CRLF,0x0d0a
+noc.csv,LF,0x0a
+participacion.csv,CRLF,0x0d0a
+poblacion.csv,LF,0x0a
+sede.csv,LF,0x0a

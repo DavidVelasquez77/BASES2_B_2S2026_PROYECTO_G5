@@ -1,0 +1,11 @@
+fecha_registro,base,esquema,tabla,filas,observacion
+2026-09-10,OlimpiadasDB,olympics,ENTIDAD_GEOGRAFICA,282,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,POBLACION,17024,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,NOC,236,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,ATLETA,338772,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,SEDE,42,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,EDICION_OLIMPICA,61,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,DEPORTE,65,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,DISCIPLINA,117,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,EVENTO,3106,Estado SQL previo al reset controlado; no usado como expectativa
+2026-09-10,OlimpiadasDB,olympics,PARTICIPACION,826605,Estado SQL previo al reset controlado; no usado como expectativa

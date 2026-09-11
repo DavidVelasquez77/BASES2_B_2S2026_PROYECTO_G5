@@ -1,0 +1,16 @@
+prueba,id_evento_a,id_evento_b,clasificacion,estado,detalle,motivo
+500 metres != 1500 metres,57,95,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"500 metres Freestyle, Men (Olympic) || 1,500 metres, Men (Olympic)",No se puede demostrar deporte.
+200 metres != 1200 metres,354,58,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"200 metres Hurdles, Men (Olympic) || 1,200 metres Freestyle, Men (Olympic)",No se puede demostrar deporte.
+5.5 metres != 6.5 metres,986,1009,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"5.5 metres, Open (Olympic) || 6.5 metres, Open (Olympic)",No se puede demostrar deporte.
+10 km != 15 km,1369,2294,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Normal Hill / 10 km, Individual, Men (Olympic) || Cross Country Skiing Women's 15 km Skiathlon",No se puede demostrar deporte.
+10 km != 10/15 km Pursuit,1369,,NOT_AVAILABLE,NOT_AVAILABLE_IN_PROCESSED_EVENTO,"left=Normal Hill / 10 km, Individual, Men (Olympic); right=",No se encontraron ambos ejemplos en evento.csv.
+5 km != 5/10 km Pursuit,1801,,NOT_AVAILABLE,NOT_AVAILABLE_IN_PROCESSED_EVENTO,"left=Normal Hill / 5 km, Individual, Boys (YOG); right=",No se encontraron ambos ejemplos en evento.csv.
+Single Shot != Double Shot,517,518,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Running Target, Single Shot, Team, Men (Olympic) || Running Target, Double Shot, Team, Men (Olympic)","Difieren distancia, secuencia numérica, peso, modalidad, edad, medalla o modificadores; no se autoriza por similitud textual."
+Singles != Doubles,1,2,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Singles, Men (Olympic) || Doubles, Men (Olympic)","Difieren distancia, secuencia numérica, peso, modalidad, edad, medalla o modificadores; no se autoriza por similitud textual."
+Team != Individual,37,8,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Team, Women (Olympic) || Épée, Individual, Men (Olympic)",deporte incompatible: table tennis != fencing.
+Four != Four/Five,158,240,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Four, Men (Olympic) || Four/Five, Men (Olympic)","Difieren distancia, secuencia numérica, peso, modalidad, edad, medalla o modificadores; no se autoriza por similitud textual."
+Youth != Adult,1486,,NOT_AVAILABLE,NOT_AVAILABLE_IN_PROCESSED_EVENTO,"left=Team, Mixed Youth (YOG); right=",No se encontraron ambos ejemplos en evento.csv.
+coxed != coxless,307,627,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Coxed Pairs (1 kilometre), Men (Intercalated) || Coxless Pairs, Women (Olympic)",No se puede demostrar deporte.
+lightweight != heavyweight/open,106,102,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Lightweight, Men (Olympic) || Light-Heavyweight, Men (Olympic)",No se puede demostrar deporte.
+Dramatic != Epic,1129,1140,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Literature, Dramatic Works, Open (Olympic) || Literature, Epic Works, Open (Olympic)",No se puede demostrar deporte.
+Dramatic != Lyric,1129,648,REVIEW_EVENT_ALIAS,PASS_SEPARATED,"Literature, Dramatic Works, Open (Olympic) || Literature, Lyric Works, Open (Olympic)",No se puede demostrar deporte.

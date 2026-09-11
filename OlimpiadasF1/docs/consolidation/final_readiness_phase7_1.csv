@@ -1,0 +1,13 @@
+control,esperado,actual,estado,detalle
+regresiones_reales_pass,sin FAIL; PASS válidos,12,PASS,PASS reales=12; no se altera NOT_APPLICABLE.
+regresiones_reales_not_applicable,3 justificadas,3,PASS,No existe un par completo de eventos procesados para evaluar estos casos.
+regresiones_sinteticas,3 PASS,3,PASS,Misma lógica parse_event de Fase 5.
+football_alias_positive,PASS,1,PASS,Control positivo sintético.
+messi,PASS,PASS,PASS,Canónico 110178; una participación 2008 Football ARG Gold.
+preview_counts,coincide con final_projected_counts_phase7,"{""ATLETA"": 336419, ""EVENTO"": 3007, ""PARTICIPACION"": 733414}",PASS,Comparación contra reporte previo; no valores hardcodeados.
+integridad_referencial_preview,PASS,PASS,PASS,Participación → atleta/evento.
+unicode,0 diferencias,0,PASS,Comparación exacta CSV → preview SQL-equivalente.
+sha256_processed,10/10 MATCH,10/10 MATCH,PASS,Hash actual contra hashes previos.
+componentes_review_aplicados,0,0,PASS,El mapa aplicado solo contiene componentes FINAL_SAFE.
+same_source_review_aplicados,0,0,PASS,No se materializaron merges SAME_SOURCE_REVIEW.
+conflictos_atributo_aprobados,0,0,PASS,Componentes con conflicto fueron enviados a revisión.

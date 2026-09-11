@@ -16,6 +16,8 @@ Este orden separa creación, staging, carga, índices y auditoría. Los scripts 
 12. `scripts/sql/12_functional_queries.sql`
 13. `scripts/python/13_generate_final_validation_report.py`
 
+Estado de la ejecución vigente posterior al Bloque 4: `DB_REBUILD_SUCCESS` y `FINAL_DATABASE_VALIDATION_PASS`. La última regeneración produjo 34/34 validaciones PASS. No se deben repetir resets ni `06_load_final.sql` sobre esta base cargada.
+
 Los CSV procesados se montan en el contenedor bajo `/var/opt/mssql/import/processed/`. El servicio publica SQL Server en `localhost,1434`; la autenticación local usa el secreto de `.env` sin documentarlo.
 
 `scripts/sql/03_reset_staging.sql` y `scripts/sql/00_reset_physical_tables.sql` son herramientas manuales de desarrollo. No forman parte del flujo normal, no se ejecutan automáticamente y no deben usarse durante la auditoría final.

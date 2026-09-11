@@ -1,0 +1,20 @@
+validacion,esperado,actual,estado,detalle
+processed_sha256,10/10 MATCH,10/10 MATCH,PASS,Los diez CSV oficiales coinciden con processed_manifest_after_block4_apply.csv antes y después del intento
+processed_counts,1090667,1090667,PASS,Los diez conteos locales coincidieron antes de la ejecución
+container,olimpiadas-sqlserver,olimpiadas-sqlserver,PASS,Contenedor activo y puerto 1434->1433
+database,OlimpiadasDB ONLINE,OlimpiadasDB ONLINE,PASS,Base objetivo verificada antes del reset
+sql_server_version,SQL Server 2025,SQL Server 2025 RTM-CU8-GDR 17.0.4085.5,PASS,Versión consultada antes del reset
+processed_mount,10 CSV,10 CSV,PASS,Montaje /var/opt/mssql/import/processed/ verificado
+pre_rebuild_sql_counts,registro creado,docs/loading/pre_rebuild_sql_counts_20260910.csv,PASS,Estado anterior guardado como evidencia histórica
+reset_physical,script oficial PASS,script oficial PASS,PASS,00_reset_physical_tables.sql ejecutado sobre OlimpiadasDB
+create_tables,10 tablas creadas,10 tablas recreadas,PASS,01_create_tables.sql ejecutado sin carga
+staging_reset,staging vacío,staging vaciado,PASS,03_reset_staging.sql usado porque las tablas staging ya existían
+bulk_load_staging,10 CSV cargados,evento.csv fila 2 columna 3 rechazado,FAIL,SQL Server Msg 4879 invalid column value; la transacción de bulk load falló
+validate_staging,PASS,NO EJECUTADO,NOT_RUN,Detención obligatoria después del fallo de staging
+load_final,PASS,NO EJECUTADO,NOT_RUN,06_load_final.sql no ejecutado
+indexes,8 índices IX_,NO EJECUTADO,NOT_RUN,07_create_indexes.sql no ejecutado
+final_validation,PASS,NO EJECUTADO,NOT_RUN,08_validate_loaded_data.sql no ejecutado
+decimal,7/7 sin diferencias,NO EJECUTADO,NOT_RUN,Requiere carga staging y final exitosa
+unicode,26261 comparados y 0 diferencias,NO EJECUTADO,NOT_RUN,Requiere nueva tabla ATLETA cargada
+messi,PASS,NO EJECUTADO,NOT_RUN,Requiere nueva tabla ATLETA/PARTICIPACION cargada
+special_cases,1906/1956/Youth/Zappas/NOC,PENDIENTE,NOT_RUN,No se ejecutaron validaciones posteriores al fallo

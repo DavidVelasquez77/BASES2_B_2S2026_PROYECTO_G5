@@ -1,0 +1,9 @@
+paso,script,fecha_inicio,fecha_fin,segundos,estado
+reset_physical,scripts/sql/00_reset_physical_tables.sql,2026-09-10T17:50:46.5512035-06:00,2026-09-10T17:50:47.2331742-06:00,0.682,PASS
+create_tables,scripts/sql/01_create_tables.sql,2026-09-10T17:50:47.2514220-06:00,2026-09-10T17:50:47.8254587-06:00,0.574,PASS
+reset_staging_existing,scripts/sql/03_reset_staging.sql,2026-09-10T17:50:47.8273418-06:00,2026-09-10T17:50:48.3317700-06:00,0.504,PASS
+bulk_load_staging,scripts/sql/04_bulk_load_staging.sql,2026-09-10T17:50:48.3324486-06:00,2026-09-10T17:51:01.9462199-06:00,13.614,FAIL
+validate_staging,scripts/sql/05_validate_staging.sql,,,,NOT_RUN
+load_final,scripts/sql/06_load_final.sql,,,,NOT_RUN
+create_indexes,scripts/sql/07_create_indexes.sql,,,,NOT_RUN
+validate_loaded_data,scripts/sql/08_validate_loaded_data.sql,,,,NOT_RUN

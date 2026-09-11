@@ -1,0 +1,21 @@
+tipo,caso,ids,estado,detalle
+EVENT_NEGATIVE_REGRESSION,500 metres != 1500 metres,57;95,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,200 metres != 1200 metres,354;58,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,5.5 metres != 6.5 metres,986;1009,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,10 km != 15 km,1369;2294,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,10 km != 10/15 km Pursuit,1369;,NOT_APPLICABLE,El reporte de regresión no contiene ambos IDs; no se afirma separación.
+EVENT_NEGATIVE_REGRESSION,5 km != 5/10 km Pursuit,1801;,NOT_APPLICABLE,El reporte de regresión no contiene ambos IDs; no se afirma separación.
+EVENT_NEGATIVE_REGRESSION,Single Shot != Double Shot,517;518,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,Singles != Doubles,1;2,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,Team != Individual,37;8,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,Four != Four/Five,158;240,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,Youth != Adult,1486;,NOT_APPLICABLE,El reporte de regresión no contiene ambos IDs; no se afirma separación.
+EVENT_NEGATIVE_REGRESSION,coxed != coxless,307;627,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,lightweight != heavyweight/open,106;102,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,Dramatic != Epic,1129;1140,PASS,Se mantienen separados por el dry-run final.
+EVENT_NEGATIVE_REGRESSION,Dramatic != Lyric,1129;648,PASS,Se mantienen separados por el dry-run final.
+MESSI_REGRESSION,110178 + 167544,110178;167544,PASS,atletas_preview=1; participaciones_2008_ARG_Gold=1
+SPECIAL_CASE,Youth,,PASS,Ediciones originales no modificadas por este dry-run.
+SPECIAL_CASE,1906,,PASS,Ediciones originales no modificadas por este dry-run.
+SPECIAL_CASE,1956,,PASS,Ediciones originales no modificadas por este dry-run.
+SPECIAL_CASE,Zappas,,PASS,Exclusión auditada preexistente conservada.

@@ -4,11 +4,15 @@ Proyecto de integración, limpieza, homologación y carga de datos históricos d
 
 ## Estado de entrega
 
-Los Bloques 1–6 están ejecutados. El Bloque 7 contiene la validación final y la preparación de entrega. La aprobación académica definitiva queda sujeta a revisión externa.
+Los Bloques 1–6 están ejecutados y el Bloque 7 cuenta con validación técnica final PASS. La aprobación académica definitiva queda sujeta a revisión externa.
+
+Estado técnico vigente: `FINAL_DATABASE_VALIDATION_PASS` — `10_final_validation` 26/26 PASS, `11_special_cases_validation` 8/8 PASS y reporte final regenerado con 34/34 validaciones PASS.
 
 La base `OlimpiadasDB` contiene los schemas `olympics` y `stg`. El modelo final tiene diez entidades lógicas: `ENTIDAD_GEOGRAFICA`, `POBLACION`, `NOC`, `ATLETA`, `SEDE`, `EDICION_OLIMPICA`, `DEPORTE`, `DISCIPLINA`, `EVENTO` y `PARTICIPACION`. `stg` es infraestructura ETL y no una entidad del modelo conceptual.
 
-Conteos finales: 282 entidades geográficas, 17,024 poblaciones, 236 NOC, 338,772 atletas, 42 sedes, 61 ediciones, 65 deportes, 117 disciplinas, 3,106 eventos y 826,605 participaciones.
+Conteos finales vigentes posteriores a la aplicación oficial del Bloque 4: 282 entidades geográficas, 17,024 poblaciones, 236 NOC, 336,419 atletas, 42 sedes, 61 ediciones, 65 deportes, 117 disciplinas, 3,007 eventos y 733,414 participaciones. Total vigente derivado: 1,090,667.
+
+Los conteos 338,772 atletas, 3,106 eventos y 826,605 participaciones, con total histórico 1,186,310, corresponden al estado pre-Bloque 4 y se conservan únicamente en reportes de ejecución anterior, respaldos y dry-runs.
 
 ## Requisitos y configuración
 

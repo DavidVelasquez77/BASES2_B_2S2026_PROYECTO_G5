@@ -1,0 +1,11 @@
+paso,script,inicio,fin,segundos,estado
+reset_physical,scripts/sql/00_reset_physical_tables.sql,2026-09-10T18:18:40.9196034-06:00,2026-09-10T18:18:41.4796177-06:00,0.560,PASS
+create_tables,scripts/sql/01_create_tables.sql,2026-09-10T18:18:41.4997150-06:00,2026-09-10T18:18:41.9933775-06:00,0.494,PASS
+reset_staging_existing,scripts/sql/03_reset_staging.sql,2026-09-10T18:18:41.9967584-06:00,2026-09-10T18:18:42.5316867-06:00,0.535,PASS
+bulk_load_staging,scripts/sql/04_bulk_load_staging.sql,2026-09-10T18:18:42.5322791-06:00,2026-09-10T18:19:15.2738677-06:00,32.742,PASS
+validate_staging,scripts/sql/05_validate_staging.sql,2026-09-10T18:20:09.3724689-06:00,2026-09-10T18:21:05.3890319-06:00,56.017,PASS
+load_final,scripts/sql/06_load_final.sql,2026-09-10T18:21:05.4138344-06:00,2026-09-10T18:21:40.7038500-06:00,35.290,PASS
+create_indexes,scripts/sql/07_create_indexes.sql,2026-09-10T18:21:40.7054593-06:00,2026-09-10T18:21:46.1021922-06:00,5.397,PASS
+validate_loaded_data,scripts/sql/08_validate_loaded_data.sql,2026-09-10T18:21:46.1036004-06:00,2026-09-10T18:22:03.9553766-06:00,17.852,PASS
+generate_loading_reports,scripts/python/09_generate_loading_reports.py,2026-09-10T18:22:29.5009660-06:00,2026-09-10T18:24:08.6085812-06:00,99.108,PASS
+validate_physical_model,scripts/python/04_validate_physical_model.py,2026-09-10T18:25:00.9790337-06:00,2026-09-10T18:25:25.6535069-06:00,24.674,PASS

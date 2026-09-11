@@ -14,14 +14,21 @@ Durante este bloque:
 - no se implementaron procedimientos almacenados;
 - no se inició ningún Bloque 8.
 
-Resultado técnico:
+Resultado técnico vigente:
 
 ```text
-Validaciones finales: 34/34 PASS
+10_final_validation = 26/26 PASS
+11_special_cases_validation = 8/8 PASS
 RESULTADO_GLOBAL = PASS
+RESULTADO_CASOS_ESPECIALES = PASS
+FINAL_DATABASE_VALIDATION_PASS
+
+Las validaciones SQL fueron regeneradas después de la aplicación oficial del Bloque 4 y de la reconstrucción/verificación de OlimpiadasDB.
+
+La corrida histórica previa al Bloque 4 documentó 338,772 atletas, 3,106 eventos, 826,605 participaciones y un total de 1,186,310 filas. Esos valores se conservan como trazabilidad de la ejecución anterior y no representan el estado vigente.
 ```
 
-**Estado técnico del Bloque 7: COMPLETADO Y APROBADO.**
+**Estado técnico del Bloque 7: FINAL_DATABASE_VALIDATION_PASS.** La revisión externa y la incorporación de capturas visuales finales permanecen como tareas manuales de entrega.
 
 Las capturas visuales deben agregarse manualmente como evidencia final.
 
@@ -103,18 +110,18 @@ TIPO_MEDALLA
 | ENTIDAD_GEOGRAFICA | 282 |
 | POBLACION | 17,024 |
 | NOC | 236 |
-| ATLETA | 338,772 |
+| ATLETA | 336,419 |
 | SEDE | 42 |
 | EDICION_OLIMPICA | 61 |
 | DEPORTE | 65 |
 | DISCIPLINA | 117 |
-| EVENTO | 3,106 |
-| PARTICIPACION | 826,605 |
+| EVENTO | 3,007 |
+| PARTICIPACION | 733,414 |
 
 Total:
 
 ```text
-1,186,310 filas
+1,090,667 filas
 ```
 
 ---
@@ -224,6 +231,8 @@ Las pruebas ecuestres de 1956 fueron homologadas a:
 ```
 
 La excepción histórica de Stockholm quedó documentada en el Bloque 4.
+
+El conteo final vigente es de **536 participaciones**. El valor histórico pre-Bloque 4 era **586**; la reducción de 50 corresponde exclusivamente a 50 duplicados complementarios preexistentes eliminados por el plan de consolidación. No se eliminaron atletas ni eventos lógicos: permanecen **396 atletas distintos** y **6 eventos distintos**.
 
 ### 9.3 Youth Olympic Games
 
@@ -381,8 +390,8 @@ En especial:
 ```text
 10 tablas
 66 columnas
-338772 atletas
-826605 participaciones
+336419 atletas
+733414 participaciones
 61 ediciones
 10 PK
 6 UNIQUE
@@ -446,13 +455,13 @@ SELECT 'PARTICIPACION', COUNT_BIG(*) FROM olympics.PARTICIPACION;
 ENTIDAD_GEOGRAFICA     282
 POBLACION            17024
 NOC                     236
-ATLETA               338772
+ATLETA               336419
 SEDE                     42
 EDICION_OLIMPICA         61
 DEPORTE                   65
 DISCIPLINA               117
-EVENTO                  3106
-PARTICIPACION         826605
+EVENTO                  3007
+PARTICIPACION         733414
 ```
 
 ![Conteos](../img/bloque7_03_counts.png)
@@ -857,11 +866,16 @@ Para evitar repetir trabajo:
 # 15. Resultado final del Bloque 7
 
 ```text
-Validaciones:                     34/34 PASS
+Validaciones SQL post-Bloque 4:  PASS
+10_final_validation:               26/26 PASS
+11_special_cases_validation:        8/8 PASS
+FINAL_DATABASE_VALIDATION:          PASS
 Tablas finales:                   10
 Columnas:                         66
-ATLETA:                           338,772
-PARTICIPACION:                    826,605
+ATLETA esperado:                  336,419
+PARTICIPACION esperada:           733,414
+EVENTO esperado:                  3,007
+Total esperado:                   1,090,667
 EDICION_OLIMPICA:                 61
 PK:                               10
 UNIQUE:                            6
@@ -879,6 +893,6 @@ Equestrian final:                 0
 Youth:                         PASS
 ```
 
-**Estado técnico final del Bloque 7: COMPLETADO Y APROBADO.**
+**Estado técnico vigente:** `FINAL_DATABASE_VALIDATION_PASS`. El reporte final vigente contiene 34/34 validaciones PASS. Las capturas visuales finales siguen pendientes de incorporación manual si todavía no han sido tomadas.
 
 No existe un Bloque 8 dentro del alcance actual.
