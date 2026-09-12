@@ -11,7 +11,7 @@ Durante este bloque:
 - no se ejecutaron resets;
 - no se utilizaron `DELETE`, `TRUNCATE` ni `DROP`;
 - no se modificaron los CSV de `data/raw/`, `data/intermediate/` ni `data/processed/`;
-- no se implementaron procedimientos almacenados;
+- no se alteró la lógica de los procedimientos almacenados existentes; después de la reconstrucción se ejecutaron pruebas de `sp_historial_atleta` y `sp_consultar_pais`;
 - no se inició ningún Bloque 8.
 
 Resultado técnico vigente:
@@ -31,6 +31,19 @@ La corrida histórica previa al Bloque 4 documentó 338,772 atletas, 3,106 event
 **Estado técnico del Bloque 7: FINAL_DATABASE_VALIDATION_PASS.** La revisión externa y la incorporación de capturas visuales finales permanecen como tareas manuales de entrega.
 
 Las capturas visuales deben agregarse manualmente como evidencia final.
+
+### Aplicación semántica posterior y estado vigente
+
+Después del cierre documental inicial se aplicó la corrección semántica controlada aprobada. El estado vigente de los CSV y de `OlimpiadasDB` es:
+
+```text
+ATLETA         336418
+EVENTO           2986
+PARTICIPACION 713678
+TOTAL          1070909
+```
+
+Solo se reemplazaron esas tres entidades; los otros siete CSV conservaron su hash del respaldo. La comparación exacta de `ATLETA.nombre` entre CSV y SQL registró 26,261 nombres no ASCII, 26,261 filas comparadas y 0 diferencias. La trazabilidad de la aplicación está en `docs/quality/semantic_apply_final.csv`, `docs/quality/semantic_apply_final.md` y `docs/loading/unicode_validation.csv`.
 
 ---
 
@@ -390,8 +403,8 @@ En especial:
 ```text
 10 tablas
 66 columnas
-336419 atletas
-733414 participaciones
+336418 atletas
+713678 participaciones
 61 ediciones
 10 PK
 6 UNIQUE
@@ -455,13 +468,13 @@ SELECT 'PARTICIPACION', COUNT_BIG(*) FROM olympics.PARTICIPACION;
 ENTIDAD_GEOGRAFICA     282
 POBLACION            17024
 NOC                     236
-ATLETA               336419
+ATLETA               336418
 SEDE                     42
 EDICION_OLIMPICA         61
 DEPORTE                   65
 DISCIPLINA               117
-EVENTO                  3007
-PARTICIPACION         733414
+EVENTO                  2986
+PARTICIPACION         713678
 ```
 
 ![Conteos](../img/bloque7_03_counts.png)

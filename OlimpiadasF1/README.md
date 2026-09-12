@@ -10,7 +10,7 @@ Estado técnico vigente: `FINAL_DATABASE_VALIDATION_PASS` — `10_final_validati
 
 La base `OlimpiadasDB` contiene los schemas `olympics` y `stg`. El modelo final tiene diez entidades lógicas: `ENTIDAD_GEOGRAFICA`, `POBLACION`, `NOC`, `ATLETA`, `SEDE`, `EDICION_OLIMPICA`, `DEPORTE`, `DISCIPLINA`, `EVENTO` y `PARTICIPACION`. `stg` es infraestructura ETL y no una entidad del modelo conceptual.
 
-Conteos finales vigentes posteriores a la aplicación oficial del Bloque 4: 282 entidades geográficas, 17,024 poblaciones, 236 NOC, 336,419 atletas, 42 sedes, 61 ediciones, 65 deportes, 117 disciplinas, 3,007 eventos y 733,414 participaciones. Total vigente derivado: 1,090,667.
+Conteos finales vigentes posteriores a la aplicación oficial de la corrección semántica controlada: 282 entidades geográficas, 17,024 poblaciones, 236 NOC, 336,418 atletas, 42 sedes, 61 ediciones, 65 deportes, 117 disciplinas, 2,986 eventos y 713,678 participaciones. Total vigente derivado: 1,070,909.
 
 Los conteos 338,772 atletas, 3,106 eventos y 826,605 participaciones, con total histórico 1,186,310, corresponden al estado pre-Bloque 4 y se conservan únicamente en reportes de ejecución anterior, respaldos y dry-runs.
 

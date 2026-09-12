@@ -10,31 +10,31 @@ noc.csv,codigo_noc,CHAR(3),236,0,3,3,,,,,NO,PASS,máximo observado 3; capacidad 
 noc.csv,nombre_noc,NVARCHAR(150),236,6,32,150,,,,,NO,PASS,máximo observado 32; capacidad 150 caracteres
 noc.csv,id_entidad,INT,236,5,5,,,,,,NO,PASS,rango compatible
 noc.csv,notas,NVARCHAR(500),236,215,27,500,,,,,NO,PASS,máximo observado 27; capacidad 500 caracteres
-atleta.csv,id_atleta,BIGINT,336419,0,6,,,,,,NO,PASS,rango compatible
-atleta.csv,nombre,NVARCHAR(250),336419,0,100,250,,,,,NO,PASS,máximo observado 100; capacidad 250 caracteres
-atleta.csv,nombre_completo,NVARCHAR(300),336419,190919,108,300,,,,,NO,PASS,máximo observado 108; capacidad 300 caracteres
-atleta.csv,nombre_usado,NVARCHAR(300),336419,190919,49,300,,,,,NO,PASS,máximo observado 49; capacidad 300 caracteres
-atleta.csv,nombre_original,NVARCHAR(300),336419,305680,64,300,,,,,NO,PASS,máximo observado 64; capacidad 300 caracteres
-atleta.csv,otros_nombres,NVARCHAR(500),336419,329252,180,500,,,,,NO,PASS,máximo observado 180; capacidad 500 caracteres
-atleta.csv,apodos,NVARCHAR(500),336419,327274,241,500,,,,,NO,PASS,máximo observado 241; capacidad 500 caracteres
-atleta.csv,orden_nombre,NVARCHAR(50),336419,328575,8,50,,,,,NO,PASS,máximo observado 8; capacidad 50 caracteres
-atleta.csv,sexo,NVARCHAR(20),336419,0,6,20,,,,,NO,PASS,máximo observado 6; capacidad 20 caracteres
-atleta.csv,ciudad_nacimiento,NVARCHAR(150),336419,215490,45,150,,,,,NO,PASS,máximo observado 45; capacidad 150 caracteres
-atleta.csv,region_nacimiento,NVARCHAR(150),336419,217033,54,150,,,,,NO,PASS,máximo observado 54; capacidad 150 caracteres
-atleta.csv,ciudad_fallecimiento,NVARCHAR(150),336419,307580,49,150,,,,,NO,PASS,máximo observado 49; capacidad 150 caracteres
-atleta.csv,region_fallecimiento,NVARCHAR(150),336419,307922,54,150,,,,,NO,PASS,máximo observado 54; capacidad 150 caracteres
-atleta.csv,id_pais_nacimiento,INT,336419,215623,5,,,,,,NO,PASS,rango compatible
-atleta.csv,id_pais_nacionalidad,INT,336419,329300,3,,,,,,NO,PASS,rango compatible
-atleta.csv,id_pais_fallecimiento,INT,336419,307603,5,,,,,,NO,PASS,rango compatible
-atleta.csv,titulos,NVARCHAR(2000),336419,336020,1518,2000,,,,,NO,PASS,máximo observado 1518; capacidad 2000 caracteres
-atleta.csv,fecha_nacimiento,DATE,336419,192726,10,,,,,,NO,PASS,fechas ISO compatibles
-atleta.csv,fecha_fallecimiento,DATE,336419,302479,10,,,,,,NO,PASS,fechas ISO compatibles
-atleta.csv,altura_cm,"DECIMAL(5,2)",336419,204643,3,,5,2,3,0,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
-atleta.csv,peso_kg,"DECIMAL(5,2)",336419,207301,5,,5,2,3,1,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 1/2; valores con redondeo 0; inválidos 0"
-atleta.csv,latitud,"DECIMAL(19,16)",336419,266874,19,,19,16,2,16,NO,PASS,"DECIMAL(19,16); enteros observados 2/3; decimales observados 16/16; valores con redondeo 0; inválidos 0"
-atleta.csv,longitud,"DECIMAL(19,16)",336419,266874,19,,19,16,3,16,NO,PASS,"DECIMAL(19,16); enteros observados 3/3; decimales observados 16/16; valores con redondeo 0; inválidos 0"
-atleta.csv,roles,NVARCHAR(MAX),336419,190919,119,,,,,,NO,PASS,NVARCHAR(MAX) sin límite fijo de caracteres
-atleta.csv,afiliaciones,NVARCHAR(MAX),336419,240587,174,,,,,,NO,PASS,NVARCHAR(MAX) sin límite fijo de caracteres
+atleta.csv,id_atleta,BIGINT,336418,0,6,,,,,,NO,PASS,rango compatible
+atleta.csv,nombre,NVARCHAR(250),336418,0,100,250,,,,,NO,PASS,máximo observado 100; capacidad 250 caracteres
+atleta.csv,nombre_completo,NVARCHAR(300),336418,190918,108,300,,,,,NO,PASS,máximo observado 108; capacidad 300 caracteres
+atleta.csv,nombre_usado,NVARCHAR(300),336418,190918,49,300,,,,,NO,PASS,máximo observado 49; capacidad 300 caracteres
+atleta.csv,nombre_original,NVARCHAR(300),336418,305679,64,300,,,,,NO,PASS,máximo observado 64; capacidad 300 caracteres
+atleta.csv,otros_nombres,NVARCHAR(500),336418,329251,180,500,,,,,NO,PASS,máximo observado 180; capacidad 500 caracteres
+atleta.csv,apodos,NVARCHAR(500),336418,327273,241,500,,,,,NO,PASS,máximo observado 241; capacidad 500 caracteres
+atleta.csv,orden_nombre,NVARCHAR(50),336418,328574,8,50,,,,,NO,PASS,máximo observado 8; capacidad 50 caracteres
+atleta.csv,sexo,NVARCHAR(20),336418,0,6,20,,,,,NO,PASS,máximo observado 6; capacidad 20 caracteres
+atleta.csv,ciudad_nacimiento,NVARCHAR(150),336418,215489,45,150,,,,,NO,PASS,máximo observado 45; capacidad 150 caracteres
+atleta.csv,region_nacimiento,NVARCHAR(150),336418,217032,54,150,,,,,NO,PASS,máximo observado 54; capacidad 150 caracteres
+atleta.csv,ciudad_fallecimiento,NVARCHAR(150),336418,307579,49,150,,,,,NO,PASS,máximo observado 49; capacidad 150 caracteres
+atleta.csv,region_fallecimiento,NVARCHAR(150),336418,307921,54,150,,,,,NO,PASS,máximo observado 54; capacidad 150 caracteres
+atleta.csv,id_pais_nacimiento,INT,336418,215622,5,,,,,,NO,PASS,rango compatible
+atleta.csv,id_pais_nacionalidad,INT,336418,329299,3,,,,,,NO,PASS,rango compatible
+atleta.csv,id_pais_fallecimiento,INT,336418,307602,5,,,,,,NO,PASS,rango compatible
+atleta.csv,titulos,NVARCHAR(2000),336418,336019,1518,2000,,,,,NO,PASS,máximo observado 1518; capacidad 2000 caracteres
+atleta.csv,fecha_nacimiento,DATE,336418,192725,10,,,,,,NO,PASS,fechas ISO compatibles
+atleta.csv,fecha_fallecimiento,DATE,336418,302478,10,,,,,,NO,PASS,fechas ISO compatibles
+atleta.csv,altura_cm,"DECIMAL(5,2)",336418,204643,3,,5,2,3,0,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
+atleta.csv,peso_kg,"DECIMAL(5,2)",336418,207301,5,,5,2,3,1,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 1/2; valores con redondeo 0; inválidos 0"
+atleta.csv,latitud,"DECIMAL(19,16)",336418,266873,19,,19,16,2,16,NO,PASS,"DECIMAL(19,16); enteros observados 2/3; decimales observados 16/16; valores con redondeo 0; inválidos 0"
+atleta.csv,longitud,"DECIMAL(19,16)",336418,266873,19,,19,16,3,16,NO,PASS,"DECIMAL(19,16); enteros observados 3/3; decimales observados 16/16; valores con redondeo 0; inválidos 0"
+atleta.csv,roles,NVARCHAR(MAX),336418,190918,119,,,,,,NO,PASS,NVARCHAR(MAX) sin límite fijo de caracteres
+atleta.csv,afiliaciones,NVARCHAR(MAX),336418,240586,174,,,,,,NO,PASS,NVARCHAR(MAX) sin límite fijo de caracteres
 sede.csv,id_sede,INT,42,0,2,,,,,,NO,PASS,rango compatible
 sede.csv,nombre,NVARCHAR(150),42,0,22,150,,,,,NO,PASS,máximo observado 22; capacidad 150 caracteres
 sede.csv,id_pais,INT,42,0,3,,,,,,NO,PASS,rango compatible
@@ -47,21 +47,21 @@ deporte.csv,nombre,NVARCHAR(150),65,0,25,150,,,,,NO,PASS,máximo observado 25; c
 disciplina.csv,id_disciplina,INT,117,0,3,,,,,,NO,PASS,rango compatible
 disciplina.csv,id_deporte,INT,117,0,2,,,,,,NO,PASS,rango compatible
 disciplina.csv,nombre,NVARCHAR(150),117,0,70,150,,,,,NO,PASS,máximo observado 70; capacidad 150 caracteres
-evento.csv,id_evento,BIGINT,3007,0,4,,,,,,NO,PASS,rango compatible
-evento.csv,id_disciplina,INT,3007,0,3,,,,,,NO,PASS,rango compatible
-evento.csv,nombre,NVARCHAR(300),3007,0,157,300,,,,,NO,PASS,máximo observado 157; capacidad 300 caracteres
-participacion.csv,id_participacion,BIGINT,733414,0,6,,,,,,NO,PASS,rango compatible
-participacion.csv,id_atleta,BIGINT,733414,0,6,,,,,,NO,PASS,rango compatible
-participacion.csv,id_edicion,INT,733414,0,2,,,,,,NO,PASS,rango compatible
-participacion.csv,id_evento,BIGINT,733414,0,4,,,,,,NO,PASS,rango compatible
-participacion.csv,id_noc,INT,733414,1,3,,,,,,NO,PASS,rango compatible
-participacion.csv,id_pais_nacionalidad,INT,733414,733333,5,,,,,,NO,PASS,rango compatible
-participacion.csv,equipo,NVARCHAR(250),733414,186572,56,250,,,,,NO,PASS,máximo observado 56; capacidad 250 caracteres
-participacion.csv,nombre_competencia,NVARCHAR(300),733414,425172,49,300,,,,,NO,PASS,máximo observado 49; capacidad 300 caracteres
-participacion.csv,edad,"DECIMAL(5,2)",733414,472998,2,,5,2,2,0,NO,PASS,"DECIMAL(5,2); enteros observados 2/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
-participacion.csv,altura_cm_registrada,"DECIMAL(5,2)",733414,522497,3,,5,2,3,0,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
-participacion.csv,peso_kg_registrado,"DECIMAL(16,13)",733414,525210,16,,16,13,3,13,NO,PASS,"DECIMAL(16,13); enteros observados 3/3; decimales observados 13/13; valores con redondeo 0; inválidos 0"
-participacion.csv,posicion,INT,733414,450580,3,,,,,,NO,PASS,rango compatible
-participacion.csv,empatado,BIT,733414,426002,5,,,,,,NO,PASS,rango compatible
-participacion.csv,estado_resultado,NVARCHAR(30),733414,715079,3,30,,,,,NO,PASS,máximo observado 3; capacidad 30 caracteres
-participacion.csv,medalla,NVARCHAR(20),733414,627193,6,20,,,,,NO,PASS,máximo observado 6; capacidad 20 caracteres
+evento.csv,id_evento,BIGINT,2986,0,4,,,,,,NO,PASS,rango compatible
+evento.csv,id_disciplina,INT,2986,0,3,,,,,,NO,PASS,rango compatible
+evento.csv,nombre,NVARCHAR(300),2986,0,157,300,,,,,NO,PASS,máximo observado 157; capacidad 300 caracteres
+participacion.csv,id_participacion,BIGINT,713678,0,6,,,,,,NO,PASS,rango compatible
+participacion.csv,id_atleta,BIGINT,713678,0,6,,,,,,NO,PASS,rango compatible
+participacion.csv,id_edicion,INT,713678,0,2,,,,,,NO,PASS,rango compatible
+participacion.csv,id_evento,BIGINT,713678,0,4,,,,,,NO,PASS,rango compatible
+participacion.csv,id_noc,INT,713678,1,3,,,,,,NO,PASS,rango compatible
+participacion.csv,id_pais_nacionalidad,INT,713678,713597,5,,,,,,NO,PASS,rango compatible
+participacion.csv,equipo,NVARCHAR(250),713678,171232,56,250,,,,,NO,PASS,máximo observado 56; capacidad 250 caracteres
+participacion.csv,nombre_competencia,NVARCHAR(300),713678,405436,49,300,,,,,NO,PASS,máximo observado 49; capacidad 300 caracteres
+participacion.csv,edad,"DECIMAL(5,2)",713678,453262,2,,5,2,2,0,NO,PASS,"DECIMAL(5,2); enteros observados 2/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
+participacion.csv,altura_cm_registrada,"DECIMAL(5,2)",713678,502761,3,,5,2,3,0,NO,PASS,"DECIMAL(5,2); enteros observados 3/3; decimales observados 0/2; valores con redondeo 0; inválidos 0"
+participacion.csv,peso_kg_registrado,"DECIMAL(16,13)",713678,505474,16,,16,13,3,13,NO,PASS,"DECIMAL(16,13); enteros observados 3/3; decimales observados 13/13; valores con redondeo 0; inválidos 0"
+participacion.csv,posicion,INT,713678,430844,3,,,,,,NO,PASS,rango compatible
+participacion.csv,empatado,BIT,713678,406266,5,,,,,,NO,PASS,rango compatible
+participacion.csv,estado_resultado,NVARCHAR(30),713678,695343,3,30,,,,,NO,PASS,máximo observado 3; capacidad 30 caracteres
+participacion.csv,medalla,NVARCHAR(20),713678,609435,6,20,,,,,NO,PASS,máximo observado 6; capacidad 20 caracteres

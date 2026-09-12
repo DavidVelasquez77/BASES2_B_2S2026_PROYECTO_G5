@@ -1,22 +1,22 @@
 validacion,esperado,actual,estado,detalle
-atletas,336419,336419,PASS,Atletas finales
+atletas,336418,336418,PASS,Atletas finales
 check,3,3,PASS,Restricciones CHECK activas
 columnas,66,66,PASS,Columnas de las diez tablas finales
-conteo.ATLETA,336419,336419,PASS,Conteo final exacto
+conteo.ATLETA,336418,336418,PASS,Conteo final exacto
 conteo.DEPORTE,65,65,PASS,Conteo final exacto
 conteo.DISCIPLINA,117,117,PASS,Conteo final exacto
 conteo.EDICION_OLIMPICA,61,61,PASS,Conteo final exacto
 conteo.ENTIDAD_GEOGRAFICA,282,282,PASS,Conteo final exacto
-conteo.EVENTO,3007,3007,PASS,Conteo final exacto
+conteo.EVENTO,2986,2986,PASS,Conteo final exacto
 conteo.NOC,236,236,PASS,Conteo final exacto
-conteo.PARTICIPACION,733414,733414,PASS,Conteo final exacto
+conteo.PARTICIPACION,713678,713678,PASS,Conteo final exacto
 conteo.POBLACION,17024,17024,PASS,Conteo final exacto
 conteo.SEDE,42,42,PASS,Conteo final exacto
 ediciones,61,61,PASS,Ediciones finales
 fk,14,14,PASS,Claves foráneas activas
 fk_huerfanas,0,0,PASS,Filas sin padre en las 14 FK
 indices_adicionales,8,8,PASS,Índices IX_ adicionales
-participaciones,733414,733414,PASS,Participaciones finales
+participaciones,713678,713678,PASS,Participaciones finales
 pk,10,10,PASS,Claves primarias activas
 pk_duplicadas,0,0,PASS,Duplicados efectivos de claves primarias
 tablas_finales,10,10,PASS,Tablas esperadas en olympics

@@ -1,0 +1,6 @@
+valor_actual,filas,valor_normalizado_propuesto,filas_cambiables,clasificacion,motivo
+M,135640,Male,135640,DETERMINISTIC_FIX,M/F son equivalentes a Male/Female; se conserva sexo_original.
+Male,106325,,0,NO_ACTION,M/F son equivalentes a Male/Female; se conserva sexo_original.
+F,55279,Female,55279,DETERMINISTIC_FIX,M/F son equivalentes a Male/Female; se conserva sexo_original.
+Female,39175,,0,NO_ACTION,M/F son equivalentes a Male/Female; se conserva sexo_original.
+NULL,0,,0,NO_ACTION,M/F son equivalentes a Male/Female; se conserva sexo_original.

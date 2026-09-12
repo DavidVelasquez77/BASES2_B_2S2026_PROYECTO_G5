@@ -1,0 +1,28 @@
+categoria,metrica,esperado,actual,estado,detalle
+aliases,verified_safe_aliases,21,20,FAIL,Auditoría independiente; alias con medalla incompatible permanece REVIEW.
+aliases,rejected_aliases,0,0,PASS,ninguno rechazado
+Guatemala,medallistas,3,3,PASS,Gold=1 Silver=1 Bronze=1
+Barrondo,plata_2012,1,1,PASS,posición 2 y edad preservadas
+Phelps,medallas,28,28,PASS,23/3/2; 30 participaciones
+Chad,medallas,4,4,PASS,Summer Youth separado
+Andrianov,medallas,15,15,PASS,7/5/3
+Messi,regresion,PASS,PASS,PASS,una participación
+100m_2004,ganador,Justin Gatlin|USA|Gold,Justin Gatlin|USA|Gold,PASS,ganador correcto
+participaciones,filas_fusionadas,19732,19732,PASS,mapa trazable
+participaciones,destinos_existentes,todos,19732,PASS,destino en preview
+participaciones,eliminadas_sin_mapa,0,0,PASS,IDs antes/después
+participaciones,nuevas_sin_origen,0,0,PASS,no IDs inventados
+participaciones,perdidas_informacion,0,0,PASS,Comprobación de todos los destinos de filas FUSIONAR_PARTICIPACION.
+nombres,colisiones,3,3,PASS,no usadas como identidad
+sexo,dominio,Male|Female|NULL,Female|Male,PASS,sin códigos inesperados
+conteos,ATLETA,336419->336418,336419->336418,PASS,solo 147606
+conteos,EVENTO,3007->2986,3007->2986,PASS,21 aliases
+conteos,PARTICIPACION,733414->713682,733414->713682,PASS,fusiones trazables
+integridad,FK_preview,0,0,PASS,atleta/evento
+integridad,ids_atleta_eliminados,147606,147606,PASS,trazabilidad completa
+integridad,processed_SHA256,10/10 MATCH,10/10 MATCH,PASS,manifiesto
+integridad,SQL_Server,NO,NO,PASS,solo lectura
+integridad,stored_procedures,NO,NO,PASS,sin cambios
+integridad,preview_modificado,NO,NO,PASS,solo lectura
+estado,resultado,PRE_APPLY_REVIEW_REQUIRED,PRE_APPLY_REVIEW_REQUIRED,REVIEW_REQUIRED,No se aplica nada
+decision,recommendation,APPLY,DO_NOT_APPLY,REVIEW_REQUIRED,2231->1022 permanece REVIEW_ALIAS por dos medallas incompatibles.

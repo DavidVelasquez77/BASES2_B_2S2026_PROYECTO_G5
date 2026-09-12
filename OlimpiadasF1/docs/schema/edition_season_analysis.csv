@@ -1,67 +1,67 @@
 ﻿tipo_registro,id_edicion,anio,temporada,id_sede,sede,cantidad_participaciones,cantidad_ediciones,anios,sedes,observacion
-EDITION,1,1896,Summer,1,Athina,1188,1,1896,Athina,Edición ordinaria de verano o invierno.
-EDITION,2,1900,Summer,2,Paris,5281,1,1900,Paris,Edición ordinaria de verano o invierno.
-EDITION,3,1904,Summer,3,St. Louis,4058,1,1904,St. Louis,Edición ordinaria de verano o invierno.
+EDITION,1,1896,Summer,1,Athina,1139,1,1896,Athina,Edición ordinaria de verano o invierno.
+EDITION,2,1900,Summer,2,Paris,5164,1,1900,Paris,Edición ordinaria de verano o invierno.
+EDITION,3,1904,Summer,3,St. Louis,3882,1,1904,St. Louis,Edición ordinaria de verano o invierno.
 EDITION,4,1906,Intercalated Games,1,Athina,5162,1,1906,Athina,"1906; edición histórica intercalada de Atenas, no equivalente a una edición ordinaria de la Olympiad."
-EDITION,5,1908,Summer,4,London,8520,1,1908,London,Edición ordinaria de verano o invierno.
-EDITION,6,1912,Summer,5,Stockholm,11474,1,1912,Stockholm,Edición ordinaria de verano o invierno.
-EDITION,7,1920,Summer,6,Antwerpen,11164,1,1920,Antwerpen,Edición ordinaria de verano o invierno.
-EDITION,8,1924,Summer,2,Paris,14050,1,1924,Paris,Edición ordinaria de verano o invierno.
+EDITION,5,1908,Summer,4,London,8215,1,1908,London,Edición ordinaria de verano o invierno.
+EDITION,6,1912,Summer,5,Stockholm,11321,1,1912,Stockholm,Edición ordinaria de verano o invierno.
+EDITION,7,1920,Summer,6,Antwerpen,11009,1,1920,Antwerpen,Edición ordinaria de verano o invierno.
+EDITION,8,1924,Summer,2,Paris,13645,1,1924,Paris,Edición ordinaria de verano o invierno.
 EDITION,9,1924,Winter,7,Chamonix,955,1,1924,Chamonix,Edición ordinaria de verano o invierno.
-EDITION,10,1928,Summer,8,Amsterdam,12589,1,1928,Amsterdam,Edición ordinaria de verano o invierno.
+EDITION,10,1928,Summer,8,Amsterdam,12113,1,1928,Amsterdam,Edición ordinaria de verano o invierno.
 EDITION,11,1928,Winter,9,Sankt Moritz,1134,1,1928,Sankt Moritz,Edición ordinaria de verano o invierno.
-EDITION,12,1932,Summer,10,Los Angeles,6710,1,1932,Los Angeles,Edición ordinaria de verano o invierno.
+EDITION,12,1932,Summer,10,Los Angeles,6555,1,1932,Los Angeles,Edición ordinaria de verano o invierno.
 EDITION,13,1932,Winter,11,Lake Placid,861,1,1932,Lake Placid,Edición ordinaria de verano o invierno.
-EDITION,14,1936,Summer,12,Berlin,15847,1,1936,Berlin,Edición ordinaria de verano o invierno.
+EDITION,14,1936,Summer,12,Berlin,15060,1,1936,Berlin,Edición ordinaria de verano o invierno.
 EDITION,15,1936,Winter,13,Garmisch-Partenkirchen,1753,1,1936,Garmisch-Partenkirchen,Edición ordinaria de verano o invierno.
-EDITION,16,1948,Summer,4,London,16514,1,1948,London,Edición ordinaria de verano o invierno.
+EDITION,16,1948,Summer,4,London,15841,1,1948,London,Edición ordinaria de verano o invierno.
 EDITION,17,1948,Winter,9,Sankt Moritz,2124,1,1948,Sankt Moritz,Edición ordinaria de verano o invierno.
-EDITION,18,1952,Summer,14,Helsinki,22475,1,1952,Helsinki,Edición ordinaria de verano o invierno.
+EDITION,18,1952,Summer,14,Helsinki,21423,1,1952,Helsinki,Edición ordinaria de verano o invierno.
 EDITION,19,1952,Winter,15,Oslo,2117,1,1952,Oslo,Edición ordinaria de verano o invierno.
-EDITION,20,1956,Summer,16,Melbourne,13886,1,1956,Melbourne,Edición ordinaria de verano o invierno.
+EDITION,20,1956,Summer,16,Melbourne,13365,1,1956,Melbourne,Edición ordinaria de verano o invierno.
 EDITION,21,1956,Winter,17,Cortina d'Ampezzo,2542,1,1956,Cortina d'Ampezzo,Edición ordinaria de verano o invierno.
-EDITION,22,1960,Summer,18,Roma,21422,1,1960,Roma,Edición ordinaria de verano o invierno.
+EDITION,22,1960,Summer,18,Roma,20488,1,1960,Roma,Edición ordinaria de verano o invierno.
 EDITION,23,1960,Winter,19,Squaw Valley,2139,1,1960,Squaw Valley,Edición ordinaria de verano o invierno.
-EDITION,24,1964,Summer,20,Tokyo,20393,1,1964,Tokyo,Edición ordinaria de verano o invierno.
+EDITION,24,1964,Summer,20,Tokyo,19381,1,1964,Tokyo,Edición ordinaria de verano o invierno.
 EDITION,25,1964,Winter,21,Innsbruck,3399,1,1964,Innsbruck,Edición ordinaria de verano o invierno.
-EDITION,26,1968,Summer,22,Mexico City,23071,1,1968,Mexico City,Edición ordinaria de verano o invierno.
+EDITION,26,1968,Summer,22,Mexico City,22042,1,1968,Mexico City,Edición ordinaria de verano o invierno.
 EDITION,27,1968,Winter,23,Grenoble,3617,1,1968,Grenoble,Edición ordinaria de verano o invierno.
-EDITION,28,1972,Summer,24,Munich,26811,1,1972,Munich,Edición ordinaria de verano o invierno.
+EDITION,28,1972,Summer,24,Munich,25790,1,1972,Munich,Edición ordinaria de verano o invierno.
 EDITION,29,1972,Winter,25,Sapporo,3186,1,1972,Sapporo,Edición ordinaria de verano o invierno.
-EDITION,30,1976,Summer,26,Montreal,22760,1,1976,Montreal,Edición ordinaria de verano o invierno.
+EDITION,30,1976,Summer,26,Montreal,21929,1,1976,Montreal,Edición ordinaria de verano o invierno.
 EDITION,31,1976,Winter,21,Innsbruck,3590,1,1976,Innsbruck,Edición ordinaria de verano o invierno.
-EDITION,32,1980,Summer,27,Moskva,18419,1,1980,Moskva,Edición ordinaria de verano o invierno.
+EDITION,32,1980,Summer,27,Moskva,17853,1,1980,Moskva,Edición ordinaria de verano o invierno.
 EDITION,33,1980,Winter,11,Lake Placid,3317,1,1980,Lake Placid,Edición ordinaria de verano o invierno.
-EDITION,34,1984,Summer,10,Los Angeles,24111,1,1984,Los Angeles,Edición ordinaria de verano o invierno.
+EDITION,34,1984,Summer,10,Los Angeles,23110,1,1984,Los Angeles,Edición ordinaria de verano o invierno.
 EDITION,35,1984,Winter,28,Sarajevo,4101,1,1984,Sarajevo,Edición ordinaria de verano o invierno.
-EDITION,36,1988,Summer,29,Seoul,31045,1,1988,Seoul,Edición ordinaria de verano o invierno.
+EDITION,36,1988,Summer,29,Seoul,29897,1,1988,Seoul,Edición ordinaria de verano o invierno.
 EDITION,37,1988,Winter,30,Calgary,5313,1,1988,Calgary,Edición ordinaria de verano o invierno.
-EDITION,38,1992,Summer,31,Barcelona,33727,1,1992,Barcelona,Edición ordinaria de verano o invierno.
+EDITION,38,1992,Summer,31,Barcelona,32596,1,1992,Barcelona,Edición ordinaria de verano o invierno.
 EDITION,39,1992,Winter,32,Albertville,6769,1,1992,Albertville,Edición ordinaria de verano o invierno.
 EDITION,40,1994,Winter,33,Lillehammer,6190,1,1994,Lillehammer,Edición ordinaria de verano o invierno.
-EDITION,41,1996,Summer,34,Atlanta,35311,1,1996,Atlanta,Edición ordinaria de verano o invierno.
+EDITION,41,1996,Summer,34,Atlanta,34145,1,1996,Atlanta,Edición ordinaria de verano o invierno.
 EDITION,42,1998,Winter,35,Nagano,6994,1,1998,Nagano,Edición ordinaria de verano o invierno.
-EDITION,43,2000,Summer,36,Sydney,35565,1,2000,Sydney,Edición ordinaria de verano o invierno.
+EDITION,43,2000,Summer,36,Sydney,34474,1,2000,Sydney,Edición ordinaria de verano o invierno.
 EDITION,44,2002,Winter,37,Salt Lake City,7981,1,2002,Salt Lake City,Edición ordinaria de verano o invierno.
-EDITION,45,2004,Summer,1,Athina,34558,1,2004,Athina,Edición ordinaria de verano o invierno.
+EDITION,45,2004,Summer,1,Athina,33507,1,2004,Athina,Edición ordinaria de verano o invierno.
 EDITION,46,2006,Winter,38,Torino,8507,1,2006,Torino,Edición ordinaria de verano o invierno.
-EDITION,47,2008,Summer,39,Beijing,34830,1,2008,Beijing,Edición ordinaria de verano o invierno.
+EDITION,47,2008,Summer,39,Beijing,33878,1,2008,Beijing,Edición ordinaria de verano o invierno.
 EDITION,48,2010,Summer Youth,,,752,1,2010,,"2010, 2014 y 2018; Juegos Olímpicos de la Juventud de verano, sin sede conservada en el CSV final."
 EDITION,49,2010,Winter,40,Vancouver,8595,1,2010,Vancouver,Edición ordinaria de verano o invierno.
-EDITION,50,2012,Summer,4,London,33034,1,2012,London,Edición ordinaria de verano o invierno.
+EDITION,50,2012,Summer,4,London,32150,1,2012,London,Edición ordinaria de verano o invierno.
 EDITION,51,2012,Winter Youth,,,412,1,2012,,"2012, 2016 y 2020; Juegos Olímpicos de la Juventud de invierno, sin sede conservada en el CSV final."
 EDITION,52,2014,Summer Youth,,,592,1,2014,,"2010, 2014 y 2018; Juegos Olímpicos de la Juventud de verano, sin sede conservada en el CSV final."
 EDITION,53,2014,Winter,41,Sochi,9509,1,2014,Sochi,Edición ordinaria de verano o invierno.
-EDITION,54,2016,Summer,42,Rio de Janeiro,34829,1,2016,Rio de Janeiro,Edición ordinaria de verano o invierno.
+EDITION,54,2016,Summer,42,Rio de Janeiro,33937,1,2016,Rio de Janeiro,Edición ordinaria de verano o invierno.
 EDITION,55,2016,Winter Youth,,,284,1,2016,,"2012, 2016 y 2020; Juegos Olímpicos de la Juventud de invierno, sin sede conservada en el CSV final."
 EDITION,56,2018,Summer Youth,,,47,1,2018,,"2010, 2014 y 2018; Juegos Olímpicos de la Juventud de verano, sin sede conservada en el CSV final."
 EDITION,57,2018,Winter,,,5140,1,2018,,Edición ordinaria de verano o invierno.
-EDITION,58,2020,Summer,20,Tokyo,29066,1,2020,Tokyo,Edición ordinaria de verano o invierno.
+EDITION,58,2020,Summer,20,Tokyo,29063,1,2020,Tokyo,Edición ordinaria de verano o invierno.
 EDITION,59,2020,Winter Youth,,,3988,1,2020,,"2012, 2016 y 2020; Juegos Olímpicos de la Juventud de invierno, sin sede conservada en el CSV final."
 EDITION,60,2022,Winter,,,4744,1,2022,,Edición ordinaria de verano o invierno.
 EDITION,61,2024,Summer,2,Paris,14892,1,2024,Paris,Edición ordinaria de verano o invierno.
 SEASON_SUMMARY,,,Intercalated Games,,,5162,1,1906,Athina,"1906; edición histórica intercalada de Atenas, no equivalente a una edición ordinaria de la Olympiad."
-SEASON_SUMMARY,,,Summer,,,617600,30,1896|1900|1904|1908|1912|1920|1924|1928|1932|1936|1948|1952|1956|1960|1964|1968|1972|1976|1980|1984|1988|1992|1996|2000|2004|2008|2012|2016|2020|2024,Amsterdam|Antwerpen|Athina|Atlanta|Barcelona|Beijing|Berlin|Helsinki|London|Los Angeles|Melbourne|Mexico City|Montreal|Moskva|Munich|Paris|Rio de Janeiro|Roma|Seoul|St. Louis|Stockholm|Sydney|Tokyo,Resumen de ediciones observadas.
+SEASON_SUMMARY,,,Summer,,,597864,30,1896|1900|1904|1908|1912|1920|1924|1928|1932|1936|1948|1952|1956|1960|1964|1968|1972|1976|1980|1984|1988|1992|1996|2000|2004|2008|2012|2016|2020|2024,Amsterdam|Antwerpen|Athina|Atlanta|Barcelona|Beijing|Berlin|Helsinki|London|Los Angeles|Melbourne|Mexico City|Montreal|Moskva|Munich|Paris|Rio de Janeiro|Roma|Seoul|St. Louis|Stockholm|Sydney|Tokyo,Resumen de ediciones observadas.
 SEASON_SUMMARY,,,Summer Youth,,,1391,3,2010|2014|2018,,"2010, 2014 y 2018; Juegos Olímpicos de la Juventud de verano, sin sede conservada en el CSV final."
 SEASON_SUMMARY,,,Winter,,,104577,24,1924|1928|1932|1936|1948|1952|1956|1960|1964|1968|1972|1976|1980|1984|1988|1992|1994|1998|2002|2006|2010|2014|2018|2022,Albertville|Calgary|Chamonix|Cortina d'Ampezzo|Garmisch-Partenkirchen|Grenoble|Innsbruck|Lake Placid|Lillehammer|Nagano|Oslo|Salt Lake City|Sankt Moritz|Sapporo|Sarajevo|Sochi|Squaw Valley|Torino|Vancouver,Resumen de ediciones observadas.
 SEASON_SUMMARY,,,Winter Youth,,,4684,3,2012|2016|2020,,"2012, 2016 y 2020; Juegos Olímpicos de la Juventud de invierno, sin sede conservada en el CSV final."

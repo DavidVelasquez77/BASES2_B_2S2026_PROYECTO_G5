@@ -1,0 +1,23 @@
+categoria,metrica,valor_actual,clasificacion,accion,detalle
+integridad,processed_SHA256,10/10 MATCH,PASS,NO_ACTION,Manifiesto posterior al Bloque 4.
+sexo,filas_M_F_normalizables,190919,DETERMINISTIC_FIX,SP_OR_VIEW,M->Male; F->Female.
+nombres,bullet_nombre_completo,145252,DETERMINISTIC_FIX,SP_OR_VIEW,U+2022 -> espacio; conservar original.
+atletas,SAFE_MERGE,0,SAFE_MERGE,REVIEW_REQUIRED,Candidatos no aplicados.
+atletas,REVIEW,21501,REVIEW,REVIEW_REQUIRED,No fusionar automáticamente.
+atletas,CONFLICT,28536,CONFLICT,DO_NOT_APPLY,Conflictos de identidad.
+eventos,SAFE_ALIAS,5,SAFE_ALIAS,REVIEW_REQUIRED,Candidatos no aplicados.
+eventos,REVIEW_ALIAS,1326,REVIEW_ALIAS,REVIEW_REQUIRED,Requieren contexto.
+eventos,CONFLICT_ALIAS,4,CONFLICT_ALIAS,DO_NOT_APPLY,Modalidades no equivalentes.
+participaciones,EXACT_DUPLICATE_groups,0,EXACT_DUPLICATE,REVIEW_REQUIRED,No eliminadas.
+participaciones,COMPLEMENTARY_DUPLICATE_groups,112492,COMPLEMENTARY_DUPLICATE,REVIEW_REQUIRED,Exceso candidato=155652.
+participaciones,CONFLICTING_DUPLICATE_groups,3108,CONFLICTING_DUPLICATE,DO_NOT_APPLY,No fusionar automáticamente.
+casos,Barrondo_ids,121191;147606;192591,REVIEW,REVIEW_REQUIRED,participaciones observadas=9.
+casos,Phelps_medallas_crudas,56,CONFLICT,REVIEW_REQUIRED,estimación pos/edad=28; no persistente.
+casos,Guatemala_medallistas_filas,5,REVIEW,REVIEW_REQUIRED,Ver guatemala_medal_audit.csv.
+aceptacion,resultado_global,FAIL/REVIEW_REQUIRED,REVIEW,REVIEW_REQUIRED,No se aplican correcciones en auditoría.
+sql_server,ATLETA_filas,336419,PASS,NO_ACTION,SELECT directo contra olympics.ATLETA.
+sql_server,EVENTO_filas,3007,PASS,NO_ACTION,SELECT directo contra olympics.EVENTO.
+sql_server,PARTICIPACION_filas,733414,PASS,NO_ACTION,SELECT directo contra olympics.PARTICIPACION.
+sql_server,Michael_Phelps_medallas,56,CONFLICT,REVIEW_REQUIRED,id_atleta=93113; Gold=46; Silver=6; Bronze=4.
+sql_server,Guatemala_medallas,5,REVIEW,REVIEW_REQUIRED,SELECT directo por codigo_noc=GUA.
+sql_server,bullet_nombre_completo,145252,PASS,NO_ACTION,SELECT directo en SQL coincide con CSV.

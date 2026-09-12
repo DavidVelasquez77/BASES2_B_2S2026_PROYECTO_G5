@@ -1,0 +1,30 @@
+﻿validacion,esperado,actual,estado,detalle
+conteo.entidad_geografica,materializado,282,PASS,Conteo leído de data/processed
+backup.entidad_geografica,3630e019afdd63e7afd1e0e98aa60faad7d627113ec45703c9b662bb294ecb67,3630e019afdd63e7afd1e0e98aa60faad7d627113ec45703c9b662bb294ecb67,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.poblacion,materializado,17024,PASS,Conteo leído de data/processed
+backup.poblacion,73b271ae1dcd517538ec9dcb490d24ba54fcb48ac974d25df03fcb43d7026161,73b271ae1dcd517538ec9dcb490d24ba54fcb48ac974d25df03fcb43d7026161,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.noc,materializado,236,PASS,Conteo leído de data/processed
+backup.noc,5b687b1cfd49fa0da323f70dc0d053068fd22767df3a1c09f68e486965d17554,5b687b1cfd49fa0da323f70dc0d053068fd22767df3a1c09f68e486965d17554,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.atleta,materializado,336418,PASS,Conteo leído de data/processed
+backup.atleta,97b2089e82ea1f0d3ad4102f3d234b8cbe9e8928d00bebe05c8f246e778baa18,7eeb08fdc6732120d2d2311183a5f821e71a60cd0f6609dd7a35d44f273ec172,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+preview.atleta,7eeb08fdc6732120d2d2311183a5f821e71a60cd0f6609dd7a35d44f273ec172,7eeb08fdc6732120d2d2311183a5f821e71a60cd0f6609dd7a35d44f273ec172,PASS,Igualdad byte a byte preview -> processed
+conteo.sede,materializado,42,PASS,Conteo leído de data/processed
+backup.sede,1e3f0148c394460798a1a88259413d9cbfac97aa4257cb0c4896eb5e576d11f5,1e3f0148c394460798a1a88259413d9cbfac97aa4257cb0c4896eb5e576d11f5,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.edicion_olimpica,materializado,61,PASS,Conteo leído de data/processed
+backup.edicion_olimpica,2c51d0a0c43627e182ab6262173327af70ff0e4fa0f62dea7f8bde73964013b1,2c51d0a0c43627e182ab6262173327af70ff0e4fa0f62dea7f8bde73964013b1,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.deporte,materializado,65,PASS,Conteo leído de data/processed
+backup.deporte,b096ecfdde1d7abf3eabcfa6ad80a58a485ee5351ea4e053ffd571e373b3738a,b096ecfdde1d7abf3eabcfa6ad80a58a485ee5351ea4e053ffd571e373b3738a,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.disciplina,materializado,117,PASS,Conteo leído de data/processed
+backup.disciplina,2335e257494e011a86904d00ca87ef3844740a20dd1e39af39e56ddd1e00b3c5,2335e257494e011a86904d00ca87ef3844740a20dd1e39af39e56ddd1e00b3c5,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+conteo.evento,materializado,2986,PASS,Conteo leído de data/processed
+backup.evento,d40e80508e38a07e95d1a829ffc0d390477e92ff66d6f960c49cb985b35044cf,e32208a49873997e24b9de276e9f2c22357f65ab2d0cd0efacdb22361916424c,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+preview.evento,e32208a49873997e24b9de276e9f2c22357f65ab2d0cd0efacdb22361916424c,e32208a49873997e24b9de276e9f2c22357f65ab2d0cd0efacdb22361916424c,PASS,Igualdad byte a byte preview -> processed
+conteo.participacion,materializado,713678,PASS,Conteo leído de data/processed
+backup.participacion,e168d53a72fff69724a86e0d60d218f567d7140a229c904e1364bafb496abcc1,50f1cd693fd4219850dfc2f338ba832849814f233113d5040c8109047d598132,PASS,Los tres archivos modificados tienen cambio esperado; los otros siete deben ser idénticos
+preview.participacion,50f1cd693fd4219850dfc2f338ba832849814f233113d5040c8109047d598132,50f1cd693fd4219850dfc2f338ba832849814f233113d5040c8109047d598132,PASS,Igualdad byte a byte preview -> processed
+event_aliases,21,21,PASS,Aliases aprobados materializados
+review_or_conflict_aliases,0,0,PASS,No se auto-resolvieron aliases REVIEW/CONFLICT
+csv_fk_orphans,0,0,PASS,FK lógicas entre los diez CSV
+sex_legacy_values,0,0,PASS,No quedan M/F sin homologar
+nombre_completo_bullet,0,0,PASS,No queda U+2022 en nombre_completo
+london_2012_50km_historical,4,4,PASS,Tallent/Si/Heffernan/Kirdyapkin con resultado vigente y una fila lógica cada uno

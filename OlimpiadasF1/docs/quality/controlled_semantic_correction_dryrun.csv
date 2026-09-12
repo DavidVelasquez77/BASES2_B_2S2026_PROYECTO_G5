@@ -1,0 +1,22 @@
+categoria,metrica,valor,estado,detalle
+estado,resultado,CONTROLLED_FIX_READY,PASS,Dry-run controlado; no se aplica nada.
+normalizacion,sexo_determinista,190919,PASS,M/F -> Male/Female; no nombres vacíos creados.
+normalizacion,nombre_completo_bullet,145252,PASS,colisiones_generadas=3; U+2022 final=0 en filas no vacías.
+atletas,final_safe_athlete_corrections,1,PASS,"147606->121191; no se fusionan 192591, Guy/Eric/Phelps/Messi/Chad/Andrianov completos."
+eventos,final_safe_event_aliases,21,PASS,Aliases explícitos y auditados; no se aplican aliases REVIEW.
+participaciones,final_safe_participation_groups,19708,PASS,filas_fusionadas=19732; mapa trazable.
+regresion,Guatemala,PASS,PASS,Validación directa sobre preview.
+regresion,Barrondo,PASS,PASS,Validación directa sobre preview.
+regresion,Phelps,PASS,PASS,Validación directa sobre preview.
+regresion,Phelps_participaciones,PASS,PASS,Validación directa sobre preview.
+regresion,Chad,PASS,PASS,Validación directa sobre preview.
+regresion,Andrianov,PASS,PASS,Validación directa sobre preview.
+regresion,Messi,PASS,PASS,Validación directa sobre preview.
+regresion,100m_2004,PASS,PASS,Validación directa sobre preview.
+regresion,sha,PASS,PASS,Validación directa sobre preview.
+conteo,ATLETA,336419->336418,PASS,merge completo explícito 147606->121191
+conteo,EVENTO,3007->2986,PASS,aliases FINAL_SAFE_ALIAS materializados
+conteo,PARTICIPACION,733414->713682,PASS,aliases/reasignaciones y fusiones trazables
+integridad,processed_sha256,10/10 MATCH,PASS,Hashes antes/después del dry-run.
+seguridad,SQL_Server,NO,PASS,No se ejecutó SQL.
+seguridad,stored_procedures,NO,PASS,No se modificaron stored procedures.

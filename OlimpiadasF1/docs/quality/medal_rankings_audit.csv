@@ -1,0 +1,81 @@
+tipo,filtro,deporte,rango,id_atleta,atleta,medallas_crudas,medallas_preview,clasificacion
+ranking_global,Gold,,1,93113,Michael Phelps,46,46,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,2,77795,Ray Ewry,20,20,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,3,78102,Carl Lewis,18,18,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,4,51214,Mark Spitz,18,18,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,5,67218,Paavo Nurmi,18,18,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,6,9825,Birgit Fischer-Schmidt,16,16,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,7,50859,Jenny Thompson,16,16,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,8,50908,Matt Biondi,16,16,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,9,30361,Sawao Kato,16,16,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,10,104492,Usain Bolt,16,16,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,11,11443,Isabell Werth,14,14,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,12,124356,Katie Ledecky,14,14,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,13,31000,Nikolay Andrianov,14,14,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,14,111919,Jason Kenny,13,13,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,15,30376,Akinori Nakayama,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,16,50865,Amy Van Dyken,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,17,89671,Chris Hoy,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,18,51194,Don Schollander,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,19,22508,Edoardo Mangiarotti,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Gold,,20,10707,Gert Fredriksson,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,1,31009,Aleksandr Dityatin,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,2,31040,Mikhail Voronin,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,3,50597,Shirley Babashoff,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,4,11431,Anky van Grunsven,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,5,94892,Bogdan Musiol,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,6,47316,Dagmar Hase,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,7,22508,Edoardo Mangiarotti,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,8,22515,Gustavo Marzi,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,9,11443,Isabell Werth,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,10,92527,Leisel Jones,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,11,31000,Nikolay Andrianov,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,12,81748,Raisa Smetanina,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,13,31019,Viktor Lisitsky,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,14,31037,Yury Titov,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,15,119877,Chad le Clos,9,9,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,16,117263,Charlotte Kalla,9,9,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,17,50604,Amanda Beard,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,18,9825,Birgit Fischer-Schmidt,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,19,50860,Dara Torres,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Silver,,20,104245,David Cal,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,1,30743,Aleksey Nemov,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,2,47405,Franziska van Almsick,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,3,87293,Harri Kirvesniemi,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,4,29611,Heikki Savolainen,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,5,71688,Merlene Ottey-Page,12,12,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,6,47293,Antje Buschschulte,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,7,22776,Arie de Jong,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,8,21867,Daniel Revenu,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,9,102358,Natalie Coughlin,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,10,65535,Phil Edwards,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,11,79977,Stefania Belmondo,10,10,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,12,108766,Arianna Fontana,9,9,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,13,126682,Brianna Throssell,9,9,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,14,129909,Kyle Chalmers,9,9,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,15,100697,Apolo Anton Ohno,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,16,13064,Clara Hughes,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,17,50860,Dara Torres,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,18,49704,Dmitry Sautin,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,19,75867,Edvin Wide,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Bronze,,20,126684,Emma McKeon,8,8,RAW_EQUALS_PREVIEW
+ranking_global,Total,,1,29611,Heikki Savolainen,78,78,RAW_EQUALS_PREVIEW
+ranking_global,Total,,2,30464,Josy Stoffel,76,76,RAW_EQUALS_PREVIEW
+ranking_global,Total,,3,30096,Andreas Wecker,64,64,RAW_EQUALS_PREVIEW
+ranking_global,Total,,4,42351,Ioannis Theofilakis,63,63,RAW_EQUALS_PREVIEW
+ranking_global,Total,,5,31116,Al Jochim,62,62,RAW_EQUALS_PREVIEW
+ranking_global,Total,,6,29180,Hans Sauter,62,62,RAW_EQUALS_PREVIEW
+ranking_global,Total,,7,28188,Michel Mathiot,62,62,RAW_EQUALS_PREVIEW
+ranking_global,Total,,8,93113,Michael Phelps,60,60,RAW_EQUALS_PREVIEW
+ranking_global,Total,,9,30904,William Thoresson,60,60,RAW_EQUALS_PREVIEW
+ranking_global,Total,,10,29278,Yordan Yovchev,60,60,RAW_EQUALS_PREVIEW
+ranking_global,Total,,11,21435,Ivan Osiier,59,59,RAW_EQUALS_PREVIEW
+ranking_global,Total,,12,29091,Oksana Chusovitina,59,59,RAW_EQUALS_PREVIEW
+ranking_global,Total,,13,42350,Alexandros Theofilakis,58,58,RAW_EQUALS_PREVIEW
+ranking_global,Total,,14,43823,Eric Carlberg,57,57,RAW_EQUALS_PREVIEW
+ranking_global,Total,,15,75674,Eric Lemming,57,57,RAW_EQUALS_PREVIEW
+ranking_global,Total,,16,22776,Arie de Jong,56,56,RAW_EQUALS_PREVIEW
+ranking_global,Total,,17,81384,Gabriella Paruzzi,50,50,RAW_EQUALS_PREVIEW
+ranking_global,Total,,18,30798,Georges Miez,50,50,RAW_EQUALS_PREVIEW
+ranking_global,Total,,19,31000,Nikolay Andrianov,49,49,RAW_EQUALS_PREVIEW
+ranking_global,Total,,20,90777,Alberto Busnari,48,48,RAW_EQUALS_PREVIEW

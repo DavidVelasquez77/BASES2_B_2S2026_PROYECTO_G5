@@ -1,0 +1,37 @@
+metrica,resultado,valor,esperado,estado,detalle
+evento_2231,nombre,Athletics Men's 50 kilometres Walk,50 kilometres Race Walk Men,PASS,Nombre alternativo de fuente; distancia 50 km y género masculino
+evento_1022,nombre,50 kilometres Race Walk Men Olympic,50 kilometres Race Walk Men,PASS,Nombre canónico del catálogo
+evento_2231_disciplina,deporte_disciplina,Athletics / Athletics,Athletics / Athletics,PASS,Ambos comparten id_disciplina 10 e id_deporte 6
+modalidad,genero_distancia,Men / 50 kilometres / individual,Men / 50 kilometres / individual,PASS,No corresponde a 20 km mujeres Youth Intercalated ni otra modalidad
+ediciones_comunes,conteo,19,19,PASS,1932 a 2016 excepto las ediciones ausentes en cada fuente
+ediciones_solo_2231,lista,,ninguna,PASS,No hay edición exclusiva de 2231
+ediciones_solo_1022,lista,2020,identificar,PASS,1022 incluye 2020 y 2231 no contiene ese registro
+contextos_comunes,atleta_edicion_noc,502,502,PASS,Emparejamiento por identidad canónica id_atleta edición y NOC
+atletas_comunes,conteo,332,332,PASS,Identidades comunes en contextos compartidos
+NOC_comunes,conteo,53,53,PASS,No se observan conflictos de NOC en los contextos emparejados
+medallas_exactas,conteo,498,502,PASS,99.20% de coincidencia exacta incluyendo NULL; hay cuatro diferencias de estado
+medallas_bidireccionales_conflictivas,conteo,2,2,REVIEW,Silver vs Gold y Bronze vs Silver en Londres 2012
+medalla_null_status_differences,conteo,2,2,REVIEW,Heffernan Bronze posterior y Kirdyapkin Gold original frente a NULL/DQ posterior
+posiciones_exactas,conteo,132,502,PASS,La fuente 2231 aporta principalmente edad y la 1022 posición; diferencias no implican eventos distintos
+pares_posicion_edad,conteo,370,identificar,PASS,Registros complementarios: posición en 1022 y edad en 2231
+conflictos_NOC,conteo,0,0,PASS,No hay NOC incompatibles en los 502 contextos comunes
+conflictos_genero,conteo,0,0,PASS,Ambos eventos son masculinos y la identidad de los atletas es masculina
+conflictos_edicion,conteo,0,0,PASS,Las ediciones comunes tienen mismo año y temporada Summer
+compatibilidad_exacta,porcentaje,99.20%,>=99%,PASS,498 de 502 contextos coinciden exactamente en el campo medalla; las diferencias están explicadas por actualización histórica
+compatibilidad_semantica,resultado,100%,100%,PASS,La evidencia de catálogo y disciplina confirma que es el mismo evento
+regresion_Guatemala,resultado,Gold 1 Silver 1 Bronze 1,Gold 1 Silver 1 Bronze 1,PASS,El alias 2231->1022 no afecta la medalla de 20 km de Barrondo
+regresion_Barrondo,resultado,2012 20 km GUA Silver posicion 2 edad 21,igual,PASS,Evento 2218->1021 permanece independiente del alias de 50 km
+regresion_Phelps,resultado,Gold 23 Silver 3 Bronze 2,Gold 23 Silver 3 Bronze 2,PASS,Sin cambios en el preview hipotético
+regresion_Chad_le_Clos,resultado,Summer 1/3/0 Youth separado,Summer 1/3/0 Youth separado,PASS,No se mezclan Youth con Summer
+regresion_Andrianov,resultado,Gold 7 Silver 5 Bronze 3,Gold 7 Silver 5 Bronze 3,PASS,Sin cambios en el preview hipotético
+regresion_Messi,resultado,una participación 2008 ARG evento 303 Gold,igual,PASS,Sin cambios en el preview hipotético
+regresion_100m_2004,resultado,Justin Gatlin USA Gold posicion 1,igual,PASS,Sin cambios en el preview hipotético
+preview_20_aliases,ATLETA,336418,336418,PASS,Eliminación controlada de 147606 no depende de este alias
+preview_20_aliases,EVENTO,2987,2987,PASS,3007 menos 20 aliases; 2231 permanece como entidad de evento
+preview_20_aliases,PARTICIPACION,714181,714181,PASS,Reaplicación lógica en memoria sin escribir data/semantic_preview
+decision,resultado,ALIAS_2231_1022_SELECTIVE,una de tres salidas permitidas,REVIEW,Unificar catálogo pero preservar las filas con conflicto histórico sin merge automático
+recommendation,resultado,DO_NOT_APPLY,detener antes de aplicar,PASS,La fase fue solo auditoría y no promovió ninguna corrección
+processed_sha256,integridad,10/10 MATCH,10/10 MATCH,PASS,Comparado con processed_manifest_after_block4_apply.csv
+semantic_preview,modificado,NO,NO,PASS,No se escribieron ni reemplazaron los tres CSV del preview
+sql_server,modificado,NO,NO,PASS,No se ejecutó SQL
+stored_procedures,modificados,NO,NO,PASS,No se modificó código de procedimientos almacenados

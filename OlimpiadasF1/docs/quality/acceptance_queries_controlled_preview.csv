@@ -1,0 +1,266 @@
+caso,fase,posicion,atleta,id_atleta,medallas,estado,detalle
+Guatemala_medallistas,actual,,,,5,REVIEW,Filas crudas; contienen duplicación Barrondo.
+Guatemala_medallistas,preview,,Érick Barrondo; Adriana Ruano; Pierre Brol,121191|140041|337121,3,PASS,"Se esperan Adriana Ruano Gold, Érick Barrondo Silver y Pierre Brol Bronze."
+Phelps_medals,actual,,Michael Phelps,93113,56,REVIEW,"{'Bronze': 4, 'Gold': 46, 'Silver': 6}"
+Phelps_medals,preview,,Michael Phelps,93113,28,PASS,"{'Bronze': 2, 'Gold': 23, 'Silver': 3}; esperado={'Gold': 23, 'Silver': 3, 'Bronze': 2}"
+Phelps_participaciones_logicas,preview,,Michael Phelps,93113,30,PASS,Participaciones después de aliases y fusiones contextuales; esperado=30.
+Chad le Clos_medals,actual,,Chad le Clos,119877,8,REVIEW,"{'Silver': 6, 'Gold': 2}"
+Chad le Clos_medals,preview,,Chad le Clos,119877,4,PASS,"{'Silver': 3, 'Gold': 1}; esperado={'Gold': 1, 'Silver': 3, 'Bronze': 0}"
+Nikolay Andrianov_medals,actual,,Nikolay Andrianov,31000,30,REVIEW,"{'Silver': 10, 'Gold': 14, 'Bronze': 6}"
+Nikolay Andrianov_medals,preview,,Nikolay Andrianov,31000,15,PASS,"{'Silver': 5, 'Gold': 7, 'Bronze': 3}; esperado={'Gold': 7, 'Silver': 5, 'Bronze': 3}"
+Messi_regresion,preview,,Lionel Messi,110178,1,PASS,"Una identidad canónica, 2008 Summer, ARG, Gold; nacimiento 1987-06-24."
+100m_2004_Gold,actual,,,,1,REVIEW,filas actuales=1
+100m_2004_Gold,preview,,Justin Gatlin,104445,1,PASS,evento=43; año=2004; medalla=Gold; filas_preview=1
+Phelps_100fly_2004,actual,,,,1,REVIEW,filas actuales=1
+Phelps_100fly_2004,preview,,Michael Phelps; Michael Ii,285125|93113,2,PASS,evento=783; año=2004; medalla=Gold; filas_preview=2
+Phelps_200fly_2008,actual,,,,1,REVIEW,filas actuales=1
+Phelps_200fly_2008,preview,,Michael Phelps; Michael Ii,285134|93113,2,PASS,evento=784; año=2008; medalla=Gold; filas_preview=2
+Barrondo_20km_2012,actual,,,,1,REVIEW,filas actuales=1
+Barrondo_20km_2012,preview,,Érick Barrondo,121191,1,PASS,evento=1021; año=2012; medalla=Silver; filas_preview=1
+Andrianov_team_1972,actual,,,,6,REVIEW,filas actuales=6
+Andrianov_team_1972,preview,,Nikolay Andrianov; Viktor Klimenko; Aleksandr Maleyev; Edvard Mikaelyan; Vladimir Shchukin; Mikhail Voronin; Edvard Mikayelyan; Viktor Klimenko; Aleksandr Maleyev; Edvard Mikayelyan,167701|249476|263280|269447|301038|31000|31014|31022|31025|31033|31040|321219,12,PASS,evento=489; año=1972; medalla=Silver; filas_preview=12
+Guy_Forget_singles_1992,actual,,,,64,REVIEW,filas actuales=64
+Guy_Forget_singles_1992,preview,,Guy Forget; Henri Leconte; Fabrice Santoro; Andrew Castle; Chris Wilkinson; Boris Becker; Carl-Uwe Steeb; Michael Stich; Sándor Noszály; Benny Wijaya,1000|1031|1056|1060|121|138|160|161|17|225|2268|2273|2274|2334|2336|2366|2411|2412|2422|2466|2481|2495|2507|2521|2564|2565|26|2602|2605|2612|2650|267|2707|2708|2738|2740|2773|2811|284|287|35|626|631|639|652|656|660|710|712|760|788|797|816|818|82|822|864|909|944|946|967|969|994|996,64,PASS,evento=1; año=1992; medalla=; filas_preview=64
+ranking_global_Gold,actual,1,Michael Phelps,93113,46,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,2,Ray Ewry,77795,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,3,Mark Spitz,51214,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,4,Paavo Nurmi,67218,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,5,Carl Lewis,78102,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,6,Birgit Fischer-Schmidt,9825,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,7,Sawao Kato,30361,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,8,Jenny Thompson,50859,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,9,Matt Biondi,50908,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,actual,10,Usain Bolt,104492,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,1,Michael Phelps,93113,23,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,2,Ray Ewry,77795,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,3,Paavo Nurmi,67218,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,4,Birgit Fischer-Schmidt,9825,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,5,Jenny Thompson,50859,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,6,Carl Lewis,78102,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,7,Isabell Werth,11443,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,8,Katie Ledecky,124356,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,9,Usain Bolt,104492,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Gold,preview,10,Jason Kenny,111919,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,1,Aleksandr Dityatin,31009,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,2,Mikhail Voronin,31040,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,3,Shirley Babashoff,50597,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,4,Anky van Grunsven,11431,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,5,Isabell Werth,11443,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,6,Edoardo Mangiarotti,22508,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,7,Gustavo Marzi,22515,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,8,Nikolay Andrianov,31000,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,9,Viktor Lisitsky,31019,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,actual,10,Yury Titov,31037,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,1,Shirley Babashoff,50597,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,2,Anky van Grunsven,11431,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,3,Isabell Werth,11443,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,4,Edoardo Mangiarotti,22508,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,5,Gustavo Marzi,22515,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,6,Dagmar Hase,47316,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,7,Raisa Smetanina,81748,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,8,Leisel Jones,92527,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,9,Bogdan Musiol,94892,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Silver,preview,10,Charlotte Kalla,117263,9,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,1,Heikki Savolainen,29611,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,2,Aleksey Nemov,30743,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,3,Franziska van Almsick,47405,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,4,Merlene Ottey-Page,71688,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,5,Harri Kirvesniemi,87293,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,6,Daniel Revenu,21867,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,7,Arie de Jong,22776,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,8,Antje Buschschulte,47293,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,9,Phil Edwards,65535,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,actual,10,Stefania Belmondo,79977,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,1,Franziska van Almsick,47405,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,2,Merlene Ottey-Page,71688,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,3,Harri Kirvesniemi,87293,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,4,Daniel Revenu,21867,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,5,Arie de Jong,22776,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,6,Antje Buschschulte,47293,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,7,Phil Edwards,65535,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,8,Stefania Belmondo,79977,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,9,Natalie Coughlin,102358,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_Bronze,preview,10,Arianna Fontana,108766,9,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,1,Michael Phelps,93113,56,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,2,Nikolay Andrianov,31000,30,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,3,Edoardo Mangiarotti,22508,26,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,4,Birgit Fischer-Schmidt,9825,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,5,Isabell Werth,11443,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,6,Sawao Kato,30361,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,7,Aleksey Nemov,30743,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,8,Jenny Thompson,50859,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,9,Dara Torres,50860,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,actual,10,Paavo Nurmi,67218,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,1,Michael Phelps,93113,28,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,2,Edoardo Mangiarotti,22508,26,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,3,Birgit Fischer-Schmidt,9825,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,4,Isabell Werth,11443,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,5,Jenny Thompson,50859,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,6,Paavo Nurmi,67218,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,7,Natalie Coughlin,102358,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,8,Dara Torres,50860,23,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,9,Emma McKeon,126684,21,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_global_TOTAL,preview,10,Franziska van Almsick,47405,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,1,Ray Ewry,77795,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,2,Paavo Nurmi,67218,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,3,Carl Lewis,78102,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,4,Usain Bolt,104492,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,5,Martin Sheridan,78441,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,6,Betty Cuthbert,64026,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,7,Hannes Kolehmainen,67131,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,8,Fanny Blankers-Koen,73150,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,9,Robert Korzeniowski,74189,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,actual,10,Eric Lemming,75674,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,1,Ray Ewry,77795,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,2,Paavo Nurmi,67218,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,3,Carl Lewis,78102,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,4,Usain Bolt,104492,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,5,Martin Sheridan,78441,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,6,Betty Cuthbert,64026,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,7,Hannes Kolehmainen,67131,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,8,Fanny Blankers-Koen,73150,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,9,Eric Lemming,75674,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Gold,preview,10,Evelyn Ashford,77159,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,1,Frankie Fredericks,73121,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,2,Shelly-Ann Fraser-Pryce,113450,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,3,Raelene Boyle,64008,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,4,Paavo Nurmi,67218,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,5,Alain Mimoun,67894,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,6,Ernie Webb,69052,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,7,Merlene Ottey-Page,71688,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,8,Herb McKenley,71764,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,9,Irv Baxter,77500,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,actual,10,Martin Sheridan,78441,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,1,Shelly-Ann Fraser-Pryce,113450,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,2,Raelene Boyle,64008,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,3,Paavo Nurmi,67218,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,4,Alain Mimoun,67894,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,5,Ernie Webb,69052,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,6,Merlene Ottey-Page,71688,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,7,Frankie Fredericks,73121,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,8,Irv Baxter,77500,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,9,Martin Sheridan,78441,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Silver,preview,10,Veronica Campbell-Brown,86428,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,1,Merlene Ottey-Page,71688,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,2,Phil Edwards,65535,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,3,Edvin Wide,75867,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,4,Shirley Strickland de la Hunty,64099,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,5,Stan Rowley,64308,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,6,Alex Wilson,65784,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,7,Kathy Smallwood-Cook,68265,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,8,Eric Backman,75481,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,9,Ato Boldon,76323,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,actual,10,Tirunesh Dibaba,103976,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,1,Merlene Ottey-Page,71688,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,2,Phil Edwards,65535,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,3,Edvin Wide,75867,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,4,Shirley Strickland de la Hunty,64099,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,5,Alex Wilson,65784,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,6,Kathy Smallwood-Cook,68265,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,7,Eric Backman,75481,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,8,Tirunesh Dibaba,103976,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,9,Stan Rowley,64308,5,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_Bronze,preview,10,Eric Lemming,75674,5,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,1,Paavo Nurmi,67218,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,2,Ray Ewry,77795,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,3,Carl Lewis,78102,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,4,Merlene Ottey-Page,71688,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,5,Martin Sheridan,78441,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,6,Veronica Campbell-Brown,86428,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,7,Usain Bolt,104492,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,8,Shirley Strickland de la Hunty,64099,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,9,Shelly-Ann Fraser-Pryce,113450,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,actual,10,Eric Lemming,75674,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,1,Paavo Nurmi,67218,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,2,Ray Ewry,77795,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,3,Merlene Ottey-Page,71688,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,4,Carl Lewis,78102,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,5,Martin Sheridan,78441,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,6,Veronica Campbell-Brown,86428,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,7,Shirley Strickland de la Hunty,64099,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,8,Shelly-Ann Fraser-Pryce,113450,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,9,Eric Lemming,75674,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Athletics_TOTAL,preview,10,Usain Bolt,104492,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,1,Sawao Kato,30361,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,2,Nikolay Andrianov,31000,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,3,Akinori Nakayama,30376,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,4,Yukio Endo,30345,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,5,Mitsuo Tsukahara,30388,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,6,Anton Heida,31102,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,7,Zou Kai,110697,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,8,Larisa Latynina,28985,9,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,9,Larysa Semenivna Latynina (Diriy-),164169,9,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,actual,10,Ecaterina Szabo,28826,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,1,Larisa Latynina,28985,9,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,2,Larysa Semenivna Latynina (Diriy-),164169,9,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,3,Ecaterina Szabo,28826,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,4,Olga Korbut,28980,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,5,Lyudmila Turishcheva,29003,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,6,Sawao Kato,30361,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,7,Věra Čáslavská,28902,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,8,Nikolay Andrianov,31000,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,9,Boris Shakhlin,31032,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Gold,preview,10,Viktor Chukarin,31035,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,1,Aleksandr Dityatin,31009,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,2,Mikhail Voronin,31040,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,3,Nikolay Andrianov,31000,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,4,Viktor Lisitsky,31019,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,5,Yury Titov,31037,10,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,6,Erika Zuchold,28313,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,7,Svetlana Khorkina,28837,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,8,Eugen Mack,30796,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,9,Michael Reusch,30805,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,actual,10,Hryhoriy Misiutin,30996,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,1,Erika Zuchold,28313,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,2,Svetlana Khorkina,28837,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,3,Tamara Manina,28989,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,4,Lyudmila Turishcheva,29003,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,5,Aleksandr Dityatin,31009,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,6,Mikhail Voronin,31040,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,7,Shawn Johnson,116262,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,8,Nastia Liukin,116263,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,9,Mariya Paseka,124683,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Silver,preview,10,Mariya Gorokhovskaya,28970,5,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,1,Heikki Savolainen,29611,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,2,Aleksey Nemov,30743,12,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,3,Margit Korondi,28422,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,4,William Merz,31148,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,5,Gina Gogean,28792,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,6,Dominique Dawes,29025,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,7,Shannon Miller,29053,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,8,Yordan Yovchev,29278,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,9,Michael Nikolay,29996,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,actual,10,Franco Menichelli,30296,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,1,Margit Korondi,28422,8,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,2,William Merz,31148,7,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,3,Gina Gogean,28792,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,4,Dominique Dawes,29025,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,5,Shannon Miller,29053,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,6,Heikki Savolainen,29611,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,7,Aleksey Nemov,30743,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,8,Aliya Mustafina,118714,6,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,9,Maxi Gnauck,28288,4,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_Bronze,preview,10,Sonia Iovan-Inovan,28804,4,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,1,Nikolay Andrianov,31000,30,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,2,Sawao Kato,30361,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,3,Aleksey Nemov,30743,24,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,4,Akinori Nakayama,30376,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,5,Aleksandr Dityatin,31009,20,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,6,Larisa Latynina,28985,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,7,Lyudmila Turishcheva,29003,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,8,Heikki Savolainen,29611,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,9,Eizo Kenmotsu,30363,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,actual,10,Mitsuo Tsukahara,30388,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,1,Larisa Latynina,28985,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,2,Lyudmila Turishcheva,29003,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,3,Larysa Semenivna Latynina (Diriy-),164169,18,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,4,Margit Korondi,28422,16,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,5,Nikolay Andrianov,31000,15,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,6,Svetlana Khorkina,28837,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,7,Shannon Miller,29053,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,8,Aliya Mustafina,118714,14,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,9,Takashi Ono,30379,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+ranking_Gymnastics_TOTAL,preview,10,Boris Shakhlin,31032,13,PASS,Ranking calculado directamente desde PARTICIPACION.
+youngest_gold,preview,,Hans Bourquin; Donna de Varona; Fu Mingxia; Marjorie Gestring; Aileen Riggin; Klaus Zerta,39397|50644|45727|50670|50810|37757,13.0,PASS,23 conflictos individuales conservados en gold_age_conflicts_review.csv.
+Guy_Forget,preview,,Guy Forget,17,9,PASS,Se reasignan participaciones compatibles; no se eliminan identidades duplicadas.
+Eric_Lemming,preview,,Eric Lemming,75674,57,REVIEW,No se fusiona: los eventos Intercalated/Olympic y las fuentes requieren revisión histórica.

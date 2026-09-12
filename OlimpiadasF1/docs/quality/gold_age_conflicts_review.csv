@@ -1,0 +1,24 @@
+id_participacion,id_atleta,atleta,anio,fecha_nacimiento,edad_observada,edad_derivada,diferencia,clasificacion,accion,razon
+880,313,Alphonse Allaert,1920,1872-10-27,44,48,-4.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+881,313,Alphonse Allaert,1920,1872-10-27,44,48,-4.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+34535,19171,"Balbir Singh, Sr.",1948,1923-12-31,23,25,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+34536,19171,"Balbir Singh, Sr.",1952,1923-12-31,27,29,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+35516,19840,Tanvir Dar,1968,1937-06-04,21,31,-10.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+74929,32672,Igor Vasilyev,1992,1966-01-24,28,26,2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+117025,52542,Zbigniew Zarzycki,1976,1946-09-08,28,30,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+329647,47433,Arno Bieberstein,1908,1883-10-23,21,25,-4.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+344722,22089,Gustav Casmir,1906,1872-11-05,31,34,-3.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+344723,22089,Gustav Casmir,1906,1872-11-05,31,34,-3.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+424270,59441,Makharbek Khadartsev,1988,1964-10-02,22,24,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+424271,59441,Makharbek Khadartsev,1992,1964-10-02,26,28,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+427247,51088,John Kinsella,1972,1949-08-26,20,23,-3.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+474561,22528,Nedo Nadi,1912,1893-06-09,17,19,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+474564,22528,Nedo Nadi,1920,1893-06-09,25,27,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+474565,22528,Nedo Nadi,1920,1893-06-09,25,27,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+474566,22528,Nedo Nadi,1920,1893-06-09,25,27,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+474567,22528,Nedo Nadi,1920,1893-06-09,25,27,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+474568,22528,Nedo Nadi,1920,1893-06-09,25,27,-2.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+498752,49701,Aleksandr Popov,1988,1971-11-16,22,17,5.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+504900,57053,Valentin Raychev,1980,1958-08-20,26,22,4.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+532135,72063,Son Gi-Jeong,1936,1912-08-29,21,24,-3.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.
+536518,161,Michael Stich,1992,1968-10-18,28,24,4.0,CONFLICT_REVIEW,NO_CAMBIAR,Edad observada y edad derivada difieren en más de un año; no se imputa ninguna.

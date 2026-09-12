@@ -1,0 +1,9 @@
+caso,resultado_actual,resultado_preview,coherencia_historica,estado
+A Guatemala medallistas,"5 filas; [('Adriana Ruano', 'Gold'), ('Erick Bernab Barrondo Garca', 'Silver'), ('Erick Garca', 'Silver'), ('Pierre Brol', 'Bronze'), ('Érick Barrondo', 'Silver')]",igual; sin merge,3 medallas esperadas,FAIL
+B oro 100 metros 2004,129 filas; atletas=79; eventos=34,igual; sin alias,requiere alias,REVIEW_REQUIRED
+C ranking oro,ver medal_rankings_audit.csv,Phelps crudo 46,Phelps esperado 23,FAIL
+D ranking plata,ver medal_rankings_audit.csv,sin merge,requiere revisión,REVIEW_REQUIRED
+E ranking bronce,ver medal_rankings_audit.csv,sin merge,requiere revisión,REVIEW_REQUIRED
+F ranking total,ver medal_rankings_audit.csv,Phelps crudo 56,Phelps esperado 28,FAIL
+G rankings por deporte,sin consolidación,sin merge,requiere revisión,REVIEW_REQUIRED
+H oro más joven,edad mínima=13,edad sin imputación,revisar contradicciones,REVIEW_REQUIRED

@@ -1,0 +1,10 @@
+id_atleta_actual,nombre,anio,temporada,NOC,equipo,deporte,disciplina,id_evento,evento,edad,posicion,medalla,atleta_canonico_propuesto,accion_propuesta,confianza,razon
+121191,Érick Barrondo,2012,Summer,GUA,,Athletics,Athletics,1021,"20 kilometres Race Walk, Men (Olympic)",,2,Silver,121191,KEEP,alta,Registro canónico con biografía y posición/medalla.
+121191,Érick Barrondo,2012,Summer,GUA,,Athletics,Athletics,1022,"50 kilometres Race Walk, Men (Olympic)",,,,121191,KEEP,alta,Registro canónico con biografía y posición/medalla.
+121191,Érick Barrondo,2016,Summer,GUA,,Athletics,Athletics,1021,"20 kilometres Race Walk, Men (Olympic)",,50,,121191,KEEP,alta,Registro canónico con biografía y posición/medalla.
+121191,Érick Barrondo,2020,Summer,GUA,,Athletics,Athletics,1022,"50 kilometres Race Walk, Men (Olympic)",,,,121191,KEEP,alta,Registro canónico con biografía y posición/medalla.
+147606,Erick Bernab Barrondo Garca,2012,Summer,GUA,Guatemala,Athletics,Athletics,2218,Athletics Men's 20 kilometres Walk,21,,Silver,121191,REASSIGN_TO_121191,alta,Misma persona/país y atributos complementarios; no se pierde la participación.
+147606,Erick Bernab Barrondo Garca,2012,Summer,GUA,Guatemala,Athletics,Athletics,2231,Athletics Men's 50 kilometres Walk,21,,,121191,REASSIGN_TO_121191,alta,Misma persona/país y atributos complementarios; no se pierde la participación.
+147606,Erick Bernab Barrondo Garca,2016,Summer,GUA,Guatemala,Athletics,Athletics,2218,Athletics Men's 20 kilometres Walk,25,,,121191,REASSIGN_TO_121191,alta,Misma persona/país y atributos complementarios; no se pierde la participación.
+192591,Erick Garca,2012,Summer,GUA,Guatemala,Athletics,Athletics,2218,Athletics Men's 20 kilometres Walk,,,Silver,121191,REASSIGN_TO_121191,alta,Coincide con la plata de 20 km de GUA; complementa posición y edad.
+192591,Erick Garca,2020,Summer,CAN,Canada,Aquatics,Diving,2922,Men's 10m Platform,,,,,REVIEW,baja,192591 contiene una participación CAN 2020 incompatible con Barrondo; no se fusiona el atleta completo.

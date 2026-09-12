@@ -1,0 +1,5 @@
+﻿caso,esperado,actual,estado,detalle
+sexo,0,0,PASS,Residual M/F
+nombre_completo,0,0,PASS,Residual U+2022
+unicode.nombre,26261,26261,PASS,Diferencias exactas CSV->SQL: 0
+historical_2012_50km,4,4,PASS,Casos históricos resueltos

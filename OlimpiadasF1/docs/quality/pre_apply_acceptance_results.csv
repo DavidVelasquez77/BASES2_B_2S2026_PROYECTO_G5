@@ -1,0 +1,46 @@
+caso,metrica,actual,esperado,estado,detalle
+Guatemala,filas_logicas,3,3,PASS,Érick Barrondo|Silver; Adriana Ruano|Gold; Pierre Brol|Bronze
+Guatemala,Gold,1,1,PASS,conteo exacto
+Guatemala,Silver,1,1,PASS,conteo exacto
+Guatemala,Bronze,1,1,PASS,conteo exacto
+Phelps,Gold,23,23,PASS,conteo directo
+Phelps,Silver,3,3,PASS,conteo directo
+Phelps,Bronze,2,2,PASS,conteo directo
+Phelps,total,28,28,PASS,sin heurística
+Phelps,participaciones_logicas,30,30,PASS,filas directas
+Chad le Clos,Gold,1,1,PASS,conteo directo
+Chad le Clos,Silver,3,3,PASS,conteo directo
+Chad le Clos,Bronze,0,0,PASS,conteo directo
+Chad le Clos,total,4,4,PASS,sin heurística
+Chad le Clos,summer_youth_separado,8,>0,PASS,no se colapsó Youth
+Nikolay Andrianov,Gold,7,7,PASS,conteo directo
+Nikolay Andrianov,Silver,5,5,PASS,conteo directo
+Nikolay Andrianov,Bronze,3,3,PASS,conteo directo
+Nikolay Andrianov,total,15,15,PASS,sin heurística
+Barrondo,plata_2012,1,1,PASS,pos=2;edad=21
+Barrondo,id_147606,0,0,PASS,147606->121191
+Barrondo,192591_CAN_2020,1,1,PASS,permanece separado
+Messi,identidad_participacion,1,1,PASS,ARG 2008 Gold; nacimiento 1987-06-24
+100m_2004,ganador,Justin Gatlin|USA|Gold,Justin Gatlin|USA|Gold,PASS,consulta estricta
+2008 Swimming 200m Butterfly Men Gold,ganadores_preview,Michael Ii|USA|Gold;Michael Phelps|USA|Gold,igual a processed,REVIEW,comparación antes/después
+2012 Athletics 20km Men Silver,ganadores_preview,Érick Barrondo|GUA|Silver,igual a processed,PASS,comparación antes/después
+1976 Gymnastics Horse Vault Men Gold,ganadores_preview,Nikolay Andrianov|URS|Gold,igual a processed,PASS,comparación antes/después
+2012 Swimming Women 100m Butterfly Gold,ganadores_preview,Dana (-grant)|USA|Gold;Dana Vollmer|USA|Gold,igual a processed,REVIEW,comparación antes/después
+2016 Swimming Women 100m Butterfly Gold,ganadores_preview,Sarah Frederica Sjstrm|SWE|Gold;Sarah Sjstrm|SWE|Gold;Sarah Sjöström|SWE|Gold,igual a processed,REVIEW,comparación antes/después
+youngest_gold,edad_minima_confiable,13,13,PASS,casos=Hans Bourquin;Donna de Varona;Fu Mingxia;Marjorie Gestring;Aileen Riggin;Klaus Zerta;conflictos_excluidos=23
+ranking_global_Gold,top20,Michael Phelps=23; Ray Ewry=20; Paavo Nurmi=18; Birgit Fischer-Schmidt=16; Jenny Thompson=16; Carl Lewis=16; Isabell Werth=14; Katie Ledecky=14; Usain Bolt=13; Jason Kenny=13; Gert Fredriksson=12; Reiner Klimke=12; Edoardo Mangiarotti=12; Nedo Nadi=12; Lidiya Skoblikova=12; Lyubov Yegorova=12; Chris Hoy=12; Viktor An=12; Svetlana Romashina=12; Kristin Otto=11,revisión humana,REVIEW,Phelps=23;Andrianov=0;no PASS automático
+ranking_global_Silver,top20,Shirley Babashoff=12; Anky van Grunsven=10; Isabell Werth=10; Edoardo Mangiarotti=10; Gustavo Marzi=10; Dagmar Hase=10; Raisa Smetanina=10; Leisel Jones=10; Bogdan Musiol=10; Charlotte Kalla=9; Birgit Fischer-Schmidt=8; J. Michael Plumb=8; Ian Stark=8; Giulio Gaudini=8; Renzo Nostini=8; Vincenzo Pinton=8; Erika Zuchold=8; Svetlana Khorkina=8; Kornelia Ender=8; Franziska van Almsick=8,revisión humana,REVIEW,Phelps=0;Andrianov=0;no PASS automático
+ranking_global_Bronze,top20,Franziska van Almsick=12; Merlene Ottey-Page=12; Harri Kirvesniemi=12; Daniel Revenu=10; Arie de Jong=10; Antje Buschschulte=10; Phil Edwards=10; Stefania Belmondo=10; Natalie Coughlin=10; Arianna Fontana=9; Brianna Throssell=9; Piero D'Inzeo=8; Robert Dover=8; Clara Hughes=8; Jetze Doorman=8; Margit Korondi=8; Dmitry Sautin=8; Edvin Wide=8; Gabriella Paruzzi=8; Roald Larsen=8,revisión humana,REVIEW,Phelps=0;Andrianov=0;no PASS automático
+ranking_global_TOTAL,top20,Michael Phelps=28; Edoardo Mangiarotti=26; Birgit Fischer-Schmidt=24; Isabell Werth=24; Jenny Thompson=24; Paavo Nurmi=24; Natalie Coughlin=24; Dara Torres=23; Emma McKeon=21; Franziska van Almsick=20; Ray Ewry=20; Stefania Belmondo=20; Raisa Smetanina=20; Katie Ledecky=20; Anky van Grunsven=18; Giulio Gaudini=18; Larisa Latynina=18; Lyudmila Turishcheva=18; Alf Swahn=18; Merlene Ottey-Page=18,revisión humana,REVIEW,Phelps=28;Andrianov=0;no PASS automático
+ranking_Swimming_Gold,top10,,revisión humana,REVIEW,no aprobación automática
+ranking_Swimming_Silver,top10,,revisión humana,REVIEW,no aprobación automática
+ranking_Swimming_Bronze,top10,,revisión humana,REVIEW,no aprobación automática
+ranking_Swimming_TOTAL,top10,,revisión humana,REVIEW,no aprobación automática
+ranking_Athletics_Gold,top10,Ray Ewry=20; Paavo Nurmi=18; Carl Lewis=16; Usain Bolt=13; Martin Sheridan=10; Betty Cuthbert=8; Hannes Kolehmainen=8; Fanny Blankers-Koen=8; Eric Lemming=8; Evelyn Ashford=8,revisión humana,REVIEW,no aprobación automática
+ranking_Athletics_Silver,top10,Shelly-Ann Fraser-Pryce=7; Raelene Boyle=6; Paavo Nurmi=6; Alain Mimoun=6; Ernie Webb=6; Merlene Ottey-Page=6; Frankie Fredericks=6; Irv Baxter=6; Martin Sheridan=6; Veronica Campbell-Brown=6,revisión humana,REVIEW,no aprobación automática
+ranking_Athletics_Bronze,top10,Merlene Ottey-Page=12; Phil Edwards=10; Edvin Wide=8; Shirley Strickland de la Hunty=6; Alex Wilson=6; Kathy Smallwood-Cook=6; Eric Backman=6; Tirunesh Dibaba=6; Stan Rowley=5; Eric Lemming=5,revisión humana,REVIEW,no aprobación automática
+ranking_Athletics_TOTAL,top10,Paavo Nurmi=24; Ray Ewry=20; Merlene Ottey-Page=18; Carl Lewis=18; Martin Sheridan=18; Veronica Campbell-Brown=16; Shirley Strickland de la Hunty=14; Shelly-Ann Fraser-Pryce=14; Eric Lemming=13; Usain Bolt=13,revisión humana,REVIEW,no aprobación automática
+ranking_Gymnastics_Gold,top10,Larisa Latynina=9; Larysa Semenivna Latynina (Diriy-)=9; Ecaterina Szabo=8; Olga Korbut=8; Lyudmila Turishcheva=8; Sawao Kato=8; Věra Čáslavská=7; Nikolay Andrianov=7; Boris Shakhlin=7; Viktor Chukarin=7,revisión humana,REVIEW,no aprobación automática
+ranking_Gymnastics_Silver,top10,Erika Zuchold=8; Svetlana Khorkina=8; Tamara Manina=6; Lyudmila Turishcheva=6; Aleksandr Dityatin=6; Mikhail Voronin=6; Shawn Johnson=6; Nastia Liukin=6; Mariya Paseka=6; Mariya Gorokhovskaya=5,revisión humana,REVIEW,no aprobación automática
+ranking_Gymnastics_Bronze,top10,Margit Korondi=8; William Merz=7; Gina Gogean=6; Dominique Dawes=6; Shannon Miller=6; Heikki Savolainen=6; Aleksey Nemov=6; Aliya Mustafina=6; Maxi Gnauck=4; Sonia Iovan-Inovan=4,revisión humana,REVIEW,no aprobación automática
+ranking_Gymnastics_TOTAL,top10,Larisa Latynina=18; Lyudmila Turishcheva=18; Larysa Semenivna Latynina (Diriy-)=18; Margit Korondi=16; Nikolay Andrianov=15; Svetlana Khorkina=14; Shannon Miller=14; Aliya Mustafina=14; Takashi Ono=13; Boris Shakhlin=13,revisión humana,REVIEW,no aprobación automática

@@ -1,0 +1,7 @@
+campo,filas_con_bullet,filas_cambiables,colisiones_por_valor_normalizado,valores_vacios_post_normalizacion,clasificacion,transformacion,motivo
+nombre,0,55,0,0,DETERMINISTIC_FIX,U+2022 -> espacio y colapso de espacios,Aplicar solo a salida/búsqueda; conservar original.
+nombre_completo,145252,145252,2,0,REVIEW,U+2022 -> espacio y colapso de espacios,Aplicar solo a salida/búsqueda; conservar original.
+nombre_usado,145500,145500,1,0,REVIEW,U+2022 -> espacio y colapso de espacios,Aplicar solo a salida/búsqueda; conservar original.
+nombre_original,30706,30706,1,0,REVIEW,U+2022 -> espacio y colapso de espacios,Aplicar solo a salida/búsqueda; conservar original.
+otros_nombres,2,3,0,0,DETERMINISTIC_FIX,U+2022 -> espacio y colapso de espacios,Aplicar solo a salida/búsqueda; conservar original.
+apodos,0,1,0,0,DETERMINISTIC_FIX,U+2022 -> espacio y colapso de espacios,Aplicar solo a salida/búsqueda; conservar original.

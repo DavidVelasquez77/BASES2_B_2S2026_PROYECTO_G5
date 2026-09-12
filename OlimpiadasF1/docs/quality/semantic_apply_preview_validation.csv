@@ -1,0 +1,7 @@
+validacion,esperado,actual,estado
+sexo_normalizado,190919,190919,PASS
+nombre_completo_bullet_normalizado,145252,145252,PASS
+athlete_full_merge,147606->121191,147606->121191,PASS
+event_aliases,21,21,PASS
+historical_logical_cases,4,4,PASS
+participation_merges,reproducible,19736,PASS

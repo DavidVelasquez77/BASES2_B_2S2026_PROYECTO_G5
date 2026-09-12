@@ -1,0 +1,4 @@
+entidad,actual,preview,diferencia,estado,motivo
+ATLETA,336419,336418,-1,PASS,merge completo explícito 147606->121191
+EVENTO,3007,2986,-21,PASS,aliases FINAL_SAFE_ALIAS materializados
+PARTICIPACION,733414,713682,-19732,PASS,aliases/reasignaciones y fusiones trazables

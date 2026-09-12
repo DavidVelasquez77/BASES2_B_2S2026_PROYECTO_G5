@@ -1,0 +1,14 @@
+tipo,metrica,valor,id_atleta,atleta,anio,evento,medalla,estado
+metrica,total_gold_rows,35653,,,,,Gold,PASS
+metrica,sin_edad,22431,,,,,Gold,PASS
+metrica,con_dob,23425,,,,,Gold,PASS
+metrica,con_edad,13222,,,,,Gold,PASS
+metrica,con_edad_y_dob,10265,,,,,Gold,PASS
+metrica,contradictorias,23,,,,,Gold,PASS
+metrica,sin_dob,12228,,,,,Gold,PASS
+ganador_oro_mas_joven,min_edad_observada,13,37757,Klaus Zerta,1960,Rowing Men's Coxed Pairs,Gold,REVIEW_REQUIRED
+ganador_oro_mas_joven,min_edad_observada,13,39397,Hans Bourquin,1928,Rowing Men's Coxed Pairs,Gold,REVIEW_REQUIRED
+ganador_oro_mas_joven,min_edad_observada,13,45727,Fu Mingxia,1992,Diving Women's Platform,Gold,REVIEW_REQUIRED
+ganador_oro_mas_joven,min_edad_observada,13,50644,Donna de Varona,1960,Swimming Women's 4 x 100 metres Freestyle Relay,Gold,REVIEW_REQUIRED
+ganador_oro_mas_joven,min_edad_observada,13,50670,Marjorie Gestring,1936,Diving Women's Springboard,Gold,REVIEW_REQUIRED
+ganador_oro_mas_joven,min_edad_observada,13,50810,Aileen Riggin,1920,Diving Women's Springboard,Gold,REVIEW_REQUIRED
