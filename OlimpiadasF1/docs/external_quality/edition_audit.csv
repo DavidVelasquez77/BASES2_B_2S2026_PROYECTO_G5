@@ -1,0 +1,62 @@
+id_edicion,anio,temporada,id_sede,sede,estado,motivo,fuente_oficial
+1,1896,Summer,1,Athina,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+2,1900,Summer,2,Paris,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+3,1904,Summer,3,St. Louis,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+4,1906,Intercalated Games,1,Athina,HISTORICAL_SPECIAL_CASE,Official intercalated Games retained as an explicit historical category.,IOC Olympic Hosts 1896-2034
+5,1908,Summer,4,London,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+6,1912,Summer,5,Stockholm,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+7,1920,Summer,6,Antwerpen,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+8,1924,Summer,2,Paris,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+9,1924,Winter,7,Chamonix,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+10,1928,Summer,8,Amsterdam,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+11,1928,Winter,9,Sankt Moritz,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+12,1932,Summer,10,Los Angeles,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+13,1932,Winter,11,Lake Placid,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+14,1936,Summer,12,Berlin,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+15,1936,Winter,13,Garmisch-Partenkirchen,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+16,1948,Summer,4,London,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+17,1948,Winter,9,Sankt Moritz,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+18,1952,Summer,14,Helsinki,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+19,1952,Winter,15,Oslo,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+20,1956,Summer,16,Melbourne,HISTORICAL_SPECIAL_CASE,Melbourne was the main 1956 host; equestrian competitions were held in Stockholm.,IOC Olympic Hosts 1896-2034
+21,1956,Winter,17,Cortina d'Ampezzo,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+22,1960,Summer,18,Roma,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+23,1960,Winter,19,Squaw Valley,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+24,1964,Summer,20,Tokyo,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+25,1964,Winter,21,Innsbruck,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+26,1968,Summer,22,Mexico City,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+27,1968,Winter,23,Grenoble,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+28,1972,Summer,24,Munich,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+29,1972,Winter,25,Sapporo,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+30,1976,Summer,26,Montreal,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+31,1976,Winter,21,Innsbruck,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+32,1980,Summer,27,Moskva,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+33,1980,Winter,11,Lake Placid,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+34,1984,Summer,10,Los Angeles,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+35,1984,Winter,28,Sarajevo,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+36,1988,Summer,29,Seoul,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+37,1988,Winter,30,Calgary,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+38,1992,Summer,31,Barcelona,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+39,1992,Winter,32,Albertville,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+40,1994,Winter,33,Lillehammer,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+41,1996,Summer,34,Atlanta,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+42,1998,Winter,35,Nagano,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+43,2000,Summer,36,Sydney,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+44,2002,Winter,37,Salt Lake City,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+45,2004,Summer,1,Athina,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+46,2006,Winter,38,Torino,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+47,2008,Summer,39,Beijing,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+48,2010,Summer Youth,,,MATCH,Youth Olympic Games are preserved as explicit edition categories.,IOC Olympic Hosts 1896-2034
+49,2010,Winter,40,Vancouver,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+50,2012,Summer,4,London,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+51,2012,Winter Youth,,,MATCH,Youth Olympic Games are preserved as explicit edition categories.,IOC Olympic Hosts 1896-2034
+52,2014,Summer Youth,,,MATCH,Youth Olympic Games are preserved as explicit edition categories.,IOC Olympic Hosts 1896-2034
+53,2014,Winter,41,Sochi,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+54,2016,Summer,42,Rio de Janeiro,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+55,2016,Winter Youth,,,MATCH,Youth Olympic Games are preserved as explicit edition categories.,IOC Olympic Hosts 1896-2034
+56,2018,Summer Youth,,,MATCH,Youth Olympic Games are preserved as explicit edition categories.,IOC Olympic Hosts 1896-2034
+57,2018,Winter,,,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+58,2020,Summer,20,Tokyo,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+59,2020,Winter Youth,,,MATCH,Youth Olympic Games are preserved as explicit edition categories.,IOC Olympic Hosts 1896-2034
+60,2022,Winter,,,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034
+61,2024,Summer,2,Paris,MATCH,"Edition is structurally represented by year, category and venue relation.",IOC Olympic Hosts 1896-2034

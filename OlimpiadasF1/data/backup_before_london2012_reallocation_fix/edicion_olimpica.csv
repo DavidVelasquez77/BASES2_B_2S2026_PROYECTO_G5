@@ -1,0 +1,62 @@
+id_edicion,anio,temporada,id_sede
+1,1896,Summer,1
+2,1900,Summer,2
+3,1904,Summer,3
+4,1906,Intercalated Games,1
+5,1908,Summer,4
+6,1912,Summer,5
+7,1920,Summer,6
+8,1924,Summer,2
+9,1924,Winter,7
+10,1928,Summer,8
+11,1928,Winter,9
+12,1932,Summer,10
+13,1932,Winter,11
+14,1936,Summer,12
+15,1936,Winter,13
+16,1948,Summer,4
+17,1948,Winter,9
+18,1952,Summer,14
+19,1952,Winter,15
+20,1956,Summer,16
+21,1956,Winter,17
+22,1960,Summer,18
+23,1960,Winter,19
+24,1964,Summer,20
+25,1964,Winter,21
+26,1968,Summer,22
+27,1968,Winter,23
+28,1972,Summer,24
+29,1972,Winter,25
+30,1976,Summer,26
+31,1976,Winter,21
+32,1980,Summer,27
+33,1980,Winter,11
+34,1984,Summer,10
+35,1984,Winter,28
+36,1988,Summer,29
+37,1988,Winter,30
+38,1992,Summer,31
+39,1992,Winter,32
+40,1994,Winter,33
+41,1996,Summer,34
+42,1998,Winter,35
+43,2000,Summer,36
+44,2002,Winter,37
+45,2004,Summer,1
+46,2006,Winter,38
+47,2008,Summer,39
+48,2010,Summer Youth,
+49,2010,Winter,40
+50,2012,Summer,4
+51,2012,Winter Youth,
+52,2014,Summer Youth,
+53,2014,Winter,41
+54,2016,Summer,42
+55,2016,Winter Youth,
+56,2018,Summer Youth,
+57,2018,Winter,
+58,2020,Summer,20
+59,2020,Winter Youth,
+60,2022,Winter,
+61,2024,Summer,2

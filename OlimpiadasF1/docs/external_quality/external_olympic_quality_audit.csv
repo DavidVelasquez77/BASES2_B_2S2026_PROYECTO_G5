@@ -1,0 +1,27 @@
+metric,esperado,actual,estado,cobertura,observacion
+estado_final,No critical confirmed conflicts,No critical confirmed conflicts,EXTERNAL_OLYMPIC_QUALITY_AUDIT_PASS,read-only audit,No data correction was performed by the audit script.
+editions,61/61 assessed,61/61,PASS,semantic/structural,Includes special-case classification.
+venues,42/42 assessed,42/42,PASS,relation/host-list context,Some venues remain REVIEW due source granularity.
+NOCs,236/236 assessed,236/236,PASS,current/historical classification,Historical codes are not errors.
+events,2986/2986 assessed,2986/2986,PASS,semantic key; priority exact,Not a claim of external row-by-row extraction.
+medal_participations,all rows generated,104240,REVIEW,all final medal rows; selective external comparison,See medal_audit.csv.
+podiums,all edition/event/NOC groups,35832,REVIEW,all groups derived locally,Team athlete rows grouped by NOC.
+athletes_externally_checked,mandatory identities and podium/medal strata,8,REVIEW,8/336418 explicit mandatory identities,No one-by-one claim for every profile.
+non_medal_sample,fixed-seed stratified sample,6261,REVIEW,seed=20260912,Categories may overlap.
+processed_SHA,10/10 stable during audit,10/10 MATCH,PASS,local file hashes,No processed file was written.
+RAW_SHA,10/10 MATCH,10/10 MATCH,PASS,docs/source_manifest.csv,SHA-256 of raw source files.
+intermediate_SHA,stable during audit,13/13 MATCH,PASS,data/intermediate,No intermediate file was written.
+SQL_modified,NO,NO writes executed by this audit,PASS,audit execution,SELECT-only SQL is optional.
+Guatemala,Gold=1 Silver=1 Bronze=1 and three logical medallists,PASS,PASS,mandatory case,IOC Paris 2024 shooting results plus London 2012 results
+Barrondo,"One 2012 20 km Silver, GUA, position 2",PASS,PASS,mandatory case,IOC Olympic results
+Phelps 28,"23 Gold, 3 Silver, 2 Bronze",PASS,PASS,mandatory case,IOC Olympic results/official medal history
+Phelps 23 Gold,23 Gold,PASS,PASS,mandatory case,IOC Olympic results/official medal history
+London2012_50km,"Tallent Gold, Si Silver, Heffernan Bronze, Kirdyapkin DQ/NULL",PASS,PASS,mandatory case,IOC Olympic World Library London 2012 result/reallocation sources
+Gatlin2004,Unique Athens 2004 men's 100 m Gold,PASS,PASS,mandatory case,IOC Athens 2004 official results
+Messi,One 2008 football Gold participation,PASS,PASS,mandatory case,IOC official Olympic football report
+Chad le Clos,"Summer Olympic aggregate 1 Gold, 3 Silver, 0 Bronze",PASS,PASS,mandatory case,IOC Olympic results; Youth category kept separate
+Andrianov,"7 Gold, 5 Silver, 3 Bronze",PASS,PASS,mandatory case,IOC Olympic results/official medal history
+FK_ATLETA,0,0,PASS,SQL SELECT,Read-only database check.
+FK_EVENTO,0,0,PASS,SQL SELECT,Read-only database check.
+FK_DISCIPLINA,0,0,PASS,SQL SELECT,Read-only database check.
+FK_EDICION,0,0,PASS,SQL SELECT,Read-only database check.

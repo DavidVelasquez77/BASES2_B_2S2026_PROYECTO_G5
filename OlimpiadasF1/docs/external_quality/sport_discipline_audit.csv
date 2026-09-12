@@ -1,0 +1,183 @@
+tipo,id,padre,nombre,estado,motivo,fuente_oficial
+DEPORTE,1,,Aeronautics,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,2,,Air Sports,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,3,,Aquatics,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,4,,Archery,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,5,,Art Competitions,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,6,,Athletics,MATCH,Official-program nomenclature checked for priority sports.,IOC Olympic programme/results
+DEPORTE,7,,Australian Rules Football,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,8,,Badminton,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,9,,Bandy,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,10,,Baseball/Softball,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,11,,Basketball,MATCH,Official-program nomenclature checked for priority sports.,IOC Olympic programme/results
+DEPORTE,12,,Basque Pelota,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,13,,Biathlon,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,14,,Bobsleigh,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,15,,Boxing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,16,,Breaking,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,17,,Canoeing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,18,,Cricket,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,19,,Croquet,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,20,,Curling,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,21,,Cycling,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,22,,Equestrian,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,23,,Fencing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,24,,Football,MATCH,Official-program nomenclature checked for priority sports.,IOC Olympic programme/results
+DEPORTE,25,,Glíma,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,26,,Golf,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,27,,Gymnastics,MATCH,Official-program nomenclature checked for priority sports.,IOC Olympic programme/results
+DEPORTE,28,,Handball,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,29,,Hockey,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,30,,Ice Hockey,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,31,,Intercalated,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,32,,Jeu de Paume,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,33,,Judo,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,34,,Karate,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,35,,Lacrosse,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,36,,Luge,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,37,,Modern Pentathlon,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,38,,Motorboating,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,39,,Mountaineering,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,40,,Olympic,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,41,,Olympic (non-medal),REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,42,,Polo,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,43,,Racquets,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,44,,Roller Sports,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,45,,Roque,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,46,,Rowing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,47,,Rugby,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,48,,Sailing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,49,,Savate,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,50,,Shooting,MATCH,Official-program nomenclature checked for priority sports.,IOC Olympic programme/results
+DEPORTE,51,,Skating,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,52,,Ski Mountaineering,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,53,,Skiing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,54,,Sport Climbing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,55,,Surfing,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,56,,Table Tennis,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,57,,Taekwondo,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,58,,Tennis,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,59,,Triathlon,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,60,,Tug-of-War,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,61,,Volleyball,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,62,,Weightlifting,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,63,,Winter Pentathlon,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,64,,Wrestling,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DEPORTE,65,,YOG,REVIEW,Requires event-program source comparison beyond the available audit corpus.,IOC Olympic programme/results
+DISCIPLINA,1,Aeronautics,Aeronautics,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,2,Air Sports,Ballooning,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,3,Aquatics,Artistic Swimming,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,4,Aquatics,Diving,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,5,Aquatics,Marathon Swimming,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,6,Aquatics,Swimming,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,7,Aquatics,Water Polo,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,8,Archery,Archery,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,9,Art Competitions,Art Competitions,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,10,Athletics,Athletics,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,11,Australian Rules Football,Australian Rules Football,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,12,Badminton,Badminton,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,13,Bandy,Bandy,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,14,Baseball/Softball,Baseball,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,15,Baseball/Softball,Softball,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,16,Basketball,Basketball,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,17,Basketball,Basketball 3x3,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,18,Basque Pelota,Basque Pelota,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,19,Biathlon,Biathlon,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,20,Bobsleigh,Bobsleigh,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,21,Bobsleigh,Skeleton,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,22,Boxing,Boxing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,23,Breaking,Breaking,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,24,Canoeing,Canoe Marathon,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,25,Canoeing,Canoe Slalom,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,26,Canoeing,Canoe Sprint,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,27,Cricket,Cricket,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,28,Croquet,Croquet,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,29,Curling,Curling,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,30,Cycling,Bicycle Polo,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,31,Cycling,BMX Freestyle,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,32,Cycling,BMX Racing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,33,Cycling,Cycling Road,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,34,Cycling,Cycling Track,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,35,Cycling,Mountain Bike,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,36,Equestrian,Equestrian Dressage,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,37,Equestrian,Equestrian Driving,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,38,Equestrian,Equestrian Eventing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,39,Equestrian,Equestrian Jumping,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,40,Equestrian,Equestrian Vaulting,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,41,Fencing,Fencing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,42,Football,Football,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,43,Glíma,Glíma,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,44,Golf,Golf,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,45,Gymnastics,Artistic Gymnastics,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,46,Gymnastics,Rhythmic Gymnastics,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,47,Gymnastics,Trampoline Gymnastics,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,48,Handball,Handball,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,49,Hockey,Hockey,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,50,Hockey,Hockey 5s,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,51,Ice Hockey,3-on-3 Ice Hockey,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,52,Ice Hockey,Ice Hockey,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,53,Intercalated,"20 kilometres, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,54,Intercalated,"Sprint, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,55,Jeu de Paume,Jeu de Paume,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,56,Judo,Judo,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,57,Karate,Karate,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,58,Lacrosse,Lacrosse,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,59,Luge,Luge,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,60,Modern Pentathlon,Modern Pentathlon,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,61,Motorboating,Motorboating,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,62,Mountaineering,Alpinism,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,63,Olympic,"Discus Throw, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,64,Olympic,"Shot Put, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,65,Olympic (non-medal),"880 yards, Handicap, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,66,Olympic (non-medal),"Double Sculls, Intermediate, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,67,Olympic (non-medal),"Glíma, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,68,Olympic (non-medal),"Shot Put, Handicap, Men",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,69,Polo,Polo,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,70,Racquets,Racquets,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,71,Roller Sports,Roller Skating,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,72,Roller Sports,Skateboarding,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,73,Roque,Roque,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,74,Rowing,Rowing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,75,Rugby,Rugby,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,76,Rugby,Rugby Sevens,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,77,Sailing,Sailing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,78,Savate,Savate,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,79,Shooting,Shooting,MATCH,Hierarchy is internally consistent; exact historical programme wording may vary.,IOC Olympic programme/results
+DISCIPLINA,80,Skating,Figure Skating,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,81,Skating,Short Track Speed Skating,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,82,Skating,Speed Skating,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,83,Ski Mountaineering,Ski Mountaineering,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,84,Skiing,Alpine Skiing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,85,Skiing,Cross Country Skiing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,86,Skiing,Freestyle Skiing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,87,Skiing,Military Ski Patrol,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,88,Skiing,Nordic Combined,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,89,Skiing,Ski Jumping,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,90,Skiing,Snowboard,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,91,Skiing,Speed Skiing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,92,Sport Climbing,Sport Climbing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,93,Surfing,Surfing,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,94,Table Tennis,Table Tennis,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,95,Taekwondo,Taekwondo,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,96,Tennis,Tennis,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,97,Triathlon,Triathlon,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,98,Tug-of-War,Tug-of-War,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,99,Volleyball,Beach Volleyball,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,100,Volleyball,Volleyball,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,101,Weightlifting,Weightlifting,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,102,Winter Pentathlon,Winter Pentathlon,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,103,Wrestling,Wrestling Freestyle,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,104,Wrestling,Wrestling Greco-Roman,REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,105,YOG,"10 kilometres, Boys",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,106,YOG,"5 kilometres, Girls",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,107,YOG,"Cross-Country / Biathlon Relay, Mixed Youth",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,108,YOG,"Cross-Country Skiing / Ski Jumping / Nordic Combined Team, Mixed Youth",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,109,YOG,"Cross, Girls",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,110,YOG,"Freestyle/Snowboard Relay, Mixed Youth",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,111,YOG,"Normal Hill / 5 km, Individual, Boys",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,112,YOG,"Normal Hill, Individual, Boys",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,113,YOG,"Normal Hill, Individual, Girls",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,114,YOG,"Normal Hill, Team, Mixed Youth",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,115,YOG,"Ski Cross, Girls",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,116,YOG,"Sprint, Boys",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results
+DISCIPLINA,117,YOG,"Sprint, Girls",REVIEW,Historical/programme variant requires source-level review.,IOC Olympic programme/results

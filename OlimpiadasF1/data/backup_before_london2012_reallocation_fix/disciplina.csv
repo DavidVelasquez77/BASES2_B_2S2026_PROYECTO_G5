@@ -1,0 +1,118 @@
+﻿id_disciplina,id_deporte,nombre
+1,1,Aeronautics
+2,2,Ballooning
+3,3,Artistic Swimming
+4,3,Diving
+5,3,Marathon Swimming
+6,3,Swimming
+7,3,Water Polo
+8,4,Archery
+9,5,Art Competitions
+10,6,Athletics
+11,7,Australian Rules Football
+12,8,Badminton
+13,9,Bandy
+14,10,Baseball
+15,10,Softball
+16,11,Basketball
+17,11,Basketball 3x3
+18,12,Basque Pelota
+19,13,Biathlon
+20,14,Bobsleigh
+21,14,Skeleton
+22,15,Boxing
+23,16,Breaking
+24,17,Canoe Marathon
+25,17,Canoe Slalom
+26,17,Canoe Sprint
+27,18,Cricket
+28,19,Croquet
+29,20,Curling
+30,21,Bicycle Polo
+31,21,BMX Freestyle
+32,21,BMX Racing
+33,21,Cycling Road
+34,21,Cycling Track
+35,21,Mountain Bike
+36,22,Equestrian Dressage
+37,22,Equestrian Driving
+38,22,Equestrian Eventing
+39,22,Equestrian Jumping
+40,22,Equestrian Vaulting
+41,23,Fencing
+42,24,Football
+43,25,Glíma
+44,26,Golf
+45,27,Artistic Gymnastics
+46,27,Rhythmic Gymnastics
+47,27,Trampoline Gymnastics
+48,28,Handball
+49,29,Hockey
+50,29,Hockey 5s
+51,30,3-on-3 Ice Hockey
+52,30,Ice Hockey
+53,31,"20 kilometres, Men"
+54,31,"Sprint, Men"
+55,32,Jeu de Paume
+56,33,Judo
+57,34,Karate
+58,35,Lacrosse
+59,36,Luge
+60,37,Modern Pentathlon
+61,38,Motorboating
+62,39,Alpinism
+63,40,"Discus Throw, Men"
+64,40,"Shot Put, Men"
+65,41,"880 yards, Handicap, Men"
+66,41,"Double Sculls, Intermediate, Men"
+67,41,"Glíma, Men"
+68,41,"Shot Put, Handicap, Men"
+69,42,Polo
+70,43,Racquets
+71,44,Roller Skating
+72,44,Skateboarding
+73,45,Roque
+74,46,Rowing
+75,47,Rugby
+76,47,Rugby Sevens
+77,48,Sailing
+78,49,Savate
+79,50,Shooting
+80,51,Figure Skating
+81,51,Short Track Speed Skating
+82,51,Speed Skating
+83,52,Ski Mountaineering
+84,53,Alpine Skiing
+85,53,Cross Country Skiing
+86,53,Freestyle Skiing
+87,53,Military Ski Patrol
+88,53,Nordic Combined
+89,53,Ski Jumping
+90,53,Snowboard
+91,53,Speed Skiing
+92,54,Sport Climbing
+93,55,Surfing
+94,56,Table Tennis
+95,57,Taekwondo
+96,58,Tennis
+97,59,Triathlon
+98,60,Tug-of-War
+99,61,Beach Volleyball
+100,61,Volleyball
+101,62,Weightlifting
+102,63,Winter Pentathlon
+103,64,Wrestling Freestyle
+104,64,Wrestling Greco-Roman
+105,65,"10 kilometres, Boys"
+106,65,"5 kilometres, Girls"
+107,65,"Cross-Country / Biathlon Relay, Mixed Youth"
+108,65,"Cross-Country Skiing / Ski Jumping / Nordic Combined Team, Mixed Youth"
+109,65,"Cross, Girls"
+110,65,"Freestyle/Snowboard Relay, Mixed Youth"
+111,65,"Normal Hill / 5 km, Individual, Boys"
+112,65,"Normal Hill, Individual, Boys"
+113,65,"Normal Hill, Individual, Girls"
+114,65,"Normal Hill, Team, Mixed Youth"
+115,65,"Ski Cross, Girls"
+116,65,"Sprint, Boys"
+117,65,"Sprint, Girls"

@@ -1,0 +1,20 @@
+metrica,valor,detalle
+estado,LONDON2012_REALLOCATION_FIX_SUCCESS,Exclusive event 1022 cleanup and SQL rebuild validated.
+historical_rows_confirmed,3,675066;754821;767781
+historical_rows_removed,3,Dry-run removes only the three stale medal rows.
+participacion_actual,713678,Before cleanup.
+participacion_preview,713675,After exclusive cleanup.
+atleta,336418,Unchanged.
+evento,2986,Unchanged.
+processed_sha,10/10 checked,Only participation is eligible to change.
+sql_server_modified,YES_REBUILT_VALIDATED,"10_final_validation=26/26 PASS; 11_special_cases_validation=8/8 PASS."
+external_critical_conflicts,0,External audit rerun returned EXTERNAL_OLYMPIC_QUALITY_AUDIT_PASS.
+processed_sql_synchronized,YES,CSV and SQL both contain 713675 PARTICIPACION rows.
+historical_ids_present,0,"675066=NO; 754821=NO; 767781=NO."
+staging_participacion,713675,05_validate_staging.sql PASS.
+final_participacion,713675,08_validate_loaded_data.sql and 10_final_validation.sql PASS.
+fk_orphans,0,14 FK validated with zero orphans.
+pk_duplicates,0,10 PK validated with zero duplicates.
+constraints,"10 PK + 6 UNIQUE + 14 FK + 3 CHECK",PASS.
+indices,8,PASS.
+unicode,"26261 names non-ASCII and 0 differences",PASS.

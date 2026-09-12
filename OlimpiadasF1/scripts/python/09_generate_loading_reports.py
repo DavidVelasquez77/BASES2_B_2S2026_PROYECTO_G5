@@ -58,7 +58,7 @@ entities = [
     ("ENTIDAD_GEOGRAFICA", 282), ("POBLACION", 17024), ("NOC", 236),
     ("ATLETA", 336418), ("SEDE", 42), ("EDICION_OLIMPICA", 61),
     ("DEPORTE", 65), ("DISCIPLINA", 117), ("EVENTO", 2986),
-    ("PARTICIPACION", 713678),
+    ("PARTICIPACION", 713675),
 ]
 count_sql = "SET NOCOUNT ON;\n" + "\nUNION ALL\n".join(
     f"SELECT N'{name}',{expected},(SELECT COUNT_BIG(*) FROM stg.{name}),(SELECT COUNT_BIG(*) FROM olympics.{name}),CASE WHEN (SELECT COUNT_BIG(*) FROM stg.{name})={expected} AND (SELECT COUNT_BIG(*) FROM olympics.{name})={expected} THEN N'PASS' ELSE N'FAIL' END"

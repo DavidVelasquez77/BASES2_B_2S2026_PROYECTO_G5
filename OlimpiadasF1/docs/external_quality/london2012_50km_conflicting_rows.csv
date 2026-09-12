@@ -1,0 +1,8 @@
+id_participacion,id_atleta,nombre,nombre_completo,fecha_nacimiento,anio,temporada,id_evento,evento,id_noc,NOC,equipo,posicion,edad,medalla,estado_resultado
+675066,248882,Sergey Kirdyapkin,,,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",177,RUS,Russia,,,Gold,
+248154,114152,Sergey Kirdyapkin,Sergey Aleksandrovich Kirdyapkin,1980-06-18,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",177,RUS,Russia,,32,,DQ
+754821,301656,Si Tianfeng,,,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",43,CHN,China,,,Bronze,
+248112,114129,Si Tianfeng,Si Tianfeng,1984-06-17,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",43,CHN,China,2,28,Silver,
+767781,310236,Jared Tallent,,,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",14,AUS,Australia,,,Silver,
+246698,113352,Jared Tallent,Jared Tallent,1984-10-17,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",14,AUS,Australia,1,27,Gold,
+653738,235409,Robert Heffernan,,,2012,Summer,1022,"50 kilometres Race Walk, Men (Olympic)",99,IRL,Ireland,,,,

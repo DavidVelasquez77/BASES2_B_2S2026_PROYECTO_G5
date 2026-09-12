@@ -1,0 +1,43 @@
+id_sede,ciudad,pais_id,ediciones_asociadas,estado,motivo,fuente_oficial
+1,Athina,106,1896 Summer; 1906 Intercalated Games; 2004 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+2,Paris,94,1900 Summer; 1924 Summer; 2024 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+3,St. Louis,268,1904 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+4,London,98,1908 Summer; 1948 Summer; 2012 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+5,Stockholm,240,1912 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+6,Antwerpen,34,1920 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+7,Chamonix,94,1924 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+8,Amsterdam,193,1928 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+9,Sankt Moritz,54,1928 Winter; 1948 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+10,Los Angeles,268,1932 Summer; 1984 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+11,Lake Placid,268,1932 Winter; 1980 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+12,Berlin,72,1936 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+13,Garmisch-Partenkirchen,72,1936 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+14,Helsinki,92,1952 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+15,Oslo,194,1952 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+16,Melbourne,30,1956 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+17,Cortina d'Ampezzo,133,1956 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+18,Roma,133,1960 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+19,Squaw Valley,268,1960 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+20,Tokyo,136,1964 Summer; 2020 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+21,Innsbruck,31,1964 Winter; 1976 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+22,Mexico City,171,1968 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+23,Grenoble,94,1968 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+24,Munich,72,1972 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+25,Sapporo,136,1972 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+26,Montreal,52,1976 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+27,Moskva,219,1980 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+28,Sarajevo,41,1984 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+29,Seoul,143,1988 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+30,Calgary,52,1988 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+31,Barcelona,87,1992 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+32,Albertville,94,1992 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+33,Lillehammer,194,1994 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+34,Atlanta,268,1996 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+35,Nagano,136,1998 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+36,Sydney,30,2000 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+37,Salt Lake City,268,2002 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+38,Torino,133,2006 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+39,Beijing,57,2008 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+40,Vancouver,52,2010 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+41,Sochi,219,2014 Winter,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034
+42,Rio de Janeiro,46,2016 Summer,MATCH,Relación interna consistente; ausencia de una URL individual no es conflicto.,IOC Olympic Hosts 1896-2034

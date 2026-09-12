@@ -1,0 +1,11 @@
+tabla,filas,que_pudo_validarse,exact_match,semantic_match,review,conflict,cobertura_pct
+ENTIDAD_GEOGRAFICA,282,Internal relational presence; population authority not applied,See mandatory checks,See per-row report,See per-row report,0,parcial
+POBLACION,17024,Not externally compared; Olympics/IOC is not the authority,See mandatory checks,See per-row report,See per-row report,0,parcial
+NOC,236,Historical/current code classification,See mandatory checks,See per-row report,See per-row report,0,100.0
+ATLETA,336418,70769 athlete identities sampled by required strata,See mandatory checks,See per-row report,See per-row report,0,parcial
+SEDE,42,Venue relation and official host-list context,See mandatory checks,See per-row report,See per-row report,0,100.0
+EDICION_OLIMPICA,61,61/61 semantic rows assessed,See mandatory checks,See per-row report,See per-row report,0,100.0
+DEPORTE,65,Priority sports checked; remainder review,See mandatory checks,See per-row report,See per-row report,0,parcial
+DISCIPLINA,117,Hierarchy and priority sports checked,See mandatory checks,See per-row report,See per-row report,0,parcial
+EVENTO,2986,Priority events exact; remaining semantic rows review,See mandatory checks,See per-row report,See per-row report,0,parcial
+PARTICIPACION,713675,104240 medallist rows generated; sample of non-medallists,See mandatory checks,See per-row report,See per-row report,0,parcial

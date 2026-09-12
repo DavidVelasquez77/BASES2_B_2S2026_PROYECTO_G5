@@ -1,0 +1,237 @@
+id_noc,codigo_noc,nombre_noc,id_entidad,entidad,estado,motivo,fuente_oficial
+1,AFG,Afghanistan,19.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+2,AHO,Curacao,68.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+3,AIN,,,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+4,ALB,Albania,22.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+5,ALG,Algeria,77.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+6,AND,Andorra,23.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+7,ANG,Angola,21.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+8,ANT,Antigua,1.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+9,ANZ,Australia,30.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+10,ARG,Argentina,26.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+11,ARM,Armenia,27.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+12,ARU,Aruba,17.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+13,ASA,American Samoa,28.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+14,AUS,Australia,30.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+15,AUT,Austria,31.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+16,AZE,Azerbaijan,32.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+17,BAH,Bahamas,2.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+18,BAN,Bangladesh,37.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+19,BAR,Barbados,47.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+20,BDI,Burundi,33.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+21,BEL,Belgium,34.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+22,BEN,Benin,35.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+23,BER,Bermuda,44.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+24,BHU,Bhutan,49.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+25,BIH,Bosnia and Herzegovina,41.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+26,BIZ,Belize,43.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+27,BLR,Belarus,42.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+28,BOH,Czech Republic,4.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+29,BOL,Boliva,45.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+30,BOT,Botswana,50.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+31,BRA,Brazil,46.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+32,BRN,Bahrain,48.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+33,BRU,Brunei,48.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+34,BUL,Bulgaria,38.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+35,BUR,Burkina Faso,36.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+36,CAF,Central African Republic,51.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+37,CAM,Cambodia,140.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+38,CAN,Canada,52.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+39,CAY,Cayman Islands,69.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+40,CGO,Republic of Congo,9.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+41,CHA,Chad,246.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+42,CHI,Chile,55.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+43,CHN,China,57.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+44,CIV,Ivory Coast,58.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+45,CMR,Cameroon,59.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+46,COD,Democratic Republic of the Congo,60.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+47,COK,Cook Islands,3.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+48,COL,Colombia,62.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+49,COM,Comoros,63.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+50,COR,,,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+51,CPV,Cape Verde,64.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+52,CRC,Costa Rica,65.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+53,CRO,Croatia,116.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+54,CRT,Greece,106.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+55,CUB,Cuba,67.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+56,CYP,Cyprus,70.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+57,CZE,Czech Republic,71.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+58,DEN,Denmark,75.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+59,DJI,Djibouti,73.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+60,DMA,Dominica,74.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+61,DOM,Dominican Republic,76.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+62,ECU,Ecuador,83.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+63,EGY,Egypt,84.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+64,EOR,,,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+65,ERI,Eritrea,86.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+66,ESA,El Salvador,228.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+67,ESP,Spain,87.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+68,EST,Estonia,88.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+69,ETH,Ethiopia,89.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+70,EUN,Russia,219.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+71,FIJ,Fiji,93.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+72,FIN,Finland,92.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+73,FRA,France,94.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+74,FRG,Germany,72.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+75,FSM,Micronesia,96.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+76,GAB,Gabon,97.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+77,GAM,Gambia,5.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+78,GBR,UK,98.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+79,GBS,Guinea-Bissau,104.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+80,GDR,Germany,72.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+81,GEO,Georgia,99.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+82,GEQ,Equatorial Guinea,105.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+83,GER,Germany,72.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+84,GHA,Ghana,100.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+85,GRE,Greece,106.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+86,GRN,Grenada,107.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+87,GUA,Guatemala,109.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+88,GUI,Guinea,102.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+89,GUM,Guam,110.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+90,GUY,Guyana,111.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+91,HAI,Haiti,117.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+92,HKG,China,113.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+93,HON,Honduras,114.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+94,HUN,Hungary,118.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+95,INA,Indonesia,123.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+96,IND,India,126.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+97,IOA,Individual Olympic Athletes,6.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+98,IRI,Iran,129.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+99,IRL,Ireland,128.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+100,IRQ,Iraq,130.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+101,ISL,Iceland,131.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+102,ISR,Israel,132.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+103,ISV,"Virgin Islands, US",16.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+104,ITA,Italy,133.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+105,IVB,"Virgin Islands, British",15.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+106,JAM,Jamaica,134.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+107,JOR,Jordan,135.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+108,JPN,Japan,136.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+109,KAZ,Kazakhstan,137.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+110,KEN,Kenya,138.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+111,KGZ,Kyrgyzstan,139.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+112,KIR,Kiribati,141.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+113,KOR,South Korea,143.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+114,KOS,Kosovo,278.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+115,KSA,Saudi Arabia,222.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+116,KUW,Kuwait,144.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+117,LAO,Laos,146.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+118,LAT,Latvia,162.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+119,LBA,Libya,149.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+120,LBN,,147.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+121,LBR,Liberia,148.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+122,LCA,Saint Lucia,150.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+123,LES,Lesotho,158.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+124,LIB,Lebanon,147.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+125,LIE,Liechtenstein,154.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+126,LTU,Lithuania,160.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+127,LUX,Luxembourg,161.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+128,MAD,Madagascar,168.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+129,MAL,Malaysia,186.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+130,MAR,Morocco,165.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+131,MAS,Malaysia,186.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+132,MAW,Malawi,185.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+133,MDA,Moldova,167.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+134,MDV,Maldives,169.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+135,MEX,Mexico,171.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+136,MGL,Mongolia,180.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+137,MHL,Marshall Islands,172.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+138,MKD,Macedonia,174.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+139,MLI,Mali,175.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+140,MLT,Malta,176.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+141,MNE,Montenegro,179.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+142,MON,Monaco,166.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+143,MOZ,Mozambique,182.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+144,MRI,Mauritius,184.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+145,MTN,Mauritania,183.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+146,MYA,Myanmar,177.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+147,NAM,Namibia,188.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+148,NBO,Malaysia,186.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+149,NCA,Nicaragua,192.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+150,NED,Netherlands,193.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+151,NEP,Nepal,195.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+152,NFL,Canada,52.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+153,NGR,Nigeria,191.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+154,NIG,Niger,190.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+155,NOR,Norway,194.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+156,NRU,Nauru,196.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+157,NZL,New Zealand,197.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+158,OMA,Oman,199.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+159,PAK,Pakistan,201.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+160,PAN,Panama,202.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+161,PAR,Paraguay,212.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+162,PER,Peru,203.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+163,PHI,Philippines,204.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+164,PLE,Palestine,8.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+165,PLW,Palau,205.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+166,PNG,Papua New Guinea,206.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+167,POL,Poland,207.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+168,POR,Portugal,211.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+169,PRK,North Korea,210.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+170,PUR,Puerto Rico,209.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+171,QAT,Qatar,217.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+172,RHO,Zimbabwe,282.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+173,ROC,,,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+174,ROT,NA,,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+175,ROU,Romania,218.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+176,RSA,South Africa,280.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+177,RUS,Russia,219.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+178,RWA,Rwanda,220.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+179,SAA,Germany,72.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+180,SAM,Samoa,277.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+181,SCG,Serbia,231.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+182,SEN,Senegal,224.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+183,SEY,Seychelles,243.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+184,SGP,,225.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+185,SIN,Singapore,225.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+186,SKN,Saint Kitts,10.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+187,SLE,Sierra Leone,227.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+188,SLO,Slovenia,239.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+189,SMR,San Marino,229.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+190,SOL,Solomon Islands,226.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+191,SOM,Somalia,230.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+192,SRB,Serbia,231.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+193,SRI,Sri Lanka,155.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+194,SSD,South Sudan,233.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+195,STP,Sao Tome and Principe,236.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+196,SUD,Sudan,223.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+197,SUI,Switzerland,54.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+198,SUR,Suriname,237.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+199,SVK,Slovakia,238.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+200,SWE,Sweden,240.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+201,SWZ,Swaziland,241.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+202,SYR,Syria,244.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+203,TAN,Tanzania,263.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+204,TCH,Czech Republic,4.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+205,TGA,Tonga,256.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+206,THA,Thailand,250.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+207,TJK,Tajikistan,251.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+208,TKM,Turkmenistan,252.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+209,TLS,Timor-Leste,254.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+210,TOG,Togo,249.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+211,TPE,Taiwan,12.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+212,TTO,Trinidad,259.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+213,TUN,Tunisia,260.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+214,TUR,Turkey,261.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+215,TUV,NA,262.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+216,UAE,United Arab Emirates,25.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+217,UAR,Syria,244.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+218,UGA,Uganda,264.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+219,UKR,Ukraine,265.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+220,UNK,NA,7.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+221,URS,Russia,219.0,,HISTORICAL_NOC,Historical/team code retained; not treated as a current-country error.,IOC Olympic Studies Centre / historical Olympic results
+222,URU,Uruguay,267.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+223,USA,USA,268.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+224,UZB,Uzbekistan,269.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+225,VAN,Vanuatu,275.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+226,VEN,Venezuela,271.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+227,VIE,Vietnam,14.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+228,VIN,Saint Vincent,11.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+229,VNM,Vietnam,274.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+230,WIF,Trinidad,13.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+231,YAR,Yemen,279.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+232,YEM,Yemen,279.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+233,YMD,Yemen,279.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+234,YUG,Serbia,231.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+235,ZAM,Zambia,281.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
+236,ZIM,Zimbabwe,282.0,,CURRENT_NOC,Three-letter NOC code represented in the final dataset.,IOC Olympic Studies Centre / historical Olympic results
