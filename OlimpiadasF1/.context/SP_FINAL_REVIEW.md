@@ -61,7 +61,7 @@ Los conteos de medallas de atletas se deben interpretar con cuidado cuando la b�
 
 Cambios que, en principio, no cambian el significado funcional esperado del SP:
 
-- retirar lógica heurística antigua de deduplicación si ya no es necesaria;
+- retirar la lógica heurística antigua de deduplicación del SP, dado que la deduplicación ya fue resuelta en ETL y PARTICIPACION contiene el estado final consolidado.;
 - validar el dominio de `@temporada`;
 - validar `NULL`, `<=0` y el límite máximo de `@top_participaciones`;
 - escapar `%`, `_` y `[` en búsquedas `LIKE`;
