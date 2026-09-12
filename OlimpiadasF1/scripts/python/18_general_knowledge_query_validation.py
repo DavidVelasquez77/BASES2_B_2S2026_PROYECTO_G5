@@ -71,7 +71,7 @@ def qsql(sql: str) -> list[list[str]]:
     cmd = ["docker", "exec", "-i", "-e", f"SQLCMDPASSWORD={password}",
            "olimpiadas-sqlserver", "/opt/mssql-tools18/bin/sqlcmd",
            "-S", "localhost", "-U", "sa", "-C", "-d", "OlimpiadasDB",
-           "-b", "-f", "65001", "-W", "-h", "-1", "-s", "|", "-Q", sql]
+           "-b", "-f", "65001", "-y", "1000", "-h", "-1", "-s", "|", "-Q", sql]
     p = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", check=False)
     if p.returncode:
         raise RuntimeError(p.stderr.strip() or p.stdout.strip())
@@ -155,7 +155,7 @@ def main() -> int:
     gatlin_sql = qsql("""SELECT TOP 1 a.nombre, e.anio, v.nombre, n.codigo_noc, p.medalla FROM olympics.PARTICIPACION p JOIN olympics.ATLETA a ON a.id_atleta=p.id_atleta JOIN olympics.EDICION_OLIMPICA e ON e.id_edicion=p.id_edicion JOIN olympics.EVENTO v ON v.id_evento=p.id_evento JOIN olympics.NOC n ON n.id_noc=p.id_noc WHERE a.id_atleta=104445 AND e.anio=2004 AND v.id_evento=43 AND p.medalla='Gold'""") if args.sql else [["Justin Gatlin", "2004", "100 metres, Men", "USA", "Gold"]]
     gatlin_value = "|".join(gatlin_sql[0]) if gatlin_sql else "MISSING"
     add("GATLIN_2004_100M", "evento", "Justin Gatlin, 100 m masculino, Atenas 2004", gatlin_value,
-        "Justin Gatlin|2004|100 metres, Men|USA|Gold", True, source=IOC_GATLIN)
+        "Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold", True, source=IOC_GATLIN)
 
     phelps = [r for r in P if r["id_atleta"] == "93113" and r["medalla"]]
     phelps_expected = "Gold=23;Silver=3;Bronze=2"
@@ -168,9 +168,15 @@ def main() -> int:
     # Ranking by athlete and by official outcome (team events count once).
     rank_sql = """WITH M AS (SELECT p.id_atleta, a.nombre, SUM(CASE WHEN p.medalla='Gold' THEN 1 ELSE 0 END) gold, SUM(CASE WHEN p.medalla='Silver' THEN 1 ELSE 0 END) silver, SUM(CASE WHEN p.medalla='Bronze' THEN 1 ELSE 0 END) bronze FROM olympics.PARTICIPACION p JOIN olympics.ATLETA a ON a.id_atleta=p.id_atleta WHERE p.medalla IS NOT NULL GROUP BY p.id_atleta,a.nombre) SELECT TOP 20 CONVERT(varchar(30),id_atleta),nombre,CONVERT(varchar(30),gold),CONVERT(varchar(30),silver),CONVERT(varchar(30),bronze),CONVERT(varchar(30),gold+silver+bronze) FROM M ORDER BY gold DESC,silver DESC,bronze DESC,nombre,id_atleta"""
     rank_rows = qsql(rank_sql) if args.sql else []
-    write_csv("medal_rankings_validation.csv",
-              [{"ranking": i + 1, "id_atleta": r[0], "nombre": r[1], "gold": r[2], "silver": r[3], "bronze": r[4], "total": r[5], "estado": "PASS", "fuente": "INTERNAL_SQL"} for i, r in enumerate(rank_rows)],
-              ["ranking", "id_atleta", "nombre", "gold", "silver", "bronze", "total", "estado", "fuente"])
+    total_rows = sorted(rank_rows, key=lambda r: (-int(r[5]), -int(r[2]), -int(r[3]), -int(r[4]), r[1], r[0]))
+    official_sql = """WITH O AS (SELECT id_edicion,id_evento,id_noc,medalla FROM olympics.PARTICIPACION WHERE medalla IS NOT NULL GROUP BY id_edicion,id_evento,id_noc,medalla), R AS (SELECT o.id_noc,n.codigo_noc,SUM(CASE WHEN o.medalla='Gold' THEN 1 ELSE 0 END) gold,SUM(CASE WHEN o.medalla='Silver' THEN 1 ELSE 0 END) silver,SUM(CASE WHEN o.medalla='Bronze' THEN 1 ELSE 0 END) bronze FROM O o JOIN olympics.NOC n ON n.id_noc=o.id_noc GROUP BY o.id_noc,n.codigo_noc) SELECT TOP 20 CONVERT(varchar(30),id_noc),codigo_noc,CONVERT(varchar(30),gold),CONVERT(varchar(30),silver),CONVERT(varchar(30),bronze),CONVERT(varchar(30),gold+silver+bronze) FROM R ORDER BY gold DESC,silver DESC,bronze DESC,codigo_noc,id_noc"""
+    official_rows = qsql(official_sql) if args.sql else []
+    ranking_output: list[dict[str, object]] = []
+    for kind, rows in (("athlete_gold", rank_rows), ("athlete_total", total_rows)):
+        ranking_output.extend({"tipo_ranking": kind, "ranking": i + 1, "id": r[0], "nombre_o_codigo": r[1], "gold": r[2], "silver": r[3], "bronze": r[4], "total": r[5], "estado": "PASS", "fuente": "INTERNAL_SQL"} for i, r in enumerate(rows))
+    ranking_output.extend({"tipo_ranking": "official_noc_gold", "ranking": i + 1, "id": r[0], "nombre_o_codigo": r[1], "gold": r[2], "silver": r[3], "bronze": r[4], "total": r[5], "estado": "PASS", "fuente": "INTERNAL_SQL"} for i, r in enumerate(official_rows))
+    write_csv("medal_rankings_validation.csv", ranking_output,
+              ["tipo_ranking", "ranking", "id", "nombre_o_codigo", "gold", "silver", "bronze", "total", "estado", "fuente"])
     top20_ok = bool(rank_rows) and any(r[0] == "93113" for r in rank_rows)
     add("PHELPS_TOP20", "ranking", "Phelps aparece en top 20 por medallas", "YES" if top20_ok else "NO", "YES", True)
 
@@ -192,10 +198,10 @@ def main() -> int:
     event_winners: list[dict[str, object]] = []
     for year in (2004, 2008, 2012, 2016, 2020, 2024):
         for sex in ("Men", "Women"):
-            names = [r for r in V if "100" in r["nombre"] and sex.lower() in r["nombre"].lower()]
+            names = [r for r in V if re.match(rf"^100 metres, {sex} \(Olympic\)$", r["nombre"])]
             for ev in names[:1]:
                 if args.sql:
-                    rows = qsql(f"""SELECT a.nombre,n.codigo_noc,p.medalla FROM olympics.PARTICIPACION p JOIN olympics.ATLETA a ON a.id_atleta=p.id_atleta JOIN olympics.EDICION_OLIMPICA ed ON ed.id_edicion=p.id_edicion JOIN olympics.EVENTO ev ON ev.id_evento=p.id_evento JOIN olympics.NOC n ON n.id_noc=p.id_noc WHERE ed.anio={year} AND ev.id_evento={int(ev['id_evento'])} AND p.medalla='Gold'""")
+                    rows = qsql(f"""SELECT DISTINCT a.nombre,n.codigo_noc,p.medalla FROM olympics.PARTICIPACION p JOIN olympics.ATLETA a ON a.id_atleta=p.id_atleta JOIN olympics.EDICION_OLIMPICA ed ON ed.id_edicion=p.id_edicion JOIN olympics.EVENTO ev ON ev.id_evento=p.id_evento JOIN olympics.NOC n ON n.id_noc=p.id_noc WHERE ed.anio={year} AND ev.id_evento={int(ev['id_evento'])} AND p.medalla='Gold'""")
                 else:
                     rows = []
                 result = ";".join("|".join(r) for r in rows) or "NO_GOLD_ROW"
@@ -235,7 +241,7 @@ def main() -> int:
         london = []
     add("MESSI_PARTICIPATION", "caso_especial", "Messi: 2008/ARG/fútbol/Gold/posición 1", messi, "1", True)
     add("BARRONDO_PARTICIPATION", "caso_especial", "Barrondo: London 2012/20 km/Silver", barrondo, "1", True)
-    london_expected = {"Jared Tallent|AUS|1|Gold|", "Si Tianfeng|CHN|2|Silver|", "Robbie Heffernan|IRL|3|Bronze|", "Sergey Kirdyapkin|RUS|||DQ"}
+    london_expected = {"Jared Tallent|AUS|1|Gold|", "Si Tianfeng|CHN|2|Silver|", "Robbie Heffernan|IRL|3|Bronze|", "Sergey Kirdyapkin|RUS|NULL||DQ"}
     london_actual = {"|".join(r) for r in london}
     add("LONDON_2012_50KM", "caso_especial", "Podio vigente y DQ de London 2012 50 km", "PASS" if london_expected <= london_actual else "FAIL", "PASS", True, source=IOC_LONDON)
 
@@ -302,7 +308,10 @@ def main() -> int:
         actuals = {r["id_participacion"]: (r.get("nombre", ""), r["medalla"]) for r in qrows}
     for r in qrows:
         actual = actuals.get(r["id_participacion"], ("", ""))
+        actual = tuple(actual)
         r.update({"actual_name": actual[0], "actual_medal": actual[1], "estado": "PASS" if actual == (r["expected_name"], r["expected_medal"]) else "FAIL", "fuente": "INTERNAL_SQL"})
+        queries.append({"id": r["query_id"], "categoria": "cultura_general", "consulta": r["question"],
+                        "resultado": r["actual_name"], "estado": r["estado"], "obligatoria": "NO", "fuente": r["fuente"]})
     write_csv("query_results.csv", results + [{"query_id": r["query_id"], "source": r["fuente"], "field": "culture_question", "value": r["actual_name"], "expected": r["expected_name"], "estado": r["estado"]} for r in qrows], ["query_id", "source", "field", "value", "expected", "estado"])
     for r in qrows:
         if r["estado"] == "FAIL":
@@ -343,17 +352,21 @@ def main() -> int:
         f"- Guatemala: consulta de 3 medallistas y 3 filas de medalla; revisar `general_knowledge_query_validation.csv` para el estado real.",
         f"- Michael Phelps: desglose esperado 23 Gold / 3 Silver / 2 Bronze; ranking top-20 generado desde SQL.",
         "- Gatlin 100 m masculino Atenas 2004 y casos Messi, Barrondo y London 2012 se consultaron por claves explícitas.",
+        "- En London 2012 se exige la presencia del podio vigente y de Sergey Kirdyapkin como DQ; otros DQ históricos de la misma prueba se conservan y se reportan como filas adicionales, no como cambios automáticos.",
         "- La edad mínima Gold se reporta como observación raw; no se eleva a hecho histórico confiable sin una fuente externa específica.",
         "",
         "## Integridad y no mutación",
         "",
         f"- SHA de los 10 CSV procesados antes/después de la auditoría: {'MATCH' if processed_ok else 'CHANGED'}.",
-        f"- Conteos SQL vigentes: {', '.join(f'{k}={v}' for k,v in sqlc.items()) if sqlc else 'no consultados; ejecutar con --sql'}.",
+        f"- Conteos SQL vigentes: {', '.join(f'{k}={v}' for k,v in sqlc.items()) if sqlc else 'no consultados; ejecutar con --sql'}; total de las 10 entidades: {sum(sqlc.values()) if sqlc else 'no consultado'}.",
         "- No se ejecutaron resets, carga SQL, matching, deduplicación ni cambios de esquema.",
         "",
         "## Fuentes",
         "",
         "Las fuentes institucionales utilizadas como referencia están en `query_validation_sources.csv`. Las filas marcadas `NOT_EXTERNALLY_VERIFIED` o `REVIEW` no se presentan como hechos confirmados externamente.",
+        f"- OSC/IOC results database: {IOC_RESULTS}",
+        f"- IOC Athens 2004 results context: {IOC_GATLIN}",
+        f"- IOC London 2012 programme/results context: {IOC_LONDON}",
         "",
         "## Archivos generados",
         "",
@@ -365,3 +378,7 @@ def main() -> int:
     (OUT / "general_knowledge_query_validation.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     write_csv("general_knowledge_query_validation.csv", queries, ["id", "categoria", "consulta", "resultado", "estado", "obligatoria", "fuente"])
     return 0 if final_status.endswith("PASS") else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

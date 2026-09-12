@@ -1,0 +1,123 @@
+query_id,source,field,value,expected,estado
+COUNT_ENTIDAD_GEOGRAFICA,INTERNAL_SQL,result,282,282,PASS
+COUNT_POBLACION,INTERNAL_SQL,result,17024,17024,PASS
+COUNT_NOC,INTERNAL_SQL,result,236,236,PASS
+COUNT_ATLETA,INTERNAL_SQL,result,336418,336418,PASS
+COUNT_SEDE,INTERNAL_SQL,result,42,42,PASS
+COUNT_EDICION_OLIMPICA,INTERNAL_SQL,result,61,61,PASS
+COUNT_DEPORTE,INTERNAL_SQL,result,65,65,PASS
+COUNT_DISCIPLINA,INTERNAL_SQL,result,117,117,PASS
+COUNT_EVENTO,INTERNAL_SQL,result,2986,2986,PASS
+COUNT_PARTICIPACION,INTERNAL_SQL,result,713675,713675,PASS
+GUA_MEDALLISTS,INTERNAL_SQL,result,3,3,PASS
+GUA_MEDAL_ROWS,INTERNAL_SQL,result,3,3,PASS
+GATLIN_2004_100M,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true,result,"Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold","Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold",PASS
+PHELPS_MEDALS,INTERNAL_SQL,result,Gold=23;Silver=3;Bronze=2,Gold=23;Silver=3;Bronze=2,PASS
+PHELPS_TOP20,INTERNAL_SQL,result,YES,YES,PASS
+COUNTRY_OFFICIAL_LOGIC,INTERNAL_SQL,result,IMPLEMENTED,IMPLEMENTED,PASS
+EDITION_1896,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_1936,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_1968,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_1984,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2000,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2004,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2008,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2012,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2016,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2020,INTERNAL_SQL,result,YES,YES,PASS
+EDITION_2024,INTERNAL_SQL,result,YES,YES,PASS
+MESSI,INTERNAL_SQL,result,Lionel Messi|1987-06-24|ARG|1,Lionel Messi|1987-06-24,PASS
+BARRONDO,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true,result,Érick Barrondo|1991-06-14|GUA|4,Érick Barrondo,PASS
+RUANO,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html,result,Adriana Ruano|1995-06-26|GUA|2,Adriana Ruano,PASS
+BROL,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html,result,Pierre Brol|1900-01-01|GUA|1,Pierre Brol,PASS
+CHAD_LE_CLOS,INTERNAL_SQL,result,Chad le Clos|1992-04-12|RSA|19,Chad le Clos,PASS
+ANDRIANOV,INTERNAL_SQL,result,Nikolay Andrianov|1952-10-14|CHN|1;Nikolay Andrianov|1952-10-14|URS|24,Nikolay Andrianov,PASS
+MESSI_PARTICIPATION,INTERNAL_SQL,result,1,1,PASS
+BARRONDO_PARTICIPATION,INTERNAL_SQL,result,1,1,PASS
+LONDON_2012_50KM,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true,result,PASS,PASS,PASS
+BEIJING_2008_GOLD_ATHLETES,INTERNAL_SQL,result,1247,1247,PASS
+BEIJING_2008_GOLD_OUTCOMES,INTERNAL_SQL,result,570,570,PASS
+YOUNGEST_GOLD_RAW,INTERNAL_SQL,result,13.00,13.00,PASS
+YOUNGEST_GOLD_TRUSTED,INTERNAL_SQL,result,REVIEW,EXTERNAL_SOURCE_REQUIRED,REVIEW
+NO_DQ_MEDAL,INTERNAL_SQL,result,0,0,PASS
+SEMANTIC_DUPLICATE_CANDIDATES,INTERNAL_SQL,result,49741,49741,REVIEW
+RANDOM_EVENT_01,INTERNAL_SQL,result,168,168,PASS
+RANDOM_EVENT_02,INTERNAL_SQL,result,19,19,PASS
+RANDOM_EVENT_03,INTERNAL_SQL,result,22,22,PASS
+RANDOM_EVENT_04,INTERNAL_SQL,result,317,317,PASS
+RANDOM_EVENT_05,INTERNAL_SQL,result,4377,4377,PASS
+RANDOM_EVENT_06,INTERNAL_SQL,result,227,227,PASS
+RANDOM_EVENT_07,INTERNAL_SQL,result,6,6,PASS
+RANDOM_EVENT_08,INTERNAL_SQL,result,32,32,PASS
+RANDOM_EVENT_09,INTERNAL_SQL,result,245,245,PASS
+RANDOM_EVENT_10,INTERNAL_SQL,result,14,14,PASS
+RANDOM_EVENT_11,INTERNAL_SQL,result,130,130,PASS
+RANDOM_EVENT_12,INTERNAL_SQL,result,850,850,PASS
+RANDOM_EVENT_13,INTERNAL_SQL,result,1,1,PASS
+RANDOM_EVENT_14,INTERNAL_SQL,result,1,1,PASS
+RANDOM_EVENT_15,INTERNAL_SQL,result,68,68,PASS
+RANDOM_EVENT_16,INTERNAL_SQL,result,4,4,PASS
+RANDOM_EVENT_17,INTERNAL_SQL,result,574,574,PASS
+RANDOM_EVENT_18,INTERNAL_SQL,result,26,26,PASS
+RANDOM_EVENT_19,INTERNAL_SQL,result,247,247,PASS
+RANDOM_EVENT_20,INTERNAL_SQL,result,92,92,PASS
+RANDOM_EVENT_21,INTERNAL_SQL,result,29,29,PASS
+RANDOM_EVENT_22,INTERNAL_SQL,result,1503,1503,PASS
+RANDOM_EVENT_23,INTERNAL_SQL,result,32,32,PASS
+RANDOM_EVENT_24,INTERNAL_SQL,result,118,118,PASS
+RANDOM_EVENT_25,INTERNAL_SQL,result,451,451,PASS
+RANDOM_EVENT_26,INTERNAL_SQL,result,118,118,PASS
+RANDOM_EVENT_27,INTERNAL_SQL,result,36,36,PASS
+RANDOM_EVENT_28,INTERNAL_SQL,result,97,97,PASS
+RANDOM_EVENT_29,INTERNAL_SQL,result,359,359,PASS
+RANDOM_EVENT_30,INTERNAL_SQL,result,9,9,PASS
+CULTURE_01,INTERNAL_SQL,culture_question,Vasilij Žbogar,Vasilij Žbogar,PASS
+CULTURE_02,INTERNAL_SQL,culture_question,Jim Lightbody,Jim Lightbody,PASS
+CULTURE_03,INTERNAL_SQL,culture_question,Kalevi Laitinen,Kalevi Laitinen,PASS
+CULTURE_04,INTERNAL_SQL,culture_question,Alison Cox,Alison Cox,PASS
+CULTURE_05,INTERNAL_SQL,culture_question,Erzsébet Gulyás-Köteles,Erzsébet Gulyás-Köteles,PASS
+CULTURE_06,INTERNAL_SQL,culture_question,Jordi Juan,Jordi Juan,PASS
+CULTURE_07,INTERNAL_SQL,culture_question,Terence Johnson,Terence Johnson,PASS
+CULTURE_08,INTERNAL_SQL,culture_question,Tadeusz Walasek,Tadeusz Walasek,PASS
+CULTURE_09,INTERNAL_SQL,culture_question,Mary Thomson-King,Mary Thomson-King,PASS
+CULTURE_10,INTERNAL_SQL,culture_question,Gianluca Tiberti,Gianluca Tiberti,PASS
+CULTURE_11,INTERNAL_SQL,culture_question,Al Lambert,Al Lambert,PASS
+CULTURE_12,INTERNAL_SQL,culture_question,Jacobus Willems,Jacobus Willems,PASS
+CULTURE_13,INTERNAL_SQL,culture_question,Jzsef Berkes (Bittenbinder-Szendrey),Jzsef Berkes (Bittenbinder-Szendrey),PASS
+CULTURE_14,INTERNAL_SQL,culture_question,Lindsay Benko,Lindsay Benko,PASS
+CULTURE_15,INTERNAL_SQL,culture_question,Denis Dmitriyev,Denis Dmitriyev,PASS
+CULTURE_16,INTERNAL_SQL,culture_question,Giorgos Akhilleos,Giorgos Akhilleos,PASS
+CULTURE_17,INTERNAL_SQL,culture_question,Eamon Sullivan,Eamon Sullivan,PASS
+CULTURE_18,INTERNAL_SQL,culture_question,Gavril Stoyanov,Gavril Stoyanov,PASS
+CULTURE_19,INTERNAL_SQL,culture_question,Louis Bonniot de Fleurac,Louis Bonniot de Fleurac,PASS
+CULTURE_20,INTERNAL_SQL,culture_question,Paolo Vidoz,Paolo Vidoz,PASS
+CULTURE_21,INTERNAL_SQL,culture_question,mile Dupont,mile Dupont,PASS
+CULTURE_22,INTERNAL_SQL,culture_question,Karen Kraft,Karen Kraft,PASS
+CULTURE_23,INTERNAL_SQL,culture_question,Richard Fanshawe,Richard Fanshawe,PASS
+CULTURE_24,INTERNAL_SQL,culture_question,Helen Carpenter-phinney,Helen Carpenter-phinney,PASS
+CULTURE_25,INTERNAL_SQL,culture_question,Richard Nowakowski,Richard Nowakowski,PASS
+CULTURE_26,INTERNAL_SQL,culture_question,Clay Ives,Clay Ives,PASS
+CULTURE_27,INTERNAL_SQL,culture_question,Dorian Rijsselberge,Dorian Rijsselberge,PASS
+CULTURE_28,INTERNAL_SQL,culture_question,Louis (dormeuil-),Louis (dormeuil-),PASS
+CULTURE_29,INTERNAL_SQL,culture_question,Gina Torrealva,Gina Torrealva,PASS
+CULTURE_30,INTERNAL_SQL,culture_question,Lin Dan,Lin Dan,PASS
+CULTURE_31,INTERNAL_SQL,culture_question,Aleksei Budlin,Aleksei Budlin,PASS
+CULTURE_32,INTERNAL_SQL,culture_question,Robert Jr.,Robert Jr.,PASS
+CULTURE_33,INTERNAL_SQL,culture_question,Sophie Hosking,Sophie Hosking,PASS
+CULTURE_34,INTERNAL_SQL,culture_question,Stanislas Wawrinka,Stanislas Wawrinka,PASS
+CULTURE_35,INTERNAL_SQL,culture_question,Jacqueline Lölling,Jacqueline Lölling,PASS
+CULTURE_36,INTERNAL_SQL,culture_question,Simone Biles,Simone Biles,PASS
+CULTURE_37,INTERNAL_SQL,culture_question,Gene Hámori,Gene Hámori,PASS
+CULTURE_38,INTERNAL_SQL,culture_question,Birgit Fischer-Schmidt,Birgit Fischer-Schmidt,PASS
+CULTURE_39,INTERNAL_SQL,culture_question,Seiji Aochi,Seiji Aochi,PASS
+CULTURE_40,INTERNAL_SQL,culture_question,Zhang Jinrong,Zhang Jinrong,PASS
+CULTURE_41,INTERNAL_SQL,culture_question,Léon Moreaux,Léon Moreaux,PASS
+CULTURE_42,INTERNAL_SQL,culture_question,Paul Falk,Paul Falk,PASS
+CULTURE_43,INTERNAL_SQL,culture_question,Teodora Ungureanu,Teodora Ungureanu,PASS
+CULTURE_44,INTERNAL_SQL,culture_question,"Arthur William Charles ""Wentworth"" Gore","Arthur William Charles ""Wentworth"" Gore",PASS
+CULTURE_45,INTERNAL_SQL,culture_question,Manuel Mendívil,Manuel Mendívil,PASS
+CULTURE_46,INTERNAL_SQL,culture_question,Oleksandr Svitlychniy,Oleksandr Svitlychniy,PASS
+CULTURE_47,INTERNAL_SQL,culture_question,Angela Ruggiero,Angela Ruggiero,PASS
+CULTURE_48,INTERNAL_SQL,culture_question,Wu Minxia,Wu Minxia,PASS
+CULTURE_49,INTERNAL_SQL,culture_question,Marcelo Ferreira,Marcelo Ferreira,PASS
+CULTURE_50,INTERNAL_SQL,culture_question,Norman Ross,Norman Ross,PASS

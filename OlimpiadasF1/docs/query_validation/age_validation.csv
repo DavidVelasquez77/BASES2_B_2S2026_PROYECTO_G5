@@ -1,1 +1,11 @@
 tipo,id_atleta,nombre,edad,fecha_nacimiento,anio,evento,estado,fuente
+youngest_gold_raw,37757,Klaus Zerta,13.00,1946-11-25,1960,Rowing Men's Coxed Pairs,REVIEW,INTERNAL_SQL
+youngest_gold_raw,39397,Hans Bourquin,13.00,1914-05-30,1928,Rowing Men's Coxed Pairs,REVIEW,INTERNAL_SQL
+youngest_gold_raw,45727,Fu Mingxia,13.00,1978-08-16,1992,Diving Women's Platform,REVIEW,INTERNAL_SQL
+youngest_gold_raw,50644,Donna de Varona,13.00,1947-04-26,1960,Swimming Women's 4 x 100 metres Freestyle Relay,REVIEW,INTERNAL_SQL
+youngest_gold_raw,50670,Marjorie Gestring,13.00,1922-11-18,1936,Diving Women's Springboard,REVIEW,INTERNAL_SQL
+youngest_gold_raw,50810,Aileen Riggin,13.00,1906-05-02,1920,Diving Women's Springboard,REVIEW,INTERNAL_SQL
+youngest_gold_raw,162136,Kim Yun-Mi,13.00,1900-01-01,1994,"Short Track Speed Skating Women's 3,000 metres Relay",REVIEW,INTERNAL_SQL
+youngest_gold_raw,28969,Mariya Filatova,14.00,1961-07-19,1976,Gymnastics Women's Team All-Around,REVIEW,INTERNAL_SQL
+youngest_gold_raw,29055,Dominique Moceanu,14.00,1981-09-30,1996,Gymnastics Women's Team All-Around,REVIEW,INTERNAL_SQL
+youngest_gold_raw,37715,Gunther Tiersch,14.00,1954-04-30,1968,Rowing Men's Coxed Eights,REVIEW,INTERNAL_SQL

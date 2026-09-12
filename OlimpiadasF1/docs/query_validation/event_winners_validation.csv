@@ -1,13 +1,13 @@
 test_id,anio,deporte,disciplina,evento,resultado,estado,fuente
-100M_2004_MEN,2004,Athletics,100 metres,"100 metres, Men (Olympic)",NO_GOLD_ROW,REVIEW,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true
-100M_2004_WOMEN,2004,Athletics,100 metres,"100 metres Backstroke, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2008_MEN,2008,Athletics,100 metres,"100 metres, Men (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2008_WOMEN,2008,Athletics,100 metres,"100 metres Backstroke, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2012_MEN,2012,Athletics,100 metres,"100 metres, Men (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2012_WOMEN,2012,Athletics,100 metres,"100 metres Backstroke, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2016_MEN,2016,Athletics,100 metres,"100 metres, Men (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2016_WOMEN,2016,Athletics,100 metres,"100 metres Backstroke, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2020_MEN,2020,Athletics,100 metres,"100 metres, Men (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2020_WOMEN,2020,Athletics,100 metres,"100 metres Backstroke, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
+100M_2004_MEN,2004,Athletics,100 metres,"100 metres, Men (Olympic)",Justin Gatlin|USA|Gold,PASS,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true
+100M_2004_WOMEN,2004,Athletics,100 metres,"100 metres, Women (Olympic)",Yuliya Nestsiarenka|BLR|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2008_MEN,2008,Athletics,100 metres,"100 metres, Men (Olympic)",Usain Bolt|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2008_WOMEN,2008,Athletics,100 metres,"100 metres, Women (Olympic)",Shelly-Ann Fraser-Pryce|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2012_MEN,2012,Athletics,100 metres,"100 metres, Men (Olympic)",Usain Bolt|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2012_WOMEN,2012,Athletics,100 metres,"100 metres, Women (Olympic)",Shelly-Ann Fraser-Pryce|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2016_MEN,2016,Athletics,100 metres,"100 metres, Men (Olympic)",Usain Bolt|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2016_WOMEN,2016,Athletics,100 metres,"100 metres, Women (Olympic)",Elaine Thompson-Herah|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2020_MEN,2020,Athletics,100 metres,"100 metres, Men (Olympic)",Lamont Marcell Jacobs|ITA|Gold,PASS,NOT_EXTERNALLY_VERIFIED
+100M_2020_WOMEN,2020,Athletics,100 metres,"100 metres, Women (Olympic)",Elaine Thompson-Herah|JAM|Gold,PASS,NOT_EXTERNALLY_VERIFIED
 100M_2024_MEN,2024,Athletics,100 metres,"100 metres, Men (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
-100M_2024_WOMEN,2024,Athletics,100 metres,"100 metres Backstroke, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
+100M_2024_WOMEN,2024,Athletics,100 metres,"100 metres, Women (Olympic)",NO_GOLD_ROW,REVIEW,NOT_EXTERNALLY_VERIFIED
