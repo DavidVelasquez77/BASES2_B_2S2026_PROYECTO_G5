@@ -10,12 +10,12 @@ La auditoría fue de solo lectura sobre los diez CSV finales y, cuando se solici
 
 ## Resultado ejecutivo
 
-- Filas procesadas localmente: **1,070,906**.
+- Filas procesadas localmente: **1,069,889**.
 - Ediciones: **61/61** evaluadas.
 - Sedes: **42/42** evaluadas estructuralmente.
 - NOC: **236/236** clasificados como actuales o históricos.
 - Eventos: **2986/2986** evaluados con clave semántica; solo los casos prioritarios tienen contraste exacto en esta auditoría.
-- Participaciones con medalla: **104,240** generadas en `medal_audit.csv`; no se afirma verificación externa fila por fila de todas ellas.
+- Participaciones con medalla: **103,223** generadas en `medal_audit.csv`; no se afirma verificación externa fila por fila de todas ellas.
 - Muestra no medallista: **6,261** filas, semilla fija `20260912`.
 - Conflictos confirmados: **0**.
 

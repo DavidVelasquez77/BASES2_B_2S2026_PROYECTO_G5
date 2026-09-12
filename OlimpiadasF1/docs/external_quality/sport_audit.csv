@@ -1,12 +1,12 @@
 deporte,gold,silver,bronze,total,estado,motivo
 Aeronautics,1,0,0,1,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Aquatics,4666,4418,4333,13417,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Archery,383,362,311,1056,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Aquatics,4665,4418,4332,13415,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Archery,382,362,308,1052,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Art Competitions,77,99,84,260,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Athletics,3993,3894,3807,11694,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Athletics,3747,3642,3561,10950,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Badminton,164,165,173,502,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Baseball/Softball,473,467,423,1363,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Basketball,751,804,837,2392,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Basketball,751,800,822,2373,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Basque Pelota,6,0,0,6,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Biathlon,318,326,318,962,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Bobsleigh,313,307,315,935,REVIEW,Aggregate comparison; team events retain athlete-level rows.
@@ -16,14 +16,14 @@ Canoeing,1135,1138,1118,3391,REVIEW,Aggregate comparison; team events retain ath
 Cricket,13,30,0,43,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Croquet,11,5,6,22,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Curling,125,136,123,384,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Cycling,1247,1263,1233,3743,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Cycling,1244,1262,1233,3739,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Equestrian,989,977,974,2940,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Fencing,1777,1744,1688,5209,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Football,1071,1141,1088,3300,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Fencing,1776,1744,1688,5208,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Football,1071,1141,1084,3296,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Golf,48,48,53,149,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Gymnastics,2133,2044,2002,6179,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Handball,809,797,805,2411,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Hockey,1073,1066,996,3135,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Gymnastics,2130,2044,2002,6176,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Handball,782,769,789,2340,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Hockey,1064,1046,993,3103,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Ice Hockey,710,770,820,2300,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Jeu de Paume,5,2,3,10,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Judo,418,427,841,1686,REVIEW,Aggregate comparison; team events retain athlete-level rows.
@@ -33,14 +33,14 @@ Luge,155,142,153,450,REVIEW,Aggregate comparison; team events retain athlete-lev
 Modern Pentathlon,185,184,181,550,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Motorboating,19,0,0,19,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Mountaineering,29,0,0,29,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Polo,40,56,43,139,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Polo,40,55,43,138,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Racquets,7,7,10,24,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Roller Sports,12,12,13,37,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Roque,2,2,2,6,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Rowing,2669,2642,2664,7975,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Rugby,257,262,153,672,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Rugby,256,262,153,671,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Sailing,1221,1112,1003,3336,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Shooting,1151,1156,1125,3432,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Shooting,1136,1139,1111,3386,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Skating,987,1002,976,2965,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Ski Mountaineering,8,8,8,24,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Skiing,1402,1405,1397,4204,REVIEW,Aggregate comparison; team events retain athlete-level rows.
@@ -50,8 +50,8 @@ Table Tennis,179,181,202,562,REVIEW,Aggregate comparison; team events retain ath
 Taekwondo,122,126,210,458,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Tennis,324,325,395,1044,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Triathlon,45,41,42,128,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Tug-of-War,82,93,69,244,REVIEW,Aggregate comparison; team events retain athlete-level rows.
-Volleyball,821,778,789,2388,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Tug-of-War,79,92,66,237,REVIEW,Aggregate comparison; team events retain athlete-level rows.
+Volleyball,800,757,753,2310,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Weightlifting,579,581,577,1737,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 Wrestling,1113,1103,1299,3515,REVIEW,Aggregate comparison; team events retain athlete-level rows.
 YOG,8,5,3,16,REVIEW,Aggregate comparison; team events retain athlete-level rows.

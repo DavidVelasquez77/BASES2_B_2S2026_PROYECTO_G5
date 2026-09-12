@@ -1,0 +1,15 @@
+metric,value,expected,estado
+status,BEIJING2008_CHN_GOLD_RESIDUAL_RESOLVED,RESOLVED only with 2 deterministic aliases,BEIJING2008_CHN_GOLD_RESIDUAL_RESOLVED
+chn_gold_current,89,89,PASS
+chn_gold_after_prior_preview,53,53,PASS
+chn_gold_official,51,51,PASS
+residual_candidates,2,2,PASS
+additional_confirmed_duplicates,2,2,PASS
+historical_reallocations,0,0,PASS
+legitimate_distinct,0,0,PASS
+review,0,0,PASS
+chn_gold_hypothetical_final,51,51,PASS
+processed_sha,MATCH,MATCH,PASS
+raw_sha,10/10 MATCH,10/10 MATCH,PASS
+intermediate_sha,13/13 MATCH,13/13 MATCH,PASS
+sql_modified,NO,NO,PASS

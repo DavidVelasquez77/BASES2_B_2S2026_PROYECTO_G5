@@ -1,0 +1,20 @@
+metric,value,expected,estado
+preview_status,FINAL_MEDAL_DEDUP_PREVIEW_APPROVED,APPROVED only if every control passes,PASS
+previous_confirmed_removal_ids,1015,1015,PASS
+beijing_additional_removal_ids,2,2,PASS
+overlap,0,0,PASS
+unique_final_removals,1017,1017,PASS
+participacion_before,713675,713675,PASS
+participacion_preview,712658,712658,PASS
+atleta,336418,336418,PASS
+evento,2986,2986,PASS
+guatemala,1/1/1/3,1/1/1/3,PASS
+london2012_50km,Robbie Heffernan=Bronze;Jared Tallent=Gold;Si Tianfeng=Silver;Sergey Kirdyapkin=DQ,Tallent Gold; Si Silver; Heffernan Bronze; Kirdyapkin DQ,PASS
+q12_trap_women_bronze,Penny Smith|AUS|Bronze,Penny Smith|AUS|Bronze,PASS
+dq_with_medal,0,0,PASS
+confirmed_bad_podiums,0,0,PASS
+csv_fk_orphans,0,0,PASS
+processed_sha_before_apply,10/10 baseline captured,MATCH,PASS
+raw_sha,10/10 MATCH,10/10 MATCH,PASS
+intermediate_sha,13/13 MATCH,13/13 MATCH,PASS
+sql_rebuild,PENDING_AUTHORIZATION,PENDING_AUTHORIZATION,PASS

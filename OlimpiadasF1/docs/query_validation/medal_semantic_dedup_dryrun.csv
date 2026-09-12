@@ -1,0 +1,17 @@
+metric,value,expected,estado
+status,MEDAL_SEMANTIC_DEDUPLICATION_REVIEW_REQUIRED,READY only when all focus/control counts match,MEDAL_SEMANTIC_DEDUPLICATION_REVIEW_REQUIRED
+critical_candidates_reviewed,1017,1017,PASS
+confirmed_duplicates,1015,deterministic structural rows,PASS
+probable_duplicates,0,diagnostic only,PASS
+legitimate_distinct,7,diagnostic only,PASS
+homonyms,0,diagnostic only,PASS
+review,0,0,PASS
+participation_current,713675,713675,PASS
+participation_hypothetical,712660,current - confirmed duplicate rows,PASS
+events_current,2986,2986,PASS
+beijing_CHN_gold_before,89,89,PASS
+beijing_CHN_gold_after,53,51,REVIEW
+processed_sha,MATCH,MATCH,PASS
+raw_sha,10/10 MATCH,10/10 MATCH,PASS
+intermediate_sha,13/13 MATCH,13/13 MATCH,PASS
+sql_modified,NO,NO,PASS

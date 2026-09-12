@@ -30,7 +30,7 @@ EXPECTED = {
     "ENTIDAD_GEOGRAFICA": 282, "POBLACION": 17024, "NOC": 236,
     "ATLETA": 336418, "SEDE": 42, "EDICION_OLIMPICA": 61,
     "DEPORTE": 65, "DISCIPLINA": 117, "EVENTO": 2986,
-    "PARTICIPACION": 713675,
+    "PARTICIPACION": 712658,
 }
 IOC_RESULTS = "https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html"
 IOC_GATLIN = "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true"
@@ -377,7 +377,7 @@ def main() -> int:
     ]
     (OUT / "general_knowledge_query_validation.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     write_csv("general_knowledge_query_validation.csv", queries, ["id", "categoria", "consulta", "resultado", "estado", "obligatoria", "fuente"])
-    return 0 if final_status.endswith("PASS") else 0
+    return 0 if final_status.endswith("PASS") else 1
 
 
 if __name__ == "__main__":

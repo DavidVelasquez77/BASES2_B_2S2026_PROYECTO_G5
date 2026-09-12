@@ -1,0 +1,8 @@
+indicador,valor,estado
+estado_final,FINAL_EXTERNAL_LIVE_QUERY_AUDIT_REVIEW_REQUIRED,REVIEW
+podios_revisados,200,PASS
+duplicados_medalla_critical,7,FAIL
+live_queries,42,PASS
+raw_sha,10/10 MATCH,PASS
+intermediate_sha,13/13 MATCH,PASS
+processed_unchanged,YES,PASS

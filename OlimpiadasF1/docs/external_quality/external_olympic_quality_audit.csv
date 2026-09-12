@@ -4,8 +4,8 @@ editions,61/61 assessed,61/61,PASS,semantic/structural,Includes special-case cla
 venues,42/42 assessed,42/42,PASS,relation/host-list context,Some venues remain REVIEW due source granularity.
 NOCs,236/236 assessed,236/236,PASS,current/historical classification,Historical codes are not errors.
 events,2986/2986 assessed,2986/2986,PASS,semantic key; priority exact,Not a claim of external row-by-row extraction.
-medal_participations,all rows generated,104240,REVIEW,all final medal rows; selective external comparison,See medal_audit.csv.
-podiums,all edition/event/NOC groups,35832,REVIEW,all groups derived locally,Team athlete rows grouped by NOC.
+medal_participations,all rows generated,103223,REVIEW,all final medal rows; selective external comparison,See medal_audit.csv.
+podiums,all edition/event/NOC groups,35733,REVIEW,all groups derived locally,Team athlete rows grouped by NOC.
 athletes_externally_checked,mandatory identities and podium/medal strata,8,REVIEW,8/336418 explicit mandatory identities,No one-by-one claim for every profile.
 non_medal_sample,fixed-seed stratified sample,6261,REVIEW,seed=20260912,Categories may overlap.
 processed_SHA,10/10 stable during audit,10/10 MATCH,PASS,local file hashes,No processed file was written.

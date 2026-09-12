@@ -1,0 +1,127 @@
+id_atleta,id_participacion,id_edicion,anio,temporada,id_evento,evento,deporte,disciplina,codigo_noc,medalla,posicion,estado_resultado,semantic_key,grupo_temporal
+28985,57259,20,1956,Summer,479,"Individual All-Around, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||individual|individual all around,DISTINCT_RESULT
+28985,57260,20,1956,Summer,484,"Team All-Around, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||team|team all around,DISTINCT_RESULT
+28985,57261,20,1956,Summer,486,"Team Portable Apparatus, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|women||team|team portable apparatus,DISTINCT_RESULT
+28985,57262,20,1956,Summer,480,"Floor Exercise, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||individual|floor exercise,DISTINCT_RESULT
+28985,57263,20,1956,Summer,481,"Horse Vault, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||individual|horse vault,DISTINCT_RESULT
+28985,57264,20,1956,Summer,482,"Uneven Bars, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|women||individual|uneven bars,DISTINCT_RESULT
+28985,57266,22,1960,Summer,479,"Individual All-Around, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||individual|individual all around,DISTINCT_RESULT
+28985,57267,22,1960,Summer,484,"Team All-Around, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||team|team all around,DISTINCT_RESULT
+28985,57268,22,1960,Summer,480,"Floor Exercise, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||individual|floor exercise,DISTINCT_RESULT
+28985,57269,22,1960,Summer,481,"Horse Vault, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|women||individual|horse vault,DISTINCT_RESULT
+28985,57270,22,1960,Summer,482,"Uneven Bars, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|women||individual|uneven bars,DISTINCT_RESULT
+28985,57271,22,1960,Summer,483,"Balance Beam, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|women||individual|balance beam,DISTINCT_RESULT
+28985,57272,24,1964,Summer,479,"Individual All-Around, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|women||individual|individual all around,DISTINCT_RESULT
+28985,57273,24,1964,Summer,484,"Team All-Around, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||team|team all around,DISTINCT_RESULT
+28985,57274,24,1964,Summer,480,"Floor Exercise, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|women||individual|floor exercise,DISTINCT_RESULT
+28985,57275,24,1964,Summer,481,"Horse Vault, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|women||individual|horse vault,DISTINCT_RESULT
+28985,57276,24,1964,Summer,482,"Uneven Bars, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|women||individual|uneven bars,DISTINCT_RESULT
+28985,57277,24,1964,Summer,483,"Balance Beam, Women (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|women||individual|balance beam,DISTINCT_RESULT
+31000,70772,28,1972,Summer,489,"Team All-Around, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|men||team|team all around,DISTINCT_RESULT
+31000,70773,28,1972,Summer,490,"Floor Exercise, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||individual|floor exercise,DISTINCT_RESULT
+31000,70774,28,1972,Summer,491,"Horse Vault, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|men||individual|horse vault,DISTINCT_RESULT
+31000,70779,30,1976,Summer,488,"Individual All-Around, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||individual|individual all around,DISTINCT_RESULT
+31000,70780,30,1976,Summer,489,"Team All-Around, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|men||team|team all around,DISTINCT_RESULT
+31000,70781,30,1976,Summer,490,"Floor Exercise, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||individual|floor exercise,DISTINCT_RESULT
+31000,70782,30,1976,Summer,491,"Horse Vault, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||individual|horse vault,DISTINCT_RESULT
+31000,70783,30,1976,Summer,492,"Parallel Bars, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|men||individual|parallel bars,DISTINCT_RESULT
+31000,70785,30,1976,Summer,494,"Rings, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||individual|rings,DISTINCT_RESULT
+31000,70786,30,1976,Summer,495,"Pommelled Horse, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|men||individual|pommelled horse,DISTINCT_RESULT
+31000,70787,32,1980,Summer,488,"Individual All-Around, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|men||individual|individual all around,DISTINCT_RESULT
+31000,70788,32,1980,Summer,489,"Team All-Around, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||team|team all around,DISTINCT_RESULT
+31000,70789,32,1980,Summer,490,"Floor Exercise, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Silver,2,,gymnastics|artistic gymnastics|men||individual|floor exercise,DISTINCT_RESULT
+31000,70790,32,1980,Summer,491,"Horse Vault, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Gold,1,,gymnastics|artistic gymnastics|men||individual|horse vault,DISTINCT_RESULT
+31000,70792,32,1980,Summer,493,"Horizontal Bar, Men (Olympic)",Gymnastics,Artistic Gymnastics,URS,Bronze,3,,gymnastics|artistic gymnastics|men||individual|horizontal bar,DISTINCT_RESULT
+51214,114857,26,1968,Summer,412,"100 metres Freestyle, Men (Olympic)",Aquatics,Swimming,USA,Bronze,3,,aquatics|swimming|men|100 metres|individual|100 metres freestyle,DUPLICATE_GROUP
+51214,114858,26,1968,Summer,810,"4 × 100 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres freestyle relay,DISTINCT_RESULT
+51214,114859,26,1968,Summer,781,"4 × 200 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|relay|4 x 200 metres freestyle relay,DISTINCT_RESULT
+51214,114860,26,1968,Summer,783,"100 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Silver,2,,aquatics|swimming|men|100 metres|individual|100 metres butterfly,DISTINCT_RESULT
+51214,114862,28,1972,Summer,412,"100 metres Freestyle, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|individual|100 metres freestyle,DUPLICATE_GROUP
+51214,114863,28,1972,Summer,779,"200 metres Freestyle, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres freestyle,DISTINCT_RESULT
+51214,114864,28,1972,Summer,810,"4 × 100 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres freestyle relay,DISTINCT_RESULT
+51214,114865,28,1972,Summer,781,"4 × 200 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|relay|4 x 200 metres freestyle relay,DISTINCT_RESULT
+51214,114866,28,1972,Summer,783,"100 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|individual|100 metres butterfly,DISTINCT_RESULT
+51214,114867,28,1972,Summer,784,"200 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres butterfly,DISTINCT_RESULT
+51214,114868,28,1972,Summer,791,"4 × 100 metres Medley Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres medley relay,DISTINCT_RESULT
+67218,141354,7,1920,Summer,1020,"5,000 metres, Men (Olympic)",Athletics,Athletics,FIN,Silver,2,,athletics|athletics|men|5000 metres|individual|5000 metres,DUPLICATE_GROUP
+67218,141355,7,1920,Summer,1023,"10,000 metres, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men|10000 metres|individual|10000 metres,DUPLICATE_GROUP
+67218,141357,7,1920,Summer,1051,"Cross-Country, Individual, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men||individual|cross country individual,DUPLICATE_GROUP
+67218,141358,7,1920,Summer,1062,"Cross-Country, Team, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men||team|cross country team,DUPLICATE_GROUP
+67218,141360,8,1924,Summer,95,"1,500 metres, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men|1500 metres|individual|1500 metres,DUPLICATE_GROUP
+67218,141361,8,1924,Summer,1020,"5,000 metres, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men|5000 metres|individual|5000 metres,DUPLICATE_GROUP
+67218,141362,8,1924,Summer,1061,"3,000 metres, Team, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men|3000 metres|team|3000 metres team,DUPLICATE_GROUP
+67218,141363,8,1924,Summer,1051,"Cross-Country, Individual, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men||individual|cross country individual,DUPLICATE_GROUP
+67218,141364,8,1924,Summer,1062,"Cross-Country, Team, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men||team|cross country team,DUPLICATE_GROUP
+67218,141365,10,1928,Summer,1020,"5,000 metres, Men (Olympic)",Athletics,Athletics,FIN,Silver,2,,athletics|athletics|men|5000 metres|individual|5000 metres,DUPLICATE_GROUP
+67218,141366,10,1928,Summer,1023,"10,000 metres, Men (Olympic)",Athletics,Athletics,FIN,Gold,1,,athletics|athletics|men|10000 metres|individual|10000 metres,DUPLICATE_GROUP
+67218,141367,10,1928,Summer,1019,"3,000 metres Steeplechase, Men (Olympic)",Athletics,Athletics,FIN,Silver,2,,athletics|athletics|men|3000 metres|individual|3000 metres steeplechase,DUPLICATE_GROUP
+93113,200712,45,2004,Summer,779,"200 metres Freestyle, Men (Olympic)",Aquatics,Swimming,USA,Bronze,3,,aquatics|swimming|men|200 metres|individual|200 metres freestyle,DISTINCT_RESULT
+93113,200713,45,2004,Summer,810,"4 × 100 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Bronze,3,,aquatics|swimming|men|100 metres|relay|4 x 100 metres freestyle relay,DISTINCT_RESULT
+93113,200714,45,2004,Summer,781,"4 × 200 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|relay|4 x 200 metres freestyle relay,DISTINCT_RESULT
+93113,200715,45,2004,Summer,783,"100 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|individual|100 metres butterfly,DISTINCT_RESULT
+93113,200716,45,2004,Summer,784,"200 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres butterfly,DISTINCT_RESULT
+93113,200717,45,2004,Summer,803,"200 metres Individual Medley, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres individual medley,DISTINCT_RESULT
+93113,200718,45,2004,Summer,804,"400 metres Individual Medley, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|400 metres|individual|400 metres individual medley,DISTINCT_RESULT
+93113,200719,45,2004,Summer,791,"4 × 100 metres Medley Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres medley relay,DISTINCT_RESULT
+93113,200720,47,2008,Summer,779,"200 metres Freestyle, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres freestyle,DISTINCT_RESULT
+93113,200721,47,2008,Summer,810,"4 × 100 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres freestyle relay,DISTINCT_RESULT
+93113,200722,47,2008,Summer,781,"4 × 200 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|relay|4 x 200 metres freestyle relay,DISTINCT_RESULT
+93113,200723,47,2008,Summer,783,"100 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|individual|100 metres butterfly,DISTINCT_RESULT
+93113,200724,47,2008,Summer,784,"200 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres butterfly,DISTINCT_RESULT
+93113,200725,47,2008,Summer,803,"200 metres Individual Medley, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres individual medley,DISTINCT_RESULT
+93113,200726,47,2008,Summer,804,"400 metres Individual Medley, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|400 metres|individual|400 metres individual medley,DISTINCT_RESULT
+93113,200727,47,2008,Summer,791,"4 × 100 metres Medley Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres medley relay,DISTINCT_RESULT
+93113,200728,50,2012,Summer,810,"4 × 100 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Silver,2,,aquatics|swimming|men|100 metres|relay|4 x 100 metres freestyle relay,DISTINCT_RESULT
+93113,200729,50,2012,Summer,781,"4 × 200 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|relay|4 x 200 metres freestyle relay,DISTINCT_RESULT
+93113,200730,50,2012,Summer,783,"100 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|individual|100 metres butterfly,DISTINCT_RESULT
+93113,200731,50,2012,Summer,784,"200 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Silver,2,,aquatics|swimming|men|200 metres|individual|200 metres butterfly,DISTINCT_RESULT
+93113,200732,50,2012,Summer,803,"200 metres Individual Medley, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres individual medley,DISTINCT_RESULT
+93113,200734,50,2012,Summer,791,"4 × 100 metres Medley Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres medley relay,DISTINCT_RESULT
+93113,200735,54,2016,Summer,810,"4 × 100 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres freestyle relay,DISTINCT_RESULT
+93113,200736,54,2016,Summer,781,"4 × 200 metres Freestyle Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|relay|4 x 200 metres freestyle relay,DISTINCT_RESULT
+93113,200737,54,2016,Summer,783,"100 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Silver,2,,aquatics|swimming|men|100 metres|individual|100 metres butterfly,DISTINCT_RESULT
+93113,200738,54,2016,Summer,784,"200 metres Butterfly, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres butterfly,DISTINCT_RESULT
+93113,200739,54,2016,Summer,803,"200 metres Individual Medley, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|200 metres|individual|200 metres individual medley,DISTINCT_RESULT
+93113,200740,54,2016,Summer,791,"4 × 100 metres Medley Relay, Men (Olympic)",Aquatics,Swimming,USA,Gold,1,,aquatics|swimming|men|100 metres|relay|4 x 100 metres medley relay,DISTINCT_RESULT
+100161,217940,44,2002,Winter,1233,"4 × 5 kilometres Relay, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Silver,2,,skiing|cross country skiing|women|5 kilometres|relay|4 x 5 kilometres relay,DISTINCT_RESULT
+100161,217942,46,2006,Winter,1220,"10 kilometres, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Silver,2,,skiing|cross country skiing|women|10 kilometres|individual|10 kilometres,DISTINCT_RESULT
+100161,217946,49,2010,Winter,1261,"Sprint, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women||individual|sprint,DISTINCT_RESULT
+100161,217947,49,2010,Winter,1220,"10 kilometres, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Bronze,3,,skiing|cross country skiing|women|10 kilometres|individual|10 kilometres,DISTINCT_RESULT
+100161,217948,49,2010,Winter,1231,"30 kilometres, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Silver,2,,skiing|cross country skiing|women|30 kilometres|individual|30 kilometres,DISTINCT_RESULT
+100161,217949,49,2010,Winter,1266,"15 kilometres Skiathlon, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women|15 kilometres|individual|15 kilometres skiathlon,DISTINCT_RESULT
+100161,217950,49,2010,Winter,1233,"4 × 5 kilometres Relay, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women|5 kilometres|relay|4 x 5 kilometres relay,DISTINCT_RESULT
+100161,217953,53,2014,Winter,1231,"30 kilometres, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women|30 kilometres|individual|30 kilometres,DISTINCT_RESULT
+100161,217954,53,2014,Winter,1266,"15 kilometres Skiathlon, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women|15 kilometres|individual|15 kilometres skiathlon,DISTINCT_RESULT
+100161,217956,53,2014,Winter,1268,"Team Sprint, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women||team|team sprint,DISTINCT_RESULT
+100161,217957,57,2018,Winter,1220,"10 kilometres, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Bronze,3,,skiing|cross country skiing|women|10 kilometres|individual|10 kilometres,DISTINCT_RESULT
+100161,217958,57,2018,Winter,1231,"30 kilometres, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women|30 kilometres|individual|30 kilometres,DISTINCT_RESULT
+100161,217959,57,2018,Winter,1266,"15 kilometres Skiathlon, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Silver,2,,skiing|cross country skiing|women|15 kilometres|individual|15 kilometres skiathlon,DISTINCT_RESULT
+100161,217960,57,2018,Winter,1233,"4 × 5 kilometres Relay, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Gold,1,,skiing|cross country skiing|women|5 kilometres|relay|4 x 5 kilometres relay,DISTINCT_RESULT
+100161,217961,57,2018,Winter,1268,"Team Sprint, Women (Olympic)",Skiing,Cross Country Skiing,NOR,Bronze,3,,skiing|cross country skiing|women||team|team sprint,DISTINCT_RESULT
+104492,228029,47,2008,Summer,43,"100 metres, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|100 metres|individual|100 metres,DISTINCT_RESULT
+104492,228030,47,2008,Summer,467,"200 metres, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|200 metres|individual|200 metres,DUPLICATE_GROUP
+104492,228032,50,2012,Summer,43,"100 metres, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|100 metres|individual|100 metres,DISTINCT_RESULT
+104492,228033,50,2012,Summer,467,"200 metres, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|200 metres|individual|200 metres,DUPLICATE_GROUP
+104492,228034,50,2012,Summer,400,"4 × 100 metres Relay, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|100 metres|relay|4 x 100 metres relay,DUPLICATE_GROUP
+104492,228035,54,2016,Summer,43,"100 metres, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|100 metres|individual|100 metres,DISTINCT_RESULT
+104492,228036,54,2016,Summer,467,"200 metres, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|200 metres|individual|200 metres,DUPLICATE_GROUP
+104492,228037,54,2016,Summer,400,"4 × 100 metres Relay, Men (Olympic)",Athletics,Athletics,JAM,Gold,1,,athletics|athletics|men|100 metres|relay|4 x 100 metres relay,DUPLICATE_GROUP
+104492,333021,47,2008,Summer,2047,Athletics Men's 200 metres,Athletics,Athletics,JAM,Gold,,,athletics|athletics|men|200 metres|individual|200 metres,DUPLICATE_GROUP
+104492,333024,50,2012,Summer,2047,Athletics Men's 200 metres,Athletics,Athletics,JAM,Gold,,,athletics|athletics|men|200 metres|individual|200 metres,DUPLICATE_GROUP
+104492,333025,50,2012,Summer,1966,Athletics Men's 4 x 100 metres Relay,Athletics,Athletics,JAM,Gold,,,athletics|athletics|men|100 metres|relay|4 x 100 metres relay,DUPLICATE_GROUP
+104492,333027,54,2016,Summer,2047,Athletics Men's 200 metres,Athletics,Athletics,JAM,Gold,,,athletics|athletics|men|200 metres|individual|200 metres,DUPLICATE_GROUP
+104492,333028,54,2016,Summer,1966,Athletics Men's 4 x 100 metres Relay,Athletics,Athletics,JAM,Gold,,,athletics|athletics|men|100 metres|relay|4 x 100 metres relay,DUPLICATE_GROUP
+67218,481233,7,1920,Summer,1973,"Athletics Men's 5,000 metres",Athletics,Athletics,FIN,Silver,,,athletics|athletics|men|5000 metres|individual|5000 metres,DUPLICATE_GROUP
+67218,481234,7,1920,Summer,2043,"Athletics Men's 10,000 metres",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men|10000 metres|individual|10000 metres,DUPLICATE_GROUP
+67218,481235,7,1920,Summer,2400,"Athletics Men's Cross-Country, Individual",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men||individual|cross country individual,DUPLICATE_GROUP
+67218,481236,7,1920,Summer,2401,"Athletics Men's Cross-Country, Team",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men||team|cross country team,DUPLICATE_GROUP
+67218,481237,8,1924,Summer,1949,"Athletics Men's 1,500 metres",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men|1500 metres|individual|1500 metres,DUPLICATE_GROUP
+67218,481238,8,1924,Summer,1973,"Athletics Men's 5,000 metres",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men|5000 metres|individual|5000 metres,DUPLICATE_GROUP
+67218,481239,8,1924,Summer,2417,"Athletics Men's 3,000 metres, Team",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men|3000 metres|team|3000 metres team,DUPLICATE_GROUP
+67218,481240,8,1924,Summer,2400,"Athletics Men's Cross-Country, Individual",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men||individual|cross country individual,DUPLICATE_GROUP
+67218,481241,8,1924,Summer,2401,"Athletics Men's Cross-Country, Team",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men||team|cross country team,DUPLICATE_GROUP
+67218,481242,10,1928,Summer,1973,"Athletics Men's 5,000 metres",Athletics,Athletics,FIN,Silver,,,athletics|athletics|men|5000 metres|individual|5000 metres,DUPLICATE_GROUP
+67218,481243,10,1928,Summer,2043,"Athletics Men's 10,000 metres",Athletics,Athletics,FIN,Gold,,,athletics|athletics|men|10000 metres|individual|10000 metres,DUPLICATE_GROUP
+67218,481244,10,1928,Summer,2066,"Athletics Men's 3,000 metres Steeplechase",Athletics,Athletics,FIN,Silver,,,athletics|athletics|men|3000 metres|individual|3000 metres steeplechase,DUPLICATE_GROUP
+51214,533731,26,1968,Summer,2006,Swimming Men's 100 metres Freestyle,Aquatics,Swimming,USA,Bronze,,,aquatics|swimming|men|100 metres|individual|100 metres freestyle,DUPLICATE_GROUP
+51214,533736,28,1972,Summer,2006,Swimming Men's 100 metres Freestyle,Aquatics,Swimming,USA,Gold,,,aquatics|swimming|men|100 metres|individual|100 metres freestyle,DUPLICATE_GROUP

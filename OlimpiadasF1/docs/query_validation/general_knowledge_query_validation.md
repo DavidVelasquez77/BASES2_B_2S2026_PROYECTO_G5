@@ -24,7 +24,7 @@ Esta fase ejecutó consultas de lectura sobre `OlimpiadasDB` y contrastó los re
 ## Integridad y no mutación
 
 - SHA de los 10 CSV procesados antes/después de la auditoría: MATCH.
-- Conteos SQL vigentes: ENTIDAD_GEOGRAFICA=282, POBLACION=17024, NOC=236, ATLETA=336418, SEDE=42, EDICION_OLIMPICA=61, DEPORTE=65, DISCIPLINA=117, EVENTO=2986, PARTICIPACION=713675; total de las 10 entidades: 1070906.
+- Conteos SQL vigentes: ENTIDAD_GEOGRAFICA=282, POBLACION=17024, NOC=236, ATLETA=336418, SEDE=42, EDICION_OLIMPICA=61, DEPORTE=65, DISCIPLINA=117, EVENTO=2986, PARTICIPACION=712658; total de las 10 entidades: 1069889.
 - No se ejecutaron resets, carga SQL, matching, deduplicación ni cambios de esquema.
 
 ## Fuentes

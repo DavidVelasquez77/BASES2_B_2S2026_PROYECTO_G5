@@ -8,7 +8,7 @@ COUNT_EDICION_OLIMPICA,integridad,COUNT(*) de olympics.EDICION_OLIMPICA,61,PASS,
 COUNT_DEPORTE,integridad,COUNT(*) de olympics.DEPORTE,65,PASS,NO,INTERNAL_SQL
 COUNT_DISCIPLINA,integridad,COUNT(*) de olympics.DISCIPLINA,117,PASS,NO,INTERNAL_SQL
 COUNT_EVENTO,integridad,COUNT(*) de olympics.EVENTO,2986,PASS,YES,INTERNAL_SQL
-COUNT_PARTICIPACION,integridad,COUNT(*) de olympics.PARTICIPACION,713675,PASS,YES,INTERNAL_SQL
+COUNT_PARTICIPACION,integridad,COUNT(*) de olympics.PARTICIPACION,712658,PASS,YES,INTERNAL_SQL
 GUA_MEDALLISTS,pais,Guatemala: medallistas lógicos,3,PASS,YES,INTERNAL_SQL
 GUA_MEDAL_ROWS,pais,Guatemala: filas con medalla,3,PASS,YES,INTERNAL_SQL
 GATLIN_2004_100M,evento,"Justin Gatlin, 100 m masculino, Atenas 2004","Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold",PASS,YES,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true
@@ -36,7 +36,7 @@ MESSI_PARTICIPATION,caso_especial,Messi: 2008/ARG/fútbol/Gold/posición 1,1,PAS
 BARRONDO_PARTICIPATION,caso_especial,Barrondo: London 2012/20 km/Silver,1,PASS,YES,INTERNAL_SQL
 LONDON_2012_50KM,caso_especial,Podio vigente y DQ de London 2012 50 km,PASS,PASS,YES,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true
 BEIJING_2008_GOLD_ATHLETES,ranking,Beijing 2008: atletas distintos con Gold,1247,PASS,NO,INTERNAL_SQL
-BEIJING_2008_GOLD_OUTCOMES,ranking,Beijing 2008: resultados oficiales Gold,570,PASS,NO,INTERNAL_SQL
+BEIJING_2008_GOLD_OUTCOMES,ranking,Beijing 2008: resultados oficiales Gold,566,PASS,NO,INTERNAL_SQL
 YOUNGEST_GOLD_RAW,edad,Menor edad Gold observada en SQL,13.00,PASS,NO,INTERNAL_SQL
 YOUNGEST_GOLD_TRUSTED,edad,Menor edad Gold confiable sin inventar componentes,REVIEW,REVIEW,NO,INTERNAL_SQL
 NO_DQ_MEDAL,sospechas,Descalificados con medalla no nula,0,PASS,YES,INTERNAL_SQL
@@ -71,53 +71,53 @@ RANDOM_EVENT_27,muestra,¿Cuántas participaciones tiene el evento Women's 200m 
 RANDOM_EVENT_28,muestra,"¿Cuántas participaciones tiene el evento Wrestling Women's Lightweight, Freestyle?",97,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_29,muestra,"¿Cuántas participaciones tiene el evento Fencing Women's epee, Individual?",359,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_30,muestra,"¿Cuántas participaciones tiene el evento Canadian Singles, 10,000 metres, Men (Olympic)?",9,PASS,NO,INTERNAL_SQL
-CULTURE_01,cultura_general,"¿Quién obtuvo Silver en One Person Heavyweight Dinghy, Men (Olympic)?",Vasilij Žbogar,PASS,NO,INTERNAL_SQL
-CULTURE_02,cultura_general,"¿Quién obtuvo Gold en 1,500 metres, Men (Olympic)?",Jim Lightbody,PASS,NO,INTERNAL_SQL
-CULTURE_03,cultura_general,"¿Quién obtuvo Gold en Team All-Around, Men (Olympic)?",Kalevi Laitinen,PASS,NO,INTERNAL_SQL
-CULTURE_04,cultura_general,¿Quién obtuvo Silver en Rowing Women's Coxed Eights?,Alison Cox,PASS,NO,INTERNAL_SQL
-CULTURE_05,cultura_general,"¿Quién obtuvo Silver en Team All-Around, Women (Olympic)?",Erzsébet Gulyás-Köteles,PASS,NO,INTERNAL_SQL
-CULTURE_06,cultura_general,¿Quién obtuvo Silver en Water Polo Men's Water Polo?,Jordi Juan,PASS,NO,INTERNAL_SQL
-CULTURE_07,cultura_general,"¿Quién obtuvo Bronze en 50 kilometres Race Walk, Men (Olympic)?",Terence Johnson,PASS,NO,INTERNAL_SQL
-CULTURE_08,cultura_general,¿Quién obtuvo Bronze en Boxing Men's Middleweight?,Tadeusz Walasek,PASS,NO,INTERNAL_SQL
-CULTURE_09,cultura_general,"¿Quién obtuvo Silver en Team, Open (Olympic)?",Mary Thomson-King,PASS,NO,INTERNAL_SQL
-CULTURE_10,cultura_general,"¿Quién obtuvo Silver en Team, Men (Olympic)?",Gianluca Tiberti,PASS,NO,INTERNAL_SQL
-CULTURE_11,cultura_general,¿Quién obtuvo Silver en Golf Men's Team?,Al Lambert,PASS,NO,INTERNAL_SQL
-CULTURE_12,cultura_general,¿Quién obtuvo Gold en Cycling Men's 50 kilometres?,Jacobus Willems,PASS,NO,INTERNAL_SQL
-CULTURE_13,cultura_general,"¿Quién obtuvo Silver en Team All-Around, Men (Olympic)?",Jzsef Berkes (Bittenbinder-Szendrey),PASS,NO,INTERNAL_SQL
-CULTURE_14,cultura_general,¿Quién obtuvo Gold en Swimming Women's 4 x 200 metres Freestyle Relay?,Lindsay Benko,PASS,NO,INTERNAL_SQL
-CULTURE_15,cultura_general,¿Quién obtuvo Bronze en Cycling Men's Sprint?,Denis Dmitriyev,PASS,NO,INTERNAL_SQL
-CULTURE_16,cultura_general,¿Quién obtuvo Bronze en Men's 4 x 100m Relay Team?,Giorgos Akhilleos,PASS,NO,INTERNAL_SQL
-CULTURE_17,cultura_general,"¿Quién obtuvo Silver en 4 × 100 metres Medley Relay, Men (Olympic)?",Eamon Sullivan,PASS,NO,INTERNAL_SQL
-CULTURE_18,cultura_general,"¿Quién obtuvo Bronze en Football, Men (Olympic)?",Gavril Stoyanov,PASS,NO,INTERNAL_SQL
-CULTURE_19,cultura_general,"¿Quién obtuvo Bronze en Athletics Men's 3 mile, Team?",Louis Bonniot de Fleurac,PASS,NO,INTERNAL_SQL
-CULTURE_20,cultura_general,¿Quién obtuvo Bronze en Boxing Men's Super-Heavyweight?,Paolo Vidoz,PASS,NO,INTERNAL_SQL
-CULTURE_21,cultura_general,"¿Quién obtuvo Silver en Shooting Men's Trap, Team?",mile Dupont,PASS,NO,INTERNAL_SQL
-CULTURE_22,cultura_general,¿Quién obtuvo Silver en Rowing Women's Coxless Pairs?,Karen Kraft,PASS,NO,INTERNAL_SQL
-CULTURE_23,cultura_general,"¿Quién obtuvo Bronze en Equestrianism Men's Three-Day Event, Team?",Richard Fanshawe,PASS,NO,INTERNAL_SQL
-CULTURE_24,cultura_general,"¿Quién obtuvo Gold en Cycling Women's Road Race, Individual?",Helen Carpenter-phinney,PASS,NO,INTERNAL_SQL
-CULTURE_25,cultura_general,¿Quién obtuvo Bronze en Boxing Men's Lightweight?,Richard Nowakowski,PASS,NO,INTERNAL_SQL
-CULTURE_26,cultura_general,¿Quién obtuvo Bronze en Luge Mixed (Men)'s Doubles?,Clay Ives,PASS,NO,INTERNAL_SQL
-CULTURE_27,cultura_general,¿Quién obtuvo Gold en Sailing Men's Windsurfer?,Dorian Rijsselberge,PASS,NO,INTERNAL_SQL
-CULTURE_28,cultura_general,¿Quién obtuvo Bronze en Men?,Louis (dormeuil-),PASS,NO,INTERNAL_SQL
-CULTURE_29,cultura_general,"¿Quién obtuvo Silver en Volleyball, Women (Olympic)?",Gina Torrealva,PASS,NO,INTERNAL_SQL
-CULTURE_30,cultura_general,¿Quién obtuvo Gold en Badminton Men's Singles?,Lin Dan,PASS,NO,INTERNAL_SQL
-CULTURE_31,cultura_general,¿Quién obtuvo Bronze en Judo Men's Half-Middleweight?,Aleksei Budlin,PASS,NO,INTERNAL_SQL
-CULTURE_32,cultura_general,"¿Quién obtuvo Silver en Swimming Men's 1,500 metres Freestyle?",Robert Jr.,PASS,NO,INTERNAL_SQL
-CULTURE_33,cultura_general,¿Quién obtuvo Gold en Rowing Women's Lightweight Double Sculls?,Sophie Hosking,PASS,NO,INTERNAL_SQL
-CULTURE_34,cultura_general,¿Quién obtuvo Gold en Tennis Men's Doubles?,Stanislas Wawrinka,PASS,NO,INTERNAL_SQL
-CULTURE_35,cultura_general,"¿Quién obtuvo Silver en Skeleton, Women (Olympic)?",Jacqueline Lölling,PASS,NO,INTERNAL_SQL
-CULTURE_36,cultura_general,¿Quién obtuvo Gold en Women's Vault?,Simone Biles,PASS,NO,INTERNAL_SQL
-CULTURE_37,cultura_general,"¿Quién obtuvo Gold en Sabre, Team, Men (Olympic)?",Gene Hámori,PASS,NO,INTERNAL_SQL
-CULTURE_38,cultura_general,"¿Quién obtuvo Gold en Canoeing Women's Kayak Singles, 500 metres?",Birgit Fischer-Schmidt,PASS,NO,INTERNAL_SQL
-CULTURE_39,cultura_general,"¿Quién obtuvo Bronze en Normal Hill, Individual, Men (Olympic)?",Seiji Aochi,PASS,NO,INTERNAL_SQL
-CULTURE_40,cultura_general,"¿Quién obtuvo Gold en Hockey 5s, Girls (YOG)?",Zhang Jinrong,PASS,NO,INTERNAL_SQL
-CULTURE_41,cultura_general,"¿Quién obtuvo Silver en Free Pistol, 25 metres, Men (Intercalated)?",Léon Moreaux,PASS,NO,INTERNAL_SQL
-CULTURE_42,cultura_general,"¿Quién obtuvo Gold en Pairs, Mixed (Olympic)?",Paul Falk,PASS,NO,INTERNAL_SQL
-CULTURE_43,cultura_general,"¿Quién obtuvo Silver en Team All-Around, Women (Olympic)?",Teodora Ungureanu,PASS,NO,INTERNAL_SQL
-CULTURE_44,cultura_general,"¿Quién obtuvo Gold en Tennis Men's Doubles, Covered Courts?","Arthur William Charles ""Wentworth"" Gore",PASS,NO,INTERNAL_SQL
-CULTURE_45,cultura_general,"¿Quién obtuvo Bronze en Team, Open (Olympic)?",Manuel Mendívil,PASS,NO,INTERNAL_SQL
-CULTURE_46,cultura_general,"¿Quién obtuvo Bronze en Team All-Around, Men (Olympic)?",Oleksandr Svitlychniy,PASS,NO,INTERNAL_SQL
-CULTURE_47,cultura_general,"¿Quién obtuvo Silver en Ice Hockey, Women (Olympic)?",Angela Ruggiero,PASS,NO,INTERNAL_SQL
-CULTURE_48,cultura_general,"¿Quién obtuvo Gold en Synchronized Springboard, Women (Olympic)?",Wu Minxia,PASS,NO,INTERNAL_SQL
-CULTURE_49,cultura_general,¿Quién obtuvo Gold en Sailing Mixed Two Person Keelboat?,Marcelo Ferreira,PASS,NO,INTERNAL_SQL
-CULTURE_50,cultura_general,"¿Quién obtuvo Gold en 1,500 metres Freestyle, Men (Olympic)?",Norman Ross,PASS,NO,INTERNAL_SQL
+CULTURE_01,cultura_general,¿Quién obtuvo Bronze en Men Team?,Mara Franco,PASS,NO,INTERNAL_SQL
+CULTURE_02,cultura_general,¿Quién obtuvo Silver en Athletics Women's 4 x 100 metres Relay?,Larisa Kruglova,PASS,NO,INTERNAL_SQL
+CULTURE_03,cultura_general,¿Quién obtuvo Silver en Boxing Men's Heavyweight?,Gunnar Nilsson,PASS,NO,INTERNAL_SQL
+CULTURE_04,cultura_general,"¿Quién obtuvo Silver en Individual, Open (Olympic)?",Tom McEwen,PASS,NO,INTERNAL_SQL
+CULTURE_05,cultura_general,"¿Quién obtuvo Bronze en 400 metres, Men (Olympic)?",Samson Kitur,PASS,NO,INTERNAL_SQL
+CULTURE_06,cultura_general,"¿Quién obtuvo Gold en Fencing Men's epee, Team?",Nedo Nadi,PASS,NO,INTERNAL_SQL
+CULTURE_07,cultura_general,"¿Quién obtuvo Silver en Large Hill, Individual, Men (Olympic)?",Espen Bredesen,PASS,NO,INTERNAL_SQL
+CULTURE_08,cultura_general,"¿Quién obtuvo Bronze en Horizontal Bar, Men (Olympic)?",Alphonse (hglin-),PASS,NO,INTERNAL_SQL
+CULTURE_09,cultura_general,"¿Quién obtuvo Silver en Hockey, Men (Olympic)?",Xavier Centelles,PASS,NO,INTERNAL_SQL
+CULTURE_10,cultura_general,¿Quién obtuvo Silver en Sailing Mixed 6 metres?,Frederic Conant,PASS,NO,INTERNAL_SQL
+CULTURE_11,cultura_general,¿Quién obtuvo Gold en Tennis Women's Singles?,Serena Williams,PASS,NO,INTERNAL_SQL
+CULTURE_12,cultura_general,¿Quién obtuvo Bronze en Rowing Men's Coxed Eights?,Hans Sennewald,PASS,NO,INTERNAL_SQL
+CULTURE_13,cultura_general,¿Quién obtuvo Gold en Men?,Benjamin Toniutti,PASS,NO,INTERNAL_SQL
+CULTURE_14,cultura_general,¿Quién obtuvo Bronze en Rowing Women's Lightweight Double Sculls?,Kirsten van der Kolk,PASS,NO,INTERNAL_SQL
+CULTURE_15,cultura_general,"¿Quién obtuvo Silver en Canoeing Men's Kayak Fours, 1,000 metres?",Viktor Denisov,PASS,NO,INTERNAL_SQL
+CULTURE_16,cultura_general,¿Quién obtuvo Gold en Mixed Relay Team?,Birger Andreassen,PASS,NO,INTERNAL_SQL
+CULTURE_17,cultura_general,"¿Quién obtuvo Gold en Sabre, Team, Men (Olympic)?",Boris Sanson,PASS,NO,INTERNAL_SQL
+CULTURE_18,cultura_general,"¿Quién obtuvo Gold en Team All-Around, Men (Olympic)?",Luigi Maiocco,PASS,NO,INTERNAL_SQL
+CULTURE_19,cultura_general,¿Quién obtuvo Silver en Diving Men's Platform?,Juan Robles,PASS,NO,INTERNAL_SQL
+CULTURE_20,cultura_general,"¿Quién obtuvo Bronze en Handball, Women (Olympic)?",Andrea Martn,PASS,NO,INTERNAL_SQL
+CULTURE_21,cultura_general,"¿Quién obtuvo Gold en Football, Men (Olympic)?",Victor Ikpeba,PASS,NO,INTERNAL_SQL
+CULTURE_22,cultura_general,¿Quién obtuvo Bronze en Athletics Men's Discus Throw?,James Corson,PASS,NO,INTERNAL_SQL
+CULTURE_23,cultura_general,"¿Quién obtuvo Silver en Road Race, Team, Men (Olympic)?",Leon Meredith,PASS,NO,INTERNAL_SQL
+CULTURE_24,cultura_general,"¿Quién obtuvo Gold en Coxed Fours, Men (Olympic)?",Émile Albrecht,PASS,NO,INTERNAL_SQL
+CULTURE_25,cultura_general,"¿Quién obtuvo Silver en Baseball, Men (Olympic)?",Daishin Nakamura,PASS,NO,INTERNAL_SQL
+CULTURE_26,cultura_general,¿Quién obtuvo Bronze en Rowing Men's Lightweight Double Sculls?,Peter Taylor,PASS,NO,INTERNAL_SQL
+CULTURE_27,cultura_general,"¿Quién obtuvo Silver en 30 kilometres, Men (Olympic)?",Bjørn Dæhlie,PASS,NO,INTERNAL_SQL
+CULTURE_28,cultura_general,"¿Quién obtuvo Silver en Foil, Team, Men (Olympic)?",Mario Curletto,PASS,NO,INTERNAL_SQL
+CULTURE_29,cultura_general,¿Quién obtuvo Silver en Rowing Women's Coxed Eights?,Doina Liliana Snep-Blan,PASS,NO,INTERNAL_SQL
+CULTURE_30,cultura_general,"¿Quién obtuvo Gold en Football, Women (Olympic)?",Shelina Zadorsky,PASS,NO,INTERNAL_SQL
+CULTURE_31,cultura_general,"¿Quién obtuvo Bronze en Eights, Men (Olympic)?",Daniel Walsh,PASS,NO,INTERNAL_SQL
+CULTURE_32,cultura_general,"¿Quién obtuvo Silver en 50 metres Freestyle, Women (Olympic)?",Sarah Sjöström,PASS,NO,INTERNAL_SQL
+CULTURE_33,cultura_general,"¿Quién obtuvo Silver en 4 × 200 metres Freestyle Relay, Men (Olympic)?",Grant Hackett,PASS,NO,INTERNAL_SQL
+CULTURE_34,cultura_general,"¿Quién obtuvo Silver en Basketball, Men (Olympic)?",Zoran Savi,PASS,NO,INTERNAL_SQL
+CULTURE_35,cultura_general,¿Quién obtuvo Silver en Rowing Women's Coxed Eights?,Viorica Ioja (-Vere),PASS,NO,INTERNAL_SQL
+CULTURE_36,cultura_general,¿Quién obtuvo Gold en Rowing Women's Coxed Eights?,Eleanor Logan,PASS,NO,INTERNAL_SQL
+CULTURE_37,cultura_general,"¿Quién obtuvo Gold en Shooting Men's Running Target, Single Shot, Team?",Harald Natvig,PASS,NO,INTERNAL_SQL
+CULTURE_38,cultura_general,¿Quién obtuvo Bronze en Rowing Men's Coxed Eights?,Fritz Bartholomae,PASS,NO,INTERNAL_SQL
+CULTURE_39,cultura_general,"¿Quién obtuvo Bronze en 4 × 10 kilometres Relay, Men (Olympic)?",Olav Økern,PASS,NO,INTERNAL_SQL
+CULTURE_40,cultura_general,"¿Quién obtuvo Bronze en Volleyball, Men (Olympic)?",Guido Luigi,PASS,NO,INTERNAL_SQL
+CULTURE_41,cultura_general,¿Quién obtuvo Bronze en Cross Country Skiing Men's 50 kilometres?,Vyacheslav Vedenin,PASS,NO,INTERNAL_SQL
+CULTURE_42,cultura_general,"¿Quién obtuvo Gold en Sabre, Team, Men (Olympic)?",Pál Kovács,PASS,NO,INTERNAL_SQL
+CULTURE_43,cultura_general,"¿Quién obtuvo Silver en Lightweight, Women (Olympic)?",Nicola Fairbrother,PASS,NO,INTERNAL_SQL
+CULTURE_44,cultura_general,"¿Quién obtuvo Bronze en Team All-Around, Men (Olympic)?",Kaino Lempinen,PASS,NO,INTERNAL_SQL
+CULTURE_45,cultura_general,¿Quién obtuvo Bronze en Athletics Men's 4 x 100 metres Relay?,Hermann Panzo,PASS,NO,INTERNAL_SQL
+CULTURE_46,cultura_general,"¿Quién obtuvo Gold en Football, Men (Olympic)?",Jean De Bie,PASS,NO,INTERNAL_SQL
+CULTURE_47,cultura_general,¿Quién obtuvo Silver en Diving Men's Platform?,Joaqun Capilla Prez,PASS,NO,INTERNAL_SQL
+CULTURE_48,cultura_general,¿Quién obtuvo Silver en Rowing Women's Single Sculls?,Anne (-grainger),PASS,NO,INTERNAL_SQL
+CULTURE_49,cultura_general,¿Quién obtuvo Gold en Swimming Women's 4 x 100 metres Medley Relay?,Melissa -ripley),PASS,NO,INTERNAL_SQL
+CULTURE_50,cultura_general,"¿Quién obtuvo Gold en Football, Women (Olympic)?",Simone Laudehr,PASS,NO,INTERNAL_SQL

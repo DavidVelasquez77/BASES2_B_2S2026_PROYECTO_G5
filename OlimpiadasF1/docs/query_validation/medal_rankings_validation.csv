@@ -1,60 +1,60 @@
 tipo_ranking,ranking,id,nombre_o_codigo,gold,silver,bronze,total,estado,fuente
 athlete_gold,1,93113,Michael Phelps,23,3,2,28,PASS,INTERNAL_SQL
 athlete_gold,2,77795,Ray Ewry,20,0,0,20,PASS,INTERNAL_SQL
-athlete_gold,3,67218,Paavo Nurmi,18,6,0,24,PASS,INTERNAL_SQL
-athlete_gold,4,9825,Birgit Fischer-Schmidt,16,8,0,24,PASS,INTERNAL_SQL
-athlete_gold,5,50859,Jenny Thompson,16,6,2,24,PASS,INTERNAL_SQL
-athlete_gold,6,78102,Carl Lewis,16,2,0,18,PASS,INTERNAL_SQL
-athlete_gold,7,11443,Isabell Werth,14,10,0,24,PASS,INTERNAL_SQL
-athlete_gold,8,124356,Katie Ledecky,14,5,1,20,PASS,INTERNAL_SQL
-athlete_gold,9,111919,Jason Kenny,13,3,0,16,PASS,INTERNAL_SQL
-athlete_gold,10,104492,Usain Bolt,13,0,0,13,PASS,INTERNAL_SQL
-athlete_gold,11,22508,Edoardo Mangiarotti,12,10,4,26,PASS,INTERNAL_SQL
-athlete_gold,12,82435,Lyubov Yegorova,12,6,0,18,PASS,INTERNAL_SQL
-athlete_gold,13,10707,Gert Fredriksson,12,2,2,16,PASS,INTERNAL_SQL
-athlete_gold,14,89671,Chris Hoy,12,2,0,14,PASS,INTERNAL_SQL
-athlete_gold,15,12179,Reiner Klimke,12,0,4,16,PASS,INTERNAL_SQL
-athlete_gold,16,100699,Viktor An,12,0,4,16,PASS,INTERNAL_SQL
-athlete_gold,17,81744,Lidiya Skoblikova,12,0,0,12,PASS,INTERNAL_SQL
-athlete_gold,18,22528,Nedo Nadi,12,0,0,12,PASS,INTERNAL_SQL
-athlete_gold,19,114815,Svetlana Romashina,12,0,0,12,PASS,INTERNAL_SQL
-athlete_gold,20,50865,Amy Van Dyken,11,0,0,11,PASS,INTERNAL_SQL
+athlete_gold,3,9825,Birgit Fischer-Schmidt,16,8,0,24,PASS,INTERNAL_SQL
+athlete_gold,4,50859,Jenny Thompson,16,6,2,24,PASS,INTERNAL_SQL
+athlete_gold,5,78102,Carl Lewis,16,2,0,18,PASS,INTERNAL_SQL
+athlete_gold,6,11443,Isabell Werth,14,10,0,24,PASS,INTERNAL_SQL
+athlete_gold,7,124356,Katie Ledecky,14,5,1,20,PASS,INTERNAL_SQL
+athlete_gold,8,111919,Jason Kenny,13,3,0,16,PASS,INTERNAL_SQL
+athlete_gold,9,22508,Edoardo Mangiarotti,12,10,4,26,PASS,INTERNAL_SQL
+athlete_gold,10,82435,Lyubov Yegorova,12,6,0,18,PASS,INTERNAL_SQL
+athlete_gold,11,10707,Gert Fredriksson,12,2,2,16,PASS,INTERNAL_SQL
+athlete_gold,12,89671,Chris Hoy,12,2,0,14,PASS,INTERNAL_SQL
+athlete_gold,13,12179,Reiner Klimke,12,0,4,16,PASS,INTERNAL_SQL
+athlete_gold,14,100699,Viktor An,12,0,4,16,PASS,INTERNAL_SQL
+athlete_gold,15,81744,Lidiya Skoblikova,12,0,0,12,PASS,INTERNAL_SQL
+athlete_gold,16,22528,Nedo Nadi,12,0,0,12,PASS,INTERNAL_SQL
+athlete_gold,17,114815,Svetlana Romashina,12,0,0,12,PASS,INTERNAL_SQL
+athlete_gold,18,50865,Amy Van Dyken,11,0,0,11,PASS,INTERNAL_SQL
+athlete_gold,19,47163,Kristin Otto,11,0,0,11,PASS,INTERNAL_SQL
+athlete_gold,20,333,Hubert Van Innis,10,7,0,17,PASS,INTERNAL_SQL
 athlete_total,1,93113,Michael Phelps,23,3,2,28,PASS,INTERNAL_SQL
 athlete_total,2,22508,Edoardo Mangiarotti,12,10,4,26,PASS,INTERNAL_SQL
-athlete_total,3,67218,Paavo Nurmi,18,6,0,24,PASS,INTERNAL_SQL
-athlete_total,4,9825,Birgit Fischer-Schmidt,16,8,0,24,PASS,INTERNAL_SQL
-athlete_total,5,50859,Jenny Thompson,16,6,2,24,PASS,INTERNAL_SQL
-athlete_total,6,11443,Isabell Werth,14,10,0,24,PASS,INTERNAL_SQL
-athlete_total,7,77795,Ray Ewry,20,0,0,20,PASS,INTERNAL_SQL
-athlete_total,8,124356,Katie Ledecky,14,5,1,20,PASS,INTERNAL_SQL
-athlete_total,9,78102,Carl Lewis,16,2,0,18,PASS,INTERNAL_SQL
-athlete_total,10,82435,Lyubov Yegorova,12,6,0,18,PASS,INTERNAL_SQL
+athlete_total,3,9825,Birgit Fischer-Schmidt,16,8,0,24,PASS,INTERNAL_SQL
+athlete_total,4,50859,Jenny Thompson,16,6,2,24,PASS,INTERNAL_SQL
+athlete_total,5,11443,Isabell Werth,14,10,0,24,PASS,INTERNAL_SQL
+athlete_total,6,77795,Ray Ewry,20,0,0,20,PASS,INTERNAL_SQL
+athlete_total,7,124356,Katie Ledecky,14,5,1,20,PASS,INTERNAL_SQL
+athlete_total,8,78102,Carl Lewis,16,2,0,18,PASS,INTERNAL_SQL
+athlete_total,9,82435,Lyubov Yegorova,12,6,0,18,PASS,INTERNAL_SQL
+athlete_total,10,333,Hubert Van Innis,10,7,0,17,PASS,INTERNAL_SQL
 athlete_total,11,111919,Jason Kenny,13,3,0,16,PASS,INTERNAL_SQL
 athlete_total,12,10707,Gert Fredriksson,12,2,2,16,PASS,INTERNAL_SQL
 athlete_total,13,12179,Reiner Klimke,12,0,4,16,PASS,INTERNAL_SQL
 athlete_total,14,100699,Viktor An,12,0,4,16,PASS,INTERNAL_SQL
 athlete_total,15,89671,Chris Hoy,12,2,0,14,PASS,INTERNAL_SQL
-athlete_total,16,104492,Usain Bolt,13,0,0,13,PASS,INTERNAL_SQL
-athlete_total,17,81744,Lidiya Skoblikova,12,0,0,12,PASS,INTERNAL_SQL
-athlete_total,18,22528,Nedo Nadi,12,0,0,12,PASS,INTERNAL_SQL
-athlete_total,19,114815,Svetlana Romashina,12,0,0,12,PASS,INTERNAL_SQL
-athlete_total,20,50865,Amy Van Dyken,11,0,0,11,PASS,INTERNAL_SQL
-official_noc_gold,1,223,USA,2244,1852,1641,5737,PASS,INTERNAL_SQL
-official_noc_gold,2,221,URS,866,685,659,2210,PASS,INTERNAL_SQL
-official_noc_gold,3,83,GER,687,730,702,2119,PASS,INTERNAL_SQL
-official_noc_gold,4,78,GBR,608,678,672,1958,PASS,INTERNAL_SQL
-official_noc_gold,5,43,CHN,596,461,400,1457,PASS,INTERNAL_SQL
-official_noc_gold,6,73,FRA,570,615,706,1891,PASS,INTERNAL_SQL
-official_noc_gold,7,104,ITA,529,481,529,1539,PASS,INTERNAL_SQL
-official_noc_gold,8,177,RUS,421,364,382,1167,PASS,INTERNAL_SQL
-official_noc_gold,9,200,SWE,418,441,488,1347,PASS,INTERNAL_SQL
-official_noc_gold,10,155,NOR,379,351,325,1055,PASS,INTERNAL_SQL
+athlete_total,16,81744,Lidiya Skoblikova,12,0,0,12,PASS,INTERNAL_SQL
+athlete_total,17,22528,Nedo Nadi,12,0,0,12,PASS,INTERNAL_SQL
+athlete_total,18,114815,Svetlana Romashina,12,0,0,12,PASS,INTERNAL_SQL
+athlete_total,19,50865,Amy Van Dyken,11,0,0,11,PASS,INTERNAL_SQL
+athlete_total,20,47163,Kristin Otto,11,0,0,11,PASS,INTERNAL_SQL
+official_noc_gold,1,223,USA,2221,1830,1628,5679,PASS,INTERNAL_SQL
+official_noc_gold,2,221,URS,860,681,653,2194,PASS,INTERNAL_SQL
+official_noc_gold,3,83,GER,686,728,700,2114,PASS,INTERNAL_SQL
+official_noc_gold,4,78,GBR,602,671,668,1941,PASS,INTERNAL_SQL
+official_noc_gold,5,43,CHN,593,461,400,1454,PASS,INTERNAL_SQL
+official_noc_gold,6,73,FRA,568,613,706,1887,PASS,INTERNAL_SQL
+official_noc_gold,7,104,ITA,528,481,528,1537,PASS,INTERNAL_SQL
+official_noc_gold,8,177,RUS,420,362,380,1162,PASS,INTERNAL_SQL
+official_noc_gold,9,200,SWE,418,441,485,1344,PASS,INTERNAL_SQL
+official_noc_gold,10,155,NOR,378,351,324,1053,PASS,INTERNAL_SQL
 official_noc_gold,11,94,HUN,375,324,363,1062,PASS,INTERNAL_SQL
-official_noc_gold,12,80,GDR,370,306,303,979,PASS,INTERNAL_SQL
-official_noc_gold,13,108,JPN,358,320,371,1049,PASS,INTERNAL_SQL
-official_noc_gold,14,14,AUS,344,352,426,1122,PASS,INTERNAL_SQL
-official_noc_gold,15,150,NED,294,300,341,935,PASS,INTERNAL_SQL
-official_noc_gold,16,72,FIN,289,298,349,936,PASS,INTERNAL_SQL
+official_noc_gold,12,80,GDR,367,304,300,971,PASS,INTERNAL_SQL
+official_noc_gold,13,108,JPN,358,319,370,1047,PASS,INTERNAL_SQL
+official_noc_gold,14,14,AUS,344,351,426,1121,PASS,INTERNAL_SQL
+official_noc_gold,15,150,NED,293,300,341,934,PASS,INTERNAL_SQL
+official_noc_gold,16,72,FIN,287,296,347,930,PASS,INTERNAL_SQL
 official_noc_gold,17,113,KOR,281,230,231,742,PASS,INTERNAL_SQL
 official_noc_gold,18,38,CAN,277,350,427,1054,PASS,INTERNAL_SQL
 official_noc_gold,19,197,SUI,231,240,251,722,PASS,INTERNAL_SQL
