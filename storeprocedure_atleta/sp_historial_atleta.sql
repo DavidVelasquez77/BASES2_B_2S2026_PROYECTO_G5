@@ -2,7 +2,11 @@
    Solo lectura. No escribe datos ni altera el modelo. Usa solo el schema olympics.
    Devuelve 3 result sets: ficha, medallero y detalle de participaciones.
    Si la busqueda es ambigua o vacia, devuelve un solo result set informativo.
-   Las decisiones de diseno estan explicadas en documentacion_d.md */
+
+   Las metricas salen directamente de PARTICIPACION, que es la fuente canonica.
+   El SP no deduplica: esa tarea pertenece al ETL y ya fue resuelta ahi.
+
+   Decisiones de diseno explicadas en documentacion_d.md */
 
 USE OlimpiadasDB;
 GO
@@ -23,7 +27,7 @@ CREATE OR ALTER PROCEDURE olympics.sp_historial_atleta
     @medalla             NVARCHAR(20)  = NULL,   -- Gold | Silver | Bronze
 
     /* Filtros propios */
-    @temporada           NVARCHAR(30)  = NULL,   -- 5 valores, ver documentacion_d.md 4.8
+    @temporada           NVARCHAR(30)  = NULL,   -- uno de los 5 valores validos
     @solo_medallistas    BIT           = 0,      -- 1 = solo filas con medalla
     @coincidencia_exacta BIT           = 0,      -- 1 = nombre exacto
     @id_atleta           BIGINT        = NULL,   -- desempate por id
@@ -42,14 +46,28 @@ BEGIN
         RETURN;
     END;
 
+    /* @max_atletas se normaliza y se acota por arriba para no devolver
+       listas de candidatos inmanejables. */
     IF @max_atletas IS NULL OR @max_atletas < 1
         SET @max_atletas = 25;
+    IF @max_atletas > 500
+        SET @max_atletas = 500;
 
     /* Mejor un error claro que un resultado vacio que parezca "no tiene medallas". */
     IF @medalla IS NOT NULL
        AND @medalla COLLATE Latin1_General_CI_AI NOT IN (N'Gold', N'Silver', N'Bronze')
     BEGIN
         RAISERROR(N'@medalla debe ser Gold, Silver o Bronze, o NULL para todas.', 16, 1);
+        RETURN;
+    END;
+
+    /* EDICION_OLIMPICA.temporada tiene exactamente estos cinco valores. */
+    IF @temporada IS NOT NULL
+       AND @temporada COLLATE Latin1_General_CI_AI NOT IN
+           (N'Summer', N'Winter', N'Summer Youth', N'Winter Youth', N'Intercalated Games')
+    BEGIN
+        RAISERROR(N'@temporada debe ser Summer, Winter, Summer Youth, Winter Youth o Intercalated Games, o NULL para todas.',
+                  16, 1);
         RETURN;
     END;
 
@@ -62,12 +80,24 @@ BEGIN
 
     DECLARE @busqueda NVARCHAR(250) = LTRIM(RTRIM(ISNULL(@nombre_atleta, N'')));
 
-    /* Se escapan los comodines para que un '%' escrito por el usuario
-       se busque literal y no devuelva la tabla completa. */
+    /* Se escapan los comodines en todos los filtros parciales para que el texto
+       del usuario se busque literal: un '%' no debe traer la tabla completa. */
     DECLARE @patron NVARCHAR(260) =
         N'%' + REPLACE(REPLACE(REPLACE(@busqueda, N'[', N'[[]'),
                                N'%', N'[%]'),
                        N'_', N'[_]') + N'%';
+
+    DECLARE @patron_deporte NVARCHAR(170) =
+        CASE WHEN @deporte IS NULL THEN NULL
+             ELSE N'%' + REPLACE(REPLACE(REPLACE(@deporte, N'[', N'[[]'),
+                                         N'%', N'[%]'),
+                                 N'_', N'[_]') + N'%' END;
+
+    DECLARE @patron_pais NVARCHAR(170) =
+        CASE WHEN @pais IS NULL THEN NULL
+             ELSE N'%' + REPLACE(REPLACE(REPLACE(@pais, N'[', N'[[]'),
+                                         N'%', N'[%]'),
+                                 N'_', N'[_]') + N'%' END;
 
     /* ---------- 2. Atletas que coinciden ----------
        Se fuerza Latin1_General_CI_AI porque la colacion de la base distingue
@@ -112,7 +142,7 @@ BEGIN
 
     /* ---------- 3. Participaciones filtradas ----------
        El pais se resuelve por NOC representado porque
-       PARTICIPACION.id_pais_nacionalidad esta casi siempre en NULL. */
+       PARTICIPACION.id_pais_nacionalidad es nullable y esta casi siempre vacio. */
 
     SELECT
         p.id_participacion,
@@ -121,7 +151,6 @@ BEGIN
         eo.temporada,
         s.nombre        AS sede,
         dep.nombre      AS deporte,
-        dis.id_disciplina,
         dis.nombre      AS disciplina,
         ev.nombre       AS evento,
         n.codigo_noc,
@@ -150,12 +179,12 @@ BEGIN
       AND (@anio_desde IS NULL OR eo.anio >= @anio_desde)
       AND (@anio_hasta IS NULL OR eo.anio <= @anio_hasta)
       AND (@temporada  IS NULL OR eo.temporada COLLATE Latin1_General_CI_AI = @temporada)
-      AND (@deporte    IS NULL OR dep.nombre   COLLATE Latin1_General_CI_AI LIKE N'%' + @deporte + N'%')
+      AND (@deporte    IS NULL OR dep.nombre   COLLATE Latin1_General_CI_AI LIKE @patron_deporte)
       AND (@medalla    IS NULL OR p.medalla    COLLATE Latin1_General_CI_AI = @medalla)
       AND (@pais       IS NULL
            OR n.codigo_noc COLLATE Latin1_General_CI_AI = @pais
-           OR n.nombre_noc COLLATE Latin1_General_CI_AI LIKE N'%' + @pais + N'%'
-           OR eg.nombre    COLLATE Latin1_General_CI_AI LIKE N'%' + @pais + N'%')
+           OR n.nombre_noc COLLATE Latin1_General_CI_AI LIKE @patron_pais
+           OR eg.nombre    COLLATE Latin1_General_CI_AI LIKE @patron_pais)
       AND (@solo_medallistas = 0 OR p.medalla IS NOT NULL);
 
     /* Con filtros, se descartan los atletas que no dejaron ninguna fila.
@@ -189,7 +218,7 @@ BEGIN
     END;
 
     /* ---------- 4. Control de ambiguedad ----------
-       Hay 49,869 nombres repetidos entre atletas distintos. Si la busqueda
+       Hay 48,370 nombres repetidos entre atletas distintos. Si la busqueda
        trae demasiados, se devuelve la lista de candidatos en vez del detalle. */
 
     DECLARE @n_atletas INT = (SELECT COUNT(*) FROM #atletas);
@@ -215,53 +244,19 @@ BEGIN
                  WHERE p.id_atleta = a.id_atleta AND p.medalla IS NOT NULL)   AS medallas
         FROM olympics.ATLETA a
         INNER JOIN #atletas fa ON fa.id_atleta = a.id_atleta
-        ORDER BY medallas DESC, participaciones DESC, a.nombre;
+        ORDER BY medallas DESC, participaciones DESC, a.nombre, a.id_atleta;
 
         RETURN;
     END;
 
-    /* ---------- 5. Agrupamiento para descontar duplicados ----------
-       La base trae la misma participacion bajo dos nomenclaturas de evento:
-       una fila con posicion y otra con edad. Si un grupo tiene n filas con
-       posicion y n con edad, el conteo real es n. Detalle en documentacion_d.md 5.1.
-       Se incluyen las filas sin medalla porque la firma aplica igual. */
-
-    SELECT
-        x.id_atleta,
-        x.medalla,
-        COUNT(*)                                                AS filas,
-        SUM(CASE WHEN x.posicion IS NOT NULL THEN 1 ELSE 0 END) AS con_posicion,
-        SUM(CASE WHEN x.edad     IS NOT NULL THEN 1 ELSE 0 END) AS con_edad
-    INTO #grupos
-    FROM #part x
-    GROUP BY x.id_atleta, x.anio, x.id_disciplina, x.medalla;
-
-    /* Estimado por grupo. Si la firma no concluye se deja el crudo y se marca. */
-    SELECT
-        id_atleta,
-        medalla,
-        filas,
-        CASE WHEN con_posicion > 0 AND con_edad > 0 AND con_posicion = con_edad
-             THEN con_posicion
-             ELSE filas
-        END AS estimado,
-        CASE WHEN (con_posicion > 0 AND con_edad > 0 AND con_posicion <> con_edad)
-               OR (con_posicion = 0 AND con_edad = 0 AND filas > 1)
-             THEN 1 ELSE 0
-        END AS indeterminado
-    INTO #est
-    FROM #grupos;
-
-    /* ---------- Result set 1: ficha del atleta ----------
-       Las cantidades van en crudo y estimado. ediciones y deportes no
-       necesitan correccion porque usan COUNT(DISTINCT). */
+    /* ---------- Result set 1: ficha del atleta ---------- */
 
     SELECT
         a.id_atleta,
         a.nombre,
         /* nombre_completo trae un separador U+2022; se limpia solo al mostrar. */
         LTRIM(RTRIM(REPLACE(a.nombre_completo, NCHAR(8226), N' '))) AS nombre_completo,
-        /* sexo no quedo homologado en la carga: conviven M/Male y F/Female. */
+        /* sexo convive como M/Male y F/Female; se unifica solo en la salida. */
         CASE WHEN a.sexo IN (N'M', N'Male')   THEN N'Male'
              WHEN a.sexo IN (N'F', N'Female') THEN N'Female'
              ELSE a.sexo END                                AS sexo,
@@ -274,12 +269,8 @@ BEGIN
         pf.nombre                                   AS pais_fallecimiento,
         a.altura_cm,
         a.peso_kg,
-        /* crudo */
         COUNT(x.id_participacion)                   AS participaciones,
         SUM(CASE WHEN x.medalla IS NOT NULL THEN 1 ELSE 0 END) AS total_medallas,
-        /* estimado */
-        ISNULL(r.part_est, 0)                       AS participaciones_estimado,
-        ISNULL(r.med_est,  0)                       AS total_medallas_estimado,
         COUNT(DISTINCT x.anio)                      AS ediciones,
         COUNT(DISTINCT x.deporte)                   AS deportes,
         MIN(x.anio)                                 AS primer_ano,
@@ -289,61 +280,23 @@ BEGIN
     LEFT  JOIN olympics.ENTIDAD_GEOGRAFICA pn ON pn.id_entidad = a.id_pais_nacimiento
     LEFT  JOIN olympics.ENTIDAD_GEOGRAFICA pf ON pf.id_entidad = a.id_pais_fallecimiento
     LEFT  JOIN #part x                        ON x.id_atleta   = a.id_atleta
-    LEFT  JOIN
-    (
-        SELECT
-            id_atleta,
-            SUM(estimado)                                             AS part_est,
-            SUM(CASE WHEN medalla IS NOT NULL THEN estimado ELSE 0 END) AS med_est
-        FROM #est
-        GROUP BY id_atleta
-    ) r                                       ON r.id_atleta   = a.id_atleta
     GROUP BY
         a.id_atleta, a.nombre, a.nombre_completo, a.sexo, a.fecha_nacimiento,
         a.ciudad_nacimiento, a.region_nacimiento, pn.nombre,
-        a.fecha_fallecimiento, pf.nombre, a.altura_cm, a.peso_kg,
-        r.part_est, r.med_est
-    ORDER BY total_medallas DESC, participaciones DESC, a.nombre;
+        a.fecha_fallecimiento, pf.nombre, a.altura_cm, a.peso_kg
+    ORDER BY total_medallas DESC, participaciones DESC, a.nombre, a.id_atleta;
 
     /* ---------- Result set 2: medallero ----------
-       Crudo y estimado lado a lado. El crudo nunca se altera y la columna
-       diagnostico dice que se detecto. Cobertura del metodo en documentacion_d.md 5.1. */
+       Conteo directo sobre las participaciones seleccionadas. */
 
-    WITH estimado AS
-    (
-        /* Solo los grupos con medalla. */
-        SELECT
-            id_atleta,
-            SUM(CASE WHEN medalla = N'Gold'   THEN estimado ELSE 0 END) AS oro_est,
-            SUM(CASE WHEN medalla = N'Silver' THEN estimado ELSE 0 END) AS plata_est,
-            SUM(CASE WHEN medalla = N'Bronze' THEN estimado ELSE 0 END) AS bronce_est,
-            SUM(estimado)                                               AS total_est,
-            SUM(indeterminado)                                          AS indet
-        FROM #est
-        WHERE medalla IS NOT NULL
-        GROUP BY id_atleta
-    )
     SELECT
         a.id_atleta,
         a.nombre,
-        /* crudo */
         SUM(CASE WHEN x.medalla = N'Gold'   THEN 1 ELSE 0 END) AS oro,
         SUM(CASE WHEN x.medalla = N'Silver' THEN 1 ELSE 0 END) AS plata,
         SUM(CASE WHEN x.medalla = N'Bronze' THEN 1 ELSE 0 END) AS bronce,
         SUM(CASE WHEN x.medalla IS NOT NULL THEN 1 ELSE 0 END) AS total_medallas,
-        /* estimado */
-        ISNULL(e.oro_est,    0)                                AS oro_estimado,
-        ISNULL(e.plata_est,  0)                                AS plata_estimado,
-        ISNULL(e.bronce_est, 0)                                AS bronce_estimado,
-        ISNULL(e.total_est,  0)                                AS total_estimado,
-        CASE WHEN ISNULL(e.indet, 0) > 0
-             THEN N'parcial: ' + CAST(e.indet AS NVARCHAR(10)) + N' grupo(s) indeterminado(s)'
-             WHEN ISNULL(e.total_est, 0) = 0                   THEN N'sin medallas'
-             WHEN e.total_est < SUM(CASE WHEN x.medalla IS NOT NULL THEN 1 ELSE 0 END)
-                                                               THEN N'duplicado detectado y descontado'
-             ELSE N'sin duplicados detectados'
-        END                                                    AS diagnostico,
-        /* otros estados */
+        /* resultados sin medalla, para leer el historial completo */
         SUM(CASE WHEN x.medalla IS NULL
                   AND x.estado_resultado IS NULL
                   AND x.posicion IS NOT NULL THEN 1 ELSE 0 END) AS sin_medalla_con_posicion,
@@ -353,13 +306,11 @@ BEGIN
     FROM olympics.ATLETA a
     INNER JOIN #atletas fa ON fa.id_atleta = a.id_atleta
     LEFT  JOIN #part x     ON x.id_atleta  = a.id_atleta
-    LEFT  JOIN estimado e  ON e.id_atleta  = a.id_atleta
-    GROUP BY a.id_atleta, a.nombre,
-             e.oro_est, e.plata_est, e.bronce_est, e.total_est, e.indet
-    ORDER BY total_medallas DESC, a.nombre;
+    GROUP BY a.id_atleta, a.nombre
+    ORDER BY total_medallas DESC, a.nombre, a.id_atleta;
 
     /* ---------- Result set 3: detalle de participaciones ----------
-       Fiel al dato: no fusiona las filas duplicadas.
+       Detalle fiel de PARTICIPACION: no agrupa ni filtra filas.
        La columna resultado junta medalla / estado_resultado / posicion
        en un solo campo legible ("=17 lugar" para un empate). */
 

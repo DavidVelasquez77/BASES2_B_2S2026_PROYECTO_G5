@@ -48,7 +48,7 @@ WHERE nombre COLLATE Latin1_General_CI_AI LIKE N'%Elie%';
 ```sql
 SELECT SUM(CASE WHEN id_pais_nacionalidad IS NULL THEN 1 ELSE 0 END), COUNT_BIG(*)
 FROM olympics.PARTICIPACION;
--- 733,333 de 733,414 en NULL
+-- 712,577 de 712,658 en NULL  (99.99%)
 ```
 
 **Decisión:** resolver el país por NOC representado.
@@ -57,7 +57,9 @@ FROM olympics.PARTICIPACION;
 
 Se iba a validar el parámetro contra `Summer`/`Winter`. La consulta mostró también `Summer Youth`, `Winter Youth` e `Intercalated Games`.
 
-**Decisión:** no validar el dominio; filtrar por igualdad y documentar los cinco valores. Una validación restrictiva habría rechazado consultas legítimas.
+**Decisión inicial:** no validar el dominio, para no rechazar consultas legítimas con los tres valores que no se conocían.
+
+**Corrección posterior:** la revisión final del equipo lo marcó como `HIGH` — un valor fuera de dominio devolvía un resultado vacío indistinguible de "este atleta no compitió". Ahora se valida contra los cinco valores reales y se lanza `RAISERROR` con el mensaje que los enumera. La lección fue que la alternativa a una validación incorrecta no es ninguna validación, sino la validación correcta.
 
 ### 3.5 No inventar una clasificación por fuente
 
@@ -66,6 +68,8 @@ Al detectar la duplicidad de eventos se evaluó etiquetar cada fila según su fu
 **Decisión:** descartar la columna. Una heurística que clasifica mal es peor que no clasificar.
 
 ### 3.6 Deduplicación de medallas: dos intentos descartados y uno medido
+
+> **Nota de lectura.** Las cifras de §3.6, §3.7 y §3.8 corresponden al **dataset anterior** (336,419 atletas · 3,007 eventos · 733,414 participaciones), que era el vigente cuando se hicieron estas mediciones. Se conservan porque documentan cómo se detectó y cuantificó el problema. El estado actual y las cifras vigentes están en §3.9 y §3.10.
 
 Este fue el punto que más iteración requirió. Se evaluaron tres caminos.
 
@@ -155,6 +159,46 @@ Se comprobó además que `ediciones` y `deportes` **no** requieren corrección: 
 
 ---
 
+### 3.9 La heurística cumplió su función y se retiró
+
+Este es el cierre del arco de §3.6 a §3.8.
+
+La estimación se construyó porque la base tenía las medallas duplicadas y no había forma de responder correctamente *"¿cuántas medallas tiene este atleta?"*. Sirvió para **detectar el problema, cuantificarlo y validarlo** contra tres atletas independientes, y ese resultado se reportó al equipo.
+
+El responsable del ETL aplicó la corrección en el origen. Con los datos nuevos, `PARTICIPACION` devuelve `23/3/2 = 28` para Phelps **sin ninguna heurística**, que es exactamente lo que la estimación había predicho.
+
+La revisión final del equipo marcó entonces la lógica como `CRITICAL` para retirar, con el argumento correcto: *"la deduplicación pertenece al ETL y al proceso de consolidación, no a la capa de consulta"*.
+
+**Se retiraron** `#grupos`, `#est`, las columnas `participaciones_estimado`, `total_medallas_estimado`, `oro_estimado`, `plata_estimado`, `bronce_estimado`, `total_estimado` y la columna `diagnostico`. Las métricas salen ahora directamente de `PARTICIPACION`.
+
+La lección: una heurística de consulta puede ser la herramienta correcta para *diagnosticar* un problema de datos, y la herramienta equivocada para *convivir* con él. Una vez corregido el origen, mantenerla habría producido dos números donde debe haber uno.
+
+### 3.10 Un atajo tentador que se descartó con medición
+
+Al verificar los datos nuevos se encontró que la duplicación de medallas persiste fuera de los casos corregidos: Ray Ewry aparece con 20 oros cuando sus oros reales son 10.
+
+Se evaluó un atajo: contar solo las filas con `posicion IS NOT NULL`, porque de cada par duplicado una fila trae `posicion` y la otra trae `edad`. El resultado parecía perfecto en siete atletas de prueba:
+
+```
+Phelps          23 -> 23   real 23        Carl Lewis      16 -> 9   real 9
+Ray Ewry        20 -> 10   real 10        Birgit Fischer  16 -> 8   real 8
+Jenny Thompson  16 -> 8    real 8         Usain Bolt      16 -> 8   real 8
+                                          Paavo Nurmi     18 -> 9   real 9
+```
+
+Siete de siete. Pero antes de adoptarlo se midió el riesgo opuesto — perder medallas legítimas sin `posicion`:
+
+```
+filas con medalla:                                 103,223
+  con posicion:                                     44,072  (42.7%)
+grupos sin ninguna fila con posicion:               37,117
+filas legítimas que el filtro perdería:             37,721
+```
+
+Se caen los deportes de equipo y varios relevos (Hockey, Football, Curling, el 4×400 femenino), donde la posición nunca se registró. **Descartado.**
+
+La lección es la misma de §3.7: siete casos que confirman una hipótesis no la validan; hay que buscar activamente el caso que la rompe.
+
 ## 4. Consultas de exploración ejecutadas
 
 | Objetivo | Hallazgo |
@@ -189,8 +233,10 @@ Se detectó también que `disciplina.csv` falla con `ROWTERMINATOR = '0x0a'` en 
 
 ## 6. Verificación final
 
-El procedimiento se ejecutó contra las **23 pruebas** de `pruebas.sql`, todas contra la base cargada. Los resultados están en la sección 6 de `documentacion_d.md`.
+El procedimiento se ejecutó contra las **20 pruebas** de `pruebas.sql`, todas contra la base vigente. Los resultados están en la sección 6 de `documentacion_d.md`.
 
-(Son 23 aunque la última etiqueta sea `T22`: existe un `T1b`, agregado para verificar la corrección de `participaciones` descrita en §3.8.)
+Además se verificaron las regresiones que exige la revisión final del equipo: Phelps `23/3/2 = 28`, Nurmi 12, Spitz 11, Bolt 8, Messi oro en Beijing 2008 y Barrondo plata en Londres 2012. Las seis coinciden.
+
+Ninguna afirmación de la documentación se escribió sin ejecutar antes la consulta que la respalda.
 
 Ninguna afirmación de la documentación se escribió sin ejecutar antes la consulta que la respalda.
