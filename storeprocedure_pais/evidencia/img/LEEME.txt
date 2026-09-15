@@ -1,0 +1,47 @@
+REGISTRO DE EVIDENCIAS FOTOGRÁFICAS - STORED PROCEDURE DE PAÍS (INCISO E)
+========================================================================================
+
+Este directorio contiene las capturas de pantalla de las ejecuciones del Stored Procedure
+olympics.sp_consultar_pais sobre la base de datos oficial OlimpiadasDB (SQL Server).
+
+Archivo: evidencia_e_01_francia_sedes.png
+- Caso: País con múltiples ediciones como Sede Olímpica (Francia / 'FRA').
+- Demuestra:
+  1. Perfil del país, código ISO 'FRA', códigos NOC históricos y población censal reciente.
+  2. Condición de SEDE = 'SÍ', total de ediciones organizadas (6 ediciones: París 1900, 1924, 2024;
+     Chamonix 1924, Grenoble 1968, Albertville 1992).
+  3. Desglose detallado por año, temporada y ciudad anfitriona.
+
+Archivo: evidencia_e_02_guatemala_general.png
+- Caso: Consulta general de Guatemala ('GUA') y verificación de condición de NO sede.
+- Demuestra:
+  1. Condición de SEDE = 'NO', total = 0, mensaje: 'Este país nunca ha sido sede de Juegos Olímpicos'.
+  2. Medallero oficial exacto de Guatemala: 1 Oro (Adriana Ruano 2024), 1 Plata (Érick Barrondo 2012),
+     1 Bronce (Jean Pierre Brol 2024), Total = 3 medallas.
+  3. Cero inflación de medallas y concordancia con olympics.com.
+
+Archivo: evidencia_e_03_usa_filtro_basketball.png
+- Caso: Filtro por deporte en equipo (USA / 'Basketball').
+- Demuestra:
+  1. Separación de Medallas Oficiales del País vs. Preseas físicas individuales entregadas a atletas.
+  2. En deportes colectivos (básquetbol), cada torneo ganado cuenta como 1 medalla para el país,
+     mientras que las preseas físicas computan para la totalidad de jugadores de la plantilla.
+  3. Filtrado exitoso y seguro por parámetro @deporte.
+
+Archivo: evidencia_e_04_error_pais_inexistente.png
+- Caso: Búsqueda defensiva ante país o código que no existe (ej. 'Atlantis').
+- Demuestra:
+  1. Mensaje de error controlado vía RAISERROR sin abortar la sesión ni generar excepciones SQL no controladas.
+  2. Formato amigable que orienta al usuario para corregir el parámetro de entrada.
+
+Archivo: evidencia_e_05_error_string_vacio.png
+- Caso: Búsqueda defensiva con parámetro vacío ('' o espacios en blanco).
+- Demuestra:
+  1. Detección temprana mediante TRIM(@pais_o_noc).
+  2. Retorno inmediato con mensaje de advertencia.
+
+Archivo: evidencia_e_06_error_parametro_null.png
+- Caso: Invocación pasando NULL explícito en el parámetro @pais_o_noc.
+- Demuestra:
+  1. Validación defensiva estricta de parámetro obligatorio.
+  2. Integridad del contrato de ejecución.
