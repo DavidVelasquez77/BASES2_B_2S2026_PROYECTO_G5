@@ -2,3 +2,10 @@ OlimpiadasF1/docs/consolidation/conflicts.csv
 OlimpiadasF1/data/intermediate/matching/athlete_matches.csv
 OlimpiadasF1/docs/consolidation/participation_deduplication.csv
 OlimpiadasF1/docs/consolidation/athlete_duplicate_candidates_refined.csv
+
+# Respaldos y previews locales de la corrección canónica GUA.
+# Se conservan en el equipo para trazabilidad, pero no se versionan.
+OlimpiadasF1/data/backup_before_gua_2020_fix/
+OlimpiadasF1/data/backup_before_gua_canonical_apply/
+OlimpiadasF1/data/preview_gua_2020_fix/
+OlimpiadasF1/data/preview_gua_canonical_apply/

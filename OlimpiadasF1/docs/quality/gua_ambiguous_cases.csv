@@ -1,0 +1,4 @@
+caso,id_atleta,estado,motivo,referencia
+Ángel Aldana / Ángel Aldama,58107,AMBIGUOUS_DOCUMENTED,"Diferencia de apellido entre referencia y fuente local; se conserva la asociación, no se fusiona con otro ID.",https://www.olympedia.org/countries/GUA/editions/17
+Luis Villavicencio,25450/320284,RESOLVED_CANONICAL,Dos IDs locales; se conserva el registro biográfico completo 25450 y se reasigna 320284.,https://www.olympedia.org/countries/GUA/editions/19
+Allan Wellman,25451/323238,RESOLVED_CANONICAL,Dos IDs locales; se conserva el registro biográfico completo 25451 y se reasigna 323238.,https://www.olympedia.org/countries/GUA/editions/22

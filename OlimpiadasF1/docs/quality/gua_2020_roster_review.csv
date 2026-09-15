@@ -1,0 +1,49 @@
+id_participacion,id_atleta,nombre_local,nombre_referencia_mas_cercano,similitud,id_evento,posicion,clasificacion,accion,referencia
+243943,111597,Kevin Cordón,Kevin Cordón,1.000,24,4,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+253372,116505,Juan Ignacio Maegli,Juan Ignacio Maegli,1.000,990,19,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+264271,121191,Érick Barrondo,Érick Barrondo,1.000,1022,,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+264421,121272,Mirna Ortiz,Mirna Ortiz,1.000,936,44,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+264425,121274,Mayra Herrera,Mayra Herrera,1.000,936,50,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+264434,121279,Manuel Rodas,Manuel Rodas,1.000,151,,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+284999,131507,José Ramos,José Ramos,1.000,607,17,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+285001,131508,Charles Fernández,Charles Fernández,1.000,68,27,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+285005,131511,Luis Martínez,Luis Martínez,1.000,783,7,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301260,140037,Nikté Sotomayor,Nikté Sotomayor,1.000,33,15,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301261,140038,Jennieffer Zúñiga,Jennieffer Zúñiga,1.000,628,18,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301262,140039,Yulisa López,Yulisa López,1.000,628,18,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301263,140040,Isabella Maegli,Isabella Maegli,1.000,982,29,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301264,140041,Adriana Ruano,Adriana Ruano,1.000,687,26,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301265,140042,Ana Waleska Soto,Ana Waleska Soto,1.000,687,23,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301266,140043,Gaby Santis,Gaby Santis,1.000,800,27,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301267,140044,Bernardo Barrondo,Bernardo Barrondo,1.000,1022,34,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301268,140045,José Alejandro Barrondo,José Alejandro Barrondo,1.000,1021,,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301269,140046,José Ortiz,José Ortiz,1.000,1021,40,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301270,140047,José Oswaldo Calel,José Oswaldo Calel,1.000,1021,30,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301271,140048,Luis Ángel Sánchez,Luis Ángel Sánchez,1.000,1022,,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301272,140049,Luis Grijalva,Luis Grijalva,1.000,1020,12,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+301273,140050,Juan Ramón Schaeffer,Juan Ramón Schaeffer,1.000,681,30,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+306288,144123,Scarleth Ucelo,Scarleth Ucelo,1.000,1414,12,ROSTER_MATCH,NO_ACTION,https://www.olympedia.org/countries/GUA/editions/61
+797609,111297,Morais Abreu,,0.435,2786,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+797610,53151,Paulo Abreu,,0.476,2786,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+797611,183996,Pedro Pascal,,0.455,2919,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+798537,184570,Kseniya Afanasyeva,,0.364,2919,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+799208,145863,Matteo Aicardi,,0.462,2725,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+800406,22668,Abdullah Al-Zawayed,,0.452,68,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+801322,111725,Sadam Ali,,0.636,2729,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+804356,140039,Yulisa López,Yulisa López,1.000,2856,,DUPLICATE_ROW_FOR_ROSTER_ATHLETE,REVIEW_EVENT_MATCHING; no eliminar sin mapa de evento,https://www.olympedia.org/countries/GUA/editions/61
+804519,188225,Nina Anisimova,,0.480,2896,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+804520,188226,Tatyana (poluboyarova-),,0.400,2913,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+804819,11495,Gheorghe Antohi,,0.435,2791,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+806489,51699,Aderval Arvani,,0.640,2919,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+806490,189460,Vasiliki Arvaniti,,0.462,2879,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+806900,13365,Gunnar Asmussen,,0.385,2879,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+807508,2980,Jean-Marc Augustin,,0.429,2813,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+807769,190199,Andrea Vila,,0.381,2850,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+807925,190295,Jacinto Benjamin,,0.438,687,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+808188,190472,Angel Sanchez,,0.857,2786,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+808231,190503,Karina Aznavuryan,,0.357,2875,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+808360,50316,Svetlana Babanina,,0.432,681,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+809077,190991,Alexandru Bagiu,,0.514,687,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+809081,190994,Mihai Bagiu,,0.400,2707,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+810117,191590,Gustave Ballister,,0.400,2814,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61
+811702,192594,Ana Barros,,0.560,2856,,NOT_IN_2020_GUA_ROSTER,REVIEW_MATCHING; probable_asociacion_incorrecta,https://www.olympedia.org/countries/GUA/editions/61

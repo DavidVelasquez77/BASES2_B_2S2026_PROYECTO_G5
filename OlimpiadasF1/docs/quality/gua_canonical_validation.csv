@@ -1,0 +1,23 @@
+validacion,id_edicion,edicion,esperado,actual,detalle,estado
+GUA_ROSTER_EDITION,12,1932 Summer,1,1,filas_participacion=2,PASS
+GUA_ROSTER_EDITION,18,1952 Summer,21,21,filas_participacion=44,PASS
+GUA_ROSTER_EDITION,26,1968 Summer,48,48,filas_participacion=86,PASS
+GUA_ROSTER_EDITION,28,1972 Summer,8,8,filas_participacion=16,PASS
+GUA_ROSTER_EDITION,30,1976 Summer,28,28,filas_participacion=34,PASS
+GUA_ROSTER_EDITION,32,1980 Summer,10,10,filas_participacion=17,PASS
+GUA_ROSTER_EDITION,34,1984 Summer,24,24,filas_participacion=74,PASS
+GUA_ROSTER_EDITION,36,1988 Summer,28,28,filas_participacion=40,PASS
+GUA_ROSTER_EDITION,37,1988 Winter,6,6,filas_participacion=26,PASS
+GUA_ROSTER_EDITION,38,1992 Summer,14,14,filas_participacion=48,PASS
+GUA_ROSTER_EDITION,41,1996 Summer,26,26,filas_participacion=37,PASS
+GUA_ROSTER_EDITION,43,2000 Summer,15,15,filas_participacion=22,PASS
+GUA_ROSTER_EDITION,45,2004 Summer,18,18,filas_participacion=23,PASS
+GUA_ROSTER_EDITION,47,2008 Summer,12,12,filas_participacion=16,PASS
+GUA_ROSTER_EDITION,50,2012 Summer,19,19,filas_participacion=29,PASS
+GUA_ROSTER_EDITION,54,2016 Summer,21,21,filas_participacion=31,PASS
+GUA_ROSTER_EDITION,58,2020 Summer,24,24,filas_participacion=24,PASS
+GUA_ROSTER_EDITION,61,2024 Summer,16,16,filas_participacion=16,PASS
+GUA_UNIQUE_OLYMPIC_IDS,,Olympic Games,263,263,IDs únicos en participaciones GUA no Youth,PASS
+GUA_OLYMPIC_PARTICIPATION_ROWS,,Olympic Games,585,585,Filas válidas GUA; una persona puede tener varios eventos,PASS
+GUA_YOUTH_PRESERVED,,Youth Olympic Games,9,9,Filas fuera del padrón olímpico 263,PASS
+PROCESSED_PARTICIPATION_ROWS,,participacion.csv,712020,712020,Conteo materializado,PASS

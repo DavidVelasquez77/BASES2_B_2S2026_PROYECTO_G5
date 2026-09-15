@@ -1,0 +1,350 @@
+olympedia_edition_id,anio,temporada,id_edicion_local,olympedia_athlete_id,nombre_referencia,nombre_normalizado,estados_observados,referencia,contado_en_referencia_263,motivo_referencia
+10,1932,Summer,12,920763,Antonia Matos,antoniamatos,HM,https://www.olympedia.org/countries/GUA/editions/10,YES,Participante de referencia.
+13,1952,Summer,18,13846,Armando Castillo,armandocastillo,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,15491,Fernando Marroquín,fernandomarroquin,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,15513,Gustavo Martínez,gustavomartinez,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,15719,Juan Montoya,juanmontoya,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,16438,Carlos Sandoval,carlossandoval,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,22394,Antonio Chocano,antoniochocano,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,22395,Eduardo López,eduardolopez,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,22396,Rubén Soberón,rubensoberon,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,42698,José Gómez,josegomez,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,42701,Alfredo Mury,alfredomury,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,42709,Francisco Sandoval,franciscosandoval,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,48019,José Valdés,josevaldes,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,58524,Marco Antonio Girón,marcoantoniogiron,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,58527,Oswaldo Johnston,oswaldojohnston,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,58528,Aristides Pérez,aristidesperez,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,70898,Graviola Ewing,graviolaewing,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,70903,José Julio Barillas,josejuliobarillas,DNS,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,70906,Doroteo Flores,doroteoflores,DNS,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,70920,Víctor Solares,victorsolares,DNS,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,70921,Jeremías Stokes,jeremiasstokes,,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,70923,Luis Velásquez,luisvelasquez,DNF,https://www.olympedia.org/countries/GUA/editions/13,YES,Participante de referencia.
+13,1952,Summer,18,923316,Roy Fearon,royfearon,DNS,https://www.olympedia.org/countries/GUA/editions/13,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+13,1952,Summer,18,923317,Augusto Robles,augustorobles,DNS,https://www.olympedia.org/countries/GUA/editions/13,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+13,1952,Summer,18,1005418,Carlos Serrano,carlosserrano,DNS,https://www.olympedia.org/countries/GUA/editions/13,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+17,1968,Summer,26,3739,Eugenio Boches,eugenioboches,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,3740,Mario Mendoza,mariomendoza,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,14037,Francisco Cuque,franciscocuque,DNF,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,14848,Jorge Inés,jorgeines,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,15935,Evaristo Oliva,evaristooliva,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,16400,Saturnino Rustrián,saturninorustrian,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25596,Roberto Camposeco,robertocamposeco,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25598,Edgar Chacón,edgarchacon,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25599,Ricardo Clark,ricardoclark,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25604,Julio Rodolfo García,juliorodolfogarcia,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25605,Antonio García,antoniogarcia,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25608,Ignacio González,ignaciogonzalez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25609,Horacio Hasse,horaciohasse,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25612,Llijon León,llijonleon,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25614,Alberto López,albertolopez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25617,Armando Melgar Nelson,armandomelgarnelson,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25618,Armando Melgar Retolaza,armandomelgarretolaza,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25621,Hugo Montoya,hugomontoya,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25626,Hugo Peña,hugopena,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25632,Jorge Roldán,jorgeroldan,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25636,Jeron Slusher,jeronslusher,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25637,David Stokes,davidstokes,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25638,Hugo Torres,hugotorres,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25639,Carlos Valdez,carlosvaldez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,25640,Luis Villavicencio,luisvillavicencio,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42692,Otto Brolo,ottobrolo,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42693,Gerardo Castañeda,gerardocastaneda,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42694,Víctor Castellanos,victorcastellanos,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42696,Leonel Fernández,leonelfernandez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42700,José Marroquín,josemarroquin,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42702,Felipe Ortiz,felipeortiz,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42706,Fernando Samoyoa,fernandosamoyoa,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42709,Francisco Sandoval,franciscosandoval,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,42711,Pablo Sittler,pablosittler,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,48005,Silvana Asturias,silvanaasturias,DNS,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,48008,Ramiro Benavides,ramirobenavides,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,48012,Antonio Cruz,antoniocruz,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,55914,Francisco Echeverría,franciscoecheverria,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,58519,Ángel Aldana,angelaldana,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,58523,José Luis García,joseluisgarcia,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,58526,José Manuel Hernández,josemanuelhernandez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,58530,Gustavo Ramírez,gustavoramirez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,58532,Javier Raxón,javierraxon,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,70904,Carlos Cuque,carloscuque,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,70910,Fulgencio Hernández,fulgenciohernandez,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,70915,Julio Ortiz,julioortiz,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,70917,Teodoro Palacios,teodoropalacios,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+17,1968,Summer,26,70918,Julio Quevedo,julioquevedo,,https://www.olympedia.org/countries/GUA/editions/17,YES,Participante de referencia.
+18,1972,Summer,28,42694,Víctor Castellanos,victorcastellanos,,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,58520,Joseph Burge,josephburge,,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,58521,Juan de Hernández,juandehernandez,,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,58522,Luis Fuentes,luisfuentes,DNS,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,58529,Pedro Piñeda,pedropineda,,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,70904,Carlos Cuque,carloscuque,,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,70907,Luis Flores,luisflores,DNF,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,70918,Julio Quevedo,julioquevedo,,https://www.olympedia.org/countries/GUA/editions/18,YES,Participante de referencia.
+18,1972,Summer,28,2404575,Samuel Gonzales,samuelgonzales,DNS,https://www.olympedia.org/countries/GUA/editions/18,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+18,1972,Summer,28,2404577,Rafael Pedroza,rafaelpedroza,DNS,https://www.olympedia.org/countries/GUA/editions/18,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+19,1976,Summer,30,11306,Rita Mombiela,ritamombiela,DNF,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,11307,Sylvia Luna,sylvialuna,DNF,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,12412,Oswaldo Méndez,oswaldomendez,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25593,Julio Anderson,julioanderson,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25595,Edgar Bolaños,edgarbolanos,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25602,Marco Fión,marcofion,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25604,Julio Rodolfo García,juliorodolfogarcia,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25607,Julio Gómez,juliogomez,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25610,Jorge Hurtarte,jorgehurtarte,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25615,Félix McDonald,felixmcdonald,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25619,Benjamín Monterroso,benjaminmonterroso,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25620,Carlos Monterroso,carlosmonterroso,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25623,René Morales,renemorales,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25627,Selvin Pennant,selvinpennant,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25629,Ricardo Piccinini,ricardopiccinini,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25630,Sergio Rivera,sergiorivera,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25633,Óscar Sánchez,oscarsanchez,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25635,Peter Sandoval,petersandoval,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25640,Luis Villavicencio,luisvillavicencio,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,25641,Allan Wellman,allanwellman,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,42695,Eduardo Echeverría,eduardoecheverria,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,42697,Víctor Giordani,victorgiordani,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,42699,Arturo Iglesias,arturoiglesias,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,42703,Francisco Romero Arribas,franciscoromeroarribas,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,42712,Edgardo Zachrisson,edgardozachrisson,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,55918,Edgar Tornez,edgartornez,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,62869,Juan Maegli,juanmaegli,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,63735,Jorge Springmühl,jorgespringmuhl,,https://www.olympedia.org/countries/GUA/editions/19,YES,Participante de referencia.
+19,1976,Summer,30,2305533,Ricardo Cordón,ricardocordon,DNS,https://www.olympedia.org/countries/GUA/editions/19,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+19,1976,Summer,30,2305834,Rafael Coronado,rafaelcoronado,DNS,https://www.olympedia.org/countries/GUA/editions/19,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+20,1980,Summer,32,12412,Oswaldo Méndez,oswaldomendez,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,38091,Alberic de Suremain,albericdesuremain,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,38092,Édgar Nanne,edgarnanne,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,42699,Arturo Iglesias,arturoiglesias,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,42703,Francisco Romero Arribas,franciscoromeroarribas,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,42705,Francisco Romero Portilla,franciscoromeroportilla,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,42710,Carlos Silva,carlossilva,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,42713,Mario-Óscar Zachrisson,mariooscarzachrisson,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,55917,Luis Rosito,luisrosito,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,62869,Juan Maegli,juanmaegli,,https://www.olympedia.org/countries/GUA/editions/20,YES,Participante de referencia.
+20,1980,Summer,32,2305534,Álvaro Tejada,alvarotejada,DNS,https://www.olympedia.org/countries/GUA/editions/20,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+21,1984,Summer,34,3741,Carlos Motta,carlosmotta,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,12412,Oswaldo Méndez,oswaldomendez,DNS;DNF,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,15291,Max Leiva,maxleiva,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,38092,Édgar Nanne,edgarnanne,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,42699,Arturo Iglesias,arturoiglesias,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,42703,Francisco Romero Arribas,franciscoromeroarribas,DNS,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,42710,Carlos Silva,carlossilva,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,42713,Mario-Óscar Zachrisson,mariooscarzachrisson,DNS,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,48006,Blanca Morales,blancamorales,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,48007,Karin Slowing,karinslowing,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,48013,Ernesto José Degenhart,ernestojosedegenhart,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,48014,Roberto Granados,robertogranados,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,48015,Rodrigo Leal,rodrigoleal,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,48016,Fernando Marroquín,fernandomarroquin,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,55913,Antulio Delgado,antuliodelgado,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,55916,Nery Minchez,neryminchez,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,62869,Juan Maegli,juanmaegli,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70899,Patricia Meigham,patriciameigham,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70901,Christa Schumann-Lottmann,christaschumannlottmann,DNS,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70902,José Víctor Alonzo,josevictoralonzo,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70905,Ángel Díaz,angeldiaz,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70909,Hugo Allan García,hugoallangarcia,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70911,Alberto López,albertolopez,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+21,1984,Summer,34,70919,Emilio Samayoa,emiliosamayoa,,https://www.olympedia.org/countries/GUA/editions/21,YES,Participante de referencia.
+22,1988,Summer,36,3742,Giovanni Pérez,giovanniperez,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,13421,Óscar Aquino,oscaraquino,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,14842,Julio Illescas,julioillescas,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,15273,Víctor Lechuga,victorlechuga,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,15291,Max Leiva,maxleiva,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,16872,Andrés Torres,andrestorres,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25594,Jaime Batres,jaimebatres,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25597,Carlos Castañeda,carloscastaneda,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25600,Juan Manuel Dávila,juanmanueldavila,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25601,Norman Delva,normandelva,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25603,Juan Manuel Funes,juanmanuelfunes,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25606,David Gardiner,davidgardiner,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25611,Edgar Jerez,edgarjerez,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25613,Luis López,luislopez,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25616,Rocael Mazariegos,rocaelmazariegos,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25622,Víctor Hugo Monzón,victorhugomonzon,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25624,Alejandro Ortiz,alejandroortiz,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25625,Adán Paniagua,adanpaniagua,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25628,Byron Pérez,byronperez,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25629,Ricardo Piccinini,ricardopiccinini,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25631,Julio Alberto Rodas,julioalbertorodas,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25634,Kevin Sandoval,kevinsandoval,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,25641,Allan Wellman,allanwellman,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,28597,María Flores-Wurmser,mariafloreswurmser,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,42710,Carlos Silva,carlossilva,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,48006,Blanca Morales,blancamorales,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,58533,Edvin Eduardo Vázquez,edvineduardovazquez,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,70900,María Menéndez,mariamenendez,,https://www.olympedia.org/countries/GUA/editions/22,YES,Participante de referencia.
+22,1988,Summer,36,700460,Otoniel Guevara,otonielguevara,DNS,https://www.olympedia.org/countries/GUA/editions/22,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+22,1988,Summer,36,1006150,Eddy Alburez,eddyalburez,DNS,https://www.olympedia.org/countries/GUA/editions/22,NO,No starter en la tabla de resultados (DNS/DNF-only); excluido del conteo Olympedia 263.
+43,1988,Winter,37,82403,Fiamma Smith,fiammasmith,DNF,https://www.olympedia.org/countries/GUA/editions/43,YES,Participante de referencia.
+43,1988,Winter,37,84409,Carlos Andrés Bruderer,carlosandresbruderer,DNF,https://www.olympedia.org/countries/GUA/editions/43,YES,Participante de referencia.
+43,1988,Winter,37,84410,Christian Bruderer,christianbruderer,DNF,https://www.olympedia.org/countries/GUA/editions/43,YES,Participante de referencia.
+43,1988,Winter,37,84480,Dag Burgos,dagburgos,,https://www.olympedia.org/countries/GUA/editions/43,YES,Participante de referencia.
+43,1988,Winter,37,84481,Ricardo Burgos,ricardoburgos,,https://www.olympedia.org/countries/GUA/editions/43,YES,Participante de referencia.
+43,1988,Winter,37,96766,Alfredo Rego,alfredorego,DNS,https://www.olympedia.org/countries/GUA/editions/43,YES,Participante de referencia.
+23,1992,Summer,38,3738,Mauricio Ávila,mauricioavila,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,3743,Magno Ruiz,magnoruiz,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,28598,Luisa Portocarrero,luisaportocarrero,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,42691,Cristián Bermúdez,cristianbermudez,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,42703,Francisco Romero Arribas,franciscoromeroarribas,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,42707,Sergio Sánchez,sergiosanchez,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,42708,Julio Sandoval,juliosandoval,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,48006,Blanca Morales,blancamorales,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,48010,Roberto Bonilla,robertobonilla,DQ,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,48011,Gustavo Búcaro,gustavobucaro,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,48017,Andrés Sedano,andressedano,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,48018,Helder Torres,heldertorres,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,55912,Luis Coronado,luiscoronado,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+23,1992,Summer,38,58531,Mynor Ramírez,mynorramirez,,https://www.olympedia.org/countries/GUA/editions/23,YES,Participante de referencia.
+24,1996,Summer,41,187,Kenneth Erichsen,kennetherichsen,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,10005,Ben Kvanli,benkvanli,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,14516,Sergio Godoy,sergiogodoy,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,15367,Felipe López,felipelopez,DNF,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,15920,Omar Ochoa,omarochoa,DNF,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,16005,Marlon Paniagua,marlonpaniagua,DNF,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,16449,Edwin Santos,edwinsantos,DNF,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,17082,Antón Villatoro,antonvillatoro,DNF,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,20726,Carmen Rodríguez,carmenrodriguez,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,33545,Rodolfo Cano,rodolfocano,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,33782,Juan González,juangonzalez,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,42703,Francisco Romero Arribas,franciscoromeroarribas,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,42704,Juan Romero,juanromero,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,42707,Sergio Sánchez,sergiosanchez,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,42808,Attila Solti,attilasolti,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,48009,Juan Luis Bocanegra,juanluisbocanegra,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,48010,Roberto Bonilla,robertobonilla,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,55915,Luis Medrano,luismedrano,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,58531,Mynor Ramírez,mynorramirez,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,63506,Cristian Ruata,cristianruata,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,70908,Luis Fernando García,luisfernandogarcia,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,70912,Hugo López,hugolopez,DQ,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,70913,Julio René Martínez,juliorenemartinez,DQ,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,70914,Luis Martínez,luismartinez,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,70916,Roberto Oscal,robertooscal,DQ,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+24,1996,Summer,41,70922,Julio Urías,juliourias,,https://www.olympedia.org/countries/GUA/editions/24,YES,Participante de referencia.
+25,2000,Summer,43,42704,Juan Romero,juanromero,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,42707,Sergio Sánchez,sergiosanchez,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,42808,Attila Solti,attilasolti,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,55915,Luis Medrano,luismedrano,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,70908,Luis Fernando García,luisfernandogarcia,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,70913,Julio René Martínez,juliorenemartinez,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,86975,Mario Rolando Blanco,mariorolandoblanco,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,86976,Teresita Collado,teresitacollado,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,86977,José Meneses,josemeneses,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,86978,Óscar Meneses,oscarmeneses,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,86979,José Tinoco,josetinoco,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,90413,Óscar Pineda,oscarpineda,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,92322,Jorge Quintanal,jorgequintanal,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,93503,Álvaro Fortuny,alvarofortuny,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+25,2000,Summer,43,94115,Gabriel Sagástume,gabrielsagastume,,https://www.olympedia.org/countries/GUA/editions/25,YES,Participante de referencia.
+26,2004,Summer,45,42808,Attila Solti,attilasolti,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,70908,Luis Fernando García,luisfernandogarcia,DNF,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,70913,Julio René Martínez,juliorenemartinez,DQ,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,86976,Teresita Collado,teresitacollado,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,93503,Álvaro Fortuny,alvarofortuny,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,94115,Gabriel Sagástume,gabrielsagastume,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,103311,Gisela Morales,giselamorales,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,103722,María Dolores Molina,mariadoloresmolina,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,103876,Rodrigo Díaz,rodrigodiaz,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,104128,Melanie Slowing,melanieslowing,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,104634,Joel Bran,joelbran,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,105846,Pedro Yang,pedroyang,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,106892,José Alberto Sochón,josealbertosochon,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,107438,María Isabel Sanz,mariaisabelsanz,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,108137,Euda Carías,eudacarias,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,108168,Heidy Juárez,heidyjuarez,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,108260,José Amado García,joseamadogarcia,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+26,2004,Summer,45,108261,Alfredo Arévalo,alfredoarevalo,,https://www.olympedia.org/countries/GUA/editions/26,YES,Participante de referencia.
+53,2008,Summer,47,42704,Juan Romero,juanromero,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,70908,Luis Fernando García,luisfernandogarcia,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,103311,Gisela Morales,giselamorales,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,108260,José Amado García,joseamadogarcia,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,108261,Alfredo Arévalo,alfredoarevalo,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,112838,Kevin Cordón,kevincordon,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,112995,Eddie Valenzuela,eddievalenzuela,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,116415,Christian López,christianlopez,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,116444,Rita Sanz-Agero,ritasanzagero,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,116734,Juan Rodríguez,juanrodriguez,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,116980,Evelyn Núñez,evelynnunez,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+53,2008,Summer,47,117898,Juan Ignacio Maegli,juanignaciomaegli,,https://www.olympedia.org/countries/GUA/editions/53,YES,Participante de referencia.
+54,2012,Summer,50,42707,Sergio Sánchez,sergiosanchez,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,108260,José Amado García,joseamadogarcia,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,112838,Kevin Cordón,kevincordon,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,116415,Christian López,christianlopez,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,117898,Juan Ignacio Maegli,juanignaciomaegli,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123159,Érick Barrondo,erickbarrondo,DQ,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123244,Jaime Quiyuch,jaimequiyuch,DQ,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123247,Mirna Ortiz,mirnaortiz,DQ,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123248,Jamy Franco,jamyfranco,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123249,Mayra Herrera,mayraherrera,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123252,Andrea Aldana,andreaaldana,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123253,Jean-Pierre Brol,jeanpierrebrol,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123255,Manuel Rodas,manuelrodas,DNF,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123311,Darrel Castillo,darrelcastillo,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123453,Elizabeth Zamora,elizabethzamora,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123469,Andrei Gheorghe,andreigheorghe,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123483,Kevin Ávila,kevinavila,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123489,Astrid Camposeco,astridcamposeco,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+54,2012,Summer,50,123500,Ana Sofía Gómez,anasofiagomez,,https://www.olympedia.org/countries/GUA/editions/54,YES,Participante de referencia.
+59,2016,Summer,54,108260,José Amado García,joseamadogarcia,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,112838,Kevin Cordón,kevincordon,DNF,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,117898,Juan Ignacio Maegli,juanignaciomaegli,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,123159,Érick Barrondo,erickbarrondo,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,123244,Jaime Quiyuch,jaimequiyuch,DQ,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,123247,Mirna Ortiz,mirnaortiz,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,123249,Mayra Herrera,mayraherrera,DQ,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,123255,Manuel Rodas,manuelrodas,DNF,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,123500,Ana Sofía Gómez,anasofiagomez,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,130469,Maritza Poncio,maritzaponcio,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,130470,Isabel Brand,isabelbrand,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,130471,Valerie Gruest,valeriegruest,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134297,Carlos Trujillo,carlostrujillo,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134298,José María Raymundo,josemariaraymundo,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134299,Mario Alfonso Bran,marioalfonsobran,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134300,José Ramos,joseramos,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134301,Charles Fernández,charlesfernandez,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134302,Enrique Brol,enriquebrol,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134303,Hebert Brol,hebertbrol,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134304,Luis Martínez,luismartinez,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+59,2016,Summer,54,134305,Edgar Pineda,edgarpineda,,https://www.olympedia.org/countries/GUA/editions/59,YES,Participante de referencia.
+61,2020,Summer,58,112838,Kevin Cordón,kevincordon,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,117898,Juan Ignacio Maegli,juanignaciomaegli,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,123159,Érick Barrondo,erickbarrondo,DQ,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,123247,Mirna Ortiz,mirnaortiz,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,123249,Mayra Herrera,mayraherrera,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,123255,Manuel Rodas,manuelrodas,DNF,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,134300,José Ramos,joseramos,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,134301,Charles Fernández,charlesfernandez,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,134304,Luis Martínez,luismartinez,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143533,Nikté Sotomayor,niktesotomayor,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143534,Jennieffer Zúñiga,jenniefferzuniga,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143535,Yulisa López,yulisalopez,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143536,Isabella Maegli,isabellamaegli,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143537,Adriana Ruano,adrianaruano,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143538,Ana Waleska Soto,anawaleskasoto,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143539,Gaby Santis,gabysantis,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143540,Bernardo Barrondo,bernardobarrondo,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143541,José Alejandro Barrondo,josealejandrobarrondo,DQ,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143542,José Ortiz,joseortiz,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143543,José Oswaldo Calel,joseoswaldocalel,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143544,Luis Ángel Sánchez,luisangelsanchez,DNF,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143545,Luis Grijalva,luisgrijalva,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,143546,Juan Ramón Schaeffer,juanramonschaeffer,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+61,2020,Summer,58,147795,Scarleth Ucelo,scarlethucelo,,https://www.olympedia.org/countries/GUA/editions/61,YES,Participante de referencia.
+63,2024,Summer,61,112838,Kevin Cordón,kevincordon,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,117898,Juan Ignacio Maegli,juanignaciomaegli,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,123159,Érick Barrondo,erickbarrondo,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,123253,Jean-Pierre Brol,jeanpierrebrol,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,143537,Adriana Ruano,adrianaruano,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,143538,Ana Waleska Soto,anawaleskasoto,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,143541,José Alejandro Barrondo,josealejandrobarrondo,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,143545,Luis Grijalva,luisgrijalva,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,150073,Mariandrée Chacón,mariandreechacon,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,150074,Alberto González,albertogonzalez,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,153270,Jacqueline Solís,jacquelinesolis,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,153408,Sophia Hernández,sophiahernandez,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,153409,Andrés Fernández,andresfernandez,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,154138,Sebastián Bermúdez,sebastianbermudez,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,154544,Lucero Mejía,luceromejia,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
+63,2024,Summer,61,154545,Erick Gordillo,erickgordillo,,https://www.olympedia.org/countries/GUA/editions/63,YES,Participante de referencia.
