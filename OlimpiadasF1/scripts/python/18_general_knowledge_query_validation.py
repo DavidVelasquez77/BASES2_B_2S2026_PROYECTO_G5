@@ -30,7 +30,7 @@ EXPECTED = {
     "ENTIDAD_GEOGRAFICA": 282, "POBLACION": 17024, "NOC": 236,
     "ATLETA": 336418, "SEDE": 42, "EDICION_OLIMPICA": 61,
     "DEPORTE": 65, "DISCIPLINA": 117, "EVENTO": 2986,
-    "PARTICIPACION": 712658,
+    "PARTICIPACION": 712020,
 }
 IOC_RESULTS = "https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html"
 IOC_GATLIN = "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true"

@@ -30,7 +30,7 @@ La auditoría ejecutó consultas SELECT/CTE contra `OlimpiadasDB`, contrastó ca
 
 ## Integridad
 
-- Conteos SQL: ENTIDAD_GEOGRAFICA=282, POBLACION=17024, NOC=236, ATLETA=336418, SEDE=42, EDICION_OLIMPICA=61, DEPORTE=65, DISCIPLINA=117, EVENTO=2986, PARTICIPACION=712658; total=1069889.
+- Conteos SQL: ENTIDAD_GEOGRAFICA=282, POBLACION=17024, NOC=236, ATLETA=336418, SEDE=42, EDICION_OLIMPICA=61, DEPORTE=65, DISCIPLINA=117, EVENTO=2986, PARTICIPACION=712020; total=1069251.
 - SHA processed antes/después: MATCH.
 - RAW: 10/10 MATCH; intermediate: 13/13 MATCH.
 - SQL y stored procedures: no modificados por esta fase; la única modificación de tooling fue corregir el exit code de `18_general_knowledge_query_validation.py`.

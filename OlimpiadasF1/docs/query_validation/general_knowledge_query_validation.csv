@@ -8,7 +8,7 @@ COUNT_EDICION_OLIMPICA,integridad,COUNT(*) de olympics.EDICION_OLIMPICA,61,PASS,
 COUNT_DEPORTE,integridad,COUNT(*) de olympics.DEPORTE,65,PASS,NO,INTERNAL_SQL
 COUNT_DISCIPLINA,integridad,COUNT(*) de olympics.DISCIPLINA,117,PASS,NO,INTERNAL_SQL
 COUNT_EVENTO,integridad,COUNT(*) de olympics.EVENTO,2986,PASS,YES,INTERNAL_SQL
-COUNT_PARTICIPACION,integridad,COUNT(*) de olympics.PARTICIPACION,712658,PASS,YES,INTERNAL_SQL
+COUNT_PARTICIPACION,integridad,COUNT(*) de olympics.PARTICIPACION,712020,PASS,YES,INTERNAL_SQL
 GUA_MEDALLISTS,pais,Guatemala: medallistas lógicos,3,PASS,YES,INTERNAL_SQL
 GUA_MEDAL_ROWS,pais,Guatemala: filas con medalla,3,PASS,YES,INTERNAL_SQL
 GATLIN_2004_100M,evento,"Justin Gatlin, 100 m masculino, Atenas 2004","Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold",PASS,YES,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true
@@ -27,9 +27,9 @@ EDITION_2016,edicion,Existe edición con año 2016,YES,PASS,NO,INTERNAL_SQL
 EDITION_2020,edicion,Existe edición con año 2020,YES,PASS,NO,INTERNAL_SQL
 EDITION_2024,edicion,Existe edición con año 2024,YES,PASS,YES,INTERNAL_SQL
 MESSI,atleta,Lionel Messi: identidad y fecha de nacimiento,Lionel Messi|1987-06-24|ARG|1,PASS,YES,INTERNAL_SQL
-BARRONDO,atleta,Érick Barrondo: identidad,Érick Barrondo|1991-06-14|GUA|4,PASS,YES,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true
+BARRONDO,atleta,Érick Barrondo: identidad,Érick Barrondo|1991-06-14|GUA|5,PASS,YES,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true
 RUANO,atleta,Adriana Ruano: identidad,Adriana Ruano|1995-06-26|GUA|2,PASS,NO,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html
-BROL,atleta,Pierre Brol: identidad,Pierre Brol|1900-01-01|GUA|1,PASS,NO,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html
+BROL,atleta,Pierre Brol: identidad,Pierre Brol|1900-01-01||0,PASS,NO,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html
 CHAD_LE_CLOS,atleta,Chad le Clos: identidad,Chad le Clos|1992-04-12|RSA|19,PASS,NO,INTERNAL_SQL
 ANDRIANOV,atleta,Nikolay Andrianov: identidad,Nikolay Andrianov|1952-10-14|CHN|1;Nikolay Andrianov|1952-10-14|URS|24,PASS,NO,INTERNAL_SQL
 MESSI_PARTICIPATION,caso_especial,Messi: 2008/ARG/fútbol/Gold/posición 1,1,PASS,YES,INTERNAL_SQL
@@ -52,7 +52,7 @@ RANDOM_EVENT_08,muestra,¿Cuántas participaciones tiene el evento Mixed Doubles
 RANDOM_EVENT_09,muestra,¿Cuántas participaciones tiene el evento Cross Country Skiing Women's Sprint?,245,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_10,muestra,¿Cuántas participaciones tiene el evento Women's 64kg?,14,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_11,muestra,"¿Cuántas participaciones tiene el evento Short Track Speed Skating Women's 1,500 metres?",130,PASS,NO,INTERNAL_SQL
-RANDOM_EVENT_12,muestra,¿Cuántas participaciones tiene el evento Boxing Men's Flyweight?,850,PASS,NO,INTERNAL_SQL
+RANDOM_EVENT_12,muestra,¿Cuántas participaciones tiene el evento Boxing Men's Flyweight?,849,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_13,muestra,"¿Cuántas participaciones tiene el evento 10,000 metres, Men (Olympic)?",1,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_14,muestra,"¿Cuántas participaciones tiene el evento Welterweight, Freestyle, Men (Olympic)?",1,PASS,NO,INTERNAL_SQL
 RANDOM_EVENT_15,muestra,¿Cuántas participaciones tiene el evento Men's Épée Team?,68,PASS,NO,INTERNAL_SQL

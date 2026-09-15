@@ -6,7 +6,7 @@ conteo.EDICION_OLIMPICA,61,61,PASS,Conteo CSV esperado frente a staging
 conteo.ENTIDAD_GEOGRAFICA,282,282,PASS,Conteo CSV esperado frente a staging
 conteo.EVENTO,2986,2986,PASS,Conteo CSV esperado frente a staging
 conteo.NOC,236,236,PASS,Conteo CSV esperado frente a staging
-conteo.PARTICIPACION,713678,713678,PASS,Conteo CSV esperado frente a staging
+conteo.PARTICIPACION,712020,712020,PASS,Conteo CSV esperado frente a staging
 conteo.POBLACION,17024,17024,PASS,Conteo CSV esperado frente a staging
 conteo.SEDE,42,42,PASS,Conteo CSV esperado frente a staging
 convert.ATLETA.country_ids,0,0,PASS,INT inválido en país nullable

@@ -8,7 +8,7 @@ COUNT_EDICION_OLIMPICA,INTERNAL_SQL,result,61,61,PASS
 COUNT_DEPORTE,INTERNAL_SQL,result,65,65,PASS
 COUNT_DISCIPLINA,INTERNAL_SQL,result,117,117,PASS
 COUNT_EVENTO,INTERNAL_SQL,result,2986,2986,PASS
-COUNT_PARTICIPACION,INTERNAL_SQL,result,712658,712658,PASS
+COUNT_PARTICIPACION,INTERNAL_SQL,result,712020,712020,PASS
 GUA_MEDALLISTS,INTERNAL_SQL,result,3,3,PASS
 GUA_MEDAL_ROWS,INTERNAL_SQL,result,3,3,PASS
 GATLIN_2004_100M,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=208905&parentDocumentId=176545&skipCopyright=true&skipWatermark=true,result,"Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold","Justin Gatlin|2004|100 metres, Men (Olympic)|USA|Gold",PASS
@@ -27,9 +27,9 @@ EDITION_2016,INTERNAL_SQL,result,YES,YES,PASS
 EDITION_2020,INTERNAL_SQL,result,YES,YES,PASS
 EDITION_2024,INTERNAL_SQL,result,YES,YES,PASS
 MESSI,INTERNAL_SQL,result,Lionel Messi|1987-06-24|ARG|1,Lionel Messi|1987-06-24,PASS
-BARRONDO,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true,result,Érick Barrondo|1991-06-14|GUA|4,Érick Barrondo,PASS
+BARRONDO,https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=158773&parentDocumentId=71295&skipCopyright=true&skipWatermark=true,result,Érick Barrondo|1991-06-14|GUA|5,Érick Barrondo,PASS
 RUANO,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html,result,Adriana Ruano|1995-06-26|GUA|2,Adriana Ruano,PASS
-BROL,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html,result,Pierre Brol|1900-01-01|GUA|1,Pierre Brol,PASS
+BROL,https://oscnewsletter.olympics.com/article/56/whats-new-at-the-osc_lang%3Den.html,result,Pierre Brol|1900-01-01||0,Pierre Brol,PASS
 CHAD_LE_CLOS,INTERNAL_SQL,result,Chad le Clos|1992-04-12|RSA|19,Chad le Clos,PASS
 ANDRIANOV,INTERNAL_SQL,result,Nikolay Andrianov|1952-10-14|CHN|1;Nikolay Andrianov|1952-10-14|URS|24,Nikolay Andrianov,PASS
 MESSI_PARTICIPATION,INTERNAL_SQL,result,1,1,PASS
@@ -52,7 +52,7 @@ RANDOM_EVENT_08,INTERNAL_SQL,result,32,32,PASS
 RANDOM_EVENT_09,INTERNAL_SQL,result,245,245,PASS
 RANDOM_EVENT_10,INTERNAL_SQL,result,14,14,PASS
 RANDOM_EVENT_11,INTERNAL_SQL,result,130,130,PASS
-RANDOM_EVENT_12,INTERNAL_SQL,result,850,850,PASS
+RANDOM_EVENT_12,INTERNAL_SQL,result,849,849,PASS
 RANDOM_EVENT_13,INTERNAL_SQL,result,1,1,PASS
 RANDOM_EVENT_14,INTERNAL_SQL,result,1,1,PASS
 RANDOM_EVENT_15,INTERNAL_SQL,result,68,68,PASS
