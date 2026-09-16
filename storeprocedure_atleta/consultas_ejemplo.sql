@@ -19,15 +19,24 @@ GO
 EXEC olympics.sp_historial_atleta @nombre_atleta = N'Neymar', @id_atleta = 122812;
 GO
 
-/* 1.3 Ronaldo.
-   "Ronaldo" devuelve varios atletas distintos. El Ronaldo brasileno
-   (Ronaldo Nazario) gano bronce en Atlanta 1996; aparece con mas de un
-   id_atleta por la duplicacion de homonimos.
-   Cristiano Ronaldo NO esta en el dataset. */
+/* 1.3 Cristiano Ronaldo.
+   Verificado: id 102010, nacido 1985-02-05 en Funchal. Una sola participacion:
+   2004 Summer, Athina, Football, POR, posicion 14, sin medalla.
+   Portugal no medallo en Atenas 2004, asi que es correcto.
+
+   Su nombre_usado es '<U+2022>Cristiano Ronaldo', con el separador al inicio.
+   El SP normaliza ese caracter en la busqueda, por eso la coincidencia
+   exacta lo encuentra igual. */
+EXEC olympics.sp_historial_atleta @nombre_atleta = N'Cristiano Ronaldo', @coincidencia_exacta = 1;
+GO
+
+/* 1.4 Ronaldo (el brasileno).
+   "Ronaldo" devuelve varios atletas distintos. Ronaldo Nazario gano bronce
+   en Atlanta 1996 y aparece con mas de un id_atleta por homonimia. */
 EXEC olympics.sp_historial_atleta @nombre_atleta = N'Ronaldo', @max_atletas = 30;
 GO
 
-/* 1.4 Quien mas busquen: solo cambiar el nombre.
+/* 1.5 Quien mas busquen: solo cambiar el nombre.
    Si devuelve "BUSQUEDA AMBIGUA", usar el id_atleta de la lista. */
 EXEC olympics.sp_historial_atleta @nombre_atleta = N'Usain Bolt';
 EXEC olympics.sp_historial_atleta @nombre_atleta = N'Michael Phelps', @coincidencia_exacta = 1;
@@ -42,7 +51,7 @@ GO
    Verificado: exactamente 3 medallas.
      2012 Summer  Erick Barrondo   20 kilometres Race Walk, Men   Silver
      2024 Summer  Adriana Ruano    Trap, Women                    Gold
-     2024 Summer  Pierre Brol      Trap, Men                      Bronze */
+     2024 Summer  Jean-Pierre Brol Trap, Men                      Bronze */
 SELECT eo.anio,
        eo.temporada,
        a.nombre       AS atleta,
@@ -62,7 +71,10 @@ ORDER BY eo.anio, p.medalla;
 GO
 
 /* 2.2 Cuanto ha participado Guatemala en total.
-   Verificado: 1,232 participaciones de 802 atletas distintos. */
+   Verificado: 594 participaciones de 263 atletas distintos, en 20 ediciones.
+   20 ediciones sobre 19 anios distintos: en 1988 compitio en Winter y Summer.
+   Estas cifras son posteriores a la correccion canonica de identidades
+   guatemaltecas del ETL; las anteriores (1,232 / 802) ya no son vigentes. */
 SELECT COUNT(*)                      AS participaciones,
        COUNT(DISTINCT p.id_atleta)   AS atletas_distintos,
        COUNT(DISTINCT p.id_edicion)  AS ediciones,
@@ -156,65 +168,146 @@ GO
 /* ============================================================================
    4. RANKINGS DE MEDALLISTAS
 
-   LEER LA SECCION 7 ANTES DE USAR ESTAS CONSULTAS EN VIVO.
-   Los conteos estan inflados para la mayoria de atletas por duplicacion
-   pendiente en el dato de origen.
+   Estas consultas cuentan MEDALLAS REALES, no filas de PARTICIPACION.
+
+   La misma medalla quedo registrada dos veces bajo las dos nomenclaturas de
+   evento, con campos complementarios: una fila trae posicion y la otra trae
+   edad. Dentro de un grupo (atleta, ano, disciplina, medalla), si hay n filas
+   con posicion y n con edad, el numero real es n.
+
+   Sin esta correccion el top sale mal desde el segundo puesto: Ray Ewry
+   aparece con 20 oros cuando sus oros reales son 10.
+
+   La misma logica esta dentro de sp_historial_atleta. Detalle en
+   documentacion_d.md seccion 5.2.
 ============================================================================ */
 
-/* 4.1 Atletas con mas medallas de oro. */
+/* Vista auxiliar en linea: medallas reales por atleta y tipo.
+   Se repite en cada consulta para que cada bloque sea autonomo. */
+
+/* 4.1 Atletas con mas medallas de oro.
+   Verificado el 2026-09-15: Phelps 23, Ray Ewry 10, Latynina 9, Ledecky 9,
+   Nurmi 9, Spitz 9, Carl Lewis 9.
+
+   OJO para la defensa: Larysa Latynina aparece DOS VECES, como id 28985 y como
+   164169, las dos con 9 oros y 18 medallas. No es un error de esta consulta:
+   es el hallazgo 3, dos registros de atleta para la misma persona. El SP no
+   puede fusionarlos porque eso es identidad, no conteo de filas. */
+WITH g AS (
+    SELECT p.id_atleta, p.medalla, COUNT(*) AS filas,
+           /* Misma regla que el SP: se cuentan los eventos de la familia
+              canonica (nombre con calificador entre parentesis) y solo si el
+              grupo no tiene ninguna se cuentan los de la descriptiva.
+              Ver documentacion_d.md seccion 5.2. */
+           CASE WHEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END) > 0
+                THEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END)
+                ELSE SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 0 ELSE 1 END)
+                END AS reales
+    FROM olympics.PARTICIPACION p
+    JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
+    JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
+    WHERE p.medalla IS NOT NULL
+    GROUP BY p.id_atleta, p.id_edicion, e.id_disciplina, p.medalla
+)
 SELECT TOP 10
        a.id_atleta, a.nombre,
-       SUM(CASE WHEN p.medalla = N'Gold' THEN 1 ELSE 0 END) AS oro
-FROM olympics.PARTICIPACION p
-JOIN olympics.ATLETA a ON a.id_atleta = p.id_atleta
-WHERE p.medalla IS NOT NULL
+       SUM(CASE WHEN g.medalla = N'Gold' THEN g.reales ELSE 0 END) AS oro,
+       SUM(g.reales)                                               AS total_medallas,
+       SUM(g.filas)                                                AS filas_origen
+FROM g
+JOIN olympics.ATLETA a ON a.id_atleta = g.id_atleta
 GROUP BY a.id_atleta, a.nombre
-ORDER BY oro DESC, a.nombre;
+ORDER BY oro DESC, total_medallas DESC, a.nombre;
 GO
 
-/* 4.2 Variante por tipo de medalla: cambiar 'Silver' o 'Bronze'. */
+/* 4.2 Variante por tipo de medalla: cambiar 'Silver' por 'Bronze'. */
+WITH g AS (
+    SELECT p.id_atleta, p.medalla, COUNT(*) AS filas,
+           /* Misma regla que el SP: se cuentan los eventos de la familia
+              canonica (nombre con calificador entre parentesis) y solo si el
+              grupo no tiene ninguna se cuentan los de la descriptiva.
+              Ver documentacion_d.md seccion 5.2. */
+           CASE WHEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END) > 0
+                THEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END)
+                ELSE SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 0 ELSE 1 END)
+                END AS reales
+    FROM olympics.PARTICIPACION p
+    JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
+    JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
+    WHERE p.medalla IS NOT NULL
+    GROUP BY p.id_atleta, p.id_edicion, e.id_disciplina, p.medalla
+)
 SELECT TOP 10
        a.id_atleta, a.nombre,
-       SUM(CASE WHEN p.medalla = N'Silver' THEN 1 ELSE 0 END) AS plata
-FROM olympics.PARTICIPACION p
-JOIN olympics.ATLETA a ON a.id_atleta = p.id_atleta
-WHERE p.medalla IS NOT NULL
+       SUM(CASE WHEN g.medalla = N'Silver' THEN g.reales ELSE 0 END) AS plata,
+       SUM(g.reales)                                                 AS total_medallas
+FROM g
+JOIN olympics.ATLETA a ON a.id_atleta = g.id_atleta
 GROUP BY a.id_atleta, a.nombre
-ORDER BY plata DESC, a.nombre;
+ORDER BY plata DESC, total_medallas DESC, a.nombre;
 GO
 
-/* 4.3 Variante acotada a un deporte. Al restringir el deporte, el ranking
-   es mas manejable y facil de cotejar con olympics.com. */
+/* 4.3 Variante acotada a un deporte. Cambiar el nombre del deporte. */
+WITH g AS (
+    SELECT p.id_atleta, p.medalla, dep.nombre AS deporte, COUNT(*) AS filas,
+           /* Misma regla que el SP: se cuentan los eventos de la familia
+              canonica (nombre con calificador entre parentesis) y solo si el
+              grupo no tiene ninguna se cuentan los de la descriptiva.
+              Ver documentacion_d.md seccion 5.2. */
+           CASE WHEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END) > 0
+                THEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END)
+                ELSE SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 0 ELSE 1 END)
+                END AS reales
+    FROM olympics.PARTICIPACION p
+    JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion   = p.id_edicion
+    JOIN olympics.EVENTO e            ON e.id_evento     = p.id_evento
+    JOIN olympics.DISCIPLINA d        ON d.id_disciplina = e.id_disciplina
+    JOIN olympics.DEPORTE dep         ON dep.id_deporte  = d.id_deporte
+    WHERE p.medalla IS NOT NULL
+      AND dep.nombre COLLATE Latin1_General_CI_AI = N'Gymnastics'
+    GROUP BY p.id_atleta, p.id_edicion, e.id_disciplina, p.medalla, dep.nombre
+)
 SELECT TOP 10
-       a.id_atleta, a.nombre, dep.nombre AS deporte,
-       SUM(CASE WHEN p.medalla = N'Gold'   THEN 1 ELSE 0 END) AS oro,
-       SUM(CASE WHEN p.medalla = N'Silver' THEN 1 ELSE 0 END) AS plata,
-       SUM(CASE WHEN p.medalla = N'Bronze' THEN 1 ELSE 0 END) AS bronce,
-       COUNT(*)                                               AS total
-FROM olympics.PARTICIPACION p
-JOIN olympics.ATLETA a            ON a.id_atleta     = p.id_atleta
-JOIN olympics.EVENTO e            ON e.id_evento     = p.id_evento
-JOIN olympics.DISCIPLINA d        ON d.id_disciplina = e.id_disciplina
-JOIN olympics.DEPORTE dep         ON dep.id_deporte  = d.id_deporte
-WHERE p.medalla IS NOT NULL
-  AND dep.nombre COLLATE Latin1_General_CI_AI = N'Gymnastics'
-GROUP BY a.id_atleta, a.nombre, dep.nombre
-ORDER BY oro DESC, total DESC;
+       a.id_atleta, a.nombre, g.deporte,
+       SUM(CASE WHEN g.medalla = N'Gold'   THEN g.reales ELSE 0 END) AS oro,
+       SUM(CASE WHEN g.medalla = N'Silver' THEN g.reales ELSE 0 END) AS plata,
+       SUM(CASE WHEN g.medalla = N'Bronze' THEN g.reales ELSE 0 END) AS bronce,
+       SUM(g.reales)                                                 AS total
+FROM g
+JOIN olympics.ATLETA a ON a.id_atleta = g.id_atleta
+GROUP BY a.id_atleta, a.nombre, g.deporte
+ORDER BY oro DESC, total DESC, a.nombre;
 GO
 
-/* 4.4 Medallero por pais. Ojo: cuenta preseas entregadas a atletas, no
-   medallas oficiales del pais (en deportes de equipo cada integrante
-   suma una fila). */
+/* 4.4 Medallero por pais.
+   Ojo: cuenta preseas entregadas a atletas, no medallas oficiales del pais.
+   En deportes de equipo cada integrante suma una fila; la medalla oficial del
+   pais es una sola. Esa distincion la resuelve el SP del inciso e. */
+WITH g AS (
+    SELECT p.id_atleta, p.id_noc, p.medalla, COUNT(*) AS filas,
+           /* Misma regla que el SP: se cuentan los eventos de la familia
+              canonica (nombre con calificador entre parentesis) y solo si el
+              grupo no tiene ninguna se cuentan los de la descriptiva.
+              Ver documentacion_d.md seccion 5.2. */
+           CASE WHEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END) > 0
+                THEN SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 1 ELSE 0 END)
+                ELSE SUM(CASE WHEN e.nombre LIKE N'%(%)' THEN 0 ELSE 1 END)
+                END AS reales
+    FROM olympics.PARTICIPACION p
+    JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
+    JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
+    WHERE p.medalla IS NOT NULL
+    GROUP BY p.id_atleta, p.id_noc, p.id_edicion, e.id_disciplina, p.medalla
+)
 SELECT TOP 15
        n.codigo_noc, eg.nombre AS pais,
-       SUM(CASE WHEN p.medalla = N'Gold'   THEN 1 ELSE 0 END) AS oro,
-       SUM(CASE WHEN p.medalla = N'Silver' THEN 1 ELSE 0 END) AS plata,
-       SUM(CASE WHEN p.medalla = N'Bronze' THEN 1 ELSE 0 END) AS bronce,
-       COUNT(*)                                               AS preseas
-FROM olympics.PARTICIPACION p
-JOIN olympics.NOC n                      ON n.id_noc      = p.id_noc
+       SUM(CASE WHEN g.medalla = N'Gold'   THEN g.reales ELSE 0 END) AS oro,
+       SUM(CASE WHEN g.medalla = N'Silver' THEN g.reales ELSE 0 END) AS plata,
+       SUM(CASE WHEN g.medalla = N'Bronze' THEN g.reales ELSE 0 END) AS bronce,
+       SUM(g.reales)                                                 AS preseas
+FROM g
+JOIN olympics.NOC n                      ON n.id_noc      = g.id_noc
 LEFT JOIN olympics.ENTIDAD_GEOGRAFICA eg ON eg.id_entidad = n.id_entidad
-WHERE p.medalla IS NOT NULL
 GROUP BY n.codigo_noc, eg.nombre
 ORDER BY oro DESC, plata DESC, bronce DESC;
 GO
@@ -347,36 +440,48 @@ GO
 
 
 /* ============================================================================
-   7. NOTAS DE CALIDAD DEL DATO   (leer antes de usar la seccion 4)
+   7. NOTAS DE CALIDAD DEL DATO
 
-   Los conteos de medallas por atleta estan inflados para la mayoria de los
-   casos. La misma medalla quedo registrada dos veces bajo las dos
-   nomenclaturas de evento: una fila trae posicion y la otra trae edad.
+   1. CONTEO DE MEDALLAS -- corregido en las consultas de la seccion 4 y
+      dentro de sp_historial_atleta.
 
-   Ejemplo verificado: Ray Ewry aparece con 20 oros y los reales son 10.
+      La misma medalla quedo registrada dos veces bajo las dos nomenclaturas
+      de evento. El ETL corrigio 1,015 pares confirmados, pero el patron
+      persiste en el resto. Sin correccion, Ray Ewry sale con 20 oros cuando
+      son 10, y Jenny Thompson con 24 medallas cuando son 12.
 
-     Michael Phelps  23 oros  -> correcto (fue uno de los casos corregidos)
-     Ray Ewry        20 oros  -> reales 10
-     Jenny Thompson  16 oros  -> reales 8
-     Carl Lewis      16 oros  -> reales 9
+      La regla usada cuenta pares de posicion/edad dentro de un grupo
+      (atleta, ano, disciplina, medalla). Validada contra las nueve
+      regresiones del equipo: Phelps 23/3/2=28, Latynina 9/5/4=18,
+      Bjorgen 8/4/3=15, Andrianov 7/5/3=15, Thompson 8/3/1=12, Nurmi
+      9/3/0=12, Spitz 9/1/1=11, Ewry 10/0/0=10, Bolt 8/0/0=8.
+      Las nueve dan exacto.
 
-   Alcance aproximado: unos 14,963 atletas afectados.
+      La columna filas_origen deja el conteo auditable: si es mayor que el
+      total, ese atleta tenia duplicados.
 
-   NO se puede corregir desde la consulta: las dos filas tienen id_evento
-   distinto, asi que ningun DISTINCT las junta sin colapsar medallas
-   legitimamente diferentes. Se evaluo filtrar por "posicion IS NOT NULL",
-   que da el numero correcto en varios atletas, pero se descarto: perderia
-   37,721 filas de medalla legitimas en deportes de equipo y relevos, donde
-   la posicion nunca se registro.
+   2. CONTEO DE PARTICIPACIONES -- sigue inflado, sin corregir.
 
-   Corresponde al ETL. Reportado en evidencia/hallazgos_reportados.md.
+      La misma regla NO se puede aplicar aqui. En las filas sin medalla todas
+      tienen medalla = NULL, asi que un atleta con varios eventos distintos en
+      el mismo ano y disciplina cae en un solo grupo y contar pares deja de
+      significar algo. Medido: Bolt daria 11 cuando son 10, Nurmi 15 cuando
+      son 12.
 
-   Lo que SI es confiable:
+      Corresponde al ETL. Reportado en evidencia/hallazgos_reportados.md.
+
+   3. ATLETAS HOMONIMOS -- 48,370 nombres repetidos entre atletas distintos.
+      Usain Bolt existe como 10 id_atleta, Eric Lemming como 23. Por eso el
+      SP devuelve lista de candidatos y permite desempatar con @id_atleta.
+
+   4. PARTICIPACIONES IMPOSIBLES -- 784 filas posteriores a la fecha de
+      fallecimiento del atleta, en 781 atletas. Andrianov, muerto en 2011,
+      tiene una fila de kayak femenino por CHN en 2020. No se filtran
+      automaticamente: la decision corresponde al ETL.
+
+   Lo que SI es plenamente confiable:
      - el medallero de Guatemala (3 medallas, verificado);
      - los ganadores de un evento y ano concretos (secciones 3 y 6);
      - el historial individual consultado con @id_atleta;
-     - Michael Phelps y el resto de los casos corregidos.
-
-   Recomendacion para la defensa: preferir consultas acotadas a un evento,
-   ano o pais, que no dependen del conteo agregado por atleta.
+     - los rankings de la seccion 4, ya corregidos.
 ============================================================================ */

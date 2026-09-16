@@ -3,7 +3,7 @@
 **Integrante:** Valery Alarcón
 **Grupo:** 7 — Sistemas de Bases de Datos 2, 2do. Semestre 2026
 **Objeto creado:** `olympics.sp_historial_atleta`
-**Base vigente:** 336,418 atletas · 2,986 eventos · 712,658 participaciones · total 1,069,889
+**Base vigente:** 336,418 atletas · 2,986 eventos · 712,020 participaciones · total 1,069,251
 
 ---
 
@@ -24,7 +24,7 @@ Dos exigencias literales que condicionan el diseño:
 |---|---|
 | `sp_historial_atleta.sql` | El stored procedure (`CREATE OR ALTER`) |
 | `consultas_ejemplo.sql` | Consultas listas para la calificación (Guatemala, futbolistas, rankings, edades) |
-| `pruebas.sql` | 21 pruebas ejecutables desde SSMS |
+| `pruebas.sql` | 28 pruebas ejecutables desde SSMS |
 | `documentacion_d.md` | Este documento |
 | `evidencia/prompts.md` | Evidencia de prompt engineering |
 | `evidencia/hallazgos_reportados.md` | Hallazgos de calidad de datos reportados al equipo |
@@ -54,11 +54,11 @@ EXEC olympics.sp_historial_atleta
 
 ### Salida — tres result sets
 
-1. **Ficha del atleta**: datos biográficos, país de nacimiento, y las métricas oficiales `participaciones`, `total_medallas`, `ediciones`, `deportes`, `primer_ano`, `ultimo_ano`.
-2. **Medallero**: oro / plata / bronce / total, más el desglose de resultados sin medalla (`DNF`, `DNS`, `DQ`, posiciones sin premio).
-3. **Detalle de participaciones**: año, temporada, sede, deporte, disciplina, evento, NOC, país representado, equipo, edad, posición, empate, estado y medalla.
+1. **Ficha del atleta**: datos biográficos, país de nacimiento, y las métricas `participaciones`, `participaciones_filas_origen`, `total_medallas`, `medallas_filas_origen`, `ediciones`, `deportes`, `primer_ano`, `ultimo_ano`.
+2. **Medallero**: oro / plata / bronce / total, más `filas_origen`, `grupos_indeterminados` y el desglose de resultados sin medalla (`DNF`, `DNS`, `DQ`, posiciones sin premio).
+3. **Detalle de participaciones**: año, temporada, sede, deporte, disciplina, evento, NOC, país representado, equipo, edad, posición, empate, estado, medalla y `posterior_a_fallecimiento`.
 
-Todas las métricas salen **directamente de `PARTICIPACION`**, que es la fuente canónica. El procedimiento no deduplica ni estima.
+El **detalle es fiel a `PARTICIPACION`**: no agrupa ni descarta filas. El **medallero corrige la duplicación de medallas** que persiste en el dato (§5.2); `filas_origen` deja ese conteo auditable.
 
 Cuando la búsqueda es ambigua o no da resultados, devuelve **un solo result set informativo** en lugar de los tres, para que el caso se distinga de una respuesta vacía.
 
@@ -78,6 +78,19 @@ El procedimiento fuerza `Latin1_General_CI_AI` solo en la comparación:
 | `CI_AI` (la del SP) | **223** |
 
 Se recuperan 41 atletas que de otro modo quedaban invisibles (`Éliécer Montes`, `Aurélien Agnan`, entre otros).
+
+### 4.1b Normalización del separador `•` en la búsqueda
+
+El carácter U+2022 quedó dentro de los datos: **145,500 filas en `nombre_usado`** y **30,706 en `nombre_original`**. Solo se limpió de `nombre_completo`.
+
+Eso rompía la búsqueda contra esas columnas:
+
+```
+Lionel Messi      →  nombre_usado = 'Lionel•Messi'
+Cristiano Ronaldo →  nombre_usado = '•Cristiano Ronaldo'
+```
+
+El procedimiento aplica `REPLACE(columna, NCHAR(8226), N' ')` en las cuatro columnas de nombre **antes de comparar**, tanto en la búsqueda exacta como en la parcial. El dato no se modifica.
 
 ### 4.2 Control de ambigüedad
 
@@ -101,9 +114,9 @@ equipo            = Soviet Union         <- nombre del equipo de la época
 
 Varios NOC históricos conviven apuntando a la misma entidad: `FRG`, `GDR` y `GER` → Germany; `URS` y `EUN` → Russian Federation.
 
-### 4.4 Se buscan tres columnas de nombre
+### 4.4 Se buscan cuatro columnas de nombre
 
-`nombre` está siempre poblado, pero `nombre_completo` y `nombre_usado` solo en parte de las filas. El SP busca en las tres, lo que aumenta la cobertura.
+`nombre` está siempre poblado; `nombre_completo`, `nombre_usado` y `nombre_original` solo en parte de las filas. El SP busca en las cuatro, lo que aumenta la cobertura.
 
 ### 4.5 Comodines neutralizados en los tres filtros parciales
 
@@ -140,7 +153,7 @@ Tiene **cinco** valores, no dos:
 
 ---
 
-## 5. Calidad de datos: estado y limitaciones conocidas
+## 5. Calidad de datos: estado, corrección aplicada y limitaciones
 
 Durante la construcción del procedimiento se detectaron varios problemas en el dato de origen y se reportaron al equipo. El detalle reproducible está en `evidencia/hallazgos_reportados.md`.
 
@@ -149,64 +162,150 @@ Durante la construcción del procedimiento se detectaron varios problemas en el 
 | Hallazgo | Estado |
 |---|---|
 | Dominio de `sexo` sin homologar (`M`/`Male`, `F`/`Female`) | resuelto — solo `Male` y `Female` |
-| Separador `•` (U+2022) en `nombre_completo` | resuelto — 0 filas |
-| Conteo de medallas de Michael Phelps |  resuelto — `23/3/2 = 28` |
+| Separador `•` en `nombre_completo` | resuelto en esa columna — sigue en `nombre_usado` y `nombre_original` (§4.1b) |
+| Identidades guatemaltecas duplicadas | resuelto — Guatemala pasó de 1,232 a **594** participaciones y de 802 a **263** atletas |
+| Duplicación de medallas en 1,015 pares confirmados | resuelto — Nurmi, Spitz y Bolt quedaron correctos |
 
-Por eso el procedimiento ya **no normaliza nada en la salida ni estima conteos**. Esa lógica existió mientras el problema estuvo vigente y fue retirada cuando dejó de serlo.
+### 5.2 Corregido en el procedimiento: medallas y participaciones
 
-### 5.2 Pendiente: duplicación de medallas fuera de los casos corregidos
-
-La misma medalla sigue registrada dos veces bajo las dos nomenclaturas de evento, con campos complementarios (una fila trae `posicion`, la otra trae `edad`).
+El ETL corrigió 1,015 pares confirmados, pero **el patrón persiste en el resto del dataset**: la misma medalla sigue registrada dos veces bajo las dos nomenclaturas de evento, con campos complementarios.
 
 ```
 1900  Standing High Jump, Men (Olympic)      pos=1   edad=-
 1900  Athletics Men's Standing High Jump     pos=-   edad=26     <- el mismo salto
 ```
 
-Consecuencia en los rankings agregados:
+Sin corregir, el ranking de medallistas queda mal desde el segundo puesto: Ray Ewry aparece con **20 oros** cuando son **10**, y Jenny Thompson con **24 medallas** cuando son **12**.
 
-| Consulta | Real |
-|---|---|
-| Michael Phelps 23 oros | 23  |
-| Ray Ewry 20 oros | 10  |
-| Jenny Thompson 16 oros | 8  |
-| Carl Lewis 16 oros | 9  |
+#### La causa, no el síntoma
 
-**No es corregible desde una consulta.** Las dos filas tienen `id_evento` distinto, así que ningún `DISTINCT` las junta sin colapsar medallas legítimamente diferentes. Se evaluó filtrar por `posicion IS NOT NULL`, que da el número correcto en varios atletas, pero se descartó: perdería 37,721 filas de medalla legítimas en deportes de equipo y relevos, donde la posición nunca se registró.
+Los nombres de `EVENTO` vienen en dos familias, y son dos orígenes distintos que se fusionaron al construir la base:
 
-Corresponde al ETL, y así fue reportado.
+| Familia | Forma | Ejemplo | Trae |
+|---|---|---|---|
+| canónica | calificador entre paréntesis | `200 metres, Men (Olympic)` | `posicion`, `nombre_competencia` |
+| descriptiva | sin paréntesis | `Athletics Men's 200 metres` | `edad`, `equipo` |
 
-### 5.3 Pendiente: participaciones sin medalla duplicadas
+Identificar la familia por el nombre del evento es lo que permite reconocer la fila repetida, en lugar de inferirla de qué columnas están llenas.
 
-El mismo patrón en filas sin medalla infla el conteo de participaciones. Usain Bolt (`104492`) tiene 12 filas para 10 eventos reales; sus 8 medallas sí están limpias.
+**La regla aplicada:** dentro de un grupo `(atleta, edición, disciplina)` —más `medalla` cuando se cuentan medallas— se cuentan las filas de la familia canónica. Si el grupo solo tiene filas descriptivas, se cuentan esas.
+
+Es una sola regla para los dos conteos. Cuando la familia descriptiva aporta *más* eventos que la canónica el grupo se marca en `grupos_indeterminados`, porque ahí puede haber un evento legítimo que solo existe en ese origen.
+
+**Validación — las nueve regresiones del equipo dan exacto:**
+
+| Atleta | `filas_origen` | Medallero | Real |
+|---|---:|---|---|
+| Michael Phelps | 28 | 23 / 3 / 2 = 28 | coincide |
+| Larysa Latynina | 18 | 9 / 5 / 4 = 18 | coincide |
+| Marit Bjørgen | 15 | 8 / 4 / 3 = 15 | coincide |
+| Nikolay Andrianov | 15 | 7 / 5 / 3 = 15 | coincide |
+| Jenny Thompson | **24** | 8 / 3 / 1 = **12** | corregido |
+| Paavo Nurmi | 12 | 9 / 3 / 0 = 12 | coincide |
+| Mark Spitz | 11 | 9 / 1 / 1 = 11 | coincide |
+| Ray Ewry | **20** | 10 / 0 / 0 = **10** | corregido |
+| Usain Bolt | 8 | 8 / 0 / 0 = 8 | coincide |
+
+Los siete que el ETL ya había corregido tienen `filas_origen = total`: el procedimiento **no los toca**.
+
+**Y la misma regla corrige `participaciones`**, contra casos de verdad verificable:
+
+| Atleta | Filas | `participaciones` | Comprobación |
+|---|---:|---:|---|
+| Usain Bolt | 12 | **10** | 2004 (1) + 2008, 2012 y 2016 (3 cada uno) |
+| Guy Forget | 9 | **5** | 1984 (1, exhibición) + 1988 (2) + 1992 (2) |
+| Ray Ewry | 23 | **13** | 10 oros + 3 DNS |
+| Michael Phelps | 30 | **30** | correcto de origen, no se toca |
+| Paavo Nurmi | 15 | **15** | 15 pruebas; sus 12 son medallas, no participaciones |
+
+Impacto global:
+
+| Conteo | Filas | Reales | Indeterminados |
+|---|---:|---:|---:|
+| Medallas | 103,223 | **82,698** (−19.9%) | 14 de 78,975 |
+| Participaciones | 712,020 | **557,545** (−21.7%) | 590 de 428,251 |
+
+Las dos columnas `participaciones_filas_origen` y `medallas_filas_origen` dejan el conteo auditable: si superan al total, ese atleta tenía filas repetidas.
+
+#### Verificación contra fuentes externas
+
+Las cifras "reales" de arriba no salen de la base: son el patrón con el que se la contrasta. Se verificaron el **2026-09-15** contra Olympedia, que es la fuente de la que deriva este dataset.
+
+| Atleta | El SP dice | La fuente dice | |
+|---|---|---|---|
+| Paavo Nurmi | 15 participaciones, 12 medallas, `dns = 3` | 15 entradas: 9 oros, 3 platas y 3 DNS (1500 m y steeplechase en 1920, 800 m en 1924) | coincide |
+| Guy Forget | 5 participaciones | 1984 singles (exhibición), 1988 y 1992 singles y dobles | coincide |
+| Usain Bolt | 10 participaciones | 200 m en 2004; 100 m, 200 m y relevo en 2008, 2012 y 2016 | coincide |
+| Ray Ewry | 10 oros | 8 olímpicos más 2 en los Juegos Intercalados de 1906 | coincide |
+
+El caso de Nurmi es el que más dice. Una fuente secundaria afirma que compitió en 12 pruebas, porque cuenta solo las que largó; Olympedia registra 15 entradas con 3 DNS. El SP devuelve `participaciones = 15` **y** `dns = 3`, así que reproduce las dos lecturas sin contradecirse.
+
+Fuentes: [Olympedia – Paavo Nurmi](https://www.olympedia.org/athletes/67728), [Olympedia – Guy Forget](https://www.olympedia.org/athletes/17), [Olympedia – Ray Ewry](https://www.olympedia.org/athletes/78385), [Usain Bolt en olympics.com](https://www.olympics.com/en/athletes/usain-bolt).
+
+#### Los 10 oros de Ray Ewry, y por qué las fuentes dicen 8
+
+Es previsible que alguien objete la cifra, porque el COI acredita a Ray Ewry con **8** oros. Las dos cifras son compatibles y el dataset permite demostrarlo:
+
+| Año | Temporada en la base | Oros |
+|---|---|---:|
+| 1900 | Summer | 3 |
+| 1904 | Summer | 3 |
+| **1906** | **Intercalated Games** | **2** |
+| 1908 | Summer | 2 |
+
+Los Juegos Intercalados de Atenas 1906 **no son reconocidos por el COI**. El dataset sí los incluye, y los marca con su propia `temporada`, así que el 10 es el número correcto *para esta base* y el 8 se obtiene sin tocar nada:
+
+```sql
+EXEC olympics.sp_historial_atleta
+     @nombre_atleta = N'Ray Ewry', @temporada = N'Summer';   -- 8 / 0 / 0
+```
+
+`Intercalated Games` es uno de los cinco valores que acepta `@temporada` (§4.8), precisamente porque existe en `EDICION_OLIMPICA` como una edición más.
+
+### 5.3 Una regla anterior que se descartó
+
+La primera versión contaba por una firma estadística: dentro de `(atleta, año, disciplina, medalla)`, si había *n* filas con `posicion` y *n* con `edad`, el real era *n*. Daba bien las nueve regresiones, pero tenía dos problemas.
+
+No servía para `participaciones`: ahí todas las filas comparten `medalla = NULL`, así que un atleta con varios eventos en el mismo año y disciplina caía en un solo grupo y contar pares dejaba de significar algo. Medido entonces: Bolt daba **11** cuando son **10**.
+
+Y dejaba **196** grupos de medallas indeterminados, contra **14** de la regla por familia de evento. La diferencia es que aquella inferría el duplicado de qué columnas venían llenas, y ésta lo identifica por su causa.
 
 ### 5.4 Pendiente: atletas homónimos sin fusionar
 
-48,370 nombres repetidos. El SP lo maneja con el control de ambigüedad de §4.2, pero el dato de origen sigue fragmentado.
+**48,370 nombres repetidos.** `Usain Bolt` existe como 10 `id_atleta`, `Eric Lemming` como 23. El SP lo maneja con el control de ambigüedad de §4.2.
 
-### 5.5 Pendiente: participaciones imposibles atribuidas a un atleta
+Un dato que acota el problema: entre los atletas **con fecha de nacimiento** hay un solo par duplicado en toda la base. Toda la fragmentación está en los registros sin datos biográficos, que son los que no se pudieron emparejar.
 
-El problema inverso al anterior: personas distintas fusionadas en un mismo `id_atleta`. Nikolay Andrianov (`31000`), gimnasta soviético fallecido en 2011, tiene 24 participaciones correctas de 1972 a 1980 **más una fila de kayak femenino por China en 2020**. Aristidis Akratopoulos (`173`), tenista de Atenas 1896, tiene una fila de taekwondo por Etiopía en 2020.
+### 5.5 Señalado en el procedimiento: participaciones imposibles
 
-Alcance: **786 participaciones posteriores a la fecha de fallecimiento** del atleta (783 atletas), sobre 712,658 filas — un 0.11%. Verificado que es previo a la corrección semántica, no una regresión.
+Personas distintas fusionadas en un mismo `id_atleta`. Nikolay Andrianov (`31000`), gimnasta soviético fallecido en 2011, tiene 24 participaciones correctas de 1972 a 1980 **más una fila de kayak femenino por China en 2020**. Aristidis Akratopoulos (`173`), tenista de Atenas 1896, tiene una fila de taekwondo por Etiopía en 2020.
 
-Se detectó al ejecutar la prueba T18: el SP devolvió 24 participaciones para Andrianov filtrando por `@pais = 'URS'`, y no las 25 que tiene la tabla.
+Alcance: **784 participaciones posteriores a la fecha de fallecimiento** del atleta, en 781 atletas — un 0.11% de las filas. Verificado que es previo a las correcciones del ETL, no una regresión.
 
-> **Qué significa para la salida del SP.** El procedimiento reporta fielmente lo que la base contiene. Los pendientes 5.2 a 5.4 se manifiestan en su salida porque están en el dato, no porque el procedimiento los produzca. Las consultas acotadas a un evento, año o país —y el historial individual con `@id_atleta`— no están afectadas.
+Por indicación expresa del equipo, **no se filtran**. Filtrarlas sería esconder dato de origen.
+
+Pero señalarlas no es filtrarlas. El detalle trae la columna **`posterior_a_fallecimiento`**, que marca con `1` las filas cuyo año es posterior a la muerte del atleta:
+
+```
+1980  Artistic Gymnastics  Rings, Men (Olympic)   URS   posterior_a_fallecimiento = 0
+2020  Canoe Slalom         Women's Kayak          CHN   posterior_a_fallecimiento = 1
+```
+
+Sin la marca, la fila de 2020 sale mezclada con la gimnasia soviética sin ninguna señal de que es imposible. Con ella, quien lea el detalle la identifica sin tener que conocer la fecha de fallecimiento de memoria. El conteo no cambia: la fila sigue contando.
 
 ---
 
 ## 6. Casos de prueba
 
-Ejecutables desde `pruebas.sql`.
+Ejecutables desde `pruebas.sql` (28 pruebas).
 
 | # | Caso | Esperado |
 |---|---|---|
-| T1 | Phelps, solo medallas | 23 / 3 / 2 = 28 |
+| T1 | Phelps, solo medallas | 23 / 3 / 2 = 28, `filas_origen` 28 |
 | T2 | Phelps sin filtro | 30 participaciones, 5 ediciones |
 | T3 | Búsqueda ambigua (`Messi`) | Aviso + 26 candidatos |
 | T4 | Desempate por `@id_atleta` | 2008 Summer / ARG / Gold |
-| T5 | Insensibilidad a acentos en el nombre | 182 → 223 |
+| T5 | Insensibilidad a acentos | 182 → 223 |
 | T5b | Lo mismo en `@deporte` (`Glima` → `Glíma`) | Encuentra el deporte |
 | T6 | Filtros deporte + país + año | Solo Guy Forget `17` |
 | T7 | País por código y por nombre | Ambos funcionan |
@@ -216,40 +315,58 @@ Ejecutables desde `pruebas.sql`.
 | T11 | Validación de parámetros | 4 `RAISERROR` |
 | T12 | Comodines en los 3 filtros | Nunca devuelve la tabla completa |
 | T13 | Tope de `@max_atletas` | Normaliza a 25 / acota a 500 |
-| T14 | Atleta sin participaciones | 247 en la base; ficha en 0 |
+| T14 | Atleta sin participaciones | 744 en la base; ficha en 0 |
 | T15 | Rendimiento | `DATEDIFF` en ms |
 | T16 | Caso 1906 Intercalated Games | `anio 1906` / temporada correcta |
-| T17 | Caso Youth (Chad le Clos) | 8 Summer Youth vs 11 Summer |
+| T17 | Caso Youth (Chad le Clos) | Summer Youth ≠ Summer |
 | T18 | NOC histórico (Andrianov) | `URS` / Russian Federation / Soviet Union |
-| T19 | Rango de años + medalla | 18 oros de Phelps 2004–2012 |
-| T20 | Limitación conocida (Ray Ewry) | 20 filas para 10 oros reales |
+| T19 | Rango de años + medalla | Oros de Phelps 2004–2012 |
+| T20 | La corrección en el caso extremo (Ray Ewry) | 20 filas → **10** medallas |
+| T21 | **Las nueve regresiones del equipo** | Las nueve exactas |
+| T22 | Normalización del `•` en la búsqueda | Cristiano y Messi, un atleta cada uno |
+| T23 | Guatemala tras la corrección canónica | 594 / 263 / 20 |
+| T24 | Ray Ewry por temporada: 10 de la base vs. 8 del COI | 10 sin filtro, **8** con `Summer` |
+| T25 | La corrección de `participaciones` | Bolt **10**, Forget **5**, Ewry **13**, Phelps 30 |
+| T26 | Las dos familias de nombre de evento | Bolt 2004 aparece en las dos |
+| T27 | La marca `posterior_a_fallecimiento` | Andrianov: 1980 en `0`, kayak 2020 en `1` |
 
-**Regresiones de la revisión final del equipo**, verificadas contra la base vigente:
+**Las nueve regresiones que exige la revisión del equipo**, verificadas contra la base vigente:
 
 ```
-Michael Phelps  23 / 3 / 2 = 28     Usain Bolt        8
-Paavo Nurmi              12         Lionel Messi      Gold Beijing 2008
-Mark Spitz               11         Érick Barrondo    Silver London 2012
+Michael Phelps    23/3/2 = 28      Jenny Thompson    8/3/1 = 12
+Larysa Latynina    9/5/4 = 18      Paavo Nurmi       9/3/0 = 12
+Marit Bjørgen      8/4/3 = 15      Mark Spitz        9/1/1 = 11
+Nikolay Andrianov  7/5/3 = 15      Ray Ewry         10/0/0 = 10
+                                   Usain Bolt        8/0/0 =  8
 ```
 
 ---
 
 ## 7. Evidencia visual
 
-Capturas tomadas en SSMS 21 el **2026-09-13 entre 19:24 y 19:35**, contra la base vigente, con la hora del sistema visible en cada una. Están en `evidencia/img/`.
+Capturas tomadas en SSMS 21 el **2026-09-15**, contra la base vigente y con la hora del sistema visible en cada una. Están en `evidencia/img/`. Las de las 20:13 en adelante se retomaron después de aplicar la regla por familia de evento (§5.2).
 
 | Captura | Hora | Qué acredita |
 |---|---|---|
-| `01_creacion_sp.png` | 19:24 | Creación del SP; se ven los parámetros nuevos y el `Completion time` del servidor |
-| `02_phelps.png` | 19:25 | Medallero **23 / 3 / 2 = 28**, sin columnas de estimado — la regresión de la revisión final |
-| `03_ambiguedad.png` | 19:25 | `BUSQUEDA AMBIGUA` con 26 candidatos ordenados por medallas |
-| `04_guatemala.png` | 19:26 | Los 3 medallistas de Guatemala: Barrondo 2012, Brol y Ruano 2024 |
-| `05_filtros.png` | 19:26 | Deporte + país + año juntos; formato de empate `=9 lugar` / `=17 lugar` |
-| `06_validaciones.png` | 19:27 | Los 4 `RAISERROR`, incluida la validación nueva de `@temporada` |
-| `07_noc_historico.png` | 19:34 | `URS` / `Russian Federation` / `Soviet Union`; medallero 7 / 5 / 3 = 15 |
-| `08_rango_y_medalla.png` | 19:35 | `@anio_desde` + `@anio_hasta` + `@medalla`: 18 oros entre 2004 y 2012 |
+| `01_creacion_sp.png` | 19:12 | Creación del SP; `Completion time` reportado por el servidor |
+| `02_phelps.png` | 20:13 | `30 / 30` y `28 / 28`: el caso que la corrección **no** toca |
+| `03_regresiones.png` | 19:14 | Las nueve regresiones del equipo, todas iguales a su valor esperado |
+| `04_ray_ewry.png` | 20:13 | Las dos correcciones juntas: `participaciones 13 (origen 23)`, `medallas 10 (origen 20)` |
+| `05_busqueda_bullet.png` | 19:16 | Cristiano Ronaldo (`102010`) y Lionel Messi (`110178`): el `•` normalizado |
+| `06_guatemala.png` | 19:17 | **594 / 263 / 20**, y los 3 medallistas: Barrondo 2012, Brol y Ruano 2024 |
+| `07_ambiguedad.png` | 19:17 | `BUSQUEDA AMBIGUA` con 26 candidatos y `@max_atletas = 5` |
+| `08_participaciones.png` | 20:14 | Guy Forget 1992: `participaciones 2 (origen 4)`, con los dos pares en el detalle |
+| `09_validaciones.png` | 19:19 | Las 4 validaciones de dominio capturadas por `TRY/CATCH` |
+| `10_marca_fallecimiento.png` | 20:18 | `posterior_a_fallecimiento`: el kayak CHN 2020 en `1`, la gimnasia URS 1980 en `0` |
 
-La captura `01` incluye `Completion time: 2026-09-13T19:23:46`, que es la hora reportada por SQL Server y no solo la del sistema operativo.
+Cuatro valen como prueba más allá del formato:
+
+- **`04_ray_ewry`** es la evidencia central del §5.2. El detalle muestra, lado a lado, `Athletics Men's Standing High Jump` (edad 26, sin posición) y `Standing High Jump, Men (Olympic)` (posición 1, sin edad), ambas `Gold` y del mismo año: el mismo salto contado dos veces. Las dos columnas `filas_origen` dejan ver el 23 y el 20 de origen.
+- **`08_participaciones`** prueba que la regla también corrige el conteo de participaciones. Guy Forget jugó **2** eventos en Barcelona 1992 —singles y dobles— y la base tiene **4** filas, cada evento partido en una con posición y otra con edad.
+- **`02_phelps`** prueba lo contrario, que es igual de importante: donde no hay duplicación el procedimiento no interviene. Las dos `filas_origen` coinciden con sus totales.
+- **`10_marca_fallecimiento`** muestra la fila 25 de 25, un kayak femenino por China en 2020 atribuido a un gimnasta soviético fallecido en 2011, marcada con `1` y con las filas legítimas de 1980 en `0` justo encima. No se filtra: se señala.
+
+La captura `01` incluye el `Completion time` reportado por SQL Server, no solo la hora del sistema operativo.
 
 ---
 

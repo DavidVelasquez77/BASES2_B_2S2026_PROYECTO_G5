@@ -1,12 +1,4 @@
-/* Inciso d) Stored procedure por atleta - Grupo 7
-   Solo lectura. No escribe datos ni altera el modelo. Usa solo el schema olympics.
-   Devuelve 3 result sets: ficha, medallero y detalle de participaciones.
-   Si la busqueda es ambigua o vacia, devuelve un solo result set informativo.
-
-   Las metricas salen directamente de PARTICIPACION, que es la fuente canonica.
-   El SP no deduplica: esa tarea pertenece al ETL y ya fue resuelta ahi.
-
-   Decisiones de diseno explicadas en documentacion_d.md */
+/* Inciso d) Stored procedure por atleta - Grupo 7 */
 
 USE OlimpiadasDB;
 GO
@@ -100,8 +92,13 @@ BEGIN
                                  N'_', N'[_]') + N'%' END;
 
     /* ---------- 2. Atletas que coinciden ----------
-       Se fuerza Latin1_General_CI_AI porque la colacion de la base distingue
-       acentos: sin esto, "Elie" no encuentra a "Elie" con E acentuada. */
+       Dos normalizaciones:
+
+       a) Latin1_General_CI_AI, porque la colacion de la base distingue
+          acentos.
+
+       b) REPLACE del separador U+2022, porque quedo dentro de los datos:
+          145,500 filas en nombre_usado y 30,706 en nombre_original lo traen.*/
 
     CREATE TABLE #atletas (id_atleta BIGINT NOT NULL PRIMARY KEY);
 
@@ -117,18 +114,20 @@ BEGIN
         INSERT INTO #atletas (id_atleta)
         SELECT a.id_atleta
         FROM olympics.ATLETA a
-        WHERE a.nombre          COLLATE Latin1_General_CI_AI = @busqueda
-           OR a.nombre_completo COLLATE Latin1_General_CI_AI = @busqueda
-           OR a.nombre_usado    COLLATE Latin1_General_CI_AI = @busqueda;
+        WHERE LTRIM(RTRIM(REPLACE(a.nombre,           NCHAR(8226), N' '))) COLLATE Latin1_General_CI_AI = @busqueda
+           OR LTRIM(RTRIM(REPLACE(a.nombre_completo,  NCHAR(8226), N' '))) COLLATE Latin1_General_CI_AI = @busqueda
+           OR LTRIM(RTRIM(REPLACE(a.nombre_usado,     NCHAR(8226), N' '))) COLLATE Latin1_General_CI_AI = @busqueda
+           OR LTRIM(RTRIM(REPLACE(a.nombre_original,  NCHAR(8226), N' '))) COLLATE Latin1_General_CI_AI = @busqueda;
     END
     ELSE
     BEGIN
         INSERT INTO #atletas (id_atleta)
         SELECT a.id_atleta
         FROM olympics.ATLETA a
-        WHERE a.nombre          COLLATE Latin1_General_CI_AI LIKE @patron
-           OR a.nombre_completo COLLATE Latin1_General_CI_AI LIKE @patron
-           OR a.nombre_usado    COLLATE Latin1_General_CI_AI LIKE @patron;
+        WHERE REPLACE(a.nombre,          NCHAR(8226), N' ') COLLATE Latin1_General_CI_AI LIKE @patron
+           OR REPLACE(a.nombre_completo, NCHAR(8226), N' ') COLLATE Latin1_General_CI_AI LIKE @patron
+           OR REPLACE(a.nombre_usado,    NCHAR(8226), N' ') COLLATE Latin1_General_CI_AI LIKE @patron
+           OR REPLACE(a.nombre_original, NCHAR(8226), N' ') COLLATE Latin1_General_CI_AI LIKE @patron;
     END;
 
     IF NOT EXISTS (SELECT 1 FROM #atletas)
@@ -149,8 +148,15 @@ BEGIN
         p.id_atleta,
         eo.anio,
         eo.temporada,
+        p.id_edicion,
+        /* Los eventos vienen en dos nomenclaturas: la canonica lleva un
+           calificador entre parentesis ("200 metres, Men (Olympic)") y la
+           descriptiva no ("Athletics Men's 200 metres"). Son dos origenes
+           fusionados y es lo que permite detectar la fila repetida. */
+        CASE WHEN ev.nombre LIKE N'%(%)' THEN 1 ELSE 0 END AS es_canonico,
         s.nombre        AS sede,
         dep.nombre      AS deporte,
+        dis.id_disciplina,
         dis.nombre      AS disciplina,
         ev.nombre       AS evento,
         n.codigo_noc,
@@ -249,6 +255,67 @@ BEGIN
         RETURN;
     END;
 
+    /* ---------- 5. Conteo real de medallas y participaciones ----------
+       Dentro de un grupo (atleta, edicion, disciplina) las filas de la familia
+       descriptiva repiten las de la canonica. Se cuenta la canonica cuando
+       existe; si el grupo solo tiene filas descriptivas, se cuentan esas.
+       Para medallas el valor de medalla entra en la clave, asi que no se
+       colapsan medallas legitimamente distintas. */
+
+    SELECT
+        x.id_atleta,
+        x.medalla,
+        COUNT(*)                                          AS filas,
+        SUM(CASE WHEN x.es_canonico = 1 THEN 1 ELSE 0 END) AS canon,
+        SUM(CASE WHEN x.es_canonico = 0 THEN 1 ELSE 0 END) AS descr
+    INTO #med
+    FROM #part x
+    WHERE x.medalla IS NOT NULL
+    GROUP BY x.id_atleta, x.id_edicion, x.id_disciplina, x.medalla;
+
+    SELECT
+        id_atleta,
+        SUM(CASE WHEN medalla = N'Gold'   THEN reales ELSE 0 END) AS oro,
+        SUM(CASE WHEN medalla = N'Silver' THEN reales ELSE 0 END) AS plata,
+        SUM(CASE WHEN medalla = N'Bronze' THEN reales ELSE 0 END) AS bronce,
+        SUM(reales)                                               AS total,
+        SUM(filas)                                                AS filas_origen,
+        SUM(indeterminado)                                        AS indet
+    INTO #medallero
+    FROM
+    (
+        SELECT
+            id_atleta,
+            medalla,
+            filas,
+            CASE WHEN canon > 0 THEN canon ELSE descr END AS reales,
+            /* El grupo no concluye si la familia descriptiva aporta mas
+               eventos que la canonica: ahi puede haber uno legitimo. */
+            CASE WHEN canon > 0 AND descr > canon THEN 1 ELSE 0 END AS indeterminado
+        FROM #med
+    ) q
+    GROUP BY id_atleta;
+
+    /* La misma regla sobre todas las filas, con o sin medalla, para que
+       participaciones deje de contar el duplicado. */
+
+    SELECT
+        id_atleta,
+        SUM(CASE WHEN canon > 0 THEN canon ELSE descr END)          AS reales,
+        SUM(canon + descr)                                          AS filas,
+        SUM(CASE WHEN canon > 0 AND descr > canon THEN 1 ELSE 0 END) AS indet
+    INTO #partic
+    FROM
+    (
+        SELECT
+            x.id_atleta,
+            SUM(CASE WHEN x.es_canonico = 1 THEN 1 ELSE 0 END) AS canon,
+            SUM(CASE WHEN x.es_canonico = 0 THEN 1 ELSE 0 END) AS descr
+        FROM #part x
+        GROUP BY x.id_atleta, x.id_edicion, x.id_disciplina
+    ) q
+    GROUP BY id_atleta;
+
     /* ---------- Result set 1: ficha del atleta ---------- */
 
     SELECT
@@ -269,8 +336,12 @@ BEGIN
         pf.nombre                                   AS pais_fallecimiento,
         a.altura_cm,
         a.peso_kg,
-        COUNT(x.id_participacion)                   AS participaciones,
-        SUM(CASE WHEN x.medalla IS NOT NULL THEN 1 ELSE 0 END) AS total_medallas,
+        /* participaciones y total_medallas son los numeros reales; las dos
+           columnas filas_origen dejan ver cuantas filas habia detras. */
+        ISNULL(pa.reales, 0)                        AS participaciones,
+        ISNULL(pa.filas,  0)                        AS participaciones_filas_origen,
+        ISNULL(m.total, 0)                          AS total_medallas,
+        ISNULL(m.filas_origen, 0)                   AS medallas_filas_origen,
         COUNT(DISTINCT x.anio)                      AS ediciones,
         COUNT(DISTINCT x.deporte)                   AS deportes,
         MIN(x.anio)                                 AS primer_ano,
@@ -280,22 +351,30 @@ BEGIN
     LEFT  JOIN olympics.ENTIDAD_GEOGRAFICA pn ON pn.id_entidad = a.id_pais_nacimiento
     LEFT  JOIN olympics.ENTIDAD_GEOGRAFICA pf ON pf.id_entidad = a.id_pais_fallecimiento
     LEFT  JOIN #part x                        ON x.id_atleta   = a.id_atleta
+    LEFT  JOIN #medallero m                   ON m.id_atleta   = a.id_atleta
+    LEFT  JOIN #partic pa                     ON pa.id_atleta  = a.id_atleta
     GROUP BY
         a.id_atleta, a.nombre, a.nombre_completo, a.sexo, a.fecha_nacimiento,
         a.ciudad_nacimiento, a.region_nacimiento, pn.nombre,
-        a.fecha_fallecimiento, pf.nombre, a.altura_cm, a.peso_kg
+        a.fecha_fallecimiento, pf.nombre, a.altura_cm, a.peso_kg,
+        m.total, m.filas_origen, pa.reales, pa.filas
     ORDER BY total_medallas DESC, participaciones DESC, a.nombre, a.id_atleta;
 
     /* ---------- Result set 2: medallero ----------
-       Conteo directo sobre las participaciones seleccionadas. */
+       oro/plata/bronce cuentan medallas reales, no filas de PARTICIPACION.
+       Ver la regla en el paso 5. filas_origen deja el numero auditable: si
+       supera el total, ese atleta tenia filas repetidas.
+       Detalle y validacion en documentacion_d.md seccion 5.2. */
 
     SELECT
         a.id_atleta,
         a.nombre,
-        SUM(CASE WHEN x.medalla = N'Gold'   THEN 1 ELSE 0 END) AS oro,
-        SUM(CASE WHEN x.medalla = N'Silver' THEN 1 ELSE 0 END) AS plata,
-        SUM(CASE WHEN x.medalla = N'Bronze' THEN 1 ELSE 0 END) AS bronce,
-        SUM(CASE WHEN x.medalla IS NOT NULL THEN 1 ELSE 0 END) AS total_medallas,
+        ISNULL(m.oro,    0)                                    AS oro,
+        ISNULL(m.plata,  0)                                    AS plata,
+        ISNULL(m.bronce, 0)                                    AS bronce,
+        ISNULL(m.total,  0)                                    AS total_medallas,
+        ISNULL(m.filas_origen, 0)                              AS filas_origen,
+        ISNULL(m.indet,  0)                                    AS grupos_indeterminados,
         /* resultados sin medalla, para leer el historial completo */
         SUM(CASE WHEN x.medalla IS NULL
                   AND x.estado_resultado IS NULL
@@ -306,13 +385,18 @@ BEGIN
     FROM olympics.ATLETA a
     INNER JOIN #atletas fa ON fa.id_atleta = a.id_atleta
     LEFT  JOIN #part x     ON x.id_atleta  = a.id_atleta
-    GROUP BY a.id_atleta, a.nombre
+    LEFT  JOIN #medallero m ON m.id_atleta = a.id_atleta
+    GROUP BY a.id_atleta, a.nombre,
+             m.oro, m.plata, m.bronce, m.total, m.filas_origen, m.indet
     ORDER BY total_medallas DESC, a.nombre, a.id_atleta;
 
     /* ---------- Result set 3: detalle de participaciones ----------
        Detalle fiel de PARTICIPACION: no agrupa ni filtra filas.
        La columna resultado junta medalla / estado_resultado / posicion
-       en un solo campo legible ("=17 lugar" para un empate). */
+       en un solo campo legible.
+       posterior_a_fallecimiento marca las 784 filas con ano posterior a la
+       muerte del atleta. Se senalan, no se filtran: son dato de origen y
+       ocultarlas seria peor que mostrarlas. Ver hallazgo 4. */
 
     SELECT
         /* Con nombres repetidos, sin id_atleta el detalle es ilegible. */
@@ -340,7 +424,10 @@ BEGIN
                  + CAST(x.posicion AS NVARCHAR(10)) + N' lugar'
             ELSE N'(sin dato de resultado)'
         END                                         AS resultado,
-        x.nombre_competencia
+        x.nombre_competencia,
+        CASE WHEN a.fecha_fallecimiento IS NOT NULL
+                  AND x.anio > YEAR(a.fecha_fallecimiento)
+             THEN 1 ELSE 0 END                      AS posterior_a_fallecimiento
     FROM #part x
     INNER JOIN olympics.ATLETA a ON a.id_atleta = x.id_atleta
     ORDER BY a.nombre, x.id_atleta, x.anio, x.deporte, x.disciplina, x.evento;
@@ -350,3 +437,4 @@ GO
 
 PRINT N'sp_historial_atleta creado/actualizado correctamente.';
 GO
+

@@ -1,6 +1,6 @@
 # Hallazgos de calidad de datos reportados al equipo
 
-Revisión hecha sobre la base vigente después de la corrección semántica y la deduplicación de medallas (`336,418` atletas, `2,986` eventos, `712,658` participaciones, total `1,069,889`).
+Revisión sobre la base vigente tras la corrección canónica de identidades guatemaltecas: **336,418 atletas · 2,986 eventos · 712,020 participaciones · total 1,069,251**.
 
 Todos los hallazgos son reproducibles con las consultas incluidas.
 
@@ -8,30 +8,28 @@ Todos los hallazgos son reproducibles con las consultas incluidas.
 
 ## Lo que quedó resuelto
 
-Confirmado contra los datos nuevos:
-
 | Hallazgo anterior | Estado |
 |---|---|
-| Dominio de `sexo` sin homologar (`M`/`Male`, `F`/`Female`) |  resuelto — solo `Male` (241,964) y `Female` (94,454) |
-| Separador `•` (U+2022) en `nombre_completo` |  resuelto — 0 filas |
-| Conteo de medallas de Michael Phelps |  resuelto — `23/3/2 = 28` leyendo `PARTICIPACION` directamente |
-| Medallero de Guatemala |  correcto — `1/1/1 = 3` (Barrondo 2012, Ruano 2024, Brol 2024) |
+| Dominio de `sexo` sin homologar | resuelto — solo `Male` y `Female` |
+| Separador `•` en `nombre_completo` | resuelto **en esa columna** — ver hallazgo 5 |
+| Identidades guatemaltecas duplicadas | resuelto — 1,232 → **594** participaciones, 802 → **263** atletas |
+| Duplicación de medallas en 1,015 pares confirmados | resuelto — Nurmi, Spitz y Bolt quedaron correctos |
+| Cristiano Ronaldo ausente del dataset | resuelto — id `102010`, 2004 Summer POR, posición 14 |
 
-Con eso, el procedimiento del inciso d ya no necesita normalizar nada en la salida ni estimar conteos. Esa lógica fue retirada.
+Las nueve regresiones de la revisión final pasan contra el dato vigente.
 
 ---
 
-## 1. La duplicación de medallas persiste fuera de los casos corregidos — impacto alto
+## 1. La duplicación de medallas persiste fuera de los 1,015 pares corregidos
 
-El caso Phelps quedó bien, pero el patrón original sigue presente en el resto del dataset: la misma medalla registrada dos veces bajo las dos nomenclaturas de evento, con campos complementarios (una fila trae `posicion`, la otra trae `edad`).
+El patrón original sigue presente en el resto del dataset:
 
 ```sql
 SELECT eo.anio, e.nombre AS evento, p.posicion, p.edad, p.medalla
 FROM olympics.PARTICIPACION p
 JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
 JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
-JOIN olympics.ATLETA a            ON a.id_atleta   = p.id_atleta
-WHERE a.nombre = N'Ray Ewry' AND p.medalla = N'Gold'
+WHERE p.id_atleta = 77795 AND p.medalla = N'Gold'   -- Ray Ewry
 ORDER BY eo.anio, e.nombre;
 ```
 
@@ -40,146 +38,107 @@ Devuelve **20 filas de oro** para sus **10 oros reales**:
 ```
 1900  Standing High Jump, Men (Olympic)      pos=1   edad=-
 1900  Athletics Men's Standing High Jump     pos=-   edad=26     <- el mismo salto
-1900  Standing Long Jump, Men (Olympic)      pos=1   edad=-
-1900  Athletics Men's Standing Long Jump     pos=-   edad=26     <- el mismo salto
-...
 ```
 
-Jenny Thompson presenta lo mismo: **16 filas de oro** para **8 oros reales**.
+Jenny Thompson: **24 filas** para **12 medallas** reales.
 
-### Impacto directo en las consultas de la defensa
+### Qué se hizo
 
-Una de las consultas pedidas es *"quién es el atleta con más medallas de oro"*:
+Por indicación del equipo, **el `sp_historial_atleta` ahora corrige este conteo**.
 
-```sql
-SELECT TOP 5 a.nombre, COUNT(*) AS oros
-FROM olympics.PARTICIPACION p
-JOIN olympics.ATLETA a ON a.id_atleta = p.id_atleta
-WHERE p.medalla = N'Gold'
-GROUP BY a.id_atleta, a.nombre
-ORDER BY oros DESC;
-```
+La clave está en que los nombres de `EVENTO` vienen en dos familias, y son dos orígenes que se fusionaron al construir la base:
 
-| Resultado actual | Real |
-|---|---|
-| Michael Phelps 23 | 23 correcto |
-| Ray Ewry 20 | 10 incorrecto |
-| Birgit Fischer 16 | 8  incorrecto|
-| Jenny Thompson 16 | 8 incorrecto |
-| Carl Lewis 16 | 9 incorrecto |
+| Familia | Forma | Ejemplo | Trae |
+|---|---|---|---|
+| canónica | con calificador entre paréntesis | `200 metres, Men (Olympic)` | `posicion`, `nombre_competencia` |
+| descriptiva | sin paréntesis | `Athletics Men's 200 metres` | `edad`, `equipo` |
 
-El top queda mal desde el segundo puesto.
+**La regla:** dentro de un grupo `(atleta, edición, disciplina, medalla)` se cuentan las filas de la familia canónica; si el grupo solo tiene descriptivas, se cuentan esas. Cuando la descriptiva aporta más eventos que la canónica el grupo se marca en `grupos_indeterminados`, porque ahí puede haber uno legítimo.
 
-### Alcance aproximado
+`medalla` forma parte de la clave, así que no se colapsan medallas legítimamente distintas. La columna `filas_origen` deja el conteo auditable: si es mayor que el total, ese atleta tenía duplicados.
 
-```sql
-WITH g AS (
-  SELECT p.id_atleta, eo.anio, p.medalla,
-         SUM(CASE WHEN e.nombre LIKE '%(Olympic%' OR e.nombre LIKE '%(Intercalated%'
-                  THEN 1 ELSE 0 END) AS estilo_a,
-         SUM(CASE WHEN e.nombre NOT LIKE '%(Olympic%' AND e.nombre NOT LIKE '%(Intercalated%'
-                  THEN 1 ELSE 0 END) AS estilo_b
-  FROM olympics.PARTICIPACION p
-  JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
-  JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
-  WHERE p.medalla IS NOT NULL
-  GROUP BY p.id_atleta, eo.anio, p.medalla)
-SELECT COUNT(*) AS grupos, COUNT(DISTINCT id_atleta) AS atletas
-FROM g WHERE estilo_a > 0 AND estilo_b > 0;
-```
+Validado contra las nueve regresiones del equipo: las nueve dan exacto, y los siete que el ETL ya había corregido quedan con `filas_origen = total`, o sea que **el procedimiento no los toca**. La tabla completa está en `documentacion_d.md` §5.2.
 
-```
-grupos (atleta, año, medalla) con ambas nomenclaturas:  19,690
-atletas afectados:                                      14,963
-filas de medalla implicadas:                            41,911
-```
+Impacto global: 103,223 filas de medalla → **82,698 reales** (−19.9%), con 14 grupos indeterminados de 78,975.
 
-> **Precisión:** los casos de Ray Ewry y Jenny Thompson están confirmados fila por fila. Las cifras agregadas usan el sufijo `(Olympic` / `(Intercalated` para distinguir nomenclaturas, criterio que **no es un clasificador confiable** (hay nombres de evento que no encajan en ningún patrón). Tómense como orden de magnitud, no como conteo exacto.
-
-**No se puede corregir desde una consulta.** Las dos filas tienen `id_evento` distinto, así que no hay `DISTINCT` que las junte sin colapsar medallas legítimamente diferentes. Corresponde al ETL.
+> **Para el ETL:** la corrección en el SP resuelve la salida, pero el dato de origen sigue duplicado. Cualquier otra consulta que cuente medallas directamente sobre `PARTICIPACION` seguirá dando cifras infladas.
 
 ---
 
-## 2. Las participaciones sin medalla también siguen duplicadas
+## 2. Las participaciones también estaban duplicadas — corregido en el SP
 
-El mismo patrón aparece en filas sin medalla, y por eso el conteo de participaciones queda inflado.
-
-```sql
-SELECT eo.anio, e.nombre AS evento, p.posicion, p.edad, p.medalla
-FROM olympics.PARTICIPACION p
-JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
-JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
-WHERE p.id_atleta = 104492      -- Usain Bolt canónico
-ORDER BY eo.anio, e.nombre;
-```
-
-Devuelve **12 filas** para sus **10 eventos reales**:
+El mismo patrón en filas sin medalla inflaba el conteo de participaciones. El caso más limpio es Guy Forget (`17`) en Barcelona 1992:
 
 ```
-2004  200 metres, Men (Olympic)               pos=5   edad=-
-2004  Athletics Men's 200 metres              pos=-   edad=17    <- la misma carrera
-2008  4 x 100 metres Relay, Men (Olympic)     pos=-   edad=-
-2008  Athletics Men's 4 x 100 metres Relay    pos=-   edad=21    <- la misma carrera
+Doubles, Men (Olympic)    posicion  9    edad  -
+Tennis Men's Doubles      posicion  -    edad 27
+Singles, Men (Olympic)    posicion 17    edad  -
+Tennis Men's Singles      posicion  -    edad 27
 ```
 
-Sus 8 medallas sí están limpias, una fila cada una. Las dos duplicadas son las que no tienen medalla.
+Jugó **2 eventos** y la base tiene **4 filas**.
 
-Nota aparte: el relevo 4×100 de 2008 aparece **sin medalla**, lo cual es correcto — ese oro fue retirado en 2017 por el dopaje de Nesta Carter. El dato refleja el registro oficial vigente.
+### Qué se hizo
+
+Un primer intento falló: la firma `posicion`/`edad` no sirve aquí, porque todas las filas comparten `medalla = NULL` y caen en un solo grupo.
+
+La solución vino de identificar **la causa**. Los nombres de `EVENTO` vienen en dos familias, que son dos orígenes fusionados: la canónica lleva un calificador entre paréntesis (`200 metres, Men (Olympic)`) y la descriptiva no (`Athletics Men's 200 metres`). Dentro de `(atleta, edición, disciplina)` se cuentan las filas canónicas, y solo si no hay ninguna se cuentan las descriptivas.
+
+Verificado contra casos de verdad comprobable: Bolt 12 filas → **10**, Guy Forget 9 → **5**, Ray Ewry 23 → **13**, Phelps 30 → **30** sin cambio.
+
+Global: 712,020 filas → **557,545 participaciones reales** (−21.7%), con 590 grupos indeterminados de 428,251 (0.14%).
+
+> **Para el ETL:** igual que con las medallas, esto corrige la salida del SP. Las filas siguen duplicadas en `PARTICIPACION`.
 
 ---
 
 ## 3. Atletas homónimos sin fusionar
 
-```sql
-SELECT a.id_atleta, a.nombre, a.fecha_nacimiento,
-       (SELECT COUNT(*) FROM olympics.PARTICIPACION p WHERE p.id_atleta = a.id_atleta) AS participaciones
-FROM olympics.ATLETA a WHERE a.nombre = N'Usain Bolt' ORDER BY a.id_atleta;
+**48,370 nombres repetidos.** `Usain Bolt` existe como 10 `id_atleta`, `Paavo Nurmi` como 12, `Eric Lemming` como 23.
+
+**Corrección sobre lo que se había reportado antes:** los fragmentos **no son registros vacíos**. Cada uno carga participaciones propias, que duplican las del registro canónico. Los nueve fragmentos de `Usain Bolt`:
+
+```
+197719  2008  100 metres, Men (Olympic)              JAM  Gold
+197720  2008  Athletics Men's 200 metres             JAM  Gold
+197721  2008  Athletics Men's 4 x 100 metres Relay   JAM  -
+197722  2012  100 metres, Men (Olympic)              JAM  Gold
+...                                                        (9 filas)
 ```
 
-`Usain Bolt` existe como **10 `id_atleta`**: el `104492` con biografía completa y 8 medallas, más nueve registros vacíos con una participación cada uno. `Paavo Nurmi` tiene 12, `Guy Forget` 4, `Eric Lemming` 23.
+Son sus carreras reales, repartidas en nueve atletas distintos. Es una **tercera capa de duplicación**, por encima de las dos de los hallazgos 1 y 2, y a nivel de identidad en vez de a nivel de fila.
 
-En total hay **48,370 nombres repetidos** entre atletas distintos.
+Medido: **128,324 registros sin biografía cargan 139,950 filas de participación.**
 
-Esto convierte cualquier búsqueda por nombre en ambigua, que es exactamente el escenario de la defensa. El `sp_historial_atleta` lo maneja devolviendo la lista de candidatos ordenada y permitiendo desempatar con `@id_atleta`, tal como quedó aprobado en la revisión — pero el dato de origen sigue fragmentado.
+### Por qué no se puede resolver desde el SP
+
+Se evaluó fusionarlos usando la biografía como discriminador —quedarse con el registro que la tiene— y no funciona:
+
+| Patrón entre nombres repetidos | Nombres | `id_atleta` |
+|---|---:|---:|
+| 1 canónico con biografía + N sin ella | 29,696 | 96,058 |
+| **ninguno con biografía** | **17,629** | **58,866** |
+| varios con biografía | 2,544 | 9,737 |
+
+En 17,629 nombres no hay ningún registro con biografía, así que no hay forma de saber cuál es el canónico. Y donde varios la tienen pueden ser personas distintas de verdad. Fusionar desde una consulta sería inventar una identidad que el dato no respalda.
+
+El patrón habitual, donde sí hay biografía, es **un registro canónico más N fragmentos**:
+
+```
+Usain Bolt     10 ids  ->  1 con biografía,  9 sin
+Eric Lemming   23 ids  ->  1 con biografía, 22 sin
+Michael Phelps  1 id   ->  1 con biografía,  0 sin
+```
+
+El SP lo maneja con `@max_atletas`, `@coincidencia_exacta` y `@id_atleta`.
 
 ---
 
-## 4. Participaciones imposibles atribuidas a un atleta — problema inverso al 3
+## 4. Participaciones imposibles atribuidas a un atleta
 
-Los hallazgos 3 y 4 son las dos caras del mismo error de *matching*: en el 3 una persona quedó partida en varios `id_atleta`; en el 4 **personas distintas quedaron fusionadas en un mismo id**.
-
-Se detectó al filtrar a Nikolay Andrianov por su NOC: el SP devolvió 24 participaciones y no 25.
+El problema inverso al 3: personas distintas fusionadas en un mismo `id_atleta`.
 
 ```sql
-SELECT eo.anio, n.codigo_noc, e.nombre AS evento
-FROM olympics.PARTICIPACION p
-JOIN olympics.EDICION_OLIMPICA eo ON eo.id_edicion = p.id_edicion
-JOIN olympics.EVENTO e            ON e.id_evento   = p.id_evento
-LEFT JOIN olympics.NOC n          ON n.id_noc      = p.id_noc
-WHERE p.id_atleta = 31000
-ORDER BY eo.anio;
-```
-
-```
-1972-1980   URS   24 filas de gimnasia artistica   <- correctas
-2020        CHN   Women's Kayak                    <- imposible
-```
-
-Andrianov fue un gimnasta soviético que compitió de 1972 a 1980 y **murió en 2011** — la propia ficha lo muestra (`fecha_fallecimiento = 2011-03-21`). No puede tener una participación en kayak femenino por China en 2020.
-
-Otro caso, más extremo:
-
-```
-173  Aristidis Akratopoulos   (tenista griego, Atenas 1896)
-       1896   GRE   Singles, Men (Olympic)
-       1896   GRE   Doubles, Men (Olympic)
-       2020   ETH   Men -58kg               <- taekwondo por Etiopia, 124 anos despues
-```
-
-### Alcance
-
-```sql
--- participaciones posteriores a la fecha de fallecimiento del atleta
 SELECT COUNT(*) AS filas, COUNT(DISTINCT a.id_atleta) AS atletas
 FROM olympics.PARTICIPACION p
 JOIN olympics.ATLETA a            ON a.id_atleta   = p.id_atleta
@@ -188,78 +147,152 @@ WHERE a.fecha_fallecimiento IS NOT NULL
   AND eo.anio > YEAR(a.fecha_fallecimiento);
 ```
 
-| Indicador | Cantidad |
-|---|---:|
-| Participaciones posteriores al fallecimiento | **786** (783 atletas) |
-| Atletas con carrera de más de 44 años | **4,976** |
-
-El primer indicador es objetivo: compara contra `fecha_fallecimiento`, que está en la propia tabla. El segundo usa un umbral arbitrario de 44 años y sirve solo para dimensionar.
-
-Entre las filas atípicas, **2020 es el año más frecuente** (1,210 de 4,911, el 25%), pero el problema cruza muchas décadas: también aparecen 1972, 1968, 1960 y 1952 con varios cientos cada una. No es exclusivamente la fuente más reciente mal integrada.
-
-### No es una regresión
-
-Se comparó contra el dataset anterior (commit `efdc312`) para descartar que lo hubiera introducido la corrección semántica:
+**784 participaciones posteriores a la fecha de fallecimiento**, en 781 atletas (0.11% de las filas).
 
 ```
-ANTES:   786 post-mortem,   4,983 carreras de mas de 44 anos
-AHORA:   786 post-mortem,   4,976 carreras de mas de 44 anos
+31000  Nikolay Andrianov   falleció 2011-03-21
+         1972-1980  URS  24 filas de gimnasia   <- correctas
+         2020       CHN  Women's Kayak          <- imposible
+
+173    Aristidis Akratopoulos   tenista, Atenas 1896
+         2020       ETH  Men -58kg              <- taekwondo, 124 años después
 ```
 
-El problema es previo y la corrección semántica incluso redujo levemente el segundo indicador. Viene del *matching* de atletas del Bloque 4.
+Se detectó al filtrar a Andrianov por `@pais = 'URS'`: el SP devolvió 24 y la tabla tiene 25.
 
-Son 786 filas de 712,658 (0.11%), así que el impacto es acotado — pero es visible en consultas individuales, que es justo lo que se hace en la defensa.
+Verificado que **no es una regresión**: ya existía antes de las correcciones semánticas.
+
+### Qué se hizo
+
+Por indicación del equipo **no se filtran**. Pero el detalle del SP ahora trae la columna `posterior_a_fallecimiento`, que las marca con `1` sin alterar ningún conteo. Señalar no es esconder: la fila sigue ahí y sigue contando, solo deja de pasar desapercibida.
 
 ---
 
-## Qué hace el procedimiento del inciso d frente a esto
+## 5. El separador `•` sigue en dos columnas de nombre
 
-Siguiendo la indicación de la revisión final (*"los Stored Procedures no deben volver a deduplicar"*):
+```sql
+SELECT 'nombre_usado' AS columna, COUNT(*) AS filas
+FROM olympics.ATLETA WHERE nombre_usado LIKE N'%' + NCHAR(8226) + N'%'
+UNION ALL
+SELECT 'nombre_original', COUNT(*)
+FROM olympics.ATLETA WHERE nombre_original LIKE N'%' + NCHAR(8226) + N'%';
+```
 
-- Las métricas salen **directamente de `PARTICIPACION`**, sin heurísticas ni conteos paralelos.
-- Se retiraron `#grupos`, `#est`, todas las columnas `*_estimado` y la columna `diagnostico`.
-- El detalle de participaciones es fiel: no agrupa ni descarta filas.
-- La ambigüedad por homónimos se resuelve con `@max_atletas`, `@coincidencia_exacta` y `@id_atleta`.
+```
+nombre_usado      145,500 filas
+nombre_original    30,706 filas
+nombre_completo         0 filas   <- la única que se limpió
+```
 
-Es decir: el SP reporta fielmente lo que la base contiene. Los cuatro hallazgos se manifiestan en su salida porque están en el dato, no porque el procedimiento los produzca.
+Rompía la búsqueda contra esas columnas:
+
+```
+Lionel Messi       ->  nombre_usado = 'Lionel•Messi'
+Cristiano Ronaldo  ->  nombre_usado = '•Cristiano Ronaldo'
+```
+
+**Resuelto en el SP:** aplica `REPLACE(columna, NCHAR(8226), N' ')` antes de comparar, en las cuatro columnas de nombre y tanto en la búsqueda exacta como en la parcial. El dato no se modifica.
 
 ---
 
-## Sugerencia de prioridad
+## 6. Nombres duplicados por pérdida de caracteres
 
-Quedan seis días para la entrega. El hallazgo **1** es el único que cambia lo que el ingeniero vería en una consulta en vivo.
+Un patrón distinto al de los homónimos vacíos: el mismo nombre existe dos veces, una con el carácter no-ASCII y otra **sin él**, no reemplazado sino eliminado.
 
-Y la parte difícil ya está hecha: los candidatos están identificados y los scripts existen.
+Medido sobre `atleta.csv`: **16,115 nombres no-ASCII tienen un gemelo idéntico ya despojado** de esos caracteres, presente en la base como atleta aparte.
 
-| Artefacto | Filas |
+```
+Marit Bjørgen          15 medallas
+Marit Bjrgen           10 medallas    <- la ø desapareció
+
+Ole Einar Bjørndalen   13 medallas
+Ole Einar Bjrndalen    13 medallas
+
+Zoltán Halmay           9 medallas
+Zoltn Halmay            1 medalla
+```
+
+En los dos primeros casos **las medallas están duplicadas entre ambos registros**, no repartidas: el atleta real no tiene 28 ni 26, tiene las de uno solo.
+
+**Lo que el SP sí resuelve:** buscar `Bjorgen` encuentra a `Marit Bjørgen`, porque la colación `Latin1_General_CI_AI` pliega la `ø` a `o`. Se verificó una por una: `ø æ å ð þ ł ß đ ı` se pliegan todas.
+
+```sql
+SELECT id_atleta, nombre FROM olympics.ATLETA
+WHERE nombre COLLATE Latin1_General_CI_AI LIKE N'%Bjorgen%';
+-- 100161  Marit Bjørgen
+```
+
+**Lo que no:** `Marit Bjrgen` (`148654`) es un atleta aparte, con la letra eliminada y no reemplazada. Ninguna colación lo alcanza, porque no es un problema de comparación sino de identidad — el mismo caso del hallazgo 3.
+
+> Nota para quien venga de la versión anterior de este documento: ahí se decía que `ø` no se pliega. Eso es cierto de la normalización Unicode **NFD**, que fue como se midió al principio desde Python, pero no de la colación `CI_AI` de SQL Server, que es la que usa el SP.
+
+---
+
+## 7. El conteo de medallas de `sp_consultar_pais` queda inflado por el hallazgo 1
+
+Consecuencia directa del hallazgo 1, detectada al revisar si la duplicación afectaba a otras consultas del proyecto. **No es un error de lógica de ese procedimiento**: su regla es razonable y falla solo por cómo quedó el dato.
+
+`sp_consultar_pais` cuenta las medallas oficiales del país así:
+
+```sql
+SELECT DISTINCT p.id_edicion, p.id_evento, p.id_noc, p.medalla
+```
+
+La clave incluye `id_evento`, y **las filas duplicadas tienen `id_evento` distinto**: la base guarda dos registros de `EVENTO` para la misma prueba, uno por cada nomenclatura. El `DISTINCT` no los colapsa.
+
+```sql
+SELECT ev.id_evento, ev.nombre, COUNT(*) AS filas_oro_USA
+FROM olympics.PARTICIPACION p
+JOIN olympics.EVENTO ev          ON ev.id_evento = p.id_evento
+JOIN olympics.NOC n              ON n.id_noc     = p.id_noc
+JOIN olympics.EDICION_OLIMPICA e ON e.id_edicion = p.id_edicion
+WHERE n.codigo_noc = N'USA' AND e.anio = 1900 AND p.medalla = N'Gold'
+  AND ev.nombre LIKE N'%Standing%'
+GROUP BY ev.id_evento, ev.nombre;
+```
+
+```
+2216  Athletics Men's Standing High Jump        <- misma prueba
+1049  Standing High Jump, Men (Olympic)         <- misma prueba
+2217  Athletics Men's Standing Long Jump
+561   Standing Long Jump, Men (Olympic)
+2535  Athletics Men's Standing Triple Jump
+1063  Standing Triple Jump, Men (Olympic)
+```
+
+Seis `id_evento` para **tres eventos reales**, así que el procedimiento reporta 6 oros donde hubo 3.
+
+Aplicando la regla del hallazgo 1 sobre esa misma métrica, medido en toda la base:
+
+| | |
 |---|---:|
-| `medal_confirmed_duplicate_map.csv` — pares **aplicados** | 1,015 |
-| `medal_semantic_duplicate_candidates.csv` — candidatos identificados | 27,308 |
-| `semantic_duplicate_candidates.csv` — candidatos identificados | 49,741 |
+| Medallas oficiales que reporta hoy | 40,182 |
+| Estimado real | 26,173 |
+| Inflación | **14,009 (~35%)** |
+| Grupos donde la firma no concluye | 567 |
 
-Contra las ~41,911 filas de medalla todavía implicadas (unos ~21,000 pares), lo aplicado cubre alrededor del **5%**. Ampliar el mapa de confirmados usando la lista de candidatos que ya existe, con `22_final_medal_dedup_preview_apply.py`, resolvería el top de medallistas.
+**Donde el ETL ya fusionó los pares, el conteo sale bien.** Esas filas traen `posicion` y `edad` juntas (7,581 en total) y el `DISTINCT` las trata como una sola. Guatemala, por ejemplo, devuelve **3** correctamente.
 
-Los hallazgos **2**, **3** y **4** tienen menor impacto y pueden quedar documentados como limitación conocida si no da el tiempo.
+No hay nada que corregir del lado del inciso d. Se reporta porque el conteo de país se defiende igual que el de atleta y conviene que la cifra sea consistente entre ambos.
 
-El **4** es el más barato de los tres: la consulta que lo detecta ya está escrita y las 786 filas posteriores al fallecimiento son identificables sin ambigüedad, porque se comparan contra un dato que está en la propia tabla `ATLETA`. Si se decide limpiarlas, no hace falta criterio humano para elegir cuáles.
+---
 
-Resumen de los cuatro:
+## Resumen
 
-| # | Hallazgo | Impacto en la defensa | Corregible |
-|---|---|---|---|
-| 1 | Duplicación de medallas | **Alto** — rompe el top de medallistas | Sí, ampliando el mapa existente |
-| 2 | Participaciones sin medalla duplicadas | Medio — infla `participaciones` | Mismo mecanismo que el 1 |
-| 3 | Atletas homónimos sin fusionar | Medio — lo absorbe el control de ambigüedad | Requiere criterio caso por caso |
-| 4 | Participaciones imposibles | Bajo — 0.11% de las filas | Sí, identificables sin ambigüedad |
+| # | Hallazgo | Estado |
+|---|---|---|
+| 1 | Duplicación de medallas | **Corregido en el SP**; pendiente en el dato |
+| 2 | Participaciones duplicadas | **Corregido en el SP**; pendiente en el dato |
+| 3 | Atletas homónimos (3.ª capa de duplicación) | Pendiente — no resoluble desde consulta |
+| 4 | Participaciones imposibles | **Señaladas en el SP**; pendiente en el dato |
+| 5 | Separador `•` en dos columnas | **Resuelto en el SP** |
+| 6 | Nombres con caracteres perdidos | Parcial — la búsqueda los alcanza, la identidad no |
+| 7 | Medallero de `sp_consultar_pais` inflado | Pendiente — consecuencia del 1, ~35% |
 
 ---
 
 ## Detalle de entorno (no es de datos)
 
-`04_bulk_load_staging.sql` usa `ROWTERMINATOR = '0x0a'` para los diez CSV. En un checkout de Windows con `core.autocrlf = true` los archivos quedan en CRLF, y la carga falla en `disciplina.csv` (21 filas) y `evento.csv` (1,974 filas), que son los que tienen campos entrecomillados al final.
+`04_bulk_load_staging.sql` usa `ROWTERMINATOR = '0x0a'` para los diez CSV. En un checkout de Windows con `core.autocrlf = true` los archivos quedan en CRLF y la carga falla en `disciplina.csv` y `evento.csv`, que son los que tienen campos entrecomillados al final.
 
-Un `.gitattributes` que fije los finales de línea de `*.csv` haría el script determinista en cualquier máquina:
-
-```
-*.csv -text
-```
+Un `.gitattributes` con `*.csv -text` haría el script determinista en cualquier máquina. Queda a criterio del responsable del inciso c.

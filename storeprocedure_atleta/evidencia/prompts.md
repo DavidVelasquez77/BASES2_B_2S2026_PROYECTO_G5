@@ -48,7 +48,7 @@ WHERE nombre COLLATE Latin1_General_CI_AI LIKE N'%Elie%';
 ```sql
 SELECT SUM(CASE WHEN id_pais_nacionalidad IS NULL THEN 1 ELSE 0 END), COUNT_BIG(*)
 FROM olympics.PARTICIPACION;
--- 712,577 de 712,658 en NULL  (99.99%)
+-- 711,939 de 712,020 en NULL  (99.99%)
 ```
 
 **Decisión:** resolver el país por NOC representado.
@@ -69,7 +69,7 @@ Al detectar la duplicidad de eventos se evaluó etiquetar cada fila según su fu
 
 ### 3.6 Deduplicación de medallas: dos intentos descartados y uno medido
 
-> **Nota de lectura.** Las cifras de §3.6, §3.7 y §3.8 corresponden al **dataset anterior** (336,419 atletas · 3,007 eventos · 733,414 participaciones), que era el vigente cuando se hicieron estas mediciones. Se conservan porque documentan cómo se detectó y cuantificó el problema. El estado actual y las cifras vigentes están en §3.9 y §3.10.
+> **Nota de lectura.** El dataset cambió tres veces durante el desarrollo. Las cifras de §3.6 a §3.8 son del primer estado (733,414 participaciones); las de §3.9 y §3.10 del segundo (712,658). Las vigentes —**712,020 participaciones, total 1,069,251**— están en §3.11 en adelante. Las secciones anteriores se conservan porque documentan cómo se detectó y cuantificó cada problema.
 
 Este fue el punto que más iteración requirió. Se evaluaron tres caminos.
 
@@ -199,6 +199,177 @@ Se caen los deportes de equipo y varios relevos (Hockey, Football, Curling, el 4
 
 La lección es la misma de §3.7: siete casos que confirman una hipótesis no la validan; hay que buscar activamente el caso que la rompe.
 
+### 3.11 La heurística volvió, y esta vez como el número oficial
+
+En §3.9 se retiró la estimación porque el ETL había corregido el problema. Al revisar los datos del 14 de septiembre se encontró que la corrección fue **parcial**: el ETL aplicó 1,015 pares confirmados y verificó siete atletas concretos, pero el patrón persistía en el resto.
+
+```
+Ray Ewry        20 oros   reales 10
+Jenny Thompson  24 medallas   reales 12
+```
+
+El coordinador indicó resolverlo desde el SP, revirtiendo explícitamente la instrucción `CRITICAL` de su propia revisión.
+
+**Antes de implementarlo se verificó que la regla no rompiera lo ya corregido.** Ese era el riesgo real: si el ETL había cambiado la estructura, la firma podía descalibrarse y subcontar.
+
+| Atleta | crudo | con la regla | real | |
+|---|---|---|---|---|
+| Michael Phelps | 23/3/2 | 23/3/2 | 23/3/2 | sin cambio |
+| Ray Ewry | 20/0/0 | **10/0/0** | 10/0/0 | corregido |
+| Jenny Thompson | 16/6/2 | **8/3/1** | 8/3/1 | corregido |
+| Usain Bolt | 8/0/0 | 8/0/0 | 8/0/0 | sin cambio |
+| Paavo Nurmi | 9/3/0 | 9/3/0 | 9/3/0 | sin cambio |
+| Mark Spitz | 9/1/1 | 9/1/1 | 9/1/1 | sin cambio |
+| Nikolay Andrianov | 7/5/3 | 7/5/3 | 7/5/3 | sin cambio |
+| Marit Bjørgen | 8/4/3 | 8/4/3 | 8/4/3 | sin cambio |
+| Larysa Latynina | 9/5/4 | 9/5/4 | 9/5/4 | sin cambio |
+
+**Nueve de nueve.** Arregla lo roto y no toca lo que el ETL ya había resuelto.
+
+**Diferencia de diseño respecto a §3.6:** antes se mostraban dos cifras lado a lado, crudo y estimado. La revisión del equipo objetó eso —*"el SP no debe presentar simultáneamente conteos crudos y estimados como si ambos fueran resultados oficiales"*— y tenía razón. Ahora hay **un solo número oficial**, el corregido, más una columna `filas_origen` que deja el conteo auditable sin competir con él.
+
+### 3.12 La misma regla se probó en `participaciones` y se descartó
+
+Por consistencia se evaluó corregir también el conteo de participaciones. **Se midió y no funciona:**
+
+```
+                crudo  ->  con la regla    real
+Michael Phelps    30        30             30    OK
+Usain Bolt        12        11             10    NO
+Paavo Nurmi       15        15             12    NO
+Ray Ewry          23        13             10    NO
+grupos indeterminados: 6,924  (contra 196 en medallas)
+```
+
+La razón es estructural: en el medallero el valor de `medalla` forma parte de la clave de agrupación, así que los grupos quedan finos. En las filas sin medalla **todas tienen `medalla = NULL`**, así que un atleta con varios eventos distintos en el mismo año y disciplina cae en un solo grupo y contar pares deja de significar algo.
+
+**Decisión:** aplicar la corrección solo al medallero. `participaciones` se reporta crudo, documentado como limitación.
+
+La lección se repite: una regla que funciona en un contexto no se traslada a otro sin volver a medirla.
+
+### 3.13 Una búsqueda que fallaba sin dar señal
+
+El coordinador señaló que el separador `•` podía romper la búsqueda. Se verificó y era cierto:
+
+```
+nombre_completo    0 filas con el caracter   <- la unica que se limpio
+nombre_usado     145,500
+nombre_original   30,706
+```
+
+`Lionel Messi` tiene `nombre_usado = 'Lionel•Messi'` y Cristiano Ronaldo `'•Cristiano Ronaldo'`. El SP limpiaba el carácter **en la salida** pero comparaba contra el valor crudo, así que la búsqueda exacta no alcanzaba esas dos columnas.
+
+Es el tipo de falla que no se nota: no da error, solo deja de encontrar cosas.
+
+**Corregido:** `REPLACE(columna, NCHAR(8226), N' ')` antes de comparar, en las cuatro columnas de nombre.
+
+### 3.14 Un error propio al buscar a Marit Bjørgen
+
+Al validar las regresiones, el script de verificación reportó que **Marit Bjørgen no existía en la base**. Era falso: está, con id `100161` y 15 medallas.
+
+El script normalizaba acentos con Unicode NFD, que descompone `é` en `e` + diacrítico pero **no descompone `ø`**, porque no es una vocal acentuada sino una letra distinta del alfabeto nórdico.
+
+Detectado al contrastar contra el ranking de medallistas noruegos, donde aparecía en segundo lugar.
+
+**Lección:** "quitar acentos" y "normalizar caracteres no-ASCII" no son lo mismo. Antes de afirmar que un dato no existe, conviene buscarlo por otra vía.
+
+El límite era del script, no del procedimiento: se verificó después que la colación `Latin1_General_CI_AI` del SP **sí** pliega la `ø`, y buscar `Bjorgen` devuelve a `Marit Bjørgen`. Se probaron una por una `ø æ å ð þ ł ß đ ı` y se pliegan todas.
+
+### 3.15 Un conteo mal contado que apareció al revisar las capturas
+
+Al revisar `06_guatemala.png` el resultado en pantalla decía **20 ediciones**, pero `pruebas.sql` y `consultas_ejemplo.sql` afirmaban 19. El número escrito venía de una medición propia sobre los CSV, y estaba mal: se habían contado **años distintos**, no ediciones.
+
+```
+id_edicion distintos : 20
+anios distintos      : 19
+1988 -> ['Winter', 'Summer']
+```
+
+Guatemala compitió en los Juegos de Invierno **y** de Verano de 1988, que son dos ediciones del mismo año. El 20 de la consulta es correcto; se corrigieron los dos archivos y la tabla de pruebas.
+
+Vale la pena dejarlo escrito porque el error no estaba en la consulta sino en el valor esperado, que es el caso en que una prueba puede "fallar" estando bien.
+
+---
+
+### 3.16 Una prueba que nunca habia corrido
+
+Al colapsar los comentarios de `pruebas.sql` a una linea se ejecutó el archivo completo para comprobar que nada se hubiera roto, y apareció un error que **ya estaba en `main`**:
+
+```
+Msg 468: Cannot resolve the collation conflict between
+"Latin1_General_CI_AI" and "Latin1_General_CI_AS" in the not equal to operation.
+```
+
+La consulta de T5b comparaba la columna consigo misma bajo dos colaciones explícitas distintas:
+
+```sql
+WHERE nombre COLLATE Latin1_General_CI_AS <> nombre COLLATE Latin1_General_CI_AI
+```
+
+SQL Server no puede resolver eso: cuando los dos lados traen `COLLATE` explícito y no coinciden, no hay regla de precedencia que aplicar. La idea de fondo tampoco funcionaba, porque `COLLATE` cambia cómo se compara un texto, **no lo transforma**: no existe una colación que devuelva la cadena sin acentos.
+
+Se reemplazó por una detección directa de caracteres fuera de ASCII imprimible, con colación binaria para que el rango del `LIKE` no dependa de la colación de la base:
+
+```sql
+WHERE nombre COLLATE Latin1_General_BIN2 LIKE N'%[^ -~]%'
+```
+
+Devuelve `Glíma`, que es el único deporte con un carácter no ASCII. El resto de T5b —buscarlo sin acento con `@deporte = N'Glima'`— sí funcionaba, porque ahí solo un lado lleva `COLLATE`.
+
+Lo que deja como lección: el archivo de pruebas se había revisado leyéndolo, no ejecutándolo de corrido. Un error de ese tipo solo aparece al correrlo entero.
+
+---
+
+### 3.17 La causa, después de dos intentos por el síntoma
+
+La corrección de medallas funcionaba, pero `participaciones` seguía inflado y en §3.12 se había concluido que no tenía arreglo. La conclusión era correcta **para la regla que se estaba usando**, no para el problema.
+
+El giro vino de mirar la salida cruda de Usain Bolt:
+
+```
+2004  200 metres, Men (Olympic)            posicion 5     edad -
+2004  Athletics Men's 200 metres           posicion -     edad 17
+```
+
+Los nombres de `EVENTO` vienen en **dos familias**: la canónica lleva un calificador entre paréntesis y la descriptiva no. No son dos formas de escribir lo mismo por descuido: son **dos orígenes que se fusionaron** al construir la base, y cada uno llena columnas distintas —la canónica `posicion` y `nombre_competencia`, la descriptiva `edad` y `equipo`.
+
+Las dos reglas anteriores inferían el duplicado de *qué columnas estaban llenas*, que es el síntoma. Identificar la familia por el nombre del evento ataca la causa.
+
+Se comprobó que `EVENTO` no tiene ninguna columna que relacione ambos registros —solo `id_evento`, `id_disciplina` y `nombre`—, así que la familia hay que leerla del nombre.
+
+**La regla:** dentro de `(atleta, edición, disciplina)` —más `medalla` para el medallero— se cuentan las filas canónicas; si no hay ninguna, las descriptivas.
+
+Antes de aplicarla se validó contra verdades comprobables fuera de la base:
+
+| Atleta | Filas | Regla | Verdad |
+|---|---:|---:|---|
+| Usain Bolt | 12 | 10 | 1 en 2004 + 3 en 2008, 2012 y 2016 |
+| Guy Forget | 9 | 5 | 1984 exhibición + 2 en 1988 + 2 en 1992 |
+| Ray Ewry | 23 | 13 | 10 oros + 3 DNS |
+| Michael Phelps | 30 | 30 | correcto de origen |
+
+Y **reprodujo las nueve regresiones de medalla exactas**, que era la condición para poder reemplazar la regla anterior sin romper lo ya validado.
+
+Dos cosas que mejoraron de paso: el SP quedó con **una sola regla** para los dos conteos en vez de dos heurísticas distintas, y los grupos indeterminados de medallas bajaron de **196 a 14**.
+
+Se midió el riesgo antes de aplicar: 590 grupos de 428,251 (0.14%) donde la familia descriptiva aporta más eventos que la canónica. Esos quedan marcados en `grupos_indeterminados`, no silenciados.
+
+Lo que deja como lección: "no se puede corregir" suele significar "no se puede con la regla que estoy usando". Vale la pena separar las dos afirmaciones antes de darlo por cerrado.
+
+---
+
+### 3.18 La verificación externa, que faltaba desde el principio
+
+Todo lo demás se había contrastado contra la base. Pero las cifras "reales" —Bolt 10, Forget 5, Nurmi 15, Ewry 10 oros— eran el patrón contra el que se medía, y no salían de ninguna consulta: venían de razonar sobre el dato. Se verificaron contra Olympedia el 2026-09-15.
+
+Las cuatro coinciden. La interesante es Nurmi: una fuente secundaria dice que compitió en **12** pruebas y el SP decía **15**. Olympedia resolvió la aparente contradicción — son 15 entradas, de las cuales 3 son DNS, y 12 con medalla. La fuente secundaria contaba solo las que largó.
+
+El SP devuelve `participaciones = 15` y `dns = 3` en el mismo result set, así que sostiene las dos lecturas a la vez.
+
+**Lección:** una cifra propia que coincide con el dato propio no está verificada, solo es consistente. Y cuando dos fuentes discrepan, conviene buscar la primaria antes de suponer que una está mal: acá ninguna lo estaba, contaban cosas distintas.
+
+---
+
 ## 4. Consultas de exploración ejecutadas
 
 | Objetivo | Hallazgo |
@@ -233,10 +404,8 @@ Se detectó también que `disciplina.csv` falla con `ROWTERMINATOR = '0x0a'` en 
 
 ## 6. Verificación final
 
-El procedimiento se ejecutó contra las **20 pruebas** de `pruebas.sql`, todas contra la base vigente. Los resultados están en la sección 6 de `documentacion_d.md`.
+El procedimiento se ejecutó contra las **28 pruebas** de `pruebas.sql`, todas contra la base vigente. Los resultados están en la sección 6 de `documentacion_d.md`.
 
 Además se verificaron las regresiones que exige la revisión final del equipo: Phelps `23/3/2 = 28`, Nurmi 12, Spitz 11, Bolt 8, Messi oro en Beijing 2008 y Barrondo plata en Londres 2012. Las seis coinciden.
-
-Ninguna afirmación de la documentación se escribió sin ejecutar antes la consulta que la respalda.
 
 Ninguna afirmación de la documentación se escribió sin ejecutar antes la consulta que la respalda.
