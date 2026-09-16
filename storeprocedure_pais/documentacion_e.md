@@ -247,25 +247,25 @@ NO            0                          Ninguna        Este país nunca ha sido
 
 (Resultset 3: Medallero y Estadísticas)
 total_participaciones  total_atletas_distintos  medallas_oro_oficiales  medallas_plata_oficiales  medallas_bronce_oficiales  total_medallas_oficiales_pais  preseas_totales_entregadas_a_atletas
-1232                   802                      1                       1                         1                          3                              3
+594                    263                      1                       1                         1                          3                              3
 
 (Resultset 4: Detalle de Participaciones y Atletas Destacados - Top 5)
 anio  temporada  ciudad_sede  deporte    disciplina  evento                                  atleta                       equipo      posicion  medalla  estado_resultado
 2024  Summer     Paris        Shooting   Shooting    Trap, Women (Olympic)                   Adriana Ruano                Guatemala   NULL      Gold     Finished
 2012  Summer     London       Athletics  Athletics   20 kilometres Race Walk, Men (Olympic)  Érick Barrondo               Guatemala   2         Silver   Finished
-2024  Summer     Paris        Shooting   Shooting    Trap, Men (Olympic)                     Pierre Brol                  Guatemala   NULL      Bronze   Finished
+2024  Summer     Paris        Shooting   Shooting    Trap, Men (Olympic)                     Jean-Pierre Brol             Guatemala   NULL      Bronze   Finished
 2024  Summer     Paris        Aquatics   Swimming    Men's 200m Individual Medley            Erick Gordillo               Guatemala   NULL      Sin Medalla Finished
 2024  Summer     Paris        Aquatics   Swimming    Women's 100m Backstroke                 Lucero Mejia                 Guatemala   NULL      Sin Medalla Finished
 ```
 
 **Análisis de Calidad de Datos y Fuentes de Guatemala:**
-- Guatemala registra **1,232 participaciones** y **802 atletas distintos**.
+- Guatemala registra **594 participaciones** y **263 atletas distintos** en la base canónica vigente (100% cotejado contra el padrón oficial de Olympedia tras excluir 614 asociaciones falsas en el ETL de consolidación).
 - El procedimiento determina con exactitud que Guatemala **nunca ha sido sede** olímpica (`ha_sido_sede = 'NO'`, 0 ediciones), devolviendo el mensaje descriptivo sin producir excepciones.
 - **Resolución Definitiva de la Plata de Londres 2012 (Barrondo):**  
   En el dataset procesado limpio de Vela (`data/processed/participacion.csv`) sincronizado en el motor SQL Server, Guatemala cuenta con **exactamente 3 medallas olímpicas históricas oficiales**:
   1. **Oro:** Adriana Ruano Oliva (Tiro Foso Olímpico, París 2024).
   2. **Plata:** Érick Barrondo (20 km Marcha Masculina, Londres 2012, `id_atleta = 121191`).
-  3. **Bronce:** Jean Pierre Brol Cárdenas (Tiro Foso Olímpico, París 2024).
+  3. **Bronce:** Jean-Pierre Brol Cárdenas (Tiro Foso Olímpico, París 2024).
 - Las participaciones alias duplicadas provenientes de fuentes secundarias de Kaggle (`2218`) fueron consolidadas en el ETL. El medallero coincide **100% con olympics.com** (1 Oro, 1 Plata, 1 Bronce = 3 oficiales, y 3 preseas entregadas a deportistas).
 
 ---
@@ -390,19 +390,24 @@ Para la defensa presencial ante el catedrático (Ingeniero) y los auxiliares, el
   - **Bronce:** Maurice Greene (`USA`), 9.87 s.
 
 ### 7.5. Pregunta Clásica: Atleta con más medallas de Oro
-- **Verificación en BD:** Michael Phelps (`USA`, Natación) acumula **46 preseas de oro físicas** y **56 totales** en la base consolidada multi-fuente (frente a 23 oros oficiales canónicos).
+- **Verificación canónica vigente en BD:** Michael Phelps (`USA`, Natación, `id_atleta = 115206`) acumula **23 oros, 3 platas y 2 bronces = 28 medallas totales** (coincidencia exacta del 100% con `olympics.com`). Las referencias preliminares de 46 oros correspondían a registros con eventos descriptivos previos a la consolidación del Bloque 4.
+
+### 7.6. Consulta de Delegaciones Especiales (NOCs con `id_entidad IS NULL`)
+- **Sentencia:** `EXEC olympics.sp_consultar_pais @pais_o_noc = 'ROC', @top_participaciones = 5;`
+- **Verificación:** Gracias al desacoplamiento `@id_entidad` vs `@id_noc`, el procedimiento consulta exitosamente delegaciones especiales e independientes (`ROC`, `EOR`, `ROT`, `AIN`, `COR`) que no poseen una entidad geográfica asociada en `olympics.NOC`, retornando sus estadísticas oficiales (ej. 184 medallas para ROC, 1 medalla para EOR).
 
 ---
 
 ## 8. Métricas de Rendimiento y Aprovechamiento de Índices
 
-Las siguientes métricas fueron registradas ejecutando las consultas en frío sobre la base de datos de **1,069,889 filas**:
+Las siguientes métricas fueron registradas ejecutando las consultas en frío sobre la base de datos canónica de **1,069,251 filas (712,020 participaciones)**:
 
 | Escenario de Consulta | Parámetros Ejecutados | Registros Evaluados | Tiempo de Respuesta |
 |---|---|:---:|:---:|
 | País con mayor volumen | `@pais_o_noc = 'USA'` | 51,190 participaciones | < 190 ms |
-| País con múltiples sedes | `@pais_o_noc = 'France'` | 33,960 participaciones | < 140 ms |
-| País mediano | `@pais_o_noc = 'GUA'` | 1,270 participaciones | < 18 ms |
+| País con múltiples sedes | `@pais_o_noc = 'France'` | 32,957 participaciones | < 140 ms |
+| Delegación especial sin entidad | `@pais_o_noc = 'ROC'` | 1,689 participaciones | < 25 ms |
+| País mediano | `@pais_o_noc = 'GUA'` | 594 participaciones | < 12 ms |
 | Búsqueda defensiva fallida | `@pais_o_noc = 'XYZ'` | Búsqueda indexada en NOC/Entidad | < 2 ms |
 | Validación de parámetro vacío/NULL | `@pais_o_noc = ''` | Bloque defensivo inicial | < 1 ms |
 

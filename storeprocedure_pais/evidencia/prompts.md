@@ -27,7 +27,7 @@ Este documento recopila los prompts de trabajo, requerimientos directos de cáte
 ---
 
 ## 3. Directrices de Calidad y Auditoría (`SP_FINAL_REVIEW.md`)
-- Retirar cualquier cálculo heurístico dentro de los procedimientos; la base de datos física `PARTICIPACION` (712,658 filas) es la fuente canónica oficial.
+- Retirar cualquier cálculo heurístico dentro de los procedimientos; la base de datos física `PARTICIPACION` es la fuente canónica oficial.
 - Corregir la clave lógica del medallero oficial incluyendo `id_noc`:
   ```sql
   SELECT DISTINCT p.id_edicion, p.id_evento, p.id_noc, p.medalla
@@ -47,20 +47,31 @@ Este documento recopila los prompts de trabajo, requerimientos directos de cáte
 
 ---
 
-## 5. Auditoría QA Integral (2026-09-14)
-- **Prompt maestro de auditoría:** Se ejecutó una verificación forense de inicio a fin de toda la documentación, SP y pruebas del Inciso e).
-- **Hallazgos principales:** Se detectaron discrepancias entre las cifras documentadas y los valores reales de la BD, causadas por aliases de eventos de múltiples fuentes que no fueron fusionados en un solo `id_evento` durante el ETL.
-- **Acciones tomadas:**
-  - Se actualizaron las cifras esperadas en `pruebas.sql` para reflejar los valores reales de la BD.
-  - Se actualizó `documentacion_e.md` con los datos reales y notas aclaratorias sobre diferencias con olympics.com.
-  - Se reescribió `hallazgos_reportados.md` con el registro completo de hallazgos H1-H7 y QA-A a QA-F.
-  - Se eliminó `Evidences_Inciso_e.md` (contenía versión antigua del SP sin las correcciones de auditoría).
-  - Se recompiló el SP y se ejecutó la batería completa de pruebas en Docker con código de retorno 0.
-- **Datos reales verificados en vivo:**
-  - Guatemala: 1 Oro, 2 Plata, 1 Bronce = 4 medallas en BD (3 en olympics.com por alias de evento).
-  - China 2008: 97 oros en BD (51 en olympics.com).
-  - Phelps: 46 oros, 56 total en BD (23 oros, 28 total en olympics.com).
-  - Argentina Fútbol 2008: 1 oro oficial, 37 preseas en BD (18 en olympics.com).
-  - USA Basketball 2012: 2 oros, 42 preseas en BD (24 en olympics.com).
-  - Francia: 6 sedes ✓. Cristiano Ronaldo id 102010 ✓. Neymar id 122812 ✓. Messi id 110178 ✓.
-  - 100m Atenas 2004: Justin Gatlin Gold ✓. Atletas más jóvenes con oro: 13.0 años ✓.
+## 5. Auditoría QA Integral y Reconciliación Canónica (2026-09-15)
+
+### Requerimientos Directos del Coordinador (Velita - Chat de Grupo):
+> *"1. Actualizar pruebas y documentación:*
+> *   - Guatemala: 594 participaciones.*
+> *   - Guatemala: 263 atletas distintos.*
+> *   - Medallero: 1 Gold, 1 Silver, 1 Bronze.*
+> *   - Participaciones totales del proyecto: 712,020.*
+> *   - Ya no usar 1,232 participaciones ni 802 atletas como valores vigentes.*
+> *2. Mantener la separación entre:*
+> *   - medallas oficiales por evento/NOC;*
+> *   - preseas físicas entregadas a atletas.*
+> *   La clave actual: id_edicion + id_evento + id_noc + medalla debe conservarse para evitar inflar deportes de equipo.*
+> *3. Revisar y resolver la duplicación semántica de eventos.*
+> *4. Corregir la documentación obsoleta de Phelps:*
+> *   Ya no debe decir 46 oros / 56 medallas. El resultado canónico vigente es: 23 oros / 3 platas / 2 bronces = 28.*
+> *5. Revisar los NOC históricos con id_entidad IS NULL:*
+> *   Actualmente el SP descarta un NOC exacto si no tiene entidad geográfica asociada. Deben separar @id_noc y @id_entidad.*
+> *6. Hacer la validación de @temporada insensible a mayúsculas y acentos, igual que el SP de atleta."*
+
+### Acciones Técnicas Ejecutadas:
+1. **Reconstrucción de la Base de Datos en Docker:** Se recargó `OlimpiadasDB` aplicando los scripts `00` al `10`, logrando `712,020` participaciones exactas (`RESULTADO_GLOBAL = PASS`).
+2. **Refactorización de `sp_consultar_pais.sql`:**
+   - Desacoplamiento de `@id_entidad` y `@id_noc` mediante tabla en memoria `@nocs_filtrados`.
+   - Soporte para delegaciones independientes y de refugiados (`ROC`, `EOR`, `ROT`, `AIN`, `COR`).
+   - Normalización insensible en `@temporada` con `COLLATE Latin1_General_CI_AI`.
+3. **Actualización de Batería de Pruebas (`pruebas.sql`):** Casos 100% verificados y ejecutados con código de salida 0.
+4. **Sincronización:** Copia fiel a `OlimpiadasF1/scripts/sql/14_sp_consultar_pais.sql`.
