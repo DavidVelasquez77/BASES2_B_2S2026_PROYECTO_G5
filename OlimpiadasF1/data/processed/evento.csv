@@ -1,4 +1,4 @@
-id_evento,id_disciplina,nombre
+﻿id_evento,id_disciplina,nombre
 1,96,"Singles, Men (Olympic)"
 2,96,"Doubles, Men (Olympic)"
 3,96,"Doubles, Mixed (Olympic)"
@@ -1637,7 +1637,6 @@ id_evento,id_disciplina,nombre
 2006,6,Swimming Men's 100 metres Freestyle
 2009,60,Modern Pentathlon Men's Individual
 2020,84,Alpine Skiing Women's Slalom
-2028,38,"Equestrianism Mixed Three-Day Event, Team"
 2041,10,Athletics Men's Marathon
 2043,10,"Athletics Men's 10,000 metres"
 2047,10,Athletics Men's 200 metres
@@ -1667,8 +1666,6 @@ id_evento,id_disciplina,nombre
 2189,34,"Cycling Men's Team Pursuit, 4,000 metres"
 2191,6,"Swimming Men's 1,500 metres Freestyle"
 2193,6,Swimming Women's 100 metres Freestyle
-2194,39,"Equestrianism Men's Jumping, Individual"
-2195,39,"Equestrianism Men's Jumping, Team"
 2204,47,Trampolining Women's Individual
 2207,56,Judo Men's Middleweight
 2211,56,Judo Men's Half-Lightweight
@@ -1682,12 +1679,8 @@ id_evento,id_disciplina,nombre
 2250,6,Swimming Women's 200 metres Individual Medley
 2251,77,Sailing Men's Windsurfer
 2257,60,Modern Pentathlon Women's Individual
-2261,36,"Equestrianism Men's Dressage, Individual"
-2262,36,"Equestrianism Men's Dressage, Team"
 2266,79,"Shooting Mixed Small-Bore Rifle, Prone, 50 metres"
 2267,6,Swimming Women's 800 metres Freestyle
-2283,36,"Equestrianism Mixed Dressage, Individual"
-2284,36,"Equestrianism Mixed Dressage, Team"
 2286,6,Swimming Men's 100 metres Breaststroke
 2292,77,Sailing Women's One Person Dinghy
 2294,85,Cross Country Skiing Women's 15 km Skiathlon
@@ -1891,8 +1884,6 @@ id_evento,id_disciplina,nombre
 2814,101,Women's +87kg
 2815,103,Men's Freestyle 65kg
 2816,26,Men's Kayak Single 200m
-2817,39,Jumping Team
-2818,39,Jumping Individual
 2821,104,Men's Greco-Roman 67kg
 2822,22,Men's Fly (48-52kg)
 2823,97,Men's Individual
@@ -1908,8 +1899,6 @@ id_evento,id_disciplina,nombre
 2834,3,Duet Team
 2835,22,Women's Light (57-60kg)
 2836,22,Men's Light Heavy (75-81kg)
-2837,38,Eventing Team
-2838,38,Eventing Individual
 2839,22,Women's Feather (54-57kg)
 2842,22,Men's Feather (52-57kg)
 2843,10,Men's 110m Hurdles
@@ -1981,8 +1970,6 @@ id_evento,id_disciplina,nombre
 2936,6,Men's 200m Backstroke
 2937,96,Mixed Doubles Team
 2939,6,Women's 200m Butterfly
-2942,36,Dressage Team
-2943,36,Dressage Individual
 2944,10,Women's 200m
 2947,6,Women's 1500m Freestyle
 2948,6,Men's 200m Butterfly

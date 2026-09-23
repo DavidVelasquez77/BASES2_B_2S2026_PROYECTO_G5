@@ -1,0 +1,23 @@
+{
+  "etapa": "D",
+  "descripcion": "Homologacion Ecuestre y Fusion de Clones Kaggle",
+  "atletas_previos": 223500,
+  "atletas_finales": 167295,
+  "atletas_eliminados": 56205,
+  "participaciones_previas": 487705,
+  "participaciones_finales": 367796,
+  "participaciones_eliminadas": 119909,
+  "eventos_previos": 2082,
+  "eventos_finales": 2069,
+  "guatemala": {
+    "participaciones": 594,
+    "atletas": 263,
+    "medallas": 3
+  },
+  "leyendas_validadas": {
+    "Usain Bolt": "8 oros",
+    "Michael Phelps": "23 oros, 28 medallas",
+    "Isabell Werth": "8 oros, 6 platas",
+    "Larisa Latynina": "9 oros, 18 medallas"
+  }
+}
