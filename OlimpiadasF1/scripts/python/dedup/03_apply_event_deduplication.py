@@ -178,10 +178,10 @@ def main():
                     best_p["id_noc"] = other["id_noc"]
             retained_parts.append(best_p)
 
-    # 5. Filtrar eventos activos
-    active_event_ids = set(id_to_canon for id_to_canon in event_to_canonical.values())
+    # 5. Filtrar eventos activos (asegurando integridad referencial total para todas las participaciones)
     used_event_ids = {p["id_evento"] for p in retained_parts}
-    retained_event_ids = active_event_ids & used_event_ids
+    canonical_event_ids = set(event_to_canonical.values())
+    retained_event_ids = used_event_ids | canonical_event_ids
 
     retained_events = []
     with (PROCESSED_DIR / "evento.csv").open("r", encoding="utf-8-sig") as f:
@@ -190,11 +190,20 @@ def main():
                 retained_events.append(r)
 
     # 6. Validaciones oficiales estrictas
+    # Integridad referencial
+    retained_e_set = {e["id_evento"] for e in retained_events}
+    missing_event_fks = used_event_ids - retained_e_set
+    if missing_event_fks:
+        raise RuntimeError(f"ABORTADO: Existen {len(missing_event_fks)} eventos en participacion no presentes en evento.csv")
+
     # Guatemala
-    gua_parts = sum(1 for r in retained_parts if r.get("id_noc") == "87")
-    gua_athletes = len({r["id_atleta"] for r in retained_parts if r.get("id_noc") == "87"})
-    if gua_athletes != 263 or gua_parts != 594:
-        raise RuntimeError(f"ABORTADO: Guatemala no coincide (atletas={gua_athletes}, participaciones={gua_parts})")
+    gua_parts = [r for r in retained_parts if r.get("id_noc") == "87"]
+    gua_athletes = len({r["id_atleta"] for r in gua_parts})
+    gua_medals = sum(1 for r in gua_parts if r.get("medalla") in ("Gold", "Silver", "Bronze"))
+    if gua_athletes != 263 or len(gua_parts) != 594:
+        raise RuntimeError(f"ABORTADO: Guatemala no coincide (atletas={gua_athletes}, participaciones={len(gua_parts)})")
+    if gua_medals != 3:
+        raise RuntimeError(f"ABORTADO: Guatemala no tiene 3 medallas (encontradas: {gua_medals})")
 
     # Usain Bolt
     bolt_parts = [r for r in retained_parts if r["id_atleta"] == "104492"]
@@ -207,6 +216,12 @@ def main():
     phelps_medals = Counter(r.get("medalla") for r in phelps_parts if r.get("medalla"))
     if phelps_medals.get("Gold") != 23 or phelps_medals.get("Silver") != 3 or phelps_medals.get("Bronze") != 2:
         raise RuntimeError(f"ABORTADO: Michael Phelps difiere del récord olímpico (medallas={dict(phelps_medals)})")
+
+    # Lionel Messi
+    messi_parts = [r for r in retained_parts if r["id_atleta"] == "110178"]
+    messi_golds = sum(1 for r in messi_parts if r.get("medalla") == "Gold")
+    if len(messi_parts) != 1 or messi_golds != 1:
+        raise RuntimeError(f"ABORTADO: Lionel Messi difiere del registro oficial (participaciones={len(messi_parts)}, oros={messi_golds})")
 
     # 7. Escribir Preview
     PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
@@ -239,9 +254,10 @@ def main():
     print(f"\nAPLICACIÓN DE ETAPA B COMPLETADA CON ÉXITO:")
     print(f"  evento.csv: {len(eventos):,} -> {len(retained_events):,} eventos")
     print(f"  participacion.csv: {total_participations:,} -> {len(retained_parts):,} participaciones")
-    print(f"  Guatemala: {gua_athletes} atletas, {gua_parts} participaciones (100% INTACTA)")
+    print(f"  Guatemala: {gua_athletes} atletas, {len(gua_parts)} participaciones (100% INTACTA)")
     print(f"  Usain Bolt: {len(bolt_parts)} carreras, {bolt_golds} oros (100% fiel al COI / olympics.com)")
     print(f"  Michael Phelps: {len(phelps_parts)} carreras, 28 medallas (23/3/2) (100% fiel al COI)")
+    print(f"  Lionel Messi: {len(messi_parts)} participaciones, {messi_golds} oro (100% fiel al COI)")
 
 if __name__ == "__main__":
     main()
