@@ -420,7 +420,7 @@ BEGIN
             WHEN x.medalla          IS NOT NULL THEN x.medalla
             WHEN x.estado_resultado IS NOT NULL THEN x.estado_resultado
             WHEN x.posicion         IS NOT NULL THEN
-                 CASE WHEN x.empatado = 1 THEN N'=' ELSE N'' END
+                 CASE WHEN CAST(x.empatado AS NVARCHAR(10)) IN (N'True', N'1') THEN N'=' ELSE N'' END
                  + CAST(x.posicion AS NVARCHAR(10)) + N' lugar'
             ELSE N'(sin dato de resultado)'
         END                                         AS resultado,
