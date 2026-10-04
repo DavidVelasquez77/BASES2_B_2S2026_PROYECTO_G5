@@ -124,17 +124,12 @@ Se reutiliza sin cambios el modelo físico validado en la Fase 1: diez tablas
 bajo el esquema `olympics`, con sus llaves primarias, foráneas y restricciones
 de dominio.
 
-El diagrama está en `OlimpiadasF1/docs/ER/ER_P1_G7-Final.pdf`.
+**El diagrama entidad-relación oficial del proyecto es
+`OlimpiadasF1/docs/ER/ER_P1_G7-Final.pdf`**, entregado y aprobado en la Fase 1.
+Esta fase no lo modifica: se adjunta ese mismo archivo.
 
-```
-ENTIDAD_GEOGRAFICA ──┬── NOC ──────────────┐
-                     ├── SEDE ── EDICION_OLIMPICA ──┐
-                     └── ATLETA ───────────────┐    │
-                                               │    │
-DEPORTE ── DISCIPLINA ── EVENTO ───────────────┼────┼──► PARTICIPACION
-                                               │    │
-ENTIDAD_GEOGRAFICA ── POBLACION                │    │
-```
+Las diez tablas son `ENTIDAD_GEOGRAFICA`, `DEPORTE`, `NOC`, `ATLETA`, `SEDE`,
+`EDICION_OLIMPICA`, `DISCIPLINA`, `EVENTO`, `POBLACION` y `PARTICIPACION`.
 
 `PARTICIPACION` es la tabla de hechos: cada fila es un atleta compitiendo en un
 evento de una edición, con su resultado y su medalla. Las nueve restantes son
