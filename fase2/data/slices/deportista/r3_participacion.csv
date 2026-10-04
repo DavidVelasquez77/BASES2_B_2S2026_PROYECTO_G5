@@ -1,0 +1,4 @@
+id_participacion,id_atleta,id_edicion,id_evento,id_noc,id_pais_nacionalidad,equipo,nombre_competencia,edad,altura_cm_registrada,peso_kg_registrado,posicion,empatado,estado_resultado,medalla
+228032,104492,50,43,106,,Jamaica,Usain Bolt,25,196,95,1,0,,Gold
+228033,104492,50,467,106,,,Usain Bolt,,,,1,0,,Gold
+228034,104492,50,400,106,,Jamaica,Usain Bolt,,,,1,0,,Gold

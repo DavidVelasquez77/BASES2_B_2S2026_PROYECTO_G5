@@ -1,0 +1,34 @@
+﻿{
+    "tipo":  "anio",
+    "base":  "OlimpiadasF2_Anio",
+    "atletas":  34250,
+    "participaciones":  58317,
+    "comprimido":  false,
+    "fecha":  "2026-10-04 00:59:52",
+    "puntos":  [
+                   {
+                       "respaldo":  "FULL",
+                       "descripcion":  "solo catalogos (estado inmediatamente posterior a la carga inicial)",
+                       "atletas":  0,
+                       "participaciones":  0
+                   },
+                   {
+                       "respaldo":  "DIFF_1",
+                       "descripcion":  "estado acumulado despues de la carga r1",
+                       "atletas":  12305,
+                       "participaciones":  15118
+                   },
+                   {
+                       "respaldo":  "DIFF_2",
+                       "descripcion":  "estado acumulado despues de la carga r2",
+                       "atletas":  26621,
+                       "participaciones":  43547
+                   },
+                   {
+                       "respaldo":  "DIFF_3",
+                       "descripcion":  "estado acumulado despues de la carga r3",
+                       "atletas":  34250,
+                       "participaciones":  58317
+                   }
+               ]
+}

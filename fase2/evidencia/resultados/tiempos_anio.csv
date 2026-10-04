@@ -1,0 +1,5 @@
+﻿"tipo","estrategia","respaldo","descripcion","atletas","participaciones","ms_full","ms_diferencial","ms_total","repeticiones","mediciones_full_ms","mediciones_diff_ms"
+"anio","FULL","FULL","solo catalogos (estado inmediatamente posterior a la carga inicial)","0","0","442","0","442","3","462 437 442",""
+"anio","FULL + DIFF_1","DIFF_1","estado acumulado despues de la carga r1","12305","15118","189","475","664","3","189 185 202","475 490 438"
+"anio","FULL + DIFF_2","DIFF_2","estado acumulado despues de la carga r2","26621","43547","202","554","756","3","197 259 202","554 527 653"
+"anio","FULL + DIFF_3","DIFF_3","estado acumulado despues de la carga r3","34250","58317","202","533","735","3","205 202 185","591 533 470"

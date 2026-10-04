@@ -1,0 +1,1004 @@
+﻿
+==============================================================================
+  FASE 3 - RESTAURACION DE DEPORTISTA  ->  base OlimpiadasF2_Deportista
+==============================================================================
+[2026-09-29 22:27:37] Log: C:\Users\valer\OneDrive\Desktop\SBD2\BASES2_B_2S2026_PROYECTO_G7\fase2\evidencia\logs\restauracion_deportista_20260929_222737.log
+[2026-09-29 22:27:37] Repeticiones por medicion: 3
+[2026-09-29 22:27:37] Puntos de restauracion declarados: 4
+
+==============================================================================
+  RESTAURACION: FULL   (solo catalogos (estado inmediatamente posterior a la carga inicial))
+==============================================================================
+[2026-09-29 22:27:37] Repeticion 1 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=7
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:37.6361252
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:37.6361252
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo RECOVERY - 2026-09-30 04:27:37.8424608
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.025 seconds (210.468 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|RECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:37.842|2026-09-30 04:27:38.295|453
+02_restaurar_full.sql finalizado.
+
+[2026-09-29 22:27:38] Repeticion 2 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=0 participaciones=0
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:38.5593736
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:38.5634926
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo RECOVERY - 2026-09-30 04:27:38.7572135
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.033 seconds (159.446 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|RECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:38.757|2026-09-30 04:27:39.248|491
+02_restaurar_full.sql finalizado.
+
+[2026-09-29 22:27:39] Repeticion 3 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=0 participaciones=0
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:39.4991359
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:39.5032921
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo RECOVERY - 2026-09-30 04:27:39.7178205
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.028 seconds (187.918 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|RECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:39.718|2026-09-30 04:27:40.150|432
+02_restaurar_full.sql finalizado.
+
+[2026-09-29 22:27:40] Tiempos FULL (ms): 453, 491, 432  -> mediana 453
+[2026-09-29 22:27:40] TOTAL mediana: 453 ms
+
+==============================================================================
+  VALIDACION de FULL
+==============================================================================
+Changed database context to 'OlimpiadasF2_Deportista'.
+base|servidor|fecha_hora_servidor|modelo_recuperacion|estado
+----|--------|-------------------|-------------------|------
+OlimpiadasF2_Deportista|e1c7ee9abb28|2026-09-30 04:27:40.4321662|SIMPLE|ONLINE
+tabla|filas
+-----|-----
+ATLETA|0
+DEPORTE|65
+DISCIPLINA|117
+EDICION_OLIMPICA|61
+ENTIDAD_GEOGRAFICA|282
+EVENTO|2069
+NOC|236
+PARTICIPACION|0
+POBLACION|17024
+SEDE|42
+total_filas_en_la_base
+----------------------
+19896
+id_entidad|nombre|codigo_pais
+----------|------|-----------
+1|Antigua|NULL
+2|Bahamas|NULL
+3|Cook Islands|NULL
+4|Czech Republic|NULL
+5|Gambia|NULL
+6|Individual Olympic Athletes|NULL
+7|NA|NULL
+8|Palestine|NULL
+9|Republic of Congo|NULL
+10|Saint Kitts|NULL
+id_deporte|nombre
+----------|------
+1|Aeronautics
+2|Air Sports
+3|Aquatics
+4|Archery
+5|Art Competitions
+6|Athletics
+7|Australian Rules Football
+8|Badminton
+9|Bandy
+10|Baseball/Softball
+id_noc|codigo_noc|nombre_noc|id_entidad|notas
+------|----------|----------|----------|-----
+1|AFG|Afghanistan|19|NULL
+2|AHO|Curacao|68|Netherlands Antilles
+3|AIN|NULL|NULL|NULL
+4|ALB|Albania|22|NULL
+5|ALG|Algeria|77|NULL
+6|AND|Andorra|23|NULL
+7|ANG|Angola|21|NULL
+8|ANT|Antigua|1|Antigua and Barbuda
+9|ANZ|Australia|30|Australasia
+10|ARG|Argentina|26|NULL
+id_sede|nombre|id_pais
+-------|------|-------
+1|Athina|106
+2|Paris|94
+3|St. Louis|268
+4|London|98
+5|Stockholm|240
+6|Antwerpen|34
+7|Chamonix|94
+8|Amsterdam|193
+9|Sankt Moritz|54
+10|Los Angeles|268
+id_edicion|anio|temporada|id_sede
+----------|----|---------|-------
+1|1896|Summer|1
+2|1900|Summer|2
+3|1904|Summer|3
+4|1906|Intercalated Games|1
+5|1908|Summer|4
+6|1912|Summer|5
+7|1920|Summer|6
+8|1924|Summer|2
+9|1924|Winter|7
+10|1928|Summer|8
+id_disciplina|id_deporte|nombre
+-------------|----------|------
+1|1|Aeronautics
+2|2|Ballooning
+3|3|Artistic Swimming
+4|3|Diving
+5|3|Marathon Swimming
+6|3|Swimming
+7|3|Water Polo
+8|4|Archery
+9|5|Art Competitions
+10|6|Athletics
+id_evento|id_disciplina|nombre
+---------|-------------|------
+1|96|Singles, Men (Olympic)
+2|96|Doubles, Men (Olympic)
+3|96|Doubles, Mixed (Olympic)
+4|94|Singles, Men (Olympic)
+5|94|Doubles, Men (Olympic)
+6|96|Singles, Handicap, Men (Olympic (non-medal))
+7|96|Doubles, Handicap, Men (Olympic (non-medal))
+8|41|Épée, Individual, Men (Olympic)
+9|41|Tennis
+10|41|Doubles, Men (Olympic)
+id_entidad|anio|poblacion
+----------|----|---------
+17|1960|54608
+17|1961|55811
+17|1962|56682
+17|1963|57475
+17|1964|58178
+17|1965|58782
+17|1966|59291
+17|1967|59522
+17|1968|59471
+17|1969|59330
+id_atleta|nombre|nombre_completo|nombre_usado|nombre_original|otros_nombres|apodos|orden_nombre|sexo|fecha_nacimiento|ciudad_nacimiento|region_nacimiento|id_pais_nacimiento|id_pais_nacionalidad|fecha_fallecimiento|ciudad_fallecimiento|region_fallecimiento|id_pais_fallecimiento|altura_cm|peso_kg|roles|afiliaciones|titulos|latitud|longitud
+---------|------|---------------|------------|---------------|-------------|------|------------|----|----------------|-----------------|-----------------|------------------|--------------------|-------------------|--------------------|--------------------|---------------------|---------|-------|-----|------------|-------|-------|--------
+id_participacion|id_atleta|id_edicion|id_evento|id_noc|id_pais_nacionalidad|equipo|nombre_competencia|edad|altura_cm_registrada|peso_kg_registrado|posicion|empatado|estado_resultado|medalla
+----------------|---------|----------|---------|------|--------------------|------|------------------|----|--------------------|------------------|--------|--------|----------------|-------
+01_conteos_y_muestra.sql finalizado.
+
+Changed database context to 'OlimpiadasF2_Deportista'.
+tabla|filas_encontradas|filas_esperadas|resultado
+-----|-----------------|---------------|---------
+ATLETA|0|0|OK
+PARTICIPACION|0|0|OK
+huerfanos_atleta|huerfanos_edicion|huerfanos_evento|huerfanos_noc|resultado
+----------------|-----------------|----------------|-------------|---------
+0|0|0|0|OK
+Integridad verificada en OlimpiadasF2_Deportista: conteos y referencias correctos a las 2026-09-30 04:27:40.8052333
+03_alerta_integridad.sql finalizado.
+
+[2026-09-29 22:27:41] Integridad correcta: 0 atletas, 0 participaciones
+
+==============================================================================
+  RESTAURACION: FULL + DIFF_1   (estado acumulado despues de la carga r1)
+==============================================================================
+[2026-09-29 22:27:41] Repeticion 1 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=0 participaciones=0
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:41.3940845
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:41.3981749
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:41.6168974
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.028 seconds (187.918 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:41.617|2026-09-30 04:27:41.814|197
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 1 a OlimpiadasF2_Deportista - 2026-09-30 04:27:42.0457100
+25 percent processed.
+51 percent processed.
+77 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.019 seconds (56.537 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 1|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_1.bak|2026-09-30 04:27:42.046|2026-09-30 04:27:42.510|464
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:42] Repeticion 2 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=1
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:42.8161343
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:42.8161343
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:43.0556779
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.029 seconds (181.438 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:43.056|2026-09-30 04:27:43.265|209
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 1 a OlimpiadasF2_Deportista - 2026-09-30 04:27:43.5009830
+25 percent processed.
+51 percent processed.
+77 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.022 seconds (48.828 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 1|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_1.bak|2026-09-30 04:27:43.501|2026-09-30 04:27:43.950|449
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:43] Repeticion 3 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=1
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:44.1976194
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:44.1976194
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:44.4080032
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.029 seconds (181.438 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:44.408|2026-09-30 04:27:44.605|197
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 1 a OlimpiadasF2_Deportista - 2026-09-30 04:27:44.8000874
+25 percent processed.
+51 percent processed.
+77 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.022 seconds (48.828 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 1|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_1.bak|2026-09-30 04:27:44.800|2026-09-30 04:27:45.282|482
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:45] Tiempos FULL (ms): 197, 209, 197  -> mediana 197
+[2026-09-29 22:27:45] Tiempos DIFF (ms): 464, 449, 482  -> mediana 464
+[2026-09-29 22:27:45] TOTAL mediana: 661 ms
+
+==============================================================================
+  VALIDACION de FULL + DIFF_1
+==============================================================================
+Changed database context to 'OlimpiadasF2_Deportista'.
+base|servidor|fecha_hora_servidor|modelo_recuperacion|estado
+----|--------|-------------------|-------------------|------
+OlimpiadasF2_Deportista|e1c7ee9abb28|2026-09-30 04:27:45.5492315|SIMPLE|ONLINE
+tabla|filas
+-----|-----
+ATLETA|1
+DEPORTE|65
+DISCIPLINA|117
+EDICION_OLIMPICA|61
+ENTIDAD_GEOGRAFICA|282
+EVENTO|2069
+NOC|236
+PARTICIPACION|1
+POBLACION|17024
+SEDE|42
+total_filas_en_la_base
+----------------------
+19898
+id_entidad|nombre|codigo_pais
+----------|------|-----------
+1|Antigua|NULL
+2|Bahamas|NULL
+3|Cook Islands|NULL
+4|Czech Republic|NULL
+5|Gambia|NULL
+6|Individual Olympic Athletes|NULL
+7|NA|NULL
+8|Palestine|NULL
+9|Republic of Congo|NULL
+10|Saint Kitts|NULL
+id_deporte|nombre
+----------|------
+1|Aeronautics
+2|Air Sports
+3|Aquatics
+4|Archery
+5|Art Competitions
+6|Athletics
+7|Australian Rules Football
+8|Badminton
+9|Bandy
+10|Baseball/Softball
+id_noc|codigo_noc|nombre_noc|id_entidad|notas
+------|----------|----------|----------|-----
+1|AFG|Afghanistan|19|NULL
+2|AHO|Curacao|68|Netherlands Antilles
+3|AIN|NULL|NULL|NULL
+4|ALB|Albania|22|NULL
+5|ALG|Algeria|77|NULL
+6|AND|Andorra|23|NULL
+7|ANG|Angola|21|NULL
+8|ANT|Antigua|1|Antigua and Barbuda
+9|ANZ|Australia|30|Australasia
+10|ARG|Argentina|26|NULL
+id_sede|nombre|id_pais
+-------|------|-------
+1|Athina|106
+2|Paris|94
+3|St. Louis|268
+4|London|98
+5|Stockholm|240
+6|Antwerpen|34
+7|Chamonix|94
+8|Amsterdam|193
+9|Sankt Moritz|54
+10|Los Angeles|268
+id_edicion|anio|temporada|id_sede
+----------|----|---------|-------
+1|1896|Summer|1
+2|1900|Summer|2
+3|1904|Summer|3
+4|1906|Intercalated Games|1
+5|1908|Summer|4
+6|1912|Summer|5
+7|1920|Summer|6
+8|1924|Summer|2
+9|1924|Winter|7
+10|1928|Summer|8
+id_disciplina|id_deporte|nombre
+-------------|----------|------
+1|1|Aeronautics
+2|2|Ballooning
+3|3|Artistic Swimming
+4|3|Diving
+5|3|Marathon Swimming
+6|3|Swimming
+7|3|Water Polo
+8|4|Archery
+9|5|Art Competitions
+10|6|Athletics
+id_evento|id_disciplina|nombre
+---------|-------------|------
+1|96|Singles, Men (Olympic)
+2|96|Doubles, Men (Olympic)
+3|96|Doubles, Mixed (Olympic)
+4|94|Singles, Men (Olympic)
+5|94|Doubles, Men (Olympic)
+6|96|Singles, Handicap, Men (Olympic (non-medal))
+7|96|Doubles, Handicap, Men (Olympic (non-medal))
+8|41|Épée, Individual, Men (Olympic)
+9|41|Tennis
+10|41|Doubles, Men (Olympic)
+id_entidad|anio|poblacion
+----------|----|---------
+17|1960|54608
+17|1961|55811
+17|1962|56682
+17|1963|57475
+17|1964|58178
+17|1965|58782
+17|1966|59291
+17|1967|59522
+17|1968|59471
+17|1969|59330
+id_atleta|nombre|nombre_completo|nombre_usado|nombre_original|otros_nombres|apodos|orden_nombre|sexo|fecha_nacimiento|ciudad_nacimiento|region_nacimiento|id_pais_nacimiento|id_pais_nacionalidad|fecha_fallecimiento|ciudad_fallecimiento|region_fallecimiento|id_pais_fallecimiento|altura_cm|peso_kg|roles|afiliaciones|titulos|latitud|longitud
+---------|------|---------------|------------|---------------|-------------|------|------------|----|----------------|-----------------|-----------------|------------------|--------------------|-------------------|--------------------|--------------------|---------------------|---------|-------|-----|------------|-------|-------|--------
+104492|Usain Bolt|Usain St. Leo Bolt|Usain•Bolt|NULL|NULL|Lightning Bolt|NULL|Male|1986-08-21|Sherwood Content|Trelawny|134|NULL|NULL|NULL|NULL|NULL|196.00|95.00|Competed in Olympic Games • Other|Racers Track Club, Kingston (JAM)|NULL|NULL|NULL
+id_participacion|id_atleta|id_edicion|id_evento|id_noc|id_pais_nacionalidad|equipo|nombre_competencia|edad|altura_cm_registrada|peso_kg_registrado|posicion|empatado|estado_resultado|medalla
+----------------|---------|----------|---------|------|--------------------|------|------------------|----|--------------------|------------------|--------|--------|----------------|-------
+228028|104492|45|467|106|NULL|NULL|Usain Bolt|NULL|NULL|NULL|5|0|NULL|NULL
+01_conteos_y_muestra.sql finalizado.
+
+Changed database context to 'OlimpiadasF2_Deportista'.
+tabla|filas_encontradas|filas_esperadas|resultado
+-----|-----------------|---------------|---------
+ATLETA|1|1|OK
+PARTICIPACION|1|1|OK
+huerfanos_atleta|huerfanos_edicion|huerfanos_evento|huerfanos_noc|resultado
+----------------|-----------------|----------------|-------------|---------
+0|0|0|0|OK
+Integridad verificada en OlimpiadasF2_Deportista: conteos y referencias correctos a las 2026-09-30 04:27:45.8218552
+03_alerta_integridad.sql finalizado.
+
+[2026-09-29 22:27:46] Integridad correcta: 1 atletas, 1 participaciones
+
+==============================================================================
+  RESTAURACION: FULL + DIFF_2   (estado acumulado despues de la carga r2)
+==============================================================================
+[2026-09-29 22:27:46] Repeticion 1 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=1
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:46.3266120
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:46.3266120
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:46.5252397
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.035 seconds (150.334 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:46.525|2026-09-30 04:27:46.747|222
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 2 a OlimpiadasF2_Deportista - 2026-09-30 04:27:46.9994360
+26 percent processed.
+52 percent processed.
+79 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.018 seconds (59.678 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 2|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_2.bak|2026-09-30 04:27:46.999|2026-09-30 04:27:47.533|534
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:47] Repeticion 2 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=4
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:47.8722733
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:47.8722733
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:48.0874631
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.031 seconds (169.732 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:48.087|2026-09-30 04:27:48.314|227
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 2 a OlimpiadasF2_Deportista - 2026-09-30 04:27:48.5242462
+26 percent processed.
+52 percent processed.
+79 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.020 seconds (53.710 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 2|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_2.bak|2026-09-30 04:27:48.524|2026-09-30 04:27:48.973|449
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:48] Repeticion 3 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=4
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:49.2375800
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:49.2375800
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:49.4972706
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.032 seconds (164.428 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:49.497|2026-09-30 04:27:49.703|206
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 2 a OlimpiadasF2_Deportista - 2026-09-30 04:27:49.9457559
+26 percent processed.
+52 percent processed.
+79 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.018 seconds (59.678 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 2|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_2.bak|2026-09-30 04:27:49.946|2026-09-30 04:27:50.398|452
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:50] Tiempos FULL (ms): 222, 227, 206  -> mediana 222
+[2026-09-29 22:27:50] Tiempos DIFF (ms): 534, 449, 452  -> mediana 452
+[2026-09-29 22:27:50] TOTAL mediana: 674 ms
+
+==============================================================================
+  VALIDACION de FULL + DIFF_2
+==============================================================================
+Changed database context to 'OlimpiadasF2_Deportista'.
+base|servidor|fecha_hora_servidor|modelo_recuperacion|estado
+----|--------|-------------------|-------------------|------
+OlimpiadasF2_Deportista|e1c7ee9abb28|2026-09-30 04:27:50.6555882|SIMPLE|ONLINE
+tabla|filas
+-----|-----
+ATLETA|1
+DEPORTE|65
+DISCIPLINA|117
+EDICION_OLIMPICA|61
+ENTIDAD_GEOGRAFICA|282
+EVENTO|2069
+NOC|236
+PARTICIPACION|4
+POBLACION|17024
+SEDE|42
+total_filas_en_la_base
+----------------------
+19901
+id_entidad|nombre|codigo_pais
+----------|------|-----------
+1|Antigua|NULL
+2|Bahamas|NULL
+3|Cook Islands|NULL
+4|Czech Republic|NULL
+5|Gambia|NULL
+6|Individual Olympic Athletes|NULL
+7|NA|NULL
+8|Palestine|NULL
+9|Republic of Congo|NULL
+10|Saint Kitts|NULL
+id_deporte|nombre
+----------|------
+1|Aeronautics
+2|Air Sports
+3|Aquatics
+4|Archery
+5|Art Competitions
+6|Athletics
+7|Australian Rules Football
+8|Badminton
+9|Bandy
+10|Baseball/Softball
+id_noc|codigo_noc|nombre_noc|id_entidad|notas
+------|----------|----------|----------|-----
+1|AFG|Afghanistan|19|NULL
+2|AHO|Curacao|68|Netherlands Antilles
+3|AIN|NULL|NULL|NULL
+4|ALB|Albania|22|NULL
+5|ALG|Algeria|77|NULL
+6|AND|Andorra|23|NULL
+7|ANG|Angola|21|NULL
+8|ANT|Antigua|1|Antigua and Barbuda
+9|ANZ|Australia|30|Australasia
+10|ARG|Argentina|26|NULL
+id_sede|nombre|id_pais
+-------|------|-------
+1|Athina|106
+2|Paris|94
+3|St. Louis|268
+4|London|98
+5|Stockholm|240
+6|Antwerpen|34
+7|Chamonix|94
+8|Amsterdam|193
+9|Sankt Moritz|54
+10|Los Angeles|268
+id_edicion|anio|temporada|id_sede
+----------|----|---------|-------
+1|1896|Summer|1
+2|1900|Summer|2
+3|1904|Summer|3
+4|1906|Intercalated Games|1
+5|1908|Summer|4
+6|1912|Summer|5
+7|1920|Summer|6
+8|1924|Summer|2
+9|1924|Winter|7
+10|1928|Summer|8
+id_disciplina|id_deporte|nombre
+-------------|----------|------
+1|1|Aeronautics
+2|2|Ballooning
+3|3|Artistic Swimming
+4|3|Diving
+5|3|Marathon Swimming
+6|3|Swimming
+7|3|Water Polo
+8|4|Archery
+9|5|Art Competitions
+10|6|Athletics
+id_evento|id_disciplina|nombre
+---------|-------------|------
+1|96|Singles, Men (Olympic)
+2|96|Doubles, Men (Olympic)
+3|96|Doubles, Mixed (Olympic)
+4|94|Singles, Men (Olympic)
+5|94|Doubles, Men (Olympic)
+6|96|Singles, Handicap, Men (Olympic (non-medal))
+7|96|Doubles, Handicap, Men (Olympic (non-medal))
+8|41|Épée, Individual, Men (Olympic)
+9|41|Tennis
+10|41|Doubles, Men (Olympic)
+id_entidad|anio|poblacion
+----------|----|---------
+17|1960|54608
+17|1961|55811
+17|1962|56682
+17|1963|57475
+17|1964|58178
+17|1965|58782
+17|1966|59291
+17|1967|59522
+17|1968|59471
+17|1969|59330
+id_atleta|nombre|nombre_completo|nombre_usado|nombre_original|otros_nombres|apodos|orden_nombre|sexo|fecha_nacimiento|ciudad_nacimiento|region_nacimiento|id_pais_nacimiento|id_pais_nacionalidad|fecha_fallecimiento|ciudad_fallecimiento|region_fallecimiento|id_pais_fallecimiento|altura_cm|peso_kg|roles|afiliaciones|titulos|latitud|longitud
+---------|------|---------------|------------|---------------|-------------|------|------------|----|----------------|-----------------|-----------------|------------------|--------------------|-------------------|--------------------|--------------------|---------------------|---------|-------|-----|------------|-------|-------|--------
+104492|Usain Bolt|Usain St. Leo Bolt|Usain•Bolt|NULL|NULL|Lightning Bolt|NULL|Male|1986-08-21|Sherwood Content|Trelawny|134|NULL|NULL|NULL|NULL|NULL|196.00|95.00|Competed in Olympic Games • Other|Racers Track Club, Kingston (JAM)|NULL|NULL|NULL
+id_participacion|id_atleta|id_edicion|id_evento|id_noc|id_pais_nacionalidad|equipo|nombre_competencia|edad|altura_cm_registrada|peso_kg_registrado|posicion|empatado|estado_resultado|medalla
+----------------|---------|----------|---------|------|--------------------|------|------------------|----|--------------------|------------------|--------|--------|----------------|-------
+228028|104492|45|467|106|NULL|NULL|Usain Bolt|NULL|NULL|NULL|5|0|NULL|NULL
+228029|104492|47|43|106|NULL|Jamaica|Usain Bolt|21.00|196.00|95.0000000000000|1|0|NULL|Gold
+228030|104492|47|467|106|NULL|NULL|Usain Bolt|NULL|NULL|NULL|1|0|NULL|Gold
+228031|104492|47|400|106|NULL|Jamaica|Usain Bolt|NULL|NULL|NULL|NULL|0|NULL|NULL
+01_conteos_y_muestra.sql finalizado.
+
+Changed database context to 'OlimpiadasF2_Deportista'.
+tabla|filas_encontradas|filas_esperadas|resultado
+-----|-----------------|---------------|---------
+ATLETA|1|1|OK
+PARTICIPACION|4|4|OK
+huerfanos_atleta|huerfanos_edicion|huerfanos_evento|huerfanos_noc|resultado
+----------------|-----------------|----------------|-------------|---------
+0|0|0|0|OK
+Integridad verificada en OlimpiadasF2_Deportista: conteos y referencias correctos a las 2026-09-30 04:27:50.9731301
+03_alerta_integridad.sql finalizado.
+
+[2026-09-29 22:27:51] Integridad correcta: 1 atletas, 4 participaciones
+
+==============================================================================
+  RESTAURACION: FULL + DIFF_3   (estado acumulado despues de la carga r3)
+==============================================================================
+[2026-09-29 22:27:51] Repeticion 1 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=4
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:51.4346510
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:51.4346510
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:51.6956661
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.033 seconds (159.446 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:51.696|2026-09-30 04:27:51.912|216
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 3 a OlimpiadasF2_Deportista - 2026-09-30 04:27:52.1503737
+26 percent processed.
+52 percent processed.
+79 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.020 seconds (53.710 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 3|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_3.bak|2026-09-30 04:27:52.150|2026-09-30 04:27:52.595|445
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:52] Repeticion 2 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=7
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:52.8428095
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:52.8428095
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:53.0622218
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.030 seconds (175.390 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:53.062|2026-09-30 04:27:53.268|206
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 3 a OlimpiadasF2_Deportista - 2026-09-30 04:27:53.4817585
+26 percent processed.
+52 percent processed.
+79 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.020 seconds (53.710 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 3|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_3.bak|2026-09-30 04:27:53.482|2026-09-30 04:27:53.930|448
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:53] Repeticion 3 de 3
+Changed database context to 'master'.
+Estado antes de eliminar: atletas=1 participaciones=7
+Base OlimpiadasF2_Deportista eliminada a las 2026-09-30 04:27:54.2182340
+base|estado|momento
+----|------|-------
+OlimpiadasF2_Deportista|ELIMINADA|2026-09-30 04:27:54.2182340
+01_eliminar_base.sql finalizado.
+
+Changed database context to 'master'.
+Restaurando FULL de OlimpiadasF2_Deportista en modo NORECOVERY - 2026-09-30 04:27:54.4288037
+25 percent processed.
+51 percent processed.
+75 percent processed.
+100 percent processed.
+Processed 672 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 674 pages in 0.030 seconds (175.390 MB/sec).
+operacion|base|modo|archivo|inicio|fin|duracion_ms
+---------|----|----|-------|------|---|-----------
+RESTORE FULL|OlimpiadasF2_Deportista|NORECOVERY|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_FULL.bak|2026-09-30 04:27:54.429|2026-09-30 04:27:54.626|197
+02_restaurar_full.sql finalizado.
+
+Changed database context to 'master'.
+Aplicando DIFERENCIAL 3 a OlimpiadasF2_Deportista - 2026-09-30 04:27:54.8322779
+26 percent processed.
+52 percent processed.
+79 percent processed.
+100 percent processed.
+Processed 136 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista' on file 1.
+Processed 2 pages for database 'OlimpiadasF2_Deportista', file 'OlimpiadasF2_Deportista_log' on file 1.
+RESTORE DATABASE successfully processed 138 pages in 0.016 seconds (67.138 MB/sec).
+operacion|base|archivo|inicio|fin|duracion_ms
+---------|----|-------|------|---|-----------
+RESTORE DIFERENCIAL 3|OlimpiadasF2_Deportista|/var/opt/mssql/fase2/backups/OlimpiadasF2_Deportista_DIFF_3.bak|2026-09-30 04:27:54.832|2026-09-30 04:27:55.264|432
+03_restaurar_diferencial.sql finalizado.
+
+[2026-09-29 22:27:55] Tiempos FULL (ms): 216, 206, 197  -> mediana 206
+[2026-09-29 22:27:55] Tiempos DIFF (ms): 445, 448, 432  -> mediana 445
+[2026-09-29 22:27:55] TOTAL mediana: 651 ms
+
+==============================================================================
+  VALIDACION de FULL + DIFF_3
+==============================================================================
+Changed database context to 'OlimpiadasF2_Deportista'.
+base|servidor|fecha_hora_servidor|modelo_recuperacion|estado
+----|--------|-------------------|-------------------|------
+OlimpiadasF2_Deportista|e1c7ee9abb28|2026-09-30 04:27:55.5738585|SIMPLE|ONLINE
+tabla|filas
+-----|-----
+ATLETA|1
+DEPORTE|65
+DISCIPLINA|117
+EDICION_OLIMPICA|61
+ENTIDAD_GEOGRAFICA|282
+EVENTO|2069
+NOC|236
+PARTICIPACION|7
+POBLACION|17024
+SEDE|42
+total_filas_en_la_base
+----------------------
+19904
+id_entidad|nombre|codigo_pais
+----------|------|-----------
+1|Antigua|NULL
+2|Bahamas|NULL
+3|Cook Islands|NULL
+4|Czech Republic|NULL
+5|Gambia|NULL
+6|Individual Olympic Athletes|NULL
+7|NA|NULL
+8|Palestine|NULL
+9|Republic of Congo|NULL
+10|Saint Kitts|NULL
+id_deporte|nombre
+----------|------
+1|Aeronautics
+2|Air Sports
+3|Aquatics
+4|Archery
+5|Art Competitions
+6|Athletics
+7|Australian Rules Football
+8|Badminton
+9|Bandy
+10|Baseball/Softball
+id_noc|codigo_noc|nombre_noc|id_entidad|notas
+------|----------|----------|----------|-----
+1|AFG|Afghanistan|19|NULL
+2|AHO|Curacao|68|Netherlands Antilles
+3|AIN|NULL|NULL|NULL
+4|ALB|Albania|22|NULL
+5|ALG|Algeria|77|NULL
+6|AND|Andorra|23|NULL
+7|ANG|Angola|21|NULL
+8|ANT|Antigua|1|Antigua and Barbuda
+9|ANZ|Australia|30|Australasia
+10|ARG|Argentina|26|NULL
+id_sede|nombre|id_pais
+-------|------|-------
+1|Athina|106
+2|Paris|94
+3|St. Louis|268
+4|London|98
+5|Stockholm|240
+6|Antwerpen|34
+7|Chamonix|94
+8|Amsterdam|193
+9|Sankt Moritz|54
+10|Los Angeles|268
+id_edicion|anio|temporada|id_sede
+----------|----|---------|-------
+1|1896|Summer|1
+2|1900|Summer|2
+3|1904|Summer|3
+4|1906|Intercalated Games|1
+5|1908|Summer|4
+6|1912|Summer|5
+7|1920|Summer|6
+8|1924|Summer|2
+9|1924|Winter|7
+10|1928|Summer|8
+id_disciplina|id_deporte|nombre
+-------------|----------|------
+1|1|Aeronautics
+2|2|Ballooning
+3|3|Artistic Swimming
+4|3|Diving
+5|3|Marathon Swimming
+6|3|Swimming
+7|3|Water Polo
+8|4|Archery
+9|5|Art Competitions
+10|6|Athletics
+id_evento|id_disciplina|nombre
+---------|-------------|------
+1|96|Singles, Men (Olympic)
+2|96|Doubles, Men (Olympic)
+3|96|Doubles, Mixed (Olympic)
+4|94|Singles, Men (Olympic)
+5|94|Doubles, Men (Olympic)
+6|96|Singles, Handicap, Men (Olympic (non-medal))
+7|96|Doubles, Handicap, Men (Olympic (non-medal))
+8|41|Épée, Individual, Men (Olympic)
+9|41|Tennis
+10|41|Doubles, Men (Olympic)
+id_entidad|anio|poblacion
+----------|----|---------
+17|1960|54608
+17|1961|55811
+17|1962|56682
+17|1963|57475
+17|1964|58178
+17|1965|58782
+17|1966|59291
+17|1967|59522
+17|1968|59471
+17|1969|59330
+id_atleta|nombre|nombre_completo|nombre_usado|nombre_original|otros_nombres|apodos|orden_nombre|sexo|fecha_nacimiento|ciudad_nacimiento|region_nacimiento|id_pais_nacimiento|id_pais_nacionalidad|fecha_fallecimiento|ciudad_fallecimiento|region_fallecimiento|id_pais_fallecimiento|altura_cm|peso_kg|roles|afiliaciones|titulos|latitud|longitud
+---------|------|---------------|------------|---------------|-------------|------|------------|----|----------------|-----------------|-----------------|------------------|--------------------|-------------------|--------------------|--------------------|---------------------|---------|-------|-----|------------|-------|-------|--------
+104492|Usain Bolt|Usain St. Leo Bolt|Usain•Bolt|NULL|NULL|Lightning Bolt|NULL|Male|1986-08-21|Sherwood Content|Trelawny|134|NULL|NULL|NULL|NULL|NULL|196.00|95.00|Competed in Olympic Games • Other|Racers Track Club, Kingston (JAM)|NULL|NULL|NULL
+id_participacion|id_atleta|id_edicion|id_evento|id_noc|id_pais_nacionalidad|equipo|nombre_competencia|edad|altura_cm_registrada|peso_kg_registrado|posicion|empatado|estado_resultado|medalla
+----------------|---------|----------|---------|------|--------------------|------|------------------|----|--------------------|------------------|--------|--------|----------------|-------
+228028|104492|45|467|106|NULL|NULL|Usain Bolt|NULL|NULL|NULL|5|0|NULL|NULL
+228029|104492|47|43|106|NULL|Jamaica|Usain Bolt|21.00|196.00|95.0000000000000|1|0|NULL|Gold
+228030|104492|47|467|106|NULL|NULL|Usain Bolt|NULL|NULL|NULL|1|0|NULL|Gold
+228031|104492|47|400|106|NULL|Jamaica|Usain Bolt|NULL|NULL|NULL|NULL|0|NULL|NULL
+228032|104492|50|43|106|NULL|Jamaica|Usain Bolt|25.00|196.00|95.0000000000000|1|0|NULL|Gold
+228033|104492|50|467|106|NULL|NULL|Usain Bolt|NULL|NULL|NULL|1|0|NULL|Gold
+228034|104492|50|400|106|NULL|Jamaica|Usain Bolt|NULL|NULL|NULL|1|0|NULL|Gold
+01_conteos_y_muestra.sql finalizado.
+
+Changed database context to 'OlimpiadasF2_Deportista'.
+tabla|filas_encontradas|filas_esperadas|resultado
+-----|-----------------|---------------|---------
+ATLETA|1|1|OK
+PARTICIPACION|7|7|OK
+huerfanos_atleta|huerfanos_edicion|huerfanos_evento|huerfanos_noc|resultado
+----------------|-----------------|----------------|-------------|---------
+0|0|0|0|OK
+Integridad verificada en OlimpiadasF2_Deportista: conteos y referencias correctos a las 2026-09-30 04:27:55.8496770
+03_alerta_integridad.sql finalizado.
+
+[2026-09-29 22:27:56] Integridad correcta: 1 atletas, 7 participaciones
+
+==============================================================================
+  RESUMEN DE TIEMPOS
+==============================================================================
+[2026-09-29 22:27:56] Resultados guardados en C:\Users\valer\OneDrive\Desktop\SBD2\BASES2_B_2S2026_PROYECTO_G7\fase2\evidencia\resultados\tiempos_deportista.csv

@@ -1,0 +1,34 @@
+﻿{
+    "tipo":  "deporte",
+    "base":  "OlimpiadasF2_Deporte",
+    "atletas":  6714,
+    "participaciones":  9484,
+    "comprimido":  false,
+    "fecha":  "2026-10-04 01:25:14",
+    "puntos":  [
+                   {
+                       "respaldo":  "FULL",
+                       "descripcion":  "solo catalogos (estado inmediatamente posterior a la carga inicial)",
+                       "atletas":  0,
+                       "participaciones":  0
+                   },
+                   {
+                       "respaldo":  "DIFF_1",
+                       "descripcion":  "estado acumulado despues de la carga r1",
+                       "atletas":  2516,
+                       "participaciones":  2765
+                   },
+                   {
+                       "respaldo":  "DIFF_2",
+                       "descripcion":  "estado acumulado despues de la carga r2",
+                       "atletas":  5350,
+                       "participaciones":  7140
+                   },
+                   {
+                       "respaldo":  "DIFF_3",
+                       "descripcion":  "estado acumulado despues de la carga r3",
+                       "atletas":  6714,
+                       "participaciones":  9484
+                   }
+               ]
+}

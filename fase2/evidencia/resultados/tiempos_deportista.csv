@@ -1,0 +1,5 @@
+﻿"tipo","estrategia","respaldo","descripcion","atletas","participaciones","ms_full","ms_diferencial","ms_total","repeticiones","mediciones_full_ms","mediciones_diff_ms"
+"deportista","FULL","FULL","solo catalogos (estado inmediatamente posterior a la carga inicial)","0","0","650","0","650","3","669 629 650",""
+"deportista","FULL + DIFF_1","DIFF_1","estado acumulado despues de la carga r1","1","1","277","559","836","3","252 308 277","592 559 528"
+"deportista","FULL + DIFF_2","DIFF_2","estado acumulado despues de la carga r2","1","4","314","594","908","3","314 289 319","562 594 610"
+"deportista","FULL + DIFF_3","DIFF_3","estado acumulado despues de la carga r3","1","7","310","549","859","3","318 310 305","538 549 580"

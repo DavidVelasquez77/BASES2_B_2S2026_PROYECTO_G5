@@ -1,0 +1,83 @@
+{
+  "catalogos": {
+    "entidad_geografica": 282,
+    "deporte": 65,
+    "noc": 236,
+    "sede": 42,
+    "edicion_olimpica": 61,
+    "disciplina": 117,
+    "evento": 2069,
+    "poblacion": 17024
+  },
+  "cargas": {
+    "anio": [
+      {
+        "ronda": "r1",
+        "id_edicion": 54,
+        "etiqueta": "Rio de Janeiro 2016",
+        "atletas": 12305,
+        "participaciones": 15118
+      },
+      {
+        "ronda": "r2",
+        "id_edicion": 58,
+        "etiqueta": "Tokio 2020",
+        "atletas": 14316,
+        "participaciones": 28429
+      },
+      {
+        "ronda": "r3",
+        "id_edicion": 61,
+        "etiqueta": "Paris 2024",
+        "atletas": 7629,
+        "participaciones": 14770
+      }
+    ],
+    "deporte": [
+      {
+        "ronda": "r1",
+        "id_edicion": 54,
+        "etiqueta": "Atletismo - Rio de Janeiro 2016",
+        "atletas": 2516,
+        "participaciones": 2765
+      },
+      {
+        "ronda": "r2",
+        "id_edicion": 58,
+        "etiqueta": "Atletismo - Tokio 2020",
+        "atletas": 2834,
+        "participaciones": 4375
+      },
+      {
+        "ronda": "r3",
+        "id_edicion": 61,
+        "etiqueta": "Atletismo - Paris 2024",
+        "atletas": 1364,
+        "participaciones": 2344
+      }
+    ],
+    "deportista": [
+      {
+        "ronda": "r1",
+        "id_edicion": 45,
+        "etiqueta": "Usain Bolt - Atenas 2004",
+        "atletas": 1,
+        "participaciones": 1
+      },
+      {
+        "ronda": "r2",
+        "id_edicion": 47,
+        "etiqueta": "Usain Bolt - Pekin 2008",
+        "atletas": 0,
+        "participaciones": 3
+      },
+      {
+        "ronda": "r3",
+        "id_edicion": 50,
+        "etiqueta": "Usain Bolt - Londres 2012",
+        "atletas": 0,
+        "participaciones": 3
+      }
+    ]
+  }
+}
