@@ -19,7 +19,7 @@ integridad.
 
 En total se generaron **3 respaldos completos y 9 diferenciales**, se
 realizaron **36 restauraciones cronometradas** (4 puntos × 3 repeticiones × 3
-bases) y se tomaron **41 capturas de pantalla** con fecha y hora del sistema
+bases) y se tomaron **40 capturas de pantalla** con fecha y hora del sistema
 operativo.
 
 El hallazgo central es que, al volumen de datos manejado, **el tiempo de
@@ -425,7 +425,7 @@ sola hasta ser peor que no tener diferenciales.
 
 | Tipo | Ubicación | Cantidad |
 |---|---|---|
-| Capturas de pantalla | `fase2/evidencia/img/` | 41, todas con fecha y hora del sistema |
+| Capturas de pantalla | `fase2/evidencia/img/` | 40, todas con fecha y hora del sistema |
 | Registros de ejecución | `fase2/evidencia/logs/` | uno por cada ejecución, con sello de tiempo |
 | Mediciones | `fase2/evidencia/resultados/` | `tiempos_<tipo>.csv`, `estado_<tipo>.json`, `respaldos.csv` |
 | Gráficas | `fase2/evidencia/img/graficas/` | 2, generadas a partir de las mediciones |
@@ -440,7 +440,7 @@ ningún número se escribió a mano.
 
 ## 10. Anexo: catalogo de evidencia
 
-Las 41 capturas tomadas durante la ejecucion, en el orden en que se
+Las 40 capturas tomadas durante la ejecucion, en el orden en que se
 produjeron. Todas muestran la fecha y la hora del sistema operativo en la barra
 de tareas, como exige el enunciado. Algunas ya aparecieron en las secciones
 anteriores acompanando el analisis; aqui estan todas, completas y en orden.
@@ -692,7 +692,7 @@ Ambas las produce `generar_analisis.py` a partir de los CSV de mediciones.
 | Validación de integridad tras cada restauración | cumplido, 12 de 12 correctas |
 | Nivel de fragmentación al cierre de cada tipo | cumplido, 3 mediciones |
 | Respaldos ejecutados desde consola | cumplido, `sqlcmd` |
-| Capturas con fecha y hora del sistema operativo | cumplido, las 41 |
+| Capturas con fecha y hora del sistema operativo | cumplido, las 40 |
 | Almacenamiento persistente con Docker | cumplido, volumen `sqlserver_data` |
 
 ### Opcional
