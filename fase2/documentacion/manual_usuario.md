@@ -69,6 +69,19 @@ Carga por anio
 Si los conteos no coinciden con los del manifiesto durante la carga, es que los
 CSV de origen cambiaron y hay que volver a generar los recortes.
 
+### 2.1 Verificar el servidor antes de empezar
+
+Conviene dejar registradas las caracteristicas del servidor sobre el que se va
+a trabajar:
+
+```powershell
+docker exec olimpiadas-sqlserver /opt/mssql-tools18/bin/sqlcmd `
+  -S localhost -U sa -P $pw -C -f 65001 -W -s "|" `
+  -i /var/opt/mssql/fase2/scripts/05_validacion/05_especificaciones_servidor.sql
+```
+
+![Especificaciones del servidor](../evidencia/img/00_especificaciones_servidor.png)
+
 ---
 
 ## 3. Ejecutar un ciclo completo
@@ -100,6 +113,16 @@ se detiene muestra:
 > obligatorio para la restauración. Si la ventana se cierra antes, los datos se
 > pueden recuperar del log, pero es más simple no cerrarla.
 
+Así se ve la salida después de la carga inicial de catálogos: el conteo de las
+diez tablas y el total de filas.
+
+![Carga inicial de catálogos](../evidencia/img/anio_01_carga_inicial.png)
+
+Y así el inventario de los cuatro respaldos al cierre del ciclo, con el tamaño
+y la fecha y hora de cada archivo.
+
+![Inventario de respaldos](../evidencia/img/anio_05_respaldos.png)
+
 Opciones:
 
 | Opción | Efecto |
@@ -118,6 +141,14 @@ valida la integridad y cronometra. Repite cada medición tres veces y reporta la
 mediana, porque a esta escala una sola medición varía demasiado.
 
 Con `-Repeticiones 5` se puede subir el número de repeticiones.
+
+Salida de una restauración, con el tiempo medido:
+
+![Restauración del respaldo completo](../evidencia/img/anio_07_restaurar_full.png)
+
+Al terminar las cuatro, el script imprime la tabla comparativa y guarda el CSV:
+
+![Resumen de tiempos](../evidencia/img/anio_11_resumen_tiempos.png)
 
 ### 3.3 Repetir una sola restauración
 
@@ -249,6 +280,12 @@ Msg 50000, Level 16: ALERTA DE INTEGRIDAD en OlimpiadasF2_Anio:
 Además `sqlcmd` termina con código distinto de cero, así que la alerta
 detiene cualquier script que la invoque.
 
+En esta captura se ve la validación completa después de restaurar: el contenido
+real de las tablas, los conteos contra lo esperado y las comprobaciones de
+integridad en OK.
+
+![Validación posterior a la restauración](../evidencia/img/deporte_10_restaurar_diff3.png)
+
 ---
 
 ## 6. Cómo leer los registros
@@ -299,6 +336,8 @@ comprimido con cifrado AES-256— y las compara.
 > `/var/opt/mssql/fase2/backups/certificado/`. Si se pierde, el respaldo es
 > irrecuperable.
 
+![Comparación de compresión y cifrado](../evidencia/img/opcional_01_compresion_cifrado.png)
+
 ### 7.2 Respaldos automáticos
 
 ```powershell
@@ -311,9 +350,17 @@ catorce.
 
 Para ver la bitácora:
 
+![Instalación de la tarea programada](../evidencia/img/opcional_02_cron.png)
+
+
 ```powershell
 docker exec olimpiadas-sqlserver cat /var/opt/mssql/fase2/backups/automaticos/bitacora_cron.log
 ```
+
+La bitácora registra cada ejecución, el tipo que correspondió al día, la
+duración, el tamaño y el resultado de la verificación.
+
+![Bitácora de los respaldos automáticos](../evidencia/img/opcional_03_bitacora_cron.png)
 
 Para desinstalar: `.\fase2\scripts\06_opcionales\03_instalar_cron.ps1 -Desinstalar`
 

@@ -170,6 +170,8 @@ contenedor monta el volumen nombrado `sqlserver_data` en `/var/opt/mssql`, y
 todos los respaldos se escriben bajo `/var/opt/mssql/fase2/backups/`, es decir
 dentro de ese volumen. Sobreviven a que el contenedor se detenga o se recree.
 
+![Especificaciones tecnicas del servidor](../evidencia/img/00_especificaciones_servidor.png)
+
 ---
 
 ## 5. Plan de respaldo
@@ -239,6 +241,14 @@ medición varía demasiado para ser confiable.
 
 ![Tiempos de restauración](../evidencia/img/graficas/tiempos_restauracion.png)
 
+Las tablas que imprimio cada ciclo al terminar sus mediciones:
+
+![Resumen de tiempos, carga por anio](../evidencia/img/anio_11_resumen_tiempos.png)
+
+![Resumen de tiempos, carga por deporte](../evidencia/img/deporte_11_resumen_tiempos.png)
+
+![Resumen de tiempos, carga por deportista](../evidencia/img/deportista_11_resumen_tiempos.png)
+
 ### 6.2 Comparación entre las dos estrategias
 
 | Tipo de carga | Solo completo | Completo + diferencial | Sobrecosto |
@@ -259,6 +269,8 @@ En la carga por año **los tres diferenciales superan al respaldo completo**, y
 el tercero llega al 414 % de su tamaño. En la carga por deporte lo superan dos
 de tres.
 
+![Inventario de respaldos de la carga por anio](../evidencia/img/anio_05_respaldos.png)
+
 ### 6.4 Fragmentación
 
 Medida al cierre de cada tipo de carga, después de las cuatro inserciones
@@ -276,6 +288,8 @@ el índice de `ATLETA` llegó a 42.4 % con 1,228 páginas, suficiente para
 justificar un `REBUILD`. No se reorganizó ningún índice: hacerlo habría
 alterado el estado que los respaldos debían capturar.
 
+![Fragmentacion al cierre de la carga por anio](../evidencia/img/anio_06_fragmentacion.png)
+
 ### 6.5 Compresión y cifrado
 
 Tres versiones del mismo respaldo completo de `OlimpiadasF2_Anio`:
@@ -290,6 +304,8 @@ Tres versiones del mismo respaldo completo de `OlimpiadasF2_Anio`:
 
 El cifrado añade 3 KB sobre el comprimido: en espacio es prácticamente gratis.
 
+![Ejecucion de la comparativa de compresion y cifrado](../evidencia/img/opcional_01_compresion_cifrado.png)
+
 ### 6.6 Validación de integridad
 
 Las doce restauraciones se validaron automáticamente contra los conteos
@@ -298,6 +314,11 @@ cero filas huérfanas**, y `DBCC CHECKDB` no reportó daños en ningún caso.
 
 La recuperabilidad quedó demostrada: restaurar el completo más el diferencial 3
 devuelve exactamente el estado previo al borrado, sin pérdida de datos.
+
+![Validacion posterior a una restauracion](../evidencia/img/deporte_10_restaurar_diff3.png)
+
+La captura muestra el contenido real de las tablas tras restaurar, los conteos
+contrastados contra lo esperado y las cuatro comprobaciones de huerfanos.
 
 ---
 
@@ -417,7 +438,245 @@ ningún número se escribió a mano.
 
 ---
 
-## 10. Cumplimiento del alcance
+## 10. Anexo: catalogo de evidencia
+
+Las 41 capturas tomadas durante la ejecucion, en el orden en que se
+produjeron. Todas muestran la fecha y la hora del sistema operativo en la barra
+de tareas, como exige el enunciado. Algunas ya aparecieron en las secciones
+anteriores acompanando el analisis; aqui estan todas, completas y en orden.
+
+### 10.1 Entorno
+
+| Captura | Contenido |
+|---|---|
+| `00_especificaciones_servidor.png` | Version y edicion del motor, sistema operativo, CPU, memoria, disco y tamano de las bases |
+
+![Especificaciones del servidor](../evidencia/img/00_especificaciones_servidor.png)
+
+
+### 10.2 Carga por anio
+
+| # | Archivo | Contenido |
+|---|---|---|
+| 01 | `anio_01_carga_inicial.png` | Carga inicial: los ocho catalogos. Conteo de las diez tablas y total de filas. |
+| 02 | `anio_02_carga_r1.png` | Carga r1 — Rio de Janeiro 2016. Conteos despues de insertar atletas y participaciones. |
+| 03 | `anio_03_carga_r2.png` | Carga r2 — Tokio 2020. |
+| 04 | `anio_04_carga_r3.png` | Carga r3 — Paris 2024. |
+| 05 | `anio_05_respaldos.png` | Inventario de los cuatro respaldos: tipo, archivo, fecha y hora, y tamano. |
+| 06 | `anio_06_fragmentacion.png` | Nivel de fragmentacion de los indices al cierre del tipo de carga. |
+| 07 | `anio_07_restaurar_full.png` | Restauracion del respaldo completo, con el tiempo medido y la validacion. |
+| 08 | `anio_08_restaurar_diff1.png` | Restauracion del completo mas el diferencial 1. |
+| 09 | `anio_09_restaurar_diff2.png` | Restauracion del completo mas el diferencial 2. |
+| 10 | `anio_10_restaurar_diff3.png` | Restauracion del completo mas el diferencial 3, el estado final. |
+| 11 | `anio_11_resumen_tiempos.png` | Tabla comparativa de los cuatro puntos de restauracion. |
+| 12 | `anio_12_muestra_tablas.png` | Contenido de ATLETA y PARTICIPACION, y distribucion por edicion olimpica. |
+
+**01.** Carga inicial: los ocho catalogos. Conteo de las diez tablas y total de filas.
+
+![Carga por anio — paso 01](../evidencia/img/anio_01_carga_inicial.png)
+
+**02.** Carga r1 — Rio de Janeiro 2016. Conteos despues de insertar atletas y participaciones.
+
+![Carga por anio — paso 02](../evidencia/img/anio_02_carga_r1.png)
+
+**03.** Carga r2 — Tokio 2020.
+
+![Carga por anio — paso 03](../evidencia/img/anio_03_carga_r2.png)
+
+**04.** Carga r3 — Paris 2024.
+
+![Carga por anio — paso 04](../evidencia/img/anio_04_carga_r3.png)
+
+**05.** Inventario de los cuatro respaldos: tipo, archivo, fecha y hora, y tamano.
+
+![Carga por anio — paso 05](../evidencia/img/anio_05_respaldos.png)
+
+**06.** Nivel de fragmentacion de los indices al cierre del tipo de carga.
+
+![Carga por anio — paso 06](../evidencia/img/anio_06_fragmentacion.png)
+
+**07.** Restauracion del respaldo completo, con el tiempo medido y la validacion.
+
+![Carga por anio — paso 07](../evidencia/img/anio_07_restaurar_full.png)
+
+**08.** Restauracion del completo mas el diferencial 1.
+
+![Carga por anio — paso 08](../evidencia/img/anio_08_restaurar_diff1.png)
+
+**09.** Restauracion del completo mas el diferencial 2.
+
+![Carga por anio — paso 09](../evidencia/img/anio_09_restaurar_diff2.png)
+
+**10.** Restauracion del completo mas el diferencial 3, el estado final.
+
+![Carga por anio — paso 10](../evidencia/img/anio_10_restaurar_diff3.png)
+
+**11.** Tabla comparativa de los cuatro puntos de restauracion.
+
+![Carga por anio — paso 11](../evidencia/img/anio_11_resumen_tiempos.png)
+
+**12.** Contenido de ATLETA y PARTICIPACION, y distribucion por edicion olimpica.
+
+![Carga por anio — paso 12](../evidencia/img/anio_12_muestra_tablas.png)
+
+
+### 10.3 Carga por deporte (Atletismo)
+
+| # | Archivo | Contenido |
+|---|---|---|
+| 01 | `deporte_01_carga_inicial.png` | Carga inicial: los ocho catalogos. Conteo de las diez tablas y total de filas. |
+| 02 | `deporte_02_carga_r1.png` | Carga r1 — Atletismo en Rio 2016. Conteos despues de insertar atletas y participaciones. |
+| 03 | `deporte_03_carga_r2.png` | Carga r2 — Atletismo en Tokio 2020. |
+| 04 | `deporte_04_carga_r3.png` | Carga r3 — Atletismo en Paris 2024. |
+| 05 | `deporte_05_respaldos.png` | Inventario de los cuatro respaldos: tipo, archivo, fecha y hora, y tamano. |
+| 06 | `deporte_06_fragmentacion.png` | Nivel de fragmentacion de los indices al cierre del tipo de carga. |
+| 07 | `deporte_07_restaurar_full.png` | Restauracion del respaldo completo, con el tiempo medido y la validacion. |
+| 08 | `deporte_08_restaurar_diff1.png` | Restauracion del completo mas el diferencial 1. |
+| 09 | `deporte_09_restaurar_diff2.png` | Restauracion del completo mas el diferencial 2. |
+| 10 | `deporte_10_restaurar_diff3.png` | Restauracion del completo mas el diferencial 3, el estado final. |
+| 11 | `deporte_11_resumen_tiempos.png` | Tabla comparativa de los cuatro puntos de restauracion. |
+| 12 | `deporte_12_muestra_tablas.png` | Contenido de ATLETA y PARTICIPACION, y distribucion por edicion olimpica. |
+
+**01.** Carga inicial: los ocho catalogos. Conteo de las diez tablas y total de filas.
+
+![Carga por deporte (Atletismo) — paso 01](../evidencia/img/deporte_01_carga_inicial.png)
+
+**02.** Carga r1 — Atletismo en Rio 2016. Conteos despues de insertar atletas y participaciones.
+
+![Carga por deporte (Atletismo) — paso 02](../evidencia/img/deporte_02_carga_r1.png)
+
+**03.** Carga r2 — Atletismo en Tokio 2020.
+
+![Carga por deporte (Atletismo) — paso 03](../evidencia/img/deporte_03_carga_r2.png)
+
+**04.** Carga r3 — Atletismo en Paris 2024.
+
+![Carga por deporte (Atletismo) — paso 04](../evidencia/img/deporte_04_carga_r3.png)
+
+**05.** Inventario de los cuatro respaldos: tipo, archivo, fecha y hora, y tamano.
+
+![Carga por deporte (Atletismo) — paso 05](../evidencia/img/deporte_05_respaldos.png)
+
+**06.** Nivel de fragmentacion de los indices al cierre del tipo de carga.
+
+![Carga por deporte (Atletismo) — paso 06](../evidencia/img/deporte_06_fragmentacion.png)
+
+**07.** Restauracion del respaldo completo, con el tiempo medido y la validacion.
+
+![Carga por deporte (Atletismo) — paso 07](../evidencia/img/deporte_07_restaurar_full.png)
+
+**08.** Restauracion del completo mas el diferencial 1.
+
+![Carga por deporte (Atletismo) — paso 08](../evidencia/img/deporte_08_restaurar_diff1.png)
+
+**09.** Restauracion del completo mas el diferencial 2.
+
+![Carga por deporte (Atletismo) — paso 09](../evidencia/img/deporte_09_restaurar_diff2.png)
+
+**10.** Restauracion del completo mas el diferencial 3, el estado final.
+
+![Carga por deporte (Atletismo) — paso 10](../evidencia/img/deporte_10_restaurar_diff3.png)
+
+**11.** Tabla comparativa de los cuatro puntos de restauracion.
+
+![Carga por deporte (Atletismo) — paso 11](../evidencia/img/deporte_11_resumen_tiempos.png)
+
+**12.** Contenido de ATLETA y PARTICIPACION, y distribucion por edicion olimpica.
+
+![Carga por deporte (Atletismo) — paso 12](../evidencia/img/deporte_12_muestra_tablas.png)
+
+
+### 10.4 Carga por deportista (Usain Bolt)
+
+| # | Archivo | Contenido |
+|---|---|---|
+| 01 | `deportista_01_carga_inicial.png` | Carga inicial: los ocho catalogos. Conteo de las diez tablas y total de filas. |
+| 02 | `deportista_02_carga_r1.png` | Carga r1 — Bolt en Atenas 2004. Conteos despues de insertar atletas y participaciones. |
+| 03 | `deportista_03_carga_r2.png` | Carga r2 — Bolt en Pekin 2008. |
+| 04 | `deportista_04_carga_r3.png` | Carga r3 — Bolt en Londres 2012. |
+| 05 | `deportista_05_respaldos.png` | Inventario de los cuatro respaldos: tipo, archivo, fecha y hora, y tamano. |
+| 06 | `deportista_06_fragmentacion.png` | Nivel de fragmentacion de los indices al cierre del tipo de carga. |
+| 07 | `deportista_07_restaurar_full.png` | Restauracion del respaldo completo, con el tiempo medido y la validacion. |
+| 08 | `deportista_08_restaurar_diff1.png` | Restauracion del completo mas el diferencial 1. |
+| 09 | `deportista_09_restaurar_diff2.png` | Restauracion del completo mas el diferencial 2. |
+| 10 | `deportista_10_restaurar_diff3.png` | Restauracion del completo mas el diferencial 3, el estado final. |
+| 11 | `deportista_11_resumen_tiempos.png` | Tabla comparativa de los cuatro puntos de restauracion. |
+| 12 | `deportista_12_muestra_tablas.png` | Contenido de ATLETA y PARTICIPACION, y distribucion por edicion olimpica. |
+
+**01.** Carga inicial: los ocho catalogos. Conteo de las diez tablas y total de filas.
+
+![Carga por deportista (Usain Bolt) — paso 01](../evidencia/img/deportista_01_carga_inicial.png)
+
+**02.** Carga r1 — Bolt en Atenas 2004. Conteos despues de insertar atletas y participaciones.
+
+![Carga por deportista (Usain Bolt) — paso 02](../evidencia/img/deportista_02_carga_r1.png)
+
+**03.** Carga r2 — Bolt en Pekin 2008.
+
+![Carga por deportista (Usain Bolt) — paso 03](../evidencia/img/deportista_03_carga_r2.png)
+
+**04.** Carga r3 — Bolt en Londres 2012.
+
+![Carga por deportista (Usain Bolt) — paso 04](../evidencia/img/deportista_04_carga_r3.png)
+
+**05.** Inventario de los cuatro respaldos: tipo, archivo, fecha y hora, y tamano.
+
+![Carga por deportista (Usain Bolt) — paso 05](../evidencia/img/deportista_05_respaldos.png)
+
+**06.** Nivel de fragmentacion de los indices al cierre del tipo de carga.
+
+![Carga por deportista (Usain Bolt) — paso 06](../evidencia/img/deportista_06_fragmentacion.png)
+
+**07.** Restauracion del respaldo completo, con el tiempo medido y la validacion.
+
+![Carga por deportista (Usain Bolt) — paso 07](../evidencia/img/deportista_07_restaurar_full.png)
+
+**08.** Restauracion del completo mas el diferencial 1.
+
+![Carga por deportista (Usain Bolt) — paso 08](../evidencia/img/deportista_08_restaurar_diff1.png)
+
+**09.** Restauracion del completo mas el diferencial 2.
+
+![Carga por deportista (Usain Bolt) — paso 09](../evidencia/img/deportista_09_restaurar_diff2.png)
+
+**10.** Restauracion del completo mas el diferencial 3, el estado final.
+
+![Carga por deportista (Usain Bolt) — paso 10](../evidencia/img/deportista_10_restaurar_diff3.png)
+
+**11.** Tabla comparativa de los cuatro puntos de restauracion.
+
+![Carga por deportista (Usain Bolt) — paso 11](../evidencia/img/deportista_11_resumen_tiempos.png)
+
+**12.** Contenido de ATLETA y PARTICIPACION, y distribucion por edicion olimpica.
+
+![Carga por deportista (Usain Bolt) — paso 12](../evidencia/img/deportista_12_muestra_tablas.png)
+
+
+### 10.5 Alcance opcional
+
+| Captura | Contenido |
+|---|---|
+| `opcional_01_compresion_cifrado.png` | Las tres variantes del mismo respaldo y el ahorro de cada una |
+| `opcional_02_cron.png` | Instalacion de la tarea programada y su primera ejecucion |
+| `opcional_03_bitacora_cron.png` | Bitacora acumulada de los respaldos automaticos |
+
+![Compresion y cifrado](../evidencia/img/opcional_01_compresion_cifrado.png)
+
+![Instalacion de la tarea programada](../evidencia/img/opcional_02_cron.png)
+
+![Bitacora de los respaldos automaticos](../evidencia/img/opcional_03_bitacora_cron.png)
+
+### 10.6 Graficas generadas
+
+Ambas las produce `generar_analisis.py` a partir de los CSV de mediciones.
+
+![Tiempos de restauracion](../evidencia/img/graficas/tiempos_restauracion.png)
+
+![Compresion de respaldos](../evidencia/img/graficas/compresion_respaldos.png)
+
+---
+
+## 11. Cumplimiento del alcance
 
 ### Obligatorio
 
