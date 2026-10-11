@@ -1,0 +1,2 @@
+﻿etapa,inicio_utc,fin_utc,duracion_segundos,documentos_ajustados,participaciones_afectadas,ids_atleta_faltantes_despues,estado,detalle
+02a_backfill_nested_athlete_id,2026-10-11T23:30:30.221Z,2026-10-11T23:30:50.794Z,20.573,167293,367793,0,PASS,"Se añadió id_atleta derivado de su documento padre a cada subdocumento; no hubo recarga ni eliminación."

@@ -1,0 +1,5 @@
+﻿"coleccion","documentos","tamano_bson_maximo_bytes","documento_maximo_id","limite_bytes","estado"
+"atletas","167295","68245","31164","16777216","PASS"
+"entidades_geograficas","282","4655","268","16777216","PASS"
+"participaciones_por_pais","4856","1512131","ENTIDAD:268:EDICION:3","16777216","PASS"
+"catalogo_olimpico","2590","711","EVENTO:745","16777216","PASS"
