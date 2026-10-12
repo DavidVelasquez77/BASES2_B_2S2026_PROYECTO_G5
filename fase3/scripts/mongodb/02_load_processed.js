@@ -488,7 +488,7 @@ disciplineRows.forEach(row => {
 eventRows.forEach(row => catalogDocuments.push({
     _id: "EVENTO:" + row.id_evento.toString(), tipo: "EVENTO", id: row.id_evento,
     id_evento: row.id_evento, id_disciplina: row.id_disciplina, nombre: row.nombre,
-    disciplina: eventView(row), origen_csv: "evento.csv"
+    disciplina: eventView(row).disciplina, origen_csv: "evento.csv"
 }));
 editionRows.forEach(row => catalogDocuments.push({
     _id: "EDICION_OLIMPICA:" + row.id_edicion.toString(), tipo: "EDICION_OLIMPICA", id: row.id_edicion,
@@ -506,6 +506,12 @@ nocRows.forEach(row => catalogDocuments.push({
     id_entidad: row.id_entidad, id_entidad_csv: row.id_entidad_csv,
     entidad: entityRef(row.id_entidad, geoById), notas: row.notas, origen_csv: "noc.csv"
 }));
+
+const invalidEventHierarchy = catalogDocuments.filter(doc => doc.tipo === "EVENTO" &&
+    (!doc.disciplina || doc.disciplina.id_evento !== undefined ||
+        doc.disciplina.id_disciplina === undefined || !doc.disciplina.deporte)).length;
+check("jerarquia_catalogo_evento", 0, invalidEventHierarchy,
+    "Cada EVENTO anida directamente su DISCIPLINA y DEPORTE.", true);
 
 check("participaciones_asociadas_a_atleta", expectedCounts.participacion,
     athleteRows.reduce((sum, athlete) => sum + athlete.participaciones.length, 0),

@@ -23,6 +23,39 @@ Las participaciones se repiten intencionalmente en dos vistas de lectura: dentro
 
 La colección `participaciones_por_pais` se particiona por edición porque un único documento por país podría crecer con el historial y acercarse al máximo BSON. MongoDB limita cada documento a 16 MiB; el tamaño se midió con `$bsonSize` después de la carga. La recomendación oficial es modelar según los patrones de acceso y evitar arreglos ilimitados ([límite de BSON](https://www.mongodb.com/docs/manual/reference/limits/), [datos embebidos](https://www.mongodb.com/docs/manual/data-modeling/embedding/), [arreglos ilimitados](https://www.mongodb.com/docs/manual/data-modeling/design-antipatterns/unbounded-arrays/)).
 
+### Raíces JSON y recorrido de las consultas
+
+Los nombres de los diez CSV identifican archivos de entrada; no determinan las colecciones. Las dos raíces de lectura principales son:
+
+```text
+atletas (raíz: id_atleta)
+  datos personales + país de nacimiento/nacionalidad/fallecimiento
+  participaciones[]
+    edición → sede → entidad geográfica
+    evento → disciplina → deporte
+    NOC → entidad geográfica
+    equipo, resultado, posición, medalla y medidas registradas
+
+participaciones_por_pais (raíz: entidad/NOC + edición)
+  entidad + edición → sede
+  participaciones[]
+    atleta resumido + evento → disciplina → deporte
+    NOC, equipo, resultado, posición, medalla y medidas registradas
+```
+
+Para el inciso c, se busca un documento de `atletas` por nombre y se recorre su arreglo `participaciones`: no hace falta reconstruir las relaciones entre CSV. Para el inciso d, se lee `entidades_geograficas` por nombre para obtener población, NOC y sedes, y se leen las particiones de `participaciones_por_pais` por `id_entidad`. Esas particiones llevan resultados y atletas por edición; la ficha completa de un atleta se obtiene por `id_atleta` cuando se solicite una biografía. Los NOC sin entidad permanecen en sus buckets explícitos. La partición por edición evita que el historial de un país crezca sin límite dentro de un solo documento.
+
+| CSV de entrada | Representación en MongoDB |
+|---|---|
+| `atleta.csv` | Documento raíz de `atletas`; datos identificativos resumidos también en la vista país. |
+| `participacion.csv` | Arreglo anidado en `atletas` y copia de lectura en `participaciones_por_pais`, ambas con el mismo `id_participacion`. |
+| `entidad_geografica.csv`, `poblacion.csv` | Documento de `entidades_geograficas` con serie `poblacion_anual`; referencias descriptivas en otras vistas. |
+| `noc.csv` | NOC anidados y registros tipados en `catalogo_olimpico`, incluidos los que no tienen entidad. |
+| `sede.csv`, `edicion_olimpica.csv` | Edición y sede embebidas en las participaciones; registros tipados en el catálogo. |
+| `deporte.csv`, `disciplina.csv`, `evento.csv` | Jerarquía evento → disciplina → deporte embebida en resultados; catálogo para conservar incluso registros sin participaciones. |
+
+Una comprobación con `explain("executionStats")` de las rutas básicas examinó un documento y una clave para `atletas.nombre = Michael Phelps`, un documento y una clave para `entidades_geograficas.nombre = Guatemala`, y 20 documentos y 20 claves para las particiones de Guatemala por `id_entidad`. Se usaron `ix_atletas_nombre`, `ix_entidades_nombre` e `ix_part_pais_edicion`, respectivamente. Son observaciones de esta instalación local, no una garantía de tiempo fijo.
+
 ## Relaciones y casos especiales preservados
 
 - `id_pais_nacionalidad` se conserva separado de NOC. Para la vista de representación por país se utiliza únicamente la relación explícita `NOC.id_entidad`; no se equipara `codigo_noc` con `codigo_pais`.
@@ -66,7 +99,9 @@ Base `OlimpiadasF3`; cuatro colecciones creadas con validadores JSON Schema en m
 | `participaciones_por_pais` | 4,856 particiones | 367,793 |
 | `catalogo_olimpico` | 2,590 | — |
 
-**Resultado:** 31 validaciones posteriores PASS; 0 FAIL. Se compararon 4,182,375 campos de atleta y 5,516,895 campos de participación contra los CSV; diferencias: **0**. De los nombres en `atleta.csv`, 25,911 contienen caracteres no ASCII; se compararon exactamente todos los nombres contra MongoDB y se encontraron **0 diferencias**.
+**Resultado tras la revisión del diseño:** 42 validaciones posteriores PASS; 0 FAIL. Se compararon 4,182,375 campos de atleta y 5,516,895 campos de participación en su documento de atleta contra los CSV; diferencias: **0**. La vista país/NOC se comparó también en sus 15 campos de participación: 5,516,895 comparaciones, **0 diferencias**. La validación adicional contrasta los campos de entidad geográfica, población y los seis tipos del catálogo con los CSV respectivos. De los nombres en `atleta.csv`, 25,911 contienen caracteres no ASCII; se compararon exactamente todos los nombres contra MongoDB y se encontraron **0 diferencias**.
+
+La revisión detectó que los 2,069 registros `EVENTO` del catálogo tenían un envoltorio redundante: `disciplina` contenía de nuevo el evento antes de la disciplina. El 12 de octubre de 2026 se verificó que los datos repetidos coincidían, se corrigió esa jerarquía en los 2,069 documentos y se ajustó el cargador para futuras ejecuciones. Ahora cada `EVENTO.disciplina` contiene directamente `id_disciplina`, `nombre`, `id_deporte` y `deporte`. La validación comprueba esta forma en todos los eventos. El cambio no alteró los diez CSV ni las otras tres colecciones.
 
 ### Tamaños BSON medidos en MongoDB
 
@@ -75,7 +110,7 @@ Base `OlimpiadasF3`; cuatro colecciones creadas con validadores JSON Schema en m
 | `atletas` | 57,025 bytes | 2,757 bytes | 16,777,216 bytes |
 | `entidades_geograficas` | 3,491 bytes | 2,543 bytes | 16,777,216 bytes |
 | `participaciones_por_pais` | 1,338,035 bytes | 61,235 bytes | 16,777,216 bytes |
-| `catalogo_olimpico` | 651 bytes | 354 bytes | 16,777,216 bytes |
+| `catalogo_olimpico` | 426 bytes | 275 bytes | 16,777,216 bytes |
 
 Todos los máximos están por debajo del límite. Antes de insertar, el máximo conservador del ensamblado fue 1,512,131 bytes (`bson_size_preflight.csv`); después de persistir, MongoDB midió el máximo real con `$bsonSize`: 1,338,035 bytes (`bson_size_report.csv`).
 
@@ -113,6 +148,8 @@ mongosh --quiet --file fase3/scripts/mongodb/03_create_indexes.js
 mongosh --quiet --file fase3/scripts/mongodb/04_validate_import.js
 ```
 
+Si se trabaja con una carga anterior al ajuste de la jerarquía del catálogo, ejecutar primero `05_correct_catalog_event_hierarchy.js` en modo lectura; el script informa cuántos documentos requieren corrección. Para aplicarla, requiere `OLIMPIADAS_MONGO_APPLY=1`. Es idempotente y verifica los 2,069 eventos antes y después. El cargador actual ya produce la jerarquía corregida.
+
 `02_load_processed.js` exige exactamente los diez archivos y conteos vigentes, valida tipos, claves y referencias, mide BSON y por defecto no escribe. Para aplicar, requiere explícitamente `OLIMPIADAS_MONGO_APPLY=1`; además aborta si las colecciones destino ya contienen datos. No ejecuta `DROP`, `DELETE` ni `TRUNCATE`.
 
 `02a_backfill_nested_athlete_id.js` se ejecutó una vez para completar `id_atleta` dentro de cada subdocumento de participación. Fue una actualización aditiva: 367,793 subdocumentos en 167,293 perfiles, derivados de la relación padre ya existente; no se recargaron ni borraron documentos. El script de carga actual ya incluye ese campo para futuras ejecuciones.
@@ -121,7 +158,6 @@ La carga total se midió en **110.816 s** (23:22:07.300–23:23:58.116 UTC); la 
 
 ## Reportes generados
 
-- `fase3/docs/mongodb/preflight_validation.csv`: conteos y comprobaciones previas.
 - `fase3/docs/mongodb/processed_source_manifest.csv`: SHA-256 de los diez CSV antes/después de preparar la carga.
 - `fase3/docs/mongodb/preflight_validation.csv`: conteos, claves duplicadas, referencias huérfanas, conversiones y casos conservados sin inferencia.
 - `fase3/docs/mongodb/preflight_metrics.csv`: duración real de la pasada de solo lectura.
@@ -131,5 +167,6 @@ La carga total se midió en **110.816 s** (23:22:07.300–23:23:58.116 UTC); la 
 - `fase3/docs/mongodb/indexes_created.csv`: índices, claves, motivo e instante de creación/verificación.
 - `fase3/docs/mongodb/migration_adjustments.csv`: registro del ajuste aditivo de la vista embebida.
 - `fase3/docs/mongodb/load_validation.csv`: conteos, comparación exacta de campos, Unicode, dominios, hashes, validadores e índices.
+- `fase3/docs/mongodb/catalog_event_hierarchy_correction_20261012.csv`: resultado histórico de la corrección puntual del catálogo.
 
 **Estado:** incisos a y b ejecutados en MongoDB y auditados contra los CSV procesados. No se declara la Fase 3 completa: faltan los métodos de consulta de atleta y país (incisos c y d) y la revisión del equipo/ingeniero. No se modificaron SQL Server ni `data/processed/` durante la carga.

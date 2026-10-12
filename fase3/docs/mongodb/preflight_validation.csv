@@ -12,6 +12,7 @@
 "claves_primarias_duplicadas","0","0","PASS","Se verifican las claves de las nueve tablas con clave simple."
 "claves_compuestas_poblacion_duplicadas","0","0","PASS","Clave compuesta (id_entidad, anio)."
 "referencias_fk_huerfanas","0","0","PASS","Relaciones explícitas disponibles en los diez CSV; referencias opcionales vacías se conservan como null."
+"jerarquia_catalogo_evento","0","0","PASS","Cada EVENTO anida directamente su DISCIPLINA y DEPORTE."
 "participaciones_asociadas_a_atleta","367793","367793","PASS","Cada fila de participacion.csv se incorpora a su atleta"
 "participaciones_en_vista_geografica_y_noc","367793","367793","PASS","Incluye entidades con NOC asociado y buckets explícitos sin entidad"
 "documentos_catalogo","2590","2590","PASS","DEPORTE + DISCIPLINA + EVENTO + EDICION_OLIMPICA + SEDE + NOC"

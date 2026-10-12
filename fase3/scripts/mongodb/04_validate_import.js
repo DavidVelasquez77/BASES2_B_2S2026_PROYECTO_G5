@@ -67,6 +67,10 @@ const sourceAthletes = olympMongo.parseCsv(olympMongo.path.join(processed, "atle
 const sourceAthleteById = new Map(sourceAthletes.map(row => [olympMongo.key(row.id_atleta, "atleta.id_atleta"), row]));
 const sourceParticipations = olympMongo.parseCsv(olympMongo.path.join(processed, "participacion.csv"));
 const sourceParticipationById = new Map(sourceParticipations.map(row => [olympMongo.key(row.id_participacion, "participacion.id_participacion"), row]));
+const otherSources = {};
+["entidad_geografica", "poblacion", "noc", "sede", "edicion_olimpica", "deporte", "disciplina", "evento"].forEach(name => {
+    otherSources[name] = olympMongo.parseCsv(olympMongo.path.join(processed, name + ".csv"));
+});
 
 const collectionExpected = {
     atletas: expectedCounts.atleta,
@@ -172,20 +176,126 @@ record("participaciones_faltantes_en_atletas", 0, sourceParticipationById.size -
 
 let countryParticipationCount = 0;
 let countryParticipationDuplicateIds = 0;
+let countryFieldComparisons = 0;
+let countryFieldDifferences = 0;
 const countrySeenIds = new Set();
 let unassignedParticipationCount = 0;
-target.participaciones_por_pais.find({}, { tipo_agrupacion: 1, participaciones: 1 }).forEach(group => {
+target.participaciones_por_pais.find({}, { tipo_agrupacion: 1, id_edicion: 1, participaciones: 1 }).forEach(group => {
     if (group.tipo_agrupacion !== "ENTIDAD_GEOGRAFICA") unassignedParticipationCount += group.participaciones.length;
     group.participaciones.forEach(part => {
         countryParticipationCount += 1;
         const id = String(part.id_participacion);
         if (countrySeenIds.has(id)) countryParticipationDuplicateIds += 1;
         countrySeenIds.add(id);
+        const source = sourceParticipationById.get(id);
+        if (!source) { countryFieldDifferences += 1; return; }
+        ["id_participacion", "id_atleta", "id_evento"].forEach(field => {
+            countryFieldComparisons += 1;
+            if (!sameInt(source[field], part[field], "participacion." + field, true)) countryFieldDifferences += 1;
+        });
+        ["id_noc", "id_pais_nacionalidad", "posicion"].forEach(field => {
+            countryFieldComparisons += 1;
+            if (!sameInt(source[field], part[field], "participacion." + field, false)) countryFieldDifferences += 1;
+        });
+        countryFieldComparisons += 1;
+        if (!sameInt(source.id_edicion, group.id_edicion, "participacion.id_edicion", false)) countryFieldDifferences += 1;
+        ["equipo", "nombre_competencia", "estado_resultado", "medalla"].forEach(field => {
+            countryFieldComparisons += 1;
+            if (!sameText(source[field], part[field])) countryFieldDifferences += 1;
+        });
+        ["edad", "altura_cm_registrada", "peso_kg_registrado"].forEach(field => {
+            countryFieldComparisons += 1;
+            if (!sameDecimal(source[field], part[field], "participacion." + field)) countryFieldDifferences += 1;
+        });
+        countryFieldComparisons += 1;
+        if (!sameBoolean(source.empatado, part.empatado, "participacion.empatado")) countryFieldDifferences += 1;
     });
 });
 record("filas_participacion_vista_pais_noc", expectedCounts.participacion, countryParticipationCount, "Incluye particiones por entidad y buckets de NOC sin entidad.");
 record("participaciones_unicas_vista_pais_noc", 0, countryParticipationDuplicateIds, "Repeticiones de id_participacion dentro de esta vista.");
+record("campos_participacion_vista_pais_noc", 0, countryFieldDifferences,
+    countryFieldComparisons + " comparaciones exactas de los 15 campos de participacion.csv contra la vista de país/NOC.");
 record("participaciones_sin_entidad_geografica", 1877, unassignedParticipationCount, "Se guardan sin atribución de país, agrupadas por NOC.");
+
+const geographyById = new Map();
+const populationByKey = new Map();
+let duplicatePopulationKeys = 0;
+target.entidades_geograficas.find({}, { id_entidad: 1, nombre: 1, codigo_pais: 1, poblacion_anual: 1 }).forEach(doc => {
+    geographyById.set(String(doc.id_entidad), doc);
+    doc.poblacion_anual.forEach(item => {
+        const key = String(doc.id_entidad) + ":" + String(item.anio);
+        if (populationByKey.has(key)) duplicatePopulationKeys += 1;
+        populationByKey.set(key, item);
+    });
+});
+let geographyComparisons = 0;
+let geographyDifferences = 0;
+otherSources.entidad_geografica.forEach(row => {
+    const doc = geographyById.get(row.id_entidad);
+    if (!doc) { geographyDifferences += 1; return; }
+    geographyComparisons += 3;
+    if (!sameInt(row.id_entidad, doc.id_entidad, "entidad_geografica.id_entidad", false)) geographyDifferences += 1;
+    if (!sameText(row.nombre, doc.nombre)) geographyDifferences += 1;
+    if (!sameText(row.codigo_pais, doc.codigo_pais)) geographyDifferences += 1;
+});
+record("campos_entidad_geografica_exactos", 0, geographyDifferences, geographyComparisons + " campos comparados contra entidad_geografica.csv.");
+
+let populationComparisons = 0;
+let populationDifferences = 0;
+otherSources.poblacion.forEach(row => {
+    const item = populationByKey.get(row.id_entidad + ":" + row.anio);
+    if (!item) { populationDifferences += 1; return; }
+    populationComparisons += 2;
+    if (!sameInt(row.anio, item.anio, "poblacion.anio", false)) populationDifferences += 1;
+    if (!sameInt(row.poblacion, item.poblacion, "poblacion.poblacion", true)) populationDifferences += 1;
+});
+record("campos_poblacion_exactos", 0, populationDifferences, populationComparisons + " campos comparados contra poblacion.csv.");
+record("claves_poblacion_duplicadas_en_mongo", 0, duplicatePopulationKeys, "Clave lógica (id_entidad, anio) en la serie anidada.");
+
+const catalogByKey = new Map();
+target.catalogo_olimpico.find({}).forEach(doc => catalogByKey.set(doc.tipo + ":" + String(doc.id), doc));
+const catalogSpecs = [
+    { csv: "noc", tipo: "NOC", key: "id_noc", fields: [["id_noc", "int"], ["codigo_noc", "text"], ["nombre_noc", "text"], ["id_entidad", "int"], ["notas", "text"]] },
+    { csv: "sede", tipo: "SEDE", key: "id_sede", fields: [["id_sede", "int"], ["nombre", "text"], ["id_pais", "int"]] },
+    { csv: "edicion_olimpica", tipo: "EDICION_OLIMPICA", key: "id_edicion", fields: [["id_edicion", "int"], ["anio", "int"], ["temporada", "text"], ["id_sede", "int"]] },
+    { csv: "deporte", tipo: "DEPORTE", key: "id_deporte", fields: [["id_deporte", "int"], ["nombre", "text"]] },
+    { csv: "disciplina", tipo: "DISCIPLINA", key: "id_disciplina", fields: [["id_disciplina", "int"], ["id_deporte", "int"], ["nombre", "text"]] },
+    { csv: "evento", tipo: "EVENTO", key: "id_evento", fields: [["id_evento", "long"], ["id_disciplina", "int"], ["nombre", "text"]] }
+];
+catalogSpecs.forEach(spec => {
+    let comparisons = 0;
+    let differences = 0;
+    otherSources[spec.csv].forEach(row => {
+        const doc = catalogByKey.get(spec.tipo + ":" + row[spec.key]);
+        if (!doc) { differences += 1; return; }
+        spec.fields.forEach(([field, kind]) => {
+            comparisons += 1;
+            const same = kind === "text" ? sameText(row[field], doc[field]) :
+                sameInt(row[field], doc[field], spec.csv + "." + field, kind === "long");
+            if (!same) differences += 1;
+        });
+    });
+    record("campos_catalogo_" + spec.csv + "_exactos", 0, differences,
+        comparisons + " campos comparados contra " + spec.csv + ".csv.");
+});
+
+const disciplineSourceById = new Map(otherSources.disciplina.map(row => [row.id_disciplina, row]));
+const sportSourceById = new Map(otherSources.deporte.map(row => [row.id_deporte, row]));
+let eventHierarchyDifferences = 0;
+otherSources.evento.forEach(row => {
+    const doc = catalogByKey.get("EVENTO:" + row.id_evento);
+    const sourceDiscipline = disciplineSourceById.get(row.id_disciplina);
+    const sourceSport = sourceDiscipline && sportSourceById.get(sourceDiscipline.id_deporte);
+    const nested = doc && doc.disciplina;
+    if (!sourceDiscipline || !sourceSport || !nested || nested.id_evento !== undefined ||
+        String(nested.id_disciplina) !== sourceDiscipline.id_disciplina ||
+        nested.nombre !== sourceDiscipline.nombre ||
+        String(nested.id_deporte) !== sourceSport.id_deporte ||
+        !nested.deporte || nested.deporte.nombre !== sourceSport.nombre ||
+        String(nested.deporte.id_deporte) !== sourceSport.id_deporte) eventHierarchyDifferences += 1;
+});
+record("jerarquia_evento_disciplina_deporte", 0, eventHierarchyDifferences,
+    "Cada EVENTO anida su DISCIPLINA y DEPORTE sin envolver de nuevo el EVENTO.");
 
 let invalidMedals = 0;
 let invalidSeasons = 0;
