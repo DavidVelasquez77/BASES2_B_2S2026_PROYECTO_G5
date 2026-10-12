@@ -1,0 +1,45 @@
+{
+  "coleccion": "participaciones_por_pais",
+  "descripcion": "Bucket por entidad o NOC sin entidad y edición; vista de lectura de participaciones.",
+  "raiz": {
+    "_id": "String: clave de agrupación + edición",
+    "tipo_agrupacion": "ENTIDAD_GEOGRAFICA|NOC_SIN_ENTIDAD|SIN_NOC_SIN_ENTIDAD",
+    "id_entidad": "Int32|null",
+    "entidad": "{id_entidad:Int32,nombre:String,codigo_pais:String|null}|null",
+    "id_noc": "Int32|null",
+    "noc": "Object|null",
+    "id_edicion": "Int32",
+    "anio": "Int32",
+    "temporada": "String",
+    "edicion": "{id_edicion:Int32,anio:Int32,temporada:String,id_sede:Int32|null,sede:Object|null}",
+    "metodo_asociacion": "NOC.id_entidad|NOC_SIN_ENTIDAD|SIN_NOC_SIN_ENTIDAD",
+    "participaciones": [
+      {
+        "id_participacion": "Long",
+        "id_atleta": "Long",
+        "atleta": {
+          "nombre": "String",
+          "nombre_completo": "String|null",
+          "nombre_usado": "String|null",
+          "sexo": "String|null",
+          "fecha_nacimiento": "Date|null"
+        },
+        "id_evento": "Long",
+        "evento": "{id_evento:Long,nombre:String,id_disciplina:Int32,disciplina:{id_disciplina:Int32,nombre:String,id_deporte:Int32,deporte:Object}}",
+        "id_noc": "Int32|null",
+        "noc": "Object|null",
+        "id_pais_nacionalidad": "Int32|null",
+        "medalla": "String|null",
+        "posicion": "Int32|null",
+        "empatado": "Boolean|null",
+        "estado_resultado": "String|null",
+        "equipo": "String|null",
+        "nombre_competencia": "String|null",
+        "edad": "Decimal128|null",
+        "altura_cm_registrada": "Decimal128|null",
+        "peso_kg_registrado": "Decimal128|null"
+      }
+    ],
+    "origen_csv": "participacion.csv"
+  }
+}

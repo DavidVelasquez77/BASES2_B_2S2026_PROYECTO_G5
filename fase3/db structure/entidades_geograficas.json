@@ -1,0 +1,23 @@
+{
+  "coleccion": "entidades_geograficas",
+  "descripcion": "Entidad del CSV, incluidos agregados estadísticos; no todos son países.",
+  "raiz": {
+    "_id": "Int32",
+    "id_entidad": "Int32",
+    "nombre": "String",
+    "codigo_pais": "String|null",
+    "poblacion_anual": [
+      { "anio": "Int32", "poblacion": "Long" }
+    ],
+    "nocs": [
+      { "id_noc": "Int32", "codigo_noc": "String", "nombre_noc": "String|null" }
+    ],
+    "sedes": [
+      { "id_sede": "Int32", "nombre": "String" }
+    ],
+    "ediciones_organizadas": [
+      { "id_edicion": "Int32", "anio": "Int32", "temporada": "String", "id_sede": "Int32" }
+    ],
+    "origen_csv": "entidad_geografica.csv"
+  }
+}

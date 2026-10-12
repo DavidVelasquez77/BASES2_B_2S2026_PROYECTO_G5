@@ -1,0 +1,52 @@
+{
+  "coleccion": "catalogo_olimpico",
+  "descripcion": "Documentos tipados; la forma depende del tipo y conserva filas no referenciadas.",
+  "comun": {
+    "_id": "String: TIPO:ID",
+    "tipo": "DEPORTE|DISCIPLINA|EVENTO|EDICION_OLIMPICA|SEDE|NOC",
+    "id": "Int32|Long",
+    "origen_csv": "String"
+  },
+  "variantes": {
+    "DEPORTE": { "id_deporte": "Int32", "nombre": "String" },
+    "DISCIPLINA": {
+      "id_disciplina": "Int32",
+      "id_deporte": "Int32",
+      "nombre": "String",
+      "deporte": { "id_deporte": "Int32", "nombre": "String" }
+    },
+    "EVENTO": {
+      "id_evento": "Long",
+      "id_disciplina": "Int32",
+      "nombre": "String",
+      "disciplina": {
+        "id_disciplina": "Int32",
+        "nombre": "String",
+        "id_deporte": "Int32",
+        "deporte": { "id_deporte": "Int32", "nombre": "String" }
+      }
+    },
+    "EDICION_OLIMPICA": {
+      "id_edicion": "Int32",
+      "anio": "Int32",
+      "temporada": "String",
+      "id_sede": "Int32|null",
+      "sede": "{id_sede:Int32,nombre:String,id_pais:Int32,pais:Object}|null"
+    },
+    "SEDE": {
+      "id_sede": "Int32",
+      "nombre": "String",
+      "id_pais": "Int32",
+      "pais": "{id_entidad:Int32,nombre:String,codigo_pais:String|null}"
+    },
+    "NOC": {
+      "id_noc": "Int32",
+      "codigo_noc": "String",
+      "nombre_noc": "String|null",
+      "id_entidad": "Int32|null",
+      "id_entidad_csv": "String",
+      "entidad": "Object|null",
+      "notas": "String|null"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+name: olimpiadas-fase3
+
+services:
+  mongo:
+    image: mongo:8.0
+    ports:
+      - "127.0.0.1:27018:27017"
+    volumes:
+      - mongo_fase3_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand({ping:1}).ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+    restart: unless-stopped
+
+  mongo-cli:
+    image: mongo:8.0
+    profiles: ["tools"]
+    depends_on:
+      mongo:
+        condition: service_healthy
+    working_dir: /workspace
+    entrypoint: ["mongosh", "mongodb://mongo:27017/OlimpiadasF3", "--quiet"]
+    environment:
+      OLIMPIADAS_MONGO_DB: OlimpiadasF3
+      OLIMPIADAS_MONGO_APPLY: ${OLIMPIADAS_MONGO_APPLY:-0}
+    volumes:
+      - ./:/workspace/fase3
+      - ../OlimpiadasF1/data/processed:/workspace/OlimpiadasF1/data/processed:ro
+
+volumes:
+  mongo_fase3_data:

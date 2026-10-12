@@ -136,17 +136,7 @@ El detalle de claves y motivo está en `indexes_created.csv`.
 
 ## Scripts y orden reproducible
 
-Desde la carpeta raíz `PROYECTO1`, con el servicio MongoDB disponible:
-
-```powershell
-mongosh --quiet --file fase3/scripts/mongodb/01_create_collections.js
-mongosh --quiet --file fase3/scripts/mongodb/02_load_processed.js            # preflight, no escribe
-$env:OLIMPIADAS_MONGO_APPLY='1'
-mongosh --quiet --file fase3/scripts/mongodb/02_load_processed.js            # carga protegida
-mongosh --quiet --file fase3/scripts/mongodb/02a_backfill_nested_athlete_id.js # idempotente; no-op con el cargador actual
-mongosh --quiet --file fase3/scripts/mongodb/03_create_indexes.js
-mongosh --quiet --file fase3/scripts/mongodb/04_validate_import.js
-```
+**La base documentada ya está cargada en `localhost:27017`.** El Compose añadido para instalaciones nuevas publica otra instancia en `localhost:27018`; no contiene automáticamente los datos de `27017`. Los lanzadores `run_import.ps1` y `run_import.sh` sirven para esa instalación nueva y vacía, no para verificar o sobrescribir la base vigente. El [manual técnico y de evidencias](../Evidence/Evidences_Fase3.md) utiliza comandos de comprobación dirigidos a `27017`, con resultados esperados y espacios para capturas reales. Los mapas JSON de las cuatro colecciones están en `fase3/db structure/`.
 
 Si se trabaja con una carga anterior al ajuste de la jerarquía del catálogo, ejecutar primero `05_correct_catalog_event_hierarchy.js` en modo lectura; el script informa cuántos documentos requieren corrección. Para aplicarla, requiere `OLIMPIADAS_MONGO_APPLY=1`. Es idempotente y verifica los 2,069 eventos antes y después. El cargador actual ya produce la jerarquía corregida.
 

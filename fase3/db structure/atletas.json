@@ -1,0 +1,76 @@
+{
+  "coleccion": "atletas",
+  "descripcion": "Un documento por atleta; participaciones embebidas.",
+  "raiz": {
+    "_id": "Long",
+    "id_atleta": "Long",
+    "nombre": "String",
+    "nombre_completo": "String|null",
+    "nombre_usado": "String|null",
+    "nombre_original": "String|null",
+    "otros_nombres": "String|null",
+    "apodos": "String|null",
+    "orden_nombre": "String|null",
+    "sexo": "String|null",
+    "fecha_nacimiento": "Date|null",
+    "ciudad_nacimiento": "String|null",
+    "region_nacimiento": "String|null",
+    "id_pais_nacimiento": "Int32|null",
+    "fecha_fallecimiento": "Date|null",
+    "ciudad_fallecimiento": "String|null",
+    "region_fallecimiento": "String|null",
+    "id_pais_fallecimiento": "Int32|null",
+    "id_pais_nacionalidad": "Int32|null",
+    "altura_cm": "Decimal128|null",
+    "peso_kg": "Decimal128|null",
+    "roles": "String|null",
+    "afiliaciones": "String|null",
+    "titulos": "String|null",
+    "latitud": "Decimal128|null",
+    "longitud": "Decimal128|null",
+    "pais_nacimiento": "{id_entidad:Int32,nombre:String,codigo_pais:String|null}|null",
+    "pais_nacionalidad": "{id_entidad:Int32,nombre:String,codigo_pais:String|null}|null",
+    "pais_fallecimiento": "{id_entidad:Int32,nombre:String,codigo_pais:String|null}|null",
+    "participaciones": [
+      {
+        "id_participacion": "Long",
+        "id_atleta": "Long",
+        "id_edicion": "Int32",
+        "edicion": {
+          "id_edicion": "Int32",
+          "anio": "Int32",
+          "temporada": "String",
+          "id_sede": "Int32|null",
+          "sede": "{id_sede:Int32,nombre:String,id_pais:Int32,pais:{id_entidad:Int32,nombre:String,codigo_pais:String|null}}|null"
+        },
+        "id_evento": "Long",
+        "evento": {
+          "id_evento": "Long",
+          "nombre": "String",
+          "id_disciplina": "Int32",
+          "disciplina": {
+            "id_disciplina": "Int32",
+            "nombre": "String",
+            "id_deporte": "Int32",
+            "deporte": { "id_deporte": "Int32", "nombre": "String" }
+          }
+        },
+        "id_noc": "Int32|null",
+        "noc": "{id_noc:Int32,codigo_noc:String,nombre_noc:String|null,id_entidad:Int32|null,entidad:Object|null,notas:String|null}|null",
+        "id_pais_nacionalidad": "Int32|null",
+        "pais_nacionalidad": "Object|null",
+        "equipo": "String|null",
+        "nombre_competencia": "String|null",
+        "edad": "Decimal128|null",
+        "altura_cm_registrada": "Decimal128|null",
+        "peso_kg_registrado": "Decimal128|null",
+        "posicion": "Int32|null",
+        "empatado": "Boolean|null",
+        "estado_resultado": "String|null",
+        "medalla": "String|null",
+        "origen_csv": "participacion.csv"
+      }
+    ],
+    "origen_csv": "atleta.csv"
+  }
+}
