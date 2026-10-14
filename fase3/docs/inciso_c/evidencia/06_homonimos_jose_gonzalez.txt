@@ -1,0 +1,44 @@
+> .\fase3\scripts\consulta_atleta.ps1 "José González"
+
+==============================================================================
+  CONSULTA DE ATLETA · José González
+==============================================================================
+
+  Hay 14 atletas con ese nombre (homónimos); no se escoge uno automáticamente.
+  Repita la consulta con el id del atleta (-Id en Windows, --id en Linux), con el nombre
+  completo o con filtros (país, deporte, año).
+
+  ID      NOMBRE                          NACIM.      PAÍS      AÑOS
+  ----------------------------------------------------------------------------
+  6172    José González                   1914-08-03  CHI       1936
+          Basketball
+  30486   José González                   1946-01-15  MEX       1964, 1968
+          José González S. · Equestrian, Gymnastics, Shooting
+  41381   José González                   1947-10-15  CUB       1976
+          José de Jesús González Montero · Shooting
+  43493   José González                   1925-03-18  PUR       1968, 1996
+          José Ramón González Soto · Shooting, Aquatics
+  46191   José González                   1906-08-30  ESP       1928, 1932
+          José González Esplugas · Shooting, Aquatics
+  157204  Jos Gonzlez                                 CHI       1936
+          Basketball
+  157207  Jos Gonzlez                                 MEX       1948, 1960, 1964, 1968…
+          Shooting, Gymnastics, Aquatics, Cycling
+  157208  Jos Gonzlez                                 PUR       1996, 2008
+          Aquatics, Boxing
+  189565  Jos Gonzlez                                 URU/GRE   1988, 2020  (1 medallas)
+          Cycling, Aquatics
+  208058  Jos Gonzlez                                 ESP       1992
+          Shooting
+  220500  Jos Gonzlez                                 CUB       1992, 1996  (2 medallas)
+          Baseball/Softball
+  229683  Jos Gonzlez                                 ARG       2016
+          Volleyball
+  291118  Jos Gonzlez                                 COL       1996
+          Wrestling
+  336484  Jose Gonzalez                               DOM       2024
+          Athletics
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 41 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:23 UTC

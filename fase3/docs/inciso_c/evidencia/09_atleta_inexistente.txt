@@ -1,0 +1,11 @@
+> .\fase3\scripts\consulta_atleta.ps1 "Fulano Inexistente"
+
+==============================================================================
+  CONSULTA DE ATLETA · Fulano Inexistente
+==============================================================================
+
+  No se encontró ningún atleta con ese nombre.
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 491 ms · búsqueda por coincidencia parcial · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:27 UTC

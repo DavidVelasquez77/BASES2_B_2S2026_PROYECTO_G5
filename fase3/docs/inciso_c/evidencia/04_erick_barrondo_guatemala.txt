@@ -1,0 +1,47 @@
+> .\fase3\scripts\consulta_atleta.ps1 "Erick Barrondo"
+
+==============================================================================
+  CONSULTA DE ATLETA · Erick Barrondo
+==============================================================================
+
+==============================================================================
+  Érick Barrondo   (id_atleta 121191)
+==============================================================================
+  DATOS PERSONALES
+  Nombre completo:      Érick Bernabé Barrondo García
+  Sexo:                 Masculino
+  Nacimiento:           1991-06-14 · San Cristóbal, Alta Verapaz, Guatemala
+  Altura:               178 cm
+  Peso:                 60 kg
+
+  RESUMEN
+  Participaciones:      5
+  Ediciones:            4 · 2012, 2016, 2020, 2024
+  Deportes:             Athletics
+  Representó a:         GUA (Guatemala)
+  Medallas:             1  (oro 0 · plata 1 · bronce 0)
+  Mejor resultado:      Medalla de plata · 20 kilometres Race Walk, Men (Olympic) · 2012
+
+  PARTICIPACIONES Y RESULTADOS
+
+  ■ 2012 · Verano · London, United Kingdom   (edad 21)
+      [PLATA]  20 kilometres Race Walk, Men (Olympic)
+               Athletics · GUA Guatemala · Posición 2
+               50 kilometres Race Walk, Men (Olympic)
+               Athletics · GUA Guatemala · Descalificado (DQ)
+
+  ■ 2016 · Verano · Rio de Janeiro, Brazil   (edad 25)
+               20 kilometres Race Walk, Men (Olympic)
+               Athletics · GUA Guatemala · Posición 50
+
+  ■ 2020 · Verano · Tokyo, Japan
+               50 kilometres Race Walk, Men (Olympic)
+               Athletics · GUA Guatemala · Descalificado (DQ)
+
+  ■ 2024 · Verano · Paris, France
+               Men's 20km Race Walk
+               Athletics · GUA Guatemala · Sin posición registrada
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 507 ms · búsqueda por nombre sin distinguir mayúsculas ni acentos · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:20 UTC

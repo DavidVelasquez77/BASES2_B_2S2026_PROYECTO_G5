@@ -1,0 +1,59 @@
+> .\fase3\scripts\consulta_atleta.ps1 "Usain Bolt"
+
+==============================================================================
+  CONSULTA DE ATLETA · Usain Bolt
+==============================================================================
+
+==============================================================================
+  Usain Bolt   (id_atleta 104492)
+==============================================================================
+  DATOS PERSONALES
+  Nombre completo:      Usain St. Leo Bolt
+  Apodos:               Lightning Bolt
+  Sexo:                 Masculino
+  Nacimiento:           1986-08-21 · Sherwood Content, Trelawny, Jamaica
+  Altura:               196 cm
+  Peso:                 95 kg
+  Afiliaciones:         Racers Track Club, Kingston (JAM)
+
+  RESUMEN
+  Participaciones:      10
+  Ediciones:            4 · 2004, 2008, 2012, 2016
+  Deportes:             Athletics
+  Representó a:         JAM (Jamaica)
+  Medallas:             8  (oro 8 · plata 0 · bronce 0)
+  Mejor resultado:      Medalla de oro · 100 metres, Men (Olympic) · 2008
+
+  PARTICIPACIONES Y RESULTADOS
+
+  ■ 2004 · Verano · Athina, Greece
+               200 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 5
+
+  ■ 2008 · Verano · Beijing, China   (edad 21)
+      [ORO]    100 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+      [ORO]    200 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+               4 × 100 metres Relay, Men (Olympic)
+               Athletics · JAM Jamaica · Sin posición registrada
+
+  ■ 2012 · Verano · London, United Kingdom   (edad 25)
+      [ORO]    100 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+      [ORO]    200 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+      [ORO]    4 × 100 metres Relay, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+
+  ■ 2016 · Verano · Rio de Janeiro, Brazil   (edad 29)
+      [ORO]    100 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+      [ORO]    200 metres, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+      [ORO]    4 × 100 metres Relay, Men (Olympic)
+               Athletics · JAM Jamaica · Posición 1
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 27 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:17 UTC

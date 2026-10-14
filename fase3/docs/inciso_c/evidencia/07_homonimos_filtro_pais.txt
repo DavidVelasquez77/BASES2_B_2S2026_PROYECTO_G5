@@ -1,0 +1,45 @@
+> .\fase3\scripts\consulta_atleta.ps1 "Luis López" -Pais MEX
+
+==============================================================================
+  CONSULTA DE ATLETA · Luis López
+  Filtros: país representado (NOC) = MEX
+==============================================================================
+
+==============================================================================
+  Luis López   (id_atleta 30488)
+==============================================================================
+  DATOS PERSONALES
+  Nombre completo:      Luis Alberto López Ghigliazza
+  Sexo:                 Masculino
+  Nacimiento:           1969-06-08
+  Fallecimiento:        1995-10-09 · Ciudad de México (Mexico City), Ciudad de México, Mexico
+
+  RESUMEN (con filtros)
+  Participaciones:      7 de 7
+  Ediciones:            1 · 1992
+  Deportes:             Gymnastics
+  Representó a:         MEX (Mexico)
+  Medallas:             ninguna
+  Mejor resultado:      Posición 38 · Pommelled Horse, Men (Olympic) · 1992
+
+  PARTICIPACIONES Y RESULTADOS
+
+  ■ 1992 · Verano · Barcelona, Spain
+               Floor Exercise, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición 83
+               Horizontal Bar, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición =43
+               Horse Vault, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición =42
+               Individual All-Around, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición =57
+               Parallel Bars, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición 73
+               Pommelled Horse, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición =38
+               Rings, Men (Olympic)
+               Gymnastics / Artistic Gymnastics · MEX Mexico · Posición =40
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 26 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:24 UTC

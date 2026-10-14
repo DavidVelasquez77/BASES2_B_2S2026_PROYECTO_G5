@@ -1,0 +1,5 @@
+explain("executionStats") sobre OlimpiadasF3.atletas · 2026-10-13 23:51:29 UTC
+caso | resultados | claves examinadas | documentos examinados | ms en MongoDB | índices del plan
+exacto Michael Phelps | n=1 | claves=1 | docs=1 | ms=0 | "ix_atletas_nombre" "ix_atletas_nombre_completo" "ix_atletas_nombre_usado"
+exacto + filtro 2008/oro | n=1 | claves=1 | docs=1 | ms=0 | "ix_atletas_nombre" "ix_atletas_nombre_completo" "ix_atletas_nombre_usado"
+parcial phelps | n=12 | claves=454829 | docs=12 | ms=465 | "ix_atletas_nombre" "ix_atletas_nombre_completo" "ix_atletas_nombre_usado"

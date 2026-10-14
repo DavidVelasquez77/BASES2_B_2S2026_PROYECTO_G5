@@ -1,0 +1,21 @@
+> .\fase3\scripts\consulta_atleta.ps1 "Michael Phelps" -Deporte natacion
+
+==============================================================================
+  CONSULTA DE ATLETA · Michael Phelps
+  Filtros: deporte = natacion
+==============================================================================
+
+  No se encontró ningún atleta con participaciones que cumplan los filtros.
+
+  Michael Phelps (id 93113) sí existe. Valores disponibles para filtrar:
+  Años:                 2000, 2004, 2008, 2012, 2016
+  Temporadas:           Summer
+  Deportes:             Aquatics, Swimming
+  Países (NOC):         USA
+  Medallas:             Bronce, Oro, Plata
+
+  Los deportes y temporadas están registrados en inglés, como en las fuentes.
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 23 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:25 UTC

@@ -1,0 +1,57 @@
+> .\fase3\scripts\consulta_atleta.ps1 "nadia comaneci"
+
+==============================================================================
+  CONSULTA DE ATLETA · nadia comaneci
+==============================================================================
+
+==============================================================================
+  Nadia Comăneci   (id_atleta 28782)
+==============================================================================
+  DATOS PERSONALES
+  Nombre completo:      Nadia Elena Comăneci (-Conner)
+  Sexo:                 Femenino
+  Nacimiento:           1961-11-12 · Onești, Bacău, Romania
+  Altura:               162 cm
+  Peso:                 45 kg
+
+  RESUMEN
+  Participaciones:      12
+  Ediciones:            2 · 1976, 1980
+  Deportes:             Gymnastics
+  Representó a:         ROU (Romania)
+  Medallas:             9  (oro 5 · plata 3 · bronce 1)
+  Mejor resultado:      Medalla de oro · Balance Beam, Women (Olympic) · 1976
+
+  PARTICIPACIONES Y RESULTADOS
+
+  ■ 1976 · Verano · Montreal, Canada
+      [ORO]    Balance Beam, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 1
+      [BRONCE] Floor Exercise, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 3
+               Horse Vault, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 4
+      [ORO]    Individual All-Around, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 1
+      [PLATA]  Team All-Around, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 2
+      [ORO]    Uneven Bars, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 1
+
+  ■ 1980 · Verano · Moskva, Russian Federation
+      [ORO]    Balance Beam, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 1
+      [ORO]    Floor Exercise, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición =1
+               Horse Vault, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 5
+      [PLATA]  Individual All-Around, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición =2
+      [PLATA]  Team All-Around, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición 2
+               Uneven Bars, Women (Olympic)
+               Gymnastics / Artistic Gymnastics · ROU Romania · Posición =20
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 524 ms · búsqueda por nombre sin distinguir mayúsculas ni acentos · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:19 UTC

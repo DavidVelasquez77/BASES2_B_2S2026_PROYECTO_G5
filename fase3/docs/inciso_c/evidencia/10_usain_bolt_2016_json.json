@@ -1,0 +1,118 @@
+{
+  "consulta": {
+    "atleta": "Usain Bolt",
+    "id_atleta": null,
+    "deporte": null,
+    "pais": null,
+    "anio": 2016,
+    "temporada": null,
+    "medalla": null,
+    "criterio": "nombre exacto"
+  },
+  "atletas": [
+    {
+      "id_atleta": 104492,
+      "nombre": "Usain Bolt",
+      "nombre_completo": "Usain St. Leo Bolt",
+      "otros_nombres": null,
+      "apodos": "Lightning Bolt",
+      "sexo": "Male",
+      "fecha_nacimiento": "1986-08-21",
+      "lugar_nacimiento": "Sherwood Content, Trelawny, Jamaica",
+      "fecha_fallecimiento": null,
+      "lugar_fallecimiento": null,
+      "nacionalidad": null,
+      "altura_cm": 196,
+      "peso_kg": 95,
+      "roles": "Competed in Olympic Games • Other",
+      "afiliaciones": "Racers Track Club, Kingston (JAM)",
+      "titulos": null,
+      "resumen": {
+        "participaciones_totales": 10,
+        "participaciones_mostradas": 3,
+        "ediciones": 1,
+        "anios": [
+          2016
+        ],
+        "deportes": [
+          "Athletics"
+        ],
+        "paises_representados": [
+          "JAM (Jamaica)"
+        ],
+        "medallas": {
+          "oro": 3,
+          "plata": 0,
+          "bronce": 0,
+          "total": 3
+        },
+        "mejor_resultado": "Medalla de oro · 100 metres, Men (Olympic) · 2016"
+      },
+      "participaciones": [
+        {
+          "id_participacion": 228035,
+          "id_edicion": 54,
+          "anio": 2016,
+          "temporada": "Summer",
+          "sede": "Rio de Janeiro",
+          "pais_sede": "Brazil",
+          "evento": "100 metres, Men (Olympic)",
+          "disciplina": "Athletics",
+          "deporte": "Athletics",
+          "codigo_noc": "JAM",
+          "nombre_noc": "Jamaica",
+          "equipo": "Jamaica",
+          "edad": 29,
+          "posicion": 1,
+          "empatado": false,
+          "estado_resultado": null,
+          "medalla": "Gold"
+        },
+        {
+          "id_participacion": 228036,
+          "id_edicion": 54,
+          "anio": 2016,
+          "temporada": "Summer",
+          "sede": "Rio de Janeiro",
+          "pais_sede": "Brazil",
+          "evento": "200 metres, Men (Olympic)",
+          "disciplina": "Athletics",
+          "deporte": "Athletics",
+          "codigo_noc": "JAM",
+          "nombre_noc": "Jamaica",
+          "equipo": null,
+          "edad": null,
+          "posicion": 1,
+          "empatado": false,
+          "estado_resultado": null,
+          "medalla": "Gold"
+        },
+        {
+          "id_participacion": 228037,
+          "id_edicion": 54,
+          "anio": 2016,
+          "temporada": "Summer",
+          "sede": "Rio de Janeiro",
+          "pais_sede": "Brazil",
+          "evento": "4 × 100 metres Relay, Men (Olympic)",
+          "disciplina": "Athletics",
+          "deporte": "Athletics",
+          "codigo_noc": "JAM",
+          "nombre_noc": "Jamaica",
+          "equipo": "Jamaica",
+          "edad": null,
+          "posicion": 1,
+          "empatado": false,
+          "estado_resultado": null,
+          "medalla": "Gold"
+        }
+      ]
+    }
+  ],
+  "candidatos": [],
+  "total_candidatos": 0,
+  "valores_sin_filtros": [],
+  "candidatos_incompletos": false,
+  "fecha_ejecucion_utc": "2026-10-13T23:51:28.650Z",
+  "tiempo_ms": 38
+}

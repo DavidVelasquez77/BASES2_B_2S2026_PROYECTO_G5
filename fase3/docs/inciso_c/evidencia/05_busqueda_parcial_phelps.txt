@@ -1,0 +1,40 @@
+> .\fase3\scripts\consulta_atleta.ps1 "phelps"
+
+==============================================================================
+  CONSULTA DE ATLETA · phelps
+==============================================================================
+
+  Hay 12 atletas cuyo nombre contiene lo escrito.
+  Repita la consulta con el id del atleta (-Id en Windows, --id en Linux), con el nombre
+  completo o con filtros (país, deporte, año).
+
+  ID      NOMBRE                          NACIM.      PAÍS      AÑOS
+  ----------------------------------------------------------------------------
+  36895   Annamarie Stapleton             1966-05-24  GBR       1996
+          Annamarie Stapleton (-Phelps) · Rowing
+  47017   Brian Phelps                    1944-04-21  GBR       1960, 1964  (1 medallas)
+          Brian Eric Phelps · Aquatics
+  78391   Harlow Rothert                  1908-04-01  USA       1928, 1932  (1 medallas)
+          Harlow Phelps Rothert · Athletics
+  68550   Jack George                     1882-04-26  GBR       1908
+          John Phelps "Jack" George · Athletics
+  29061   Jaycie Phelps                   1979-09-26  USA       1996  (1 medallas)
+          Jaycie Lynn Phelps (-McClure, -Marus) · Gymnastics
+  18067   Mason Phelps                    1885-12-07  USA       1904  (1 medallas)
+          Mason Elliott Phelps · Golf
+  93113   Michael Phelps                  1985-06-30  USA       2000, 2004, 2008, 2012…  (28 medallas)
+          Michael Fred Phelps, II · Aquatics
+  28264   Monica Rutherford               1944-03-29  GBR       1964
+          Monica Kathleen Rutherford (-Phelps) · Gymnastics
+  78302   Pete Phelps                     1903-05-02  USA       1924
+          Harold Roy "Pete" Phelps · Athletics
+  44929   Peter Phelps                    1945-03-28  AUS       1964
+          Aquatics
+  34532   Richard Phelps                  1961-04-19  GBR       1984, 1988, 1992, 1996  (1 medallas)
+          Richard Lawson Phelps, Jr. · Modern Pentathlon, Rowing
+  34533   Robert Phelps                   1939-07-22  GBR       1912, 1964, 1968, 1972
+          Robert Lawson Phelps, Sr. · Modern Pentathlon, Wrestling
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 533 ms · búsqueda por coincidencia parcial · base OlimpiadasF3
+  Ejecutada el 2026-10-13 23:51:22 UTC
