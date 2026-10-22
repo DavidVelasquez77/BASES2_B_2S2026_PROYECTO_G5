@@ -1,0 +1,43 @@
+> .\fase3\scripts\consulta_pais.ps1 GUA -Medalla cualquiera
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · GUATEMALA (GTM)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       Guatemala
+  Código de país (ISO): GTM
+  NOCs asociados:       GUA (Guatemala)
+  Población:            17,602,431 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Sedes y ediciones organizadas: Ninguna (el país no ha sido sede en las ediciones registradas).
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Medalla=cualquiera · Límite=100
+  Participaciones:      3
+  Atletas únicos:       3
+  Ediciones disputadas: 2 · Años: 2012, 2024
+  Deportes con registro: 2 (Athletics, Shooting)
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 3   | Oro: 1   | Plata: 1   | Bronce: 1
+  • Medallas físicas acumuladas por atletas:
+      Total: 3   | Oro: 1   | Plata: 1   | Bronce: 1
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+
+  ■ 2012 · Verano · London   (Participaciones: 1)
+ [PLATA] 20 kilometres Race Walk, Men (Olympic)
+           Athletics · Érick Bernabé Barrondo García (id 121191) · Posición 2
+
+  ■ 2024 · Verano · Paris   (Participaciones: 2)
+[BRONCE] Trap, Men (Olympic)
+           Shooting · Jean-Pierre Brol Cárdenas (id 121277) · Sin posición registrada
+  [ORO]  Trap, Women (Olympic)
+           Shooting · Adriana Ruano Oliva (id 140041) · Sin posición registrada
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 62 ms · búsqueda por código NOC [GUA] · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:05 UTC

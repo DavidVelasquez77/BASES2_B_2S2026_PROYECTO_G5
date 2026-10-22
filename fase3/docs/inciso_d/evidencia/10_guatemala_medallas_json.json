@@ -1,0 +1,117 @@
+{
+  estado: 'PASS',
+  entidad: {
+    id_entidad: 109,
+    nombre: 'Guatemala',
+    codigo_pais: 'GTM',
+    nocs: [
+      {
+        id_noc: 87,
+        codigo_noc: 'GUA',
+        nombre_noc: 'Guatemala'
+      }
+    ],
+    es_agregado_estadistico: false
+  },
+  poblacion: {
+    resumen: '17,602,431 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)',
+    total_registros_serie: 64,
+    ultima_disponible: {
+      anio: 2023,
+      poblacion: Long('17602431')
+    }
+  },
+  sedes_y_ediciones_organizadas: [],
+  resumen_olimpico: {
+    total_participaciones: 3,
+    atletas_unicos: 3,
+    ediciones_con_participacion: 2,
+    deportes_disputados: [
+      'Athletics',
+      'Shooting'
+    ],
+    medallero_oficial_pais: {
+      oro: 1,
+      plata: 1,
+      bronce: 1,
+      total: 3
+    },
+    medallas_fisicas_atletas: {
+      oro: 1,
+      plata: 1,
+      bronce: 1,
+      total: 3
+    }
+  },
+  ediciones: [
+    {
+      anio: 2012,
+      temporada: 'Summer',
+      sede: 'London',
+      participaciones: [
+        {
+          id_participacion: Long('264268'),
+          atleta: {
+            id_atleta: Long('121191'),
+            nombre: 'Érick Bernabé Barrondo García',
+            sexo: 'Male'
+          },
+          evento: '20 kilometres Race Walk, Men (Olympic)',
+          disciplina: 'Athletics',
+          deporte: 'Athletics',
+          posicion: 2,
+          empatado: false,
+          estado_resultado: null,
+          medalla: 'Silver'
+        }
+      ]
+    },
+    {
+      anio: 2024,
+      temporada: 'Summer',
+      sede: 'Paris',
+      participaciones: [
+        {
+          id_participacion: Long('823950'),
+          atleta: {
+            id_atleta: Long('121277'),
+            nombre: 'Jean-Pierre Brol Cárdenas',
+            sexo: 'Male'
+          },
+          evento: 'Trap, Men (Olympic)',
+          disciplina: 'Shooting',
+          deporte: 'Shooting',
+          posicion: null,
+          empatado: null,
+          estado_resultado: null,
+          medalla: 'Bronze'
+        },
+        {
+          id_participacion: Long('823949'),
+          atleta: {
+            id_atleta: Long('140041'),
+            nombre: 'Adriana Ruano Oliva',
+            sexo: 'Female'
+          },
+          evento: 'Trap, Women (Olympic)',
+          disciplina: 'Shooting',
+          deporte: 'Shooting',
+          posicion: null,
+          empatado: null,
+          estado_resultado: null,
+          medalla: 'Gold'
+        }
+      ]
+    }
+  ],
+  metadatos: {
+    tiempo_ms: 52,
+    metodo_busqueda: 'código NOC [GUA]',
+    filtros_aplicados: [
+      'Medalla=cualquiera',
+      'Límite=100'
+    ],
+    base: 'OlimpiadasF3',
+    fecha_utc: '2026-10-21T16:46:24.794Z'
+  }
+}

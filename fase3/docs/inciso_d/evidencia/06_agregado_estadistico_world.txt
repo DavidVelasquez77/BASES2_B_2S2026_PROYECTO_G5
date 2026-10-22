@@ -1,0 +1,35 @@
+> .\fase3\scripts\consulta_pais.ps1 "World"
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · WORLD (WLD)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       World
+  Código de país (ISO): WLD
+  NOCs asociados:       Ninguno registrado
+  Población:            8,024,997,028 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+  ⚠️ AVISO: Esta entidad es un agregado estadístico/regional. No posee comités olímpicos ni delegaciones.
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Sedes y ediciones organizadas: Ninguna (el país no ha sido sede en las ediciones registradas).
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Límite=100
+  Participaciones:      0 (sin registros con los filtros indicados)
+  Atletas únicos:       0
+  Ediciones disputadas: 0
+  Deportes con registro: Ninguno
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 0   | Oro: 0   | Plata: 0   | Bronce: 0
+  • Medallas físicas acumuladas por atletas:
+      Total: 0   | Oro: 0   | Plata: 0   | Bronce: 0
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+  (No se encontraron participaciones con los criterios especificados)
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 34 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:16 UTC

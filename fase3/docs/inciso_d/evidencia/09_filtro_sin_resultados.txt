@@ -1,0 +1,37 @@
+> .\fase3\scripts\consulta_pais.ps1 GUA -Anio 2012 -Deporte Swimming
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · GUATEMALA (GTM)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       Guatemala
+  Código de país (ISO): GTM
+  NOCs asociados:       GUA (Guatemala)
+  Población:            17,602,431 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Sedes y ediciones organizadas: Ninguna (el país no ha sido sede en las ediciones registradas).
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Año=2012 · Deporte=Swimming · Límite=100
+  Participaciones:      1
+  Atletas únicos:       1
+  Ediciones disputadas: 1 · Años: 2012
+  Deportes con registro: 1 (Aquatics)
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 0   | Oro: 0   | Plata: 0   | Bronce: 0
+  • Medallas físicas acumuladas por atletas:
+      Total: 0   | Oro: 0   | Plata: 0   | Bronce: 0
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+
+  ■ 2012 · Verano · London   (Participaciones: 1)
+        100 metres Freestyle, Men (Olympic)
+           Aquatics · Swimming · Kevin Salvador Ávila Soto (id 121493) · Posición 38
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 39 ms · búsqueda por código NOC [GUA] · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:22 UTC

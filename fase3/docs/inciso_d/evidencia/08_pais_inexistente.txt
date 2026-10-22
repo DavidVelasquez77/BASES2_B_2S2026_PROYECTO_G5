@@ -1,0 +1,4 @@
+> .\fase3\scripts\consulta_pais.ps1 "Atlantis"
+
+No se encontró ningún país, entidad geográfica ni código NOC para: Atlantis
+  Verifique la ortografía o intente con el código NOC (ej. GUA, FRA, USA, ARG).

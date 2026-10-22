@@ -1,0 +1,12 @@
+> .\fase3\scripts\consulta_pais.ps1 "United"
+
+==============================================================================
+  SE ENCONTRARON MÚLTIPLES ENTIDADES PARA: United
+==============================================================================
+  Especifique el código NOC/ISO exacto o el nombre completo:
+
+  • United Arab Emirates                 | NOC: UAE          | ISO: ARE
+  • United Kingdom                       | NOC: GBR          | ISO: GBR
+  • United States                        | NOC: USA          | ISO: USA
+
+------------------------------------------------------------------------------

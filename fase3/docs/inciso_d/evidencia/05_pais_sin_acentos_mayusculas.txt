@@ -1,0 +1,81 @@
+> .\fase3\scripts\consulta_pais.ps1 "peru" -Medalla cualquiera
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · PERU (PER)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       Peru
+  Código de país (ISO): PER
+  NOCs asociados:       PER (Peru)
+  Población:            34,352,719 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Sedes y ediciones organizadas: Ninguna (el país no ha sido sede en las ediciones registradas).
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Medalla=cualquiera · Límite=100
+  Participaciones:      18
+  Atletas únicos:       18
+  Ediciones disputadas: 5 · Años: 1948, 1984, 1988, 1992, 2024
+  Deportes con registro: 3 (Shooting, Volleyball, Sailing)
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 5   | Oro: 1   | Plata: 3   | Bronce: 1
+  • Medallas físicas acumuladas por atletas:
+      Total: 18  | Oro: 1   | Plata: 16  | Bronce: 1
+    Nota: La diferencia corresponde a eventos colectivos/por equipo (donde cada atleta recibe medalla física
+          pero cuenta como 1 única medalla oficial para el medallero del país).
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+
+  ■ 1948 · Verano · London   (Participaciones: 1)
+  [ORO]  Free Pistol, 50 metres, Men (Olympic)
+           Shooting · Edwin Gonzalo Vásquez Cam (id 43312) · Posición 1
+
+  ■ 1984 · Verano · Los Angeles   (Participaciones: 1)
+ [PLATA] Trap, Open (Olympic)
+           Shooting · Francisco Juan Boza Dibós (id 43282) · Posición 2
+
+  ■ 1988 · Verano · Seoul   (Participaciones: 14)
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Luisa Haydee Cervera Cevedón (id 52447) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Alejandra de la Guerra (id 52453) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Denisse Fajardo García (id 52456) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Miriam Isabel Gallardo Tenemás (id 52459) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Rosa Gisella García Rivas (id 52460) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Sonia Isabel Heredia Condemarin (id 52463) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Natalia María Málaga Dibós (id 52467) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Gabriela Lourdes "Gaby" Pérez del Solar Cuculiza (id 52472) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Cecilia Roxana Tait Villacorta (id 52480) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Gina Torrealva (id 52481) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Cenaida Cebastiana Uribe Medina (id 52482) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Katherine Xenia "Kathy" Horny Sebastiani (id 109913) · Posición 2
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Gabriela Lourdes "Gaby" Prez del Solar Cuculiza (id 171622) · Sin posición registrada
+ [PLATA] Volleyball, Women (Olympic)
+           Volleyball · Gabriela Cuculiza (id 283849) · Sin posición registrada
+
+  ■ 1992 · Verano · Barcelona   (Participaciones: 1)
+ [PLATA] Skeet, Open (Olympic)
+           Shooting · Juan Jorge Giha Yarur (id 43293) · Posición 2
+
+  ■ 2024 · Verano · Paris   (Participaciones: 1)
+[BRONCE] Men's Dinghy
+           Sailing · Stefano Peschiera Loret de Mola (id 132564) · Sin posición registrada
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 58 ms · búsqueda por nombre insensible a acentos/mayúsculas · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:14 UTC

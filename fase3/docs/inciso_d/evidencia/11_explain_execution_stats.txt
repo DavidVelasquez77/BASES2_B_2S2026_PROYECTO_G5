@@ -1,0 +1,37 @@
+> mongosh explain("executionStats") -- colecciones entidades_geograficas y participaciones_por_pais
+
+=== EXPLAIN 1: Búsqueda de Entidad Geográfica por Código NOC 'GUA' ===
+{
+  keysExamined: 0,
+  docsExamined: 282,
+  nReturned: 1,
+  executionTimeMillis: 0,
+  winningPlan: 'COLLSCAN'
+}
+
+=== EXPLAIN 2: Búsqueda de Entidad Geográfica por Nombre 'Guatemala' ===
+{
+  keysExamined: 1,
+  docsExamined: 1,
+  nReturned: 1,
+  executionTimeMillis: 0,
+  indexName: 'ix_entidades_nombre'
+}
+
+=== EXPLAIN 3: Búsqueda de Buckets por Entidad y Edición (id_entidad 109, anio 2012) ===
+{
+  keysExamined: 1,
+  docsExamined: 1,
+  nReturned: 1,
+  executionTimeMillis: 0,
+  indexName: 'ix_part_pais_edicion'
+}
+
+=== EXPLAIN 4: Búsqueda de Buckets con Filtro de Medalla (id_entidad 109, participaciones.medalla in [Gold, Silver, Bronze]) ===
+{
+  keysExamined: 4,
+  docsExamined: 2,
+  nReturned: 2,
+  executionTimeMillis: 0,
+  indexName: 'ix_part_pais_medalla'
+}

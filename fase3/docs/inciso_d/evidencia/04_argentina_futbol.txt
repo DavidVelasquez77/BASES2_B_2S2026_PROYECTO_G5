@@ -1,0 +1,250 @@
+> .\fase3\scripts\consulta_pais.ps1 "Argentina" -Deporte Football
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · ARGENTINA (ARG)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       Argentina
+  Código de país (ISO): ARG
+  NOCs asociados:       ARG (Argentina)
+  Población:            46,654,581 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Sedes y ediciones organizadas: Ninguna (el país no ha sido sede en las ediciones registradas).
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Deporte=Football · Límite=100
+  Participaciones:      233
+  Atletas únicos:       227
+  Ediciones disputadas: 10 · Años: 1928, 1960, 1964, 1988, 1996, 2004, 2008, 2016, 2020, 2024
+  Deportes con registro: 1 (Football)
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 4   | Oro: 2   | Plata: 2   | Bronce: 0
+  • Medallas físicas acumuladas por atletas:
+      Total: 82  | Oro: 45  | Plata: 37  | Bronce: 0
+    Nota: La diferencia corresponde a eventos colectivos/por equipo (donde cada atleta recibe medalla física
+          pero cuenta como 1 única medalla oficial para el medallero del país).
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+
+  ■ 1928 · Verano · Amsterdam   (Participaciones: 18)
+ [PLATA] Football, Men (Olympic)
+           Football · Ludovico Bidoglio (id 23721) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Ángel Fernando Bossio Garcilández (id 23725) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Saúl Horacio Calandra (id 23730) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Alfredo Demetrio Carricaberry (id 23731) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Roberto Eugenio Cherro (Cerro-) (id 23735) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Octavio Juan Díaz (id 23741) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Juan Léon Evaristo (id 23745) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Manuel Ferreira (id 23747) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Enrique Ambrosio Gainzarain (id 23748) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Ángel Segundo Médici (id 23759) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Luigi Felipe "Luis Felipe" Monti (id 23760) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Rodolfo Orlando Orlandini (id 23767) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Raimundo Bibiani Orsi (id 23768) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Fernando Paternoster (id 23770) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Feliciano Ángel Perducca (id 23772) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Domingo Alberto Tarasconi (Tarascone-) (id 23787) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · ngel Garclandez (id 198644) · Sin posición registrada
+ [PLATA] Football, Men (Olympic)
+           Football · ngel Mdici (id 267708) · Sin posición registrada
+
+  ■ 1960 · Verano · Roma   (Participaciones: 16)
+        Football, Men (Olympic)
+           Football · Carlos Salvador Bilardo (id 23722) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Roberto Manuel Blanco Payo (id 23723) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Roberto Bonanno (id 23724) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Pedro de Ciancio Scaiella (id 23738) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Mario O. Desiderio (id 23740) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · José Díaz Daddona (id 23743) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Salvador Hugo Ginel (id 23750) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Juan Carlos Oleniak (id 23766) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Raúl Adolfo Pérez Vanini (id 23774) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Marwell Chiafredo Periotti (id 23776) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Alberto Rendo (id 23778) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Juan Carlos Stauskas (id 23786) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Hugo Marcos Zarich Bebek (id 23790) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Jos Daz (id 153289) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Ral Adolfo Prez (id 171697) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Ral Prez (id 283963) · Sin posición registrada
+
+  ■ 1964 · Verano · Tokyo   (Participaciones: 14)
+        Football, Men (Olympic)
+           Football · Andrés Arturo Bertolotti (id 23720) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Carlos Alberto Bulla (id 23727) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Antonio Roberto Cabrera (id 23728) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Agustín Mario Cejas (id 23733) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Juan Carlos Domínguez (id 23744) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · José Malleo (id 23756) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Néstor Manfredi (id 23757) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Horacio Óscar Morales (id 23762) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Miguel Ángel Mori (id 23764) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Héctor Osvaldo Ochoa (id 23765) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Roberto Alfredo Perfumo (id 23775) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Juan Nazareno Risso (id 23779) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Otto Norberto Sesana (id 23783) · Posición 9 (empate)
+        Football, Men (Olympic)
+           Football · Miguel Ángel Tojo (id 23788) · Posición 9 (empate)
+
+  ■ 1988 · Verano · Seoul   (Participaciones: 21)
+        Football, Men (Olympic)
+           Football · Rubén José Agüero (id 23714) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Mauro Gabriel Airez (id 23715) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Carlos Alejandro Alfaro Moreno (id 23716) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Claudio Martín Cabrera (id 23729) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Jorge Alberto Comas Romero (id 23736) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Hernán Edgardo Díaz (id 23742) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Néstor Ariel Fabbri (id 23746) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Luis Alberto Islas Ranieri (id 23751) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Néstor Gabriel Lorenzo (id 23754) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Mario Bruno Lucca (id 23755) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Carlos Alberto Mayor (id 23758) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Pedro Damián Monzón (id 23761) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Hugo Leonardo Pérez (id 23773) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Alejandro Ruidíaz (id 23780) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Alejandro Marcelo Russo (id 23781) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Darío Andrés Siviski (id 23785) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Rubn Jos Agero (id 145784) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Hernn Edgardo Daz (id 153278) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Rubn Agero (id 184703) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Carlos Moreno (id 186134) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Hernn Daz (id 215153) · Sin posición registrada
+
+  ■ 1996 · Verano · Atlanta   (Participaciones: 19)
+ [PLATA] Football, Men (Olympic)
+           Football · Matías Jesús Almeyda (id 23717) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Roberto Fabián Ayala (id 23718) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Christian Gustavo Bassedas (id 23719) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Carlos Gustavo Bossio (id 23726) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Pablo Óscar Cavallero Rodríguez (id 23732) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · José Antonio Chamot Reguero (id 23734) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Hernán Jorge Crespo (id 23737) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Marcelo Alejandro Delgado (id 23739) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Marcelo Daniel Gallardo (id 23749) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Claudio Javier López Paulocci (id 23752) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Gustavo Adrián López Pablo (id 23753) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Hugo Alberto Morales (id 23763) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Ariel Arnaldo Ortega (id 23769) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Pablo Ariel Paz Gallo (id 23771) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Héctor Mauricio Pineda (id 23777) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Roberto Néstor Sensini (id 23782) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Diego Pablo Simeone (id 23784) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Javier Adelmar Zanetti (id 23789) · Posición 2
+ [PLATA] Football, Men (Olympic)
+           Football · Matas Almeyda (id 186573) · Sin posición registrada
+
+  ■ 2004 · Verano · Athina   (Participaciones: 22)
+  [ORO]  Football, Men (Olympic)
+           Football · Roberto Fabián Ayala (id 23718) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Germán Darío Lux (id 101826) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Fabricio Coloccini (id 101827) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Javier Alejandro Mascherano (id 101828) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Gabriel Iván Heinze (id 101829) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · César Fabián Delgado Godoy (id 101830) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Carlos Alberto Martínez Tévez (id 101831) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Cristian Alberto "Kily" González Peret (id 101832) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Mauro Damián Rosales (id 101833) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Andrés Nicolás D'Alessandro (id 101834) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Luis Óscar González (id 101835) · Posición 1
+  [ORO]  Football, Men (Olympic)
+           Football · Javier Pedro Saviola Fernández (id 101836) · Posición 1
+
+  ... Se alcanzó el límite de visualización de 100 filas (de 233 totales).
+      Para ver todo use -Limite todos, o aplique filtros (-Anio, -Deporte, -Medalla).
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 280 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:10 UTC

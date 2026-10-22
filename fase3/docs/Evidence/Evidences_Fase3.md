@@ -100,7 +100,7 @@ date '+%Y-%m-%d %H:%M:%S %z'
 
 ### Evidencia
 
-![Base vigente y cuatro colecciones](../img/fase3_01_base_vigente.png)
+![Base vigente y cuatro colecciones](../img/fase3_01_mongo_compose.png)
 
 La imagen debe mostrar el nombre de la base, las cuatro colecciones y la fecha/hora real de la máquina.
 

@@ -1,0 +1,149 @@
+> .\fase3\scripts\consulta_pais.ps1 "France" -Anio 2024 -Medalla oro
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · FRANCE (FRA)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       France
+  Código de país (ISO): FRA
+  NOCs asociados:       FRA (France)
+  Población:            68,170,228 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Ha sido sede de 6 edición(es) olímpica(s):
+  • 1900  · Verano      · Sede: Paris
+  • 1924  · Verano      · Sede: Paris
+  • 1924  · Invierno    · Sede: Chamonix
+  • 1968  · Invierno    · Sede: Grenoble
+  • 1992  · Invierno    · Sede: Albertville
+  • 2024  · Verano      · Sede: Paris
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Año=2024 · Medalla=oro · Límite=100
+  Participaciones:      53
+  Atletas únicos:       49
+  Ediciones disputadas: 1 · Años: 2024
+  Deportes con registro: 10 (Triathlon, Surfing, Volleyball, Rugby, Canoeing, Judo, Taekwondo, Cycling...)
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 16  | Oro: 16  | Plata: 0   | Bronce: 0
+  • Medallas físicas acumuladas por atletas:
+      Total: 53  | Oro: 53  | Plata: 0   | Bronce: 0
+    Nota: La diferencia corresponde a eventos colectivos/por equipo (donde cada atleta recibe medalla física
+          pero cuenta como 1 única medalla oficial para el medallero del país).
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+
+  ■ 2024 · Verano · Paris   (Participaciones: 53)
+  [ORO]  Cross-Country, Men (Olympic)
+           Cycling · Mountain Bike · Joris Nattan Daudet (id 122878) · Sin posición registrada
+  [ORO]  Cross-Country, Women (Olympic)
+           Cycling · Mountain Bike · Pauline Ferrand (id 332429) · Sin posición registrada
+  [ORO]  Men
+           Surfing · Kauli Vaast (id 331165) · Sin posición registrada
+  [ORO]  Men +100 kg
+           Judo · Teddy Pierre-Marie Riner (id 111485) · Sin posición registrada
+  [ORO]  Men's 200m Breaststroke
+           Aquatics · Swimming · Léon Marchand (id 139453) · Sin posición registrada
+  [ORO]  Men's 200m Butterfly
+           Aquatics · Swimming · Léon Marchand (id 139453) · Sin posición registrada
+  [ORO]  Men's 200m Individual Medley
+           Aquatics · Swimming · Léon Marchand (id 139453) · Sin posición registrada
+  [ORO]  Men's 400m Individual Medley
+           Aquatics · Swimming · Léon Marchand (id 139453) · Sin posición registrada
+  [ORO]  Men's Canoe Single
+           Canoeing · Canoe Slalom · Nicolas Gestin (id 331781) · Sin posición registrada
+  [ORO]  Omnium, Men (Olympic)
+           Cycling · Cycling Track · Benjamin Thomas (id 139382) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Pascal Barraque (id 331716) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Antoine Dupont (id 331717) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Nelson Epee (id 331718) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Theo Forner (id 331719) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Aaron Grandidier (id 331720) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Jefferson-lee Joseph (id 331721) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Stephen Parez (id 131123) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Varian Pasquet (id 331723) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Rayan Rebbadj (id 331724) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Paulin Riva (id 331725) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Jordan Sepho (id 331726) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Andy Timo (id 331727) · Sin posición registrada
+  [ORO]  Rugby, Men (Olympic)
+           Rugby · Antoine Zeghdar (id 331728) · Sin posición registrada
+  [ORO]  Sabre, Individual, Women (Olympic)
+           Fencing · Manon Apithy-brunet (id 333994) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Shirine Boukli (id 139288) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Amandine Buchard (id 139283) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Leonie Cysique (id 332034) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Clarisse Bogdanna Agbegnenou (id 127682) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Eve Gahie (id 332036) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Madeleine Kelly Malonga (id 139284) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Romane Elisabeth Ngonpé Dicko (id 139286) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Luka Mkheidze (id 139431) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Walide Khyar (id 131112) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Joan-benjamin Gaba (id 332040) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Oumar Djalo (id 332041) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Maxime-gael Ngayap (id 332042) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Aurelien Diesse (id 332043) · Sin posición registrada
+  [ORO]  Team, Mixed (Olympic)
+           Judo · Teddy Pierre-Marie Riner (id 111485) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Antoine Arthur Fabien Brizard (id 139462) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Timothee Carle (id 331532) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Barthélémy Ikechi Ross Chinenyeze (id 139463) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Trévor Gérard Jean-Claude Clévenot (id 139467) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Theo Faure (id 331533) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Jénia Grebennikov (id 131166) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Quentin Jouffroy (id 331535) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · le Nicolas (id 331536) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Yacine Louati (id 139468) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Earvin Ngapeth (id 331538) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Jean Mathias Gérard Patry (id 139465) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Kévin Peter Patrice Tillie (id 131168) · Sin posición registrada
+  [ORO]  Volleyball, Men (Olympic)
+           Volleyball · Benjamin Toniutti (id 131163) · Sin posición registrada
+  [ORO]  Women +67kg
+           Taekwondo · Althéa Laurin (id 139325) · Sin posición registrada
+  [ORO]  Women's Individual
+           Triathlon · Cassandre Beaugrand (id 127720) · Sin posición registrada
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 97 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:07 UTC

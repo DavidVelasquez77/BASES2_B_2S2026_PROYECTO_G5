@@ -1,0 +1,242 @@
+> .\fase3\scripts\consulta_pais.ps1 "Guatemala"
+
+==============================================================================
+  CONSULTA HISTÓRICA POR PAÍS · GUATEMALA (GTM)
+==============================================================================
+
+  DATOS GENERALES Y GEOGRÁFICOS
+  Nombre oficial:       Guatemala
+  Código de país (ISO): GTM
+  NOCs asociados:       GUA (Guatemala)
+  Población:            17,602,431 hab. (año 2023) · Serie histórica: 1960–2023 (64 años registrados)
+
+  HISTORIAL COMO SEDE / ANFITRIÓN OLÍMPICO
+  Sedes y ediciones organizadas: Ninguna (el país no ha sido sede en las ediciones registradas).
+
+  RESUMEN HISTÓRICO OLÍMPICO
+  Filtros aplicados:    Límite=100
+  Participaciones:      591
+  Atletas únicos:       263
+  Ediciones disputadas: 20 · Años: 1932, 1952, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2010, 2012, 2014, 2016, 2020, 2024
+  Deportes con registro: 20 (Art Competitions, Cycling, Fencing, Shooting, Aquatics, Wrestling, Athletics, Boxing...)
+
+  MEDALLERO OLÍMPICO
+  • Medallero oficial del país (por prueba):
+      Total: 3   | Oro: 1   | Plata: 1   | Bronce: 1
+  • Medallas físicas acumuladas por atletas:
+      Total: 3   | Oro: 1   | Plata: 1   | Bronce: 1
+
+  PARTICIPACIONES Y RESULTADOS POR EDICIÓN
+
+  ■ 1932 · Verano · Los Angeles   (Participaciones: 1)
+        Art Competitions Mixed Painting, Paintings
+           Art Competitions · Antonia Matos (Matos Aycinena-, -de Massot) (id 167002) · Sin posición registrada
+
+  ■ 1952 · Verano · Helsinki   (Participaciones: 44)
+        1,000 metres Time Trial, Men (Olympic)
+           Cycling · Cycling Track · Gustavo Adolfo Martínez Okrassa (id 15408) · Posición 24
+        1,500 metres, Men (Olympic)
+           Athletics · Víctor Hugo Solares Hurtate (id 70396) · No se presentó (DNS)
+        10,000 metres, Men (Olympic)
+           Athletics · Doroteo Guamuch Flores (id 70382) · No se presentó (DNS)
+        10,000 metres, Men (Olympic)
+           Athletics · Luis Humberto Velásquez (id 70399) · Posición 31
+        100 metres Freestyle, Men (Olympic)
+           Aquatics · Swimming · José Valdés Basagoitia (id 47668) · Posición 56
+        100 metres, Men (Olympic)
+           Athletics · José Julio Barillas (id 70379) · Posición 7
+        100 metres, Women (Olympic)
+           Athletics · Lydia Graviola Ewing (-Burgess-, - Andino) (id 70374) · Posición 4
+        200 metres, Men (Olympic)
+           Athletics · José Julio Barillas (id 70379) · Posición 5
+        200 metres, Women (Olympic)
+           Athletics · Lydia Graviola Ewing (-Burgess-, - Andino) (id 70374) · Posición 5
+        3,000 metres Steeplechase, Men (Olympic)
+           Athletics · Víctor Hugo Solares Hurtate (id 70396) · Posición 3
+        400 metres, Men (Olympic)
+           Athletics · Jeremías Adolfus Stokes Brown (id 70397) · Posición 6
+        800 metres, Men (Olympic)
+           Athletics · Víctor Hugo Solares Hurtate (id 70396) · Posición 7
+        Athletics Men's Marathon
+           Athletics · Doroteo Guamuch Flores (id 70382) · Sin posición registrada
+        Athletics Women's 100 metres
+           Athletics · Lydia Graviola Ewing (-Burgess-, - Andino) (id 70374) · Sin posición registrada
+        Athletics Women's 200 metres
+           Athletics · Lydia Graviola Ewing (-Burgess-, - Andino) (id 70374) · Sin posición registrada
+        Bantamweight, Freestyle, Men (Olympic)
+           Wrestling · Wrestling Freestyle · José Oswaldo Johnston Sánchez (id 58114) · Sin posición registrada
+        Bantamweight, Greco-Roman, Men (Olympic)
+           Wrestling · Wrestling Greco-Roman · José Oswaldo Johnston Sánchez (id 58114) · Sin posición registrada
+        Cycling Men's Team Pursuit, 4,000 metres
+           Cycling · Cycling Track · Juan José Montoya (id 15611) · Sin posición registrada
+        Cycling Men's Team Pursuit, 4,000 metres
+           Cycling · Cycling Track · Carlos Sandoval (id 16324) · Sin posición registrada
+        Épée, Individual, Men (Olympic)
+           Fencing · Antonio Chocano Batres (id 22227) · Posición 7
+        Épée, Individual, Men (Olympic)
+           Fencing · Eduardo Carlos López Paniagua (id 22228) · Posición 8
+        Épée, Individual, Men (Olympic)
+           Fencing · José Rubén Soberón Riveiro (id 22229) · Posición 5
+        Featherweight, Freestyle, Men (Olympic)
+           Wrestling · Wrestling Freestyle · Marco Antonio Girón Román (id 58112) · Sin posición registrada
+        Featherweight, Greco-Roman, Men (Olympic)
+           Wrestling · Wrestling Greco-Roman · Marco Antonio Girón Román (id 58112) · Sin posición registrada
+        Fencing Men's epee, Individual
+           Fencing · Antonio Chocano Batres (id 22227) · Sin posición registrada
+        Foil, Individual, Men (Olympic)
+           Fencing · Eduardo Carlos López Paniagua (id 22228) · Posición 7
+        Foil, Individual, Men (Olympic)
+           Fencing · José Rubén Soberón Riveiro (id 22229) · Posición 7
+        Free Pistol, 50 metres, Men (Olympic)
+           Shooting · Francisco Hermenegildo Sandoval Guzmán (id 42387) · Posición 9
+        Free Rifle, Three Positions, 300 metres, Men (Olympic)
+           Shooting · Alfredo Charles Mury Benz (id 42379) · Posición 32
+        Lightweight, Freestyle, Men (Olympic)
+           Wrestling · Wrestling Freestyle · Aristides Pérez (id 58115) · Sin posición registrada
+        Lightweight, Greco-Roman, Men (Olympic)
+           Wrestling · Wrestling Greco-Roman · Aristides Pérez (id 58115) · Sin posición registrada
+        Long Jump, Men (Olympic)
+           Athletics · José Julio Barillas (id 70379) · No se presentó (DNS)
+        Marathon, Men (Olympic)
+           Athletics · Doroteo Guamuch Flores (id 70382) · Posición 22
+        Marathon, Men (Olympic)
+           Athletics · Luis Humberto Velásquez (id 70399) · No terminó (DNF)
+        Rapid-Fire Pistol, 25 metres, Men (Olympic)
+           Shooting · José Ángel Gómez Paz (id 42376) · Posición 32
+        Rapid-Fire Pistol, 25 metres, Men (Olympic)
+           Shooting · Francisco Hermenegildo Sandoval Guzmán (id 42387) · Posición 49
+        Sabre, Individual, Men (Olympic)
+           Fencing · Eduardo Carlos López Paniagua (id 22228) · Posición 6 (empate)
+        Small-Bore Rifle, Prone, 50 metres, Men (Olympic)
+           Shooting · José Ángel Gómez Paz (id 42376) · Posición 30
+        Small-Bore Rifle, Prone, 50 metres, Men (Olympic)
+           Shooting · Alfredo Charles Mury Benz (id 42379) · Posición 45
+        Sprint, Men (Olympic)
+           Cycling · Cycling Track · Gustavo Adolfo Martínez Okrassa (id 15408) · Posición 4
+        Team Pursuit, 4,000 metres, Men (Olympic)
+           Cycling · Cycling Track · Luis Gerardo Armando Castillo Samayoa (id 13762) · Posición 21
+        Team Pursuit, 4,000 metres, Men (Olympic)
+           Cycling · Cycling Track · Fernando Marroquín (id 15386) · Posición 21
+        Team Pursuit, 4,000 metres, Men (Olympic)
+           Cycling · Cycling Track · Juan José Montoya (id 15611) · Posición 21
+        Team Pursuit, 4,000 metres, Men (Olympic)
+           Cycling · Cycling Track · Carlos Sandoval (id 16324) · Posición 21
+
+  ■ 1968 · Verano · Mexico City   (Participaciones: 86)
+        1,500 metres, Men (Olympic)
+           Athletics · Julio Faustino Quevedo Elías (id 70394) · Posición 9
+        100 kilometres Team Time Trial, Men (Olympic)
+           Cycling · Cycling Road · Francisco Cuque Luna (id 13948) · Posición 21
+        100 kilometres Team Time Trial, Men (Olympic)
+           Cycling · Cycling Road · Jorge Inés Nufio (id 14749) · Posición 21
+        100 kilometres Team Time Trial, Men (Olympic)
+           Cycling · Cycling Road · Evaristo Oliva Piril (id 15825) · Posición 21
+        100 kilometres Team Time Trial, Men (Olympic)
+           Cycling · Cycling Road · Saturnino Rustrián Cáceres (id 16286) · Posición 21
+        100 metres Backstroke, Men (Olympic)
+           Aquatics · Swimming · Antonio Cruz (id 47661) · Posición 35
+        100 metres Butterfly, Men (Olympic)
+           Aquatics · Swimming · Ramiro Benavides (id 47657) · Posición 39
+        100 metres Freestyle, Women (Olympic)
+           Aquatics · Swimming · Silvana Asturias Morel (id 47654) · Posición 56
+        20 kilometres Race Walk, Men (Olympic)
+           Athletics · Julio Rodolfo Ortiz Figueroa (id 70391) · Posición 28
+        200 metres Backstroke, Men (Olympic)
+           Aquatics · Swimming · Antonio Cruz (id 47661) · Posición 28
+        200 metres Backstroke, Women (Olympic)
+           Aquatics · Swimming · Silvana Asturias Morel (id 47654) · No se presentó (DNS)
+        200 metres Butterfly, Men (Olympic)
+           Aquatics · Swimming · Ramiro Benavides (id 47657) · Posición 28
+        200 metres Freestyle, Men (Olympic)
+           Aquatics · Swimming · Ramiro Benavides (id 47657) · Posición 47
+        200 metres Freestyle, Women (Olympic)
+           Aquatics · Swimming · Silvana Asturias Morel (id 47654) · Posición 36
+        3,000 metres Steeplechase, Men (Olympic)
+           Athletics · Julio Faustino Quevedo Elías (id 70394) · Posición 12
+        400 metres Freestyle, Women (Olympic)
+           Aquatics · Swimming · Silvana Asturias Morel (id 47654) · Posición 27
+        400 metres Individual Medley, Men (Olympic)
+           Aquatics · Swimming · Antonio Cruz (id 47661) · Posición 33
+        5,000 metres, Men (Olympic)
+           Athletics · Julio Faustino Quevedo Elías (id 70394) · Posición 9
+        800 metres Freestyle, Women (Olympic)
+           Aquatics · Swimming · Silvana Asturias Morel (id 47654) · Posición 25
+        Athletics Men's 1,500 metres
+           Athletics · Julio Faustino Quevedo Elías (id 70394) · Sin posición registrada
+        Athletics Men's 3,000 metres Steeplechase
+           Athletics · Julio Faustino Quevedo Elías (id 70394) · Sin posición registrada
+        Athletics Men's 5,000 metres
+           Athletics · Julio Faustino Quevedo Elías (id 70394) · Sin posición registrada
+        Athletics Men's High Jump
+           Athletics · Teodoro F. Palacios Flores (id 70393) · Sin posición registrada
+        Bantamweight, Freestyle, Men (Olympic)
+           Wrestling · Wrestling Freestyle · Javier Raxón Tubac (id 58119) · Sin posición registrada
+        Bantamweight, Greco-Roman, Men (Olympic)
+           Wrestling · Wrestling Greco-Roman · Javier Raxón Tubac (id 58119) · Sin posición registrada
+        Bantamweight, Men (Olympic)
+           Boxing · Mario Roberto Mendoza Zarceno (id 3729) · Posición 33 (empate)
+        Boxing Men's Bantamweight
+           Boxing · Mario Roberto Mendoza Zarceno (id 3729) · Sin posición registrada
+        Boxing Men's Light-Middleweight
+           Boxing · Eugenio Boches Camey (id 3728) · Sin posición registrada
+        Cycling Men's 100 kilometres Team Time Trial
+           Cycling · Cycling Road · Francisco Cuque Luna (id 13948) · Sin posición registrada
+        Cycling Men's 100 kilometres Team Time Trial
+           Cycling · Cycling Road · Evaristo Oliva Piril (id 15825) · Sin posición registrada
+        Cycling Men's Road Race, Individual
+           Cycling · Cycling Road · Francisco Cuque Luna (id 13948) · Sin posición registrada
+        Cycling Men's Road Race, Individual
+           Cycling · Cycling Road · Evaristo Oliva Piril (id 15825) · Sin posición registrada
+        Featherweight, Freestyle, Men (Olympic)
+           Wrestling · Wrestling Freestyle · José Luis García de la Cruz (id 58111) · Sin posición registrada
+        Featherweight, Greco-Roman, Men (Olympic)
+           Wrestling · Wrestling Greco-Roman · José Luis García de la Cruz (id 58111) · Sin posición registrada
+        Featherweight, Men (Olympic)
+           Weightlifting · Francisco Echeverría (id 55519) · Posición 20
+        Flyweight, Freestyle, Men (Olympic)
+           Wrestling · Wrestling Freestyle · Gustavo Ramírez (id 58117) · Sin posición registrada
+        Flyweight, Greco-Roman, Men (Olympic)
+           Wrestling · Wrestling Greco-Roman · Gustavo Ramírez (id 58117) · Sin posición registrada
+        Football, Men (Olympic)
+           Football · Roberto Camposeco Marques (id 25406) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Edgar Edmundo Chacón Paredes (id 25408) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Ricardo Alexander Clark Henry (id 25409) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Julio Rodolfo García Guzmán (id 25414) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Antonio García Ramírez (id 25415) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Ignacio González Lam (id 25418) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Horacio Enrique Hasse Ovalle (id 25419) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Llijon León de León (id 25422) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Alberto López Oliva (id 25424) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Armando Melgar Nelson (id 25427) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · César Armando Melgar Retolaza (id 25428) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Hugo Francisco Montoya (id 25431) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Hugo Antonio Peña Segura (id 25436) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Jorge Roldán Popol (id 25442) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Jeron Augusto Slusher Dayle (id 25446) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · David Mathuselah Stokes Brown (id 25447) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Hugo Ricardo Torres Ocampo (id 25448) · Posición 5 (empate)
+        Football, Men (Olympic)
+           Football · Carlos Rolando Valdez Pérez (id 25449) · Posición 5 (empate)
+
+  ... Se alcanzó el límite de visualización de 100 filas (de 591 totales).
+      Para ver todo use -Limite todos, o aplique filtros (-Anio, -Deporte, -Medalla).
+
+------------------------------------------------------------------------------
+  Consulta resuelta en 83 ms · búsqueda por nombre exacto · base OlimpiadasF3
+  Ejecutada el 2026-10-21 16:46:02 UTC
