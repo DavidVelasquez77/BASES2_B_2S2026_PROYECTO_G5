@@ -11,7 +11,7 @@
 
 | Archivo | Función |
 |---|---|
-| `fase3/scripts/mongodb/06_consulta_atleta.js` | La consulta, en mongosh. Lee los parámetros de variables de entorno, igual que los scripts 01–05. |
+| `fase3/scripts/mongodb/06_consulta_atleta.js` | La consulta, en mongosh. Define la función `consultaAtleta(nombre, opciones)`: desde la terminal recibe los parámetros por variables de entorno (igual que los scripts 01–05) y se ejecuta sola; en la consola de mongosh o de Compass se pega el archivo y se llama la función. |
 | `fase3/scripts/consulta_atleta.ps1` | Comando para Windows (PowerShell). |
 | `fase3/scripts/consulta_atleta.sh` | Comando para Linux/macOS (y Git Bash en Windows). |
 | `fase3/docs/inciso_c/evidencia/` | Salidas reales de las consultas de prueba, con fecha y hora de ejecución, y la medición con `explain`. |
@@ -48,6 +48,20 @@ El primer parámetro es siempre el nombre del atleta.
 ./fase3/scripts/consulta_atleta.sh --id 93113 --deporte Swimming
 ./fase3/scripts/consulta_atleta.sh "Usain Bolt" --json
 ```
+
+**Consola de mongosh o MongoDB Compass**
+
+Conectado a la base (en Compass: **Open MongoDB shell**), se pega el contenido completo de `06_consulta_atleta.js`. Al pegarlo solo queda definida la función, que se llama con el nombre y un objeto de opciones con los mismos filtros, en minúsculas (`id`, `deporte`, `pais`, `anio`, `temporada`, `medalla`, `formato`):
+
+```javascript
+consultaAtleta("Usain Bolt")
+consultaAtleta("Michael Phelps", { anio: 2008, temporada: "verano", medalla: "oro" })
+consultaAtleta("José González", { pais: "MEX" })
+consultaAtleta(null, { id: 93113 })
+consultaAtleta("Usain Bolt", { formato: "json" })
+```
+
+Un valor inválido lanza un error con el mismo mensaje legible que en la terminal.
 
 ### Parámetros
 

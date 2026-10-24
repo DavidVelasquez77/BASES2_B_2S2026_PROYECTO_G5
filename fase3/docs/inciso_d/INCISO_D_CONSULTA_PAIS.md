@@ -14,7 +14,7 @@
 
 | Archivo | Ubicación | Descripción |
 |---|---|---|
-| `07_consulta_pais.js` | `fase3/scripts/mongodb/` | Script central en JavaScript para `mongosh`. Resuelve la entidad, ejecuta la consulta indexada a los buckets de país, calcula el doble medallero (país vs. atletas) y genera la salida. |
+| `07_consulta_pais.js` | `fase3/scripts/mongodb/` | Script central en JavaScript para `mongosh`. Define la función `consultaPais(pais, opciones)`, que resuelve la entidad, ejecuta la consulta indexada a los buckets de país, calcula el doble medallero (país vs. atletas) y genera la salida. Desde la terminal recibe los parámetros por variables de entorno y se ejecuta sola; en la consola de mongosh o de Compass se pega el archivo y se llama la función. |
 | `consulta_pais.ps1` | `fase3/scripts/` | Envoltorio en PowerShell para Windows (codificado en UTF-8 con BOM). Detecta si `mongosh` está en el sistema o ejecuta vía contenedor Docker de `fase3/compose.yaml`. |
 | `consulta_pais.sh` | `fase3/scripts/` | Envoltorio en Bash para Linux, macOS y Git Bash en Windows. |
 | `INCISO_D_CONSULTA_PAIS.md` | `fase3/docs/inciso_d/` | Este documento técnico de especificación, arquitectura y evidencias. |
@@ -64,6 +64,19 @@ El primer parámetro obligatorio es el país (nombre, código NOC o código ISO3
 ./fase3/scripts/consulta_pais.sh "Argentina" --deporte Football
 ./fase3/scripts/consulta_pais.sh GUA --json
 ```
+
+### Consola de mongosh o MongoDB Compass
+
+Conectado a la base (en Compass: **Open MongoDB shell**), se pega el contenido completo de `07_consulta_pais.js`. Al pegarlo solo queda definida la función, que se llama con el país y un objeto de opciones con los mismos filtros, en minúsculas (`anio`, `temporada`, `deporte`, `medalla`, `limite`, `formato`):
+
+```javascript
+consultaPais("Guatemala")
+consultaPais("GUA", { medalla: "cualquiera" })
+consultaPais("France", { anio: 2024, temporada: "verano", medalla: "oro" })
+consultaPais("Argentina", { deporte: "Football", limite: "todos" })
+```
+
+Los casos que terminan antes (país ambiguo, inexistente o salida JSON) cierran la consulta sin cerrar la consola, y un valor inválido lanza un error con el mismo mensaje que en la terminal.
 
 ---
 
